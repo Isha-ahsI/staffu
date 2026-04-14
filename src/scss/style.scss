@@ -73,23 +73,23 @@
 @import "./Layout/layout.scss";
 
 // Components scss
-@import "./components/alerts";
-@import "./components/accordion";
-@import "./components/background";
-@import "./components/button";
-@import "./components/dropdown";
+@import "./Components/alerts";
+@import "./Components/accordion";
+@import "./Components/background";
+@import "./Components/button";
+@import "./Components/dropdown";
 @import "./Components/helper";
-@import "./components/form";
-@import "./components/avatar";
-@import "./components/badge";
-@import "./components/card";
-@import "./components/carousel";
-@import "./components/modal";
-@import "./components/nav-tabs";
-@import "./components/spinner";
-@import "./components/offcanvas";
-@import "./components/table";
-@import "./components/gallery";
+@import "./Components/form";
+@import "./Components/avatar";
+@import "./Components/badge";
+@import "./Components/card";
+@import "./Components/carousel";
+@import "./Components/modal";
+@import "./Components/nav-tabs";
+@import "./Components/spinner";
+@import "./Components/offcanvas";
+@import "./Components/table";
+@import "./Components/gallery";
 @import "./Components/progressbar";
 @import "./Components/form";
 @import "./Components/tootltip";
@@ -97,7 +97,7 @@
 // Pages
 @import "./Pages/chat";
 @import "./Pages/email";
-@import "./pages/auth";
+@import "./Pages/auth";
 @import "./Pages/error";
 
 // Plugins scss
