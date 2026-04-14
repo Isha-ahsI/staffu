@@ -1,0 +1,25 @@
+// swiper.scss
+
+.swiper {
+    &.authSwiper {
+        .swiper-wrapper {
+            transition-timing-function: linear !important;
+
+            .swiper-slide {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        .swiper-pagination {
+            .swiper-pagination-bullet {
+                background-color: $primary;
+                border-radius: $border-radius-pill;
+                height: 4px;
+                width: 32px;
+            }
+        }
+    }
+}

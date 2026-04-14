@@ -1,0 +1,95 @@
+// apex-chart.scss
+.apexcharts-canvas {
+    width: 100% !important;
+    // .apexcharts-text {
+    //     fill: var(--bs-text-muted) !important;
+    // }
+    // .apexcharts-pie .apexcharts-slices .apexcharts-datalabels {
+    //     text {
+    //         fill: $white !important;
+    //     }
+    // }
+}
+
+.apexcharts-text.apexcharts-xaxis-label,
+.apexcharts-text.apexcharts-yaxis-label {
+    fill: var(--bs-text-muted) !important;
+}
+
+// .apexcharts-legend-text{
+//     color: var(--bs-text-muted) !important;
+// }
+
+// .apexcharts-datalabel{
+//     fill: var(--bs-text-muted) !important;
+// }
+
+.apexcharts-tooltip {
+    background: var(--bs-body-bg) !important;
+    border: 1px solid var(--bs-card-border-color) !important;
+
+    .apexcharts-tooltip-title {
+        background: var(--bs-body-bg) !important;
+        border-bottom: 1px solid var(--bs-body-bg) !important;
+        color: var(--bs-text-muted) !important;
+        margin-bottom: 0;
+    }
+
+    .apexcharts-tooltip-series-group {
+        background: var(--bs-card-bg-color) !important;
+        color: var(--bs-text-muted) !important;
+    }
+
+}
+
+.apexcharts-menu-icon {
+    color: var(--bs-text-muted) !important;
+
+    svg {
+        fill: var(--bs-text-muted) !important;
+        width: 30px !important;
+        height: 30px !important;
+    }
+}
+
+.apexcharts-menu {
+    background-color: var(--bs-body-bg) !important;
+    border: 1px solid var(--bs-card-border-color) !important;
+    border-radius: 8px !important;
+
+    .apexcharts-menu-item {
+        &:hover {
+            background-color: var(--bs-card-bg-color) !important;
+            border-radius: $border-radius-lg;
+        }
+    }
+
+}
+
+
+.radial-chart-canvas {
+
+    .apexcharts-canvas,
+    .apexcharts-canvas svg,
+    .apexcharts-canvas foreignObject {
+        min-width: 60px !important;
+        min-height: 60px !important;
+    }
+}
+
+#expenseChategoryChart {
+    .apexcharts-legend {
+        @include media-breakpoint-up(sm) {
+            top: 0 !important;
+        }
+
+        @include media-breakpoint-down(sm) {
+            top: 200px !important;
+            bottom:0px;
+         }
+
+        &.apx-legend-position-right {
+            justify-content: center
+        }
+    }
+}

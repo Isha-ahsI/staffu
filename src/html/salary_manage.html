@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <div class="page-layout">
+        %%include('./partials/layout/header.html')
+        %%include('./partials/layout/left-sidebar.html')
+        <div class="page-wrapper">
+            <div class="page-content">
+                %%include('./partials/components/page-title.html', { pageTitle: 'Salaries', pagePrTitle:
+                'Payroll' })
+                <div class="container-fluid">
+                    <div class="row mb-xl-4">
+                        <div class="col-xl-9 col-12">
+                            <div class="card mb-xl-0 mb-4">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                                        <div class="d-flex align-items-center gap-2">
+                                            <div class="avatar avatar-xs avatar-outline-light custom-avatar"><i
+                                                    class="ri-bar-chart-line"></i></div>
+                                            <h5 class="card-title mb-0">Payroll Summary</h5>
+                                        </div>
+                                        <form>
+                                            <div class="input-select-icon">
+                                                <span class="text-muted">
+                                                    <i class="bi bi-calendar2-check input-icon"></i>
+                                                </span>
+                                                <select name="salaryYearSelect" class="form-select form-select-sm"
+                                                    id="salaryYearSelect">
+                                                    <option>Last 6 Month</option>
+                                                    <option>Last Year</option>
+                                                    <option>This Month</option>
+                                                    <option>Last Month</option>
+                                                </select>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div id="salaryStackedChart"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-12">
+                            <div class="row">
+                                <div class="col-xl-12 col-md-4 col-sm-6 col-12 mb-4">
+                                    <div class="card bg-gradient-primary mb-0 h-100 h-xl-0 border-0">
+                                        <div class="card-body">
+                                            <div class="d-flex flex-wrap align-items-center gap-2 mb-4">
+                                                <div class="avatar avatar-xs avatar-outline-primary custom-avatar"><i
+                                                        class="ri-exchange-dollar-line"></i></div>
+                                                <h6 class="mb-0 fw-semibold">Monthaly Payroll</h6>
+                                            </div>
+                                            <div class="d-flex flex-wrap align-items-center gap-2">
+                                                <h3 class="text-dark fw-bold mb-0">$3,230,250.<span
+                                                        class="text-secondary text-opacity-25">00</span></h3>
+                                                <span class="badge bg-soft-success rounded-pill">- 12.5%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 col-md-4 col-sm-6 col-12 mb-4">
+                                    <div class="card bg-gradient-blue mb-0 h-100 h-xl-0 border-0">
+                                        <div class="card-body">
+                                            <div class="d-flex flex-wrap align-items-center gap-2 mb-4">
+                                                <div class="avatar avatar-xs avatar-outline-blue custom-avatar"><i
+                                                        class="ri-timer-2-line"></i></div>
+                                                <h6 class="mb-0 fw-semibold">Overtime</h6>
+                                            </div>
+                                            <div class="d-flex flex-wrap align-items-center gap-2">
+                                                <h3 class="text-dark fw-bold mb-0">$220,500.<span
+                                                        class="text-secondary text-opacity-25">00</span></h3>
+                                                <span class="badge bg-soft-success rounded-pill">- 5.3%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 col-md-4 col-sm-6 col-12 mb-xl-0 mb-4">
+                                    <div class="card bg-gradient-info mb-0 h-100 h-xl-0 border-0">
+                                        <div class="card-body">
+                                            <div class="d-flex flex-wrap align-items-center gap-2 mb-4">
+                                                <div class="avatar avatar-xs avatar-outline-info custom-avatar"><i
+                                                        class="ri-gift-line"></i></div>
+                                                <h6 class="mb-0 fw-semibold">Bonuses & Incentives</h6>
+                                            </div>
+                                            <div class="d-flex flex-wrap align-items-center gap-2">
+                                                <h3 class="text-dark fw-bold mb-0">$150,00.<span
+                                                        class="text-secondary text-opacity-25">00</span></h3>
+                                                <span class="badge bg-soft-danger rounded-pill">+ 12.3%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body pt-4">
+                                    <div class="d-flex flex-column flex-sm-row justify-content-between align-items-md-center gap-3">
+                                        <div>
+                                            <div class="d-flex flex-md-nowrap flex-sm-wrap flex-nowrap align-items-center gap-2">
+                                                <select id="customSalaryLength" class="form-select form-select-sm">
+                                                    <option value="5">5</option>
+                                                    <option value="10" selected>10</option>
+                                                    <option value="25">25</option>
+                                                    <option value="50">All</option>
+                                                </select>
+                                                <p class="mb-0 text-nowrap">entries per page</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-column flex-sm-row align-items-md-center gap-2">
+                                            <!--salary range shorting/filter -->
+                                            <div class="dropdown drop-menu-lg salaryRangeDrop position-relative">
+                                                <button type="button"
+                                                    class="btn btn-outline-secondary z-1 rounded-3 dropdown-toggle"
+                                                    id="salaryRangeFilter" data-bs-toggle="dropdown"
+                                                    aria-expanded="false"><span class="me-1"><i
+                                                            class="ri-equalizer-2-line"></i></span>
+                                                    <span class="filter-label">Filters</span> <span class="ms-5"><i
+                                                            class="bi bi-chevron-down drop-caret"></i></span></button>
+                                                <form class="p-4 dropdown-menu dropdown-menu-lg-end">
+                                                    <label for="salaryRange" class="form-label">Salary</label>
+                                                    <input type="range" class="form-range" id="salaryRange" min="0" max="20000" value="6000">
+                                                    <small>$0 - $20,000</small>
+                                                    <div
+                                                        class="d-flex align-items-center justify-content-between gap-3 mt-3">
+                                                        <div>
+                                                            <label for="maxSalary"
+                                                                class="form-label">Max</label>
+                                                            <input type="number" class="form-control"
+                                                                id="maxSalary" min="0" max="20000" value="6000">
+                                                        </div>
+                                                        <div>       
+                                                            <label for="minSalary"
+                                                                class="form-label">Min</label>
+                                                            <input type="number" class="form-control"       
+                                                                id="minSalary" min="0" max="20000" value="6000">
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <!--payment status filter dropdown -->
+                                            <div class="dropdown status-dropdown position-relative">
+                                                <button type="button"
+                                                    class="btn btn-outline-secondary z-1 rounded-3 dropdown-toggle"
+                                                    id="payStatusFilter" data-bs-toggle="dropdown"
+                                                    aria-expanded="false"> <span class="filter-label">All Status</span>
+                                                    <span><i class="bi bi-chevron-down drop-caret"></i></span></button>
+                                                <div aria-labelledby="payStatusFilter"
+                                                    class="dropdown-menu dropdown-menu-start dropdown-menu-sm-end ">
+                                                    <a class="dropdown-item" href="#" data-discover="true"
+                                                        data-status="">All Status</a>
+                                                    <a class="dropdown-item" href="#" data-discover="true"
+                                                        data-status="Paid">Paid</a>
+                                                    <a class="dropdown-item" href="#" data-discover="true"
+                                                        data-status="Pending">Pending</a>
+                                                    <a class="dropdown-item" href="#" data-discover="true"
+                                                        data-status="On hold">On hold</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr class="mb-4">
+                                    <div class="datatable-wrapper">
+                                        <table id="salaryListTable" class="table table-hover table-nowrap">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th class="border-0">No.</th>
+                                                    <th class="border-0">Employee Info</th>
+                                                    <th class="border-0">Department</th>
+                                                    <th class="border-0">Salary</th>
+                                                    <th class="border-0">Duration</th>
+                                                    <th class="border-0">Payment Status</th>
+                                                    <th class="border-0">Pay Date</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- row1 -->
+                                                %%include('partials/components/salarytable_row.html',
+                                                {
+                                                'no':'1','img':'avatar1','name':'Joyce Neal',
+                                                'id':'0117','job':'Software Engineer',
+                                                'salary':'9,450','startdate':'01 Jan,2026',
+                                                'enddate':'31 Jan,2026','status':'Paid',
+                                                'badgebg':'success','paydate':'02 February,2026'
+                                                })
+
+                                                <!-- row2 -->
+                                                %%include('partials/components/salarytable_row.html',
+                                                {
+                                                'no':'2','img':'avatar2','name':'Tiger Nixon',
+                                                'id':'0234','job':'Project Management',
+                                                'salary':'12,750','startdate':'02 Jan,2026',
+                                                'enddate':'2 Feb,2026','status':'Pending',
+                                                'badgebg':'warning','paydate':'03 February,2026'
+                                                })
+
+                                                <!-- row3 -->
+                                                %%include('partials/components/salarytable_row.html',
+                                                {
+                                                'no':'3','img':'avatar3','name':'Ethan Ray',
+                                                'id':'0223','job':'Customer Support',
+                                                'salary':'4,560','startdate':'15 Dec,2025',
+                                                'enddate':'15 Jan,2026','status':'Paid',
+                                                'badgebg':'success','paydate':'21 January,2026'
+                                                })
+
+                                                <!-- row4 -->
+                                                %%include('partials/components/salarytable_row.html',
+                                                {
+                                                'no':'4','img':'avatar4','name':'Kelvin Yia',
+                                                'id':'0458','job':'Graphic Designer',
+                                                'salary':'6,700','startdate':'01 Dec,2025',
+                                                'enddate':'30 Dec,2025','status':'Paid',
+                                                'badgebg':'success','paydate':'05 February,2026'
+                                                })
+
+                                                <!-- row5 -->
+                                                %%include('partials/components/salarytable_row.html',
+                                                {
+                                                'no':'5','img':'avatar5','name':'Ollivia Joy',
+                                                'id':'0348','job':'Site Supervisior',
+                                                'salary':'3,520','startdate':'01 Jan,2026',
+                                                'enddate':'15 Feb,2026','status':'Pending',
+                                                'badgebg':'warning','paydate':'20 February,2026'
+                                                })
+
+                                                <!-- row6 -->
+                                                %%include('partials/components/salarytable_row.html',
+                                                {
+                                                'no':'6','img':'avatar7','name':'Sophia Jackson',
+                                                'id':'0742','job':'DevOps Engineer',
+                                                'salary':'11,480', 'startdate':'01 Dec,2026',
+                                                'enddate':'01 Feb,2026','status':'On hold',
+                                                'badgebg':'danger','paydate':'-- ---- ----'
+                                                })
+
+                                                <!-- row7 -->
+                                                %%include('partials/components/salarytable_row.html',
+                                                {
+                                                'no':'7','img':'avatar6','name':'Mark Lee',
+                                                'id':'0897','job':'Data Scientist',
+                                                'salary':'10,850', 'startdate':'01 Dec,2025',
+                                                'enddate':'15 Jan,2026','status':'Pending',
+                                                'badgebg':'warning','paydate':'30 January,2026'
+                                                })
+
+                                                <!-- row8 -->
+                                                %%include('partials/components/salarytable_row.html',
+                                                {
+                                                'no':'8','img':'avatar8','name':'Laura Taylor',
+                                                'id':'0177','job':'Frontend Developer',
+                                                'salary':'2,000', 'startdate':'01 Feb,2026',
+                                                'enddate':'15 Feb,2026','status':'Paid',
+                                                'badgebg':'success','paydate':'15 February,2026'
+                                                })
+
+                                                <!-- row9 -->
+                                                %%include('partials/components/salarytable_row.html',
+                                                {
+                                                'no':'9','img':'avatar10','name':'Priya Sharma',
+                                                'id':'0723','job':'Sales Executive',
+                                                'salary':'15,500', 'startdate':'07 Dec,2025',
+                                                'enddate':'01 Feb,2026','status':'On hold',
+                                                'badgebg':'danger','paydate':'-- ---- ----'
+                                                })
+
+                                                <!-- row10 -->
+                                                %%include('partials/components/salarytable_row.html',
+                                                {
+                                                'no':'10','img':'avatar9','name':'Daniel Miller',
+                                                'id':'0124','job':'Frontend Developer',
+                                                'salary':'9,450', 'startdate':'10 Jan,2026',
+                                                'enddate':'05 Feb,2026','status':'Paid',
+                                                'badgebg':'success','paydate':'10 February,2026'
+                                                })
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div
+                                        class="table-bottom d-flex flex-wrap justify-content-center justify-content-sm-between align-items-center gap-3 mt-4">
+                                        <div id="table-salary-info" class="order-sm-1 order-2"></div>
+                                        <div id="table-salary-pagination" class="order-sm-2 order-1">
+                                            <nav aria-label="Employee list pagination">
+                                                <ul class="pagination mb-0">
+                                                    <li class="page-item disabled">
+                                                        <a class="page-link" href="#" aria-label="Previous">
+                                                            <span aria-hidden="true"><i
+                                                                    class="ri-arrow-left-double-line"></i></span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="page-item mx-1 disabled"><a class="page-link" href="#"
+                                                            aria-label="Previous">
+                                                            <span aria-hidden="true"><i
+                                                                    class="ri-arrow-left-s-line"></i></span>
+                                                        </a></li>
+                                                    <li class="page-item"><a class="page-link px-3" href="#">1</a></li>
+                                                    <li class="page-item mx-1 disabled"><a class="page-link" href="#"
+                                                            aria-label="Next">
+                                                            <span aria-hidden="true"><i
+                                                                    class="ri-arrow-right-s-line"></i></span>
+                                                        </a></li>
+                                                    <li class="page-item disabled">
+                                                        <a class="page-link" href="#" aria-label="Next">
+                                                            <span aria-hidden="true"><i
+                                                                    class="ri-arrow-right-double-line"></i></span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            %%include('./partials/layout/footer.html')
+
+        </div>
+    </div>
+    %%include('./partials/layout/right-sidebar.html')
+
+    <!-- %%include('./partials/right-sidebar.html')
+    %%include('./partials/back-to-top.html') -->
+
+    %%include('./partials/layout/footer-js.html')
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="plugins/datatables.net/js/dataTables.min.js"></script>
+    <script src="plugins/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+    <script src="plugins/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="plugins/datatables.net-responsive-dt/js/responsive.dataTables.min.js"></script>
+    <script src="plugins/apexcharts/apexcharts.min.js"></script>
+    <script src="js/pages/salary_manage.js"></script>
+
+</body>
+
+</html>

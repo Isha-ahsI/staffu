@@ -1,0 +1,75 @@
+// email.scss
+.list-group {
+    &.list-group-flush {
+        &.email-option-list-group {
+            gap: 4px;
+
+            .list-group-item {
+                background-color: transparent !important;
+                color: var(--bs-text-muted) !important;
+                border-color: transparent;
+
+                a {
+                    color: var(--bs-text-muted) !important;
+                }
+
+                &:hover,
+                &.active {
+                    background-color: rgba($gray-500, 0.15) !important;
+                    border-radius: $border-radius-xxl;
+
+                    a {
+                        color: var(--bs-text-dark) !important;
+                    }
+
+                }
+
+            }
+        }
+
+        &.email-item {
+            .list-group-item {
+                &:not(:last-child){
+                    border-bottom: $border-width $border-style inherit!important;
+
+                }
+            }
+        }
+    }
+
+}
+
+.storage-badge {
+    @include media-breakpoint-up(md) {
+        width: 30%;
+    }
+
+    @include media-breakpoint-down(md) {
+        width: 100%;
+    }
+}
+
+.email-offcanvas-sidebar{
+    height: calc(-250px + 100vh);
+}
+
+.email-item {
+    .email-text-content {
+        .email-text {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            transition: $transition-lg;
+        }
+        .email-action-icon {
+            margin-right: -100%;
+            transition: $transition-lg;
+        }
+        &:hover {
+            .email-action-icon {
+                margin-right: 0;
+            }
+        }
+    }
+}

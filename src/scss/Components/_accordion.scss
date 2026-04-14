@@ -1,0 +1,109 @@
+// accordion.scss
+
+@each $color, $value in $theme-colors {
+    .accordion {
+        .accordion-item {
+            overflow: hidden;
+            &.accordion-#{$color} {
+                border-color: var(--bs-#{$color})!important;
+
+                .accordion-header {
+                    .accordion-button {
+                       background-color: var(--bs-card-bg-color);
+                        color: var(--bs-#{$color})!important;
+
+                        &[aria-expanded="true"] {
+                            background-color: rgba(var(--bs-#{$color}-rgb), 0.14) !important;
+                        }
+                    }
+                }
+                
+                .accordion-body{
+                    background-color: var(--bs-card-bg);
+                }
+            }
+        }
+    }
+}
+
+.accordion {  
+    .accordion-item {
+        .accordion-header {
+            .accordion-button {
+                font-weight: $font-weight-semibold;
+                box-shadow: none;
+                font-size: 18px;
+                background-color: var(--bs-accordion-secondary-color);
+                color:var(--bs-title-color);
+
+                &::after {
+                    display: none;
+                }
+
+                .toggle-icon {
+                    margin-left: auto;
+                    font-size: 16px;
+                    font-weight: $font-weight-medium;
+                    transition: $transition-base;
+                }
+
+                &:not(.collapsed) {
+
+                    .toggle-icon {
+                        transform: rotate(45deg);
+                        color: var(--bs-hero-badge-color);
+                    }
+                }
+            }
+        }
+
+        .accordion-collapse {
+            .accordion-body {
+                color: var(--bs-text-muted);
+                background-color: var(--bs-card-bg-color);
+            }
+        }
+    }
+
+    &.custom-accordion {
+        .accordion-item {
+            background-color: var(--bs-accordion-secondary-color);
+            margin-bottom: 15px;
+            border: $border-width solid var(--bs-card-border-color);
+            box-shadow: $box-shadow-sm;
+            border-radius: $border-radius;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            .accordion-collapse {
+                .accordion-body {
+                    padding-top: $accordion-body-padding-y;
+                    color: var(--bs-text-muted);
+                    background-color: var(--bs-accordion-secondary-color);
+                }
+            }
+
+            .accordion-header {
+                .accordion-button {
+                    border-radius: $border-radius-lg;
+                    color:var(--bs-title-color);
+
+                    &[aria-expanded="true"] {
+                        color: var(--bs-title-color) !important;
+                        background-color: var(--bs-table-row-bg);
+                        border-radius: $border-radius $border-radius 0 0;
+
+                    }
+                }
+            }
+        }
+
+        &.accordion-shadow {
+            .accordion-item:has(.accordion-collapse.show) {
+                box-shadow: $box-shadow-lg;
+            }
+        }
+    }
+}

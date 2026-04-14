@@ -1,0 +1,92 @@
+// modal.scss
+.modal-backdrop {
+    backdrop-filter: blur(10px);
+}
+
+body.modal-open {
+    padding-right: 0 !important;
+}
+
+.modal {
+    &.video-call-modal {
+        .modal-dialog {
+            .modal-content {
+                background-color: transparent;
+                border: none;
+            }
+        }
+    }
+
+    .modal-dialog {
+        .modal-content {
+            background: var(--bs-modal-bg-color);
+            color:var(--bs-text-muted);
+            border-radius: 20px;
+            box-shadow: $box-shadow;
+
+            .modal-header {
+                display: block;
+                padding-bottom: 0;
+                border-bottom: 0;
+
+                .btn-close {
+                    position: absolute;
+                    right: 16px;
+                    top: 16px;
+                    width: 36px;
+                    height: 36px;
+                    padding: 0;
+                    background-color: rgba($white, 0.08);
+                    backdrop-filter: blur(10px);
+                    border-radius: 10px;
+                    opacity: 1;
+                    color: $primary;
+                    border: $border-width solid var(--bs-border-color-translucent);
+                    transition: background-color .2s ease, transform .2s ease;
+                    &:hover {
+                        background-color: rgba($white, 0.18);
+                        transform: scale(1.08);
+                    }
+                }
+
+            }
+
+            .modal-footer {
+                padding: $modal-header-padding-x $modal-header-padding-y $modal-header-padding-x $modal-header-padding-y;
+                gap: 8px;
+                border-top: 0;
+
+                >* {
+                    margin: 0;
+                }
+            }
+        }
+
+        &.modal-fullscreen {
+            .modal-content {
+                .modal-header {
+                    .btn-close {
+                        right: 24px;
+                        top: 24px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .modal {
+        .modal-dialog {
+            .modal-content {
+                .modal-header {
+                    .btn-close {
+                        right: 18px;
+                        top: 18px;
+                        border-radius: 7px;
+                    }
+                }
+            }
+        }
+    }
+}

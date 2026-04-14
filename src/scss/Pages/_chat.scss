@@ -1,0 +1,314 @@
+.chat-container {
+    .chat-messages {
+        position: relative;
+        height: calc(-325px + 100vh);
+        overflow: hidden;
+        z-index: 1;
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url(../../images/chatbg.png);
+            background-position: center;
+            opacity: 0.3;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: var(--bs-chat-bg-overlay-color);
+            backdrop-filter: blur(1px);
+            z-index: 0;
+        }
+
+        @include media-breakpoint-between(sm,lg) {
+            height: calc(-270px + 100vh);
+        }
+
+        @include media-breakpoint-down(sm){
+            height: calc(-280px + 100vh);
+        }
+
+        @include media-breakpoint-down(lg) {
+            .simplebar-content-wrapper {
+                height: 90% !important;
+            }
+        }
+    }
+
+    .chat-input-img {
+        padding: 0;
+        height: 200px;
+        width: 200px;
+        object-fit: cover;
+        object-position: top;
+
+        @include media-breakpoint-between(sm, lg) {
+            height: 120px;
+            width: 120px;
+        }
+
+        @include media-breakpoint-down(sm) {
+            height: 60px;
+            width: 60px;
+        }
+    }
+
+}
+
+
+.typing-indicator {
+    .dots-wrapper {
+        width: 40px;
+        height: 15px;
+        position: relative;
+        z-index: 4;
+
+        .typing-dot {
+            width: 5px;
+            height: 5px;
+            position: absolute;
+            border-radius: $border-radius-2xl;
+            background-color: var(--bs-primary);
+            left: 15%;
+            transform-origin: 50%;
+            opacity: 0.4;
+            animation: typing-circle7124 0.7s alternate infinite ease;
+
+            &:nth-child(2) {
+                left: 45%;
+                animation-delay: 0.2s;
+            }
+
+            &:nth-child(3) {
+                left: auto;
+                right: 15%;
+                animation-delay: 0.3s;
+            }
+        }
+
+        .typing-shadow {
+            width: 5px;
+            height: 4px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.2);
+            position: absolute;
+            top: 16px;
+            transform-origin: 50%;
+            z-index: 3;
+            left: 15%;
+            filter: blur(1px);
+            animation: typing-shadow046 0.7s alternate infinite ease;
+
+            &:nth-child(4) {
+                left: 45%;
+                animation-delay: 0.2s;
+            }
+
+            &:nth-child(5) {
+                left: auto;
+                right: 15%;
+                animation-delay: 0.3s;
+            }
+        }
+
+
+    }
+
+    .typing-text {
+        margin-left: 4px;
+        line-height: 1;
+        animation: typing-text 1.5s infinite ease-in-out;
+    }
+}
+
+.chat-items-bg {
+    background-color: var(--bs-chat-items-bg) !important;
+}
+
+.chat-offcanvas {
+    background-color: var(--bs-chat-offcanvas-bg-color);
+}
+
+.recording-bars {
+    height: 25px;
+
+    .bar {
+        width: 4px;
+        height: 8px;
+        // background: $primary;
+        border-radius: 2px;
+        animation: wave 1s infinite ease-in-out;
+
+        &:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        &:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        &:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+
+        &:nth-child(5) {
+            animation-delay: 0.4s;
+        }
+
+        &:nth-child(6) {
+            animation-delay: 0.5s;
+        }
+
+        &:nth-child(7) {
+            animation-delay: 0.6s;
+        }
+
+        &:nth-child(8) {
+            animation-delay: 0.7s;
+        }
+    }
+}
+
+
+.overlay-more {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($dark, 0.55);
+    color: $white;
+    font-weight: 600;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.4rem;
+}
+
+.hover-zoom {
+    transition: transform 0.2s ease;
+}
+
+.hover-zoom:hover {
+    transform: scale(1.05);
+}
+
+.group-profile {
+    position: relative;
+
+    .group-avatar2 {
+        position: absolute;
+        top: 16px;
+        left: 26px;
+    }
+}
+
+.incoming-message {
+    width: 22px;
+    height: 22px;
+    top: -5px;
+    right: -5px;
+    font-size: 0.65rem;
+    font-weight: $font-weight-semibold;
+    margin-left: -8px;
+}
+
+.msg-bg-me,
+.msg-bg-you {
+    padding: $spacer * 0.6 $spacer;
+}
+
+.msg-bg-me {
+    border-radius: 12px 2px 12px 12px;
+}
+
+.msg-bg-you {
+    border-radius: 2px 12px 12px 12px;
+    background-color: var(--bs-chat-msg-bg-color);
+}
+
+.msg-type {
+    background-color: var(--bs-card-bg-color);
+}
+
+.chat-leftbar-height {
+    @include media-breakpoint-up(lg) {
+        height: calc(-516px + 100vh);
+    }
+
+    @include media-breakpoint-down(lg) {
+        height: calc(-376px + 100vh);
+    }
+
+    min-height: max-content;
+}
+
+
+@keyframes typing-circle7124 {
+    0% {
+        top: 16px;
+        height: 5px;
+        border-radius: 50px 50px 25px 25px;
+        transform: scaleX(1.5);
+        opacity: 0.4;
+    }
+
+    40% {
+        height: 7px;
+        border-radius: $border-radius-2xl;
+        transform: scaleX(1);
+        opacity: 1;
+    }
+
+    100% {
+        top: 0%;
+        opacity: 0.4;
+    }
+}
+
+@keyframes typing-shadow046 {
+    0% {
+        transform: scaleX(1.5);
+    }
+
+    40% {
+        transform: scaleX(1);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: scaleX(0.2);
+        opacity: 0.4;
+    }
+}
+
+
+@keyframes typing-text {
+
+    0%,
+    100% {
+        opacity: .6;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes wave {
+
+    0%,
+    100% {
+        height: 6px;
+    }
+
+    50% {
+        height: 20px;
+    }
+}

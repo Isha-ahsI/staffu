@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <div class="page-layout">
+        %%include('./partials/layout/header.html')
+        %%include('./partials/layout/left-sidebar.html')
+        <div class="page-wrapper">
+            <div class="page-content">
+                %%include('./partials/components/page-title.html', { pageTitle: 'Deadlines', pagePrTitle:
+                'Projects' })
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+                                        <h6 class="mb-0 fs-18 fw-semibold">Projects with Deadlines</h6>
+                                        <div class="d-flex flex-wrap align-items-center justify-content-end gap-3">
+                                            <button type="button" class="btn btn-sm btn-outline-primary">Import Data</button>
+                                            <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#addProjectModal"><span><i class="ri-add-large-line"></i></span> Add Project</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- card1 -->
+                        <div class="col-xxl-3 col-xl-4 col-md-6 col-12 mb-4">
+                            <div class="card h-100 mb-0 overflow-hidden">
+                                %%include('partials/components/deadlines_card.html',
+                                {
+                                    "date":"May 26,2026","days":"2 months left",
+                                    "projectName":"Mobile App Development",
+                                    "statusBadgeColor":"bg-soft-warning","status":"Pending",
+                                    "description":"Design and build a cross-platform mobile application with user authentication...",
+                                    "width":"65","progressBgColor":"bg-warning"
+                                })
+                                <div class="card-footer bg-transparent border-0">
+                                    <hr>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                         <div class="avatar-group">
+                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                title="Ollivia Joy"><img alt="Ollivia Joy"
+                                                    class="w-100 h-100"
+                                                    src="../images/avatars/avatar7.jpg"></div>
+                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                title="Mark Lee"><img alt="Mark Lee"
+                                                    class="w-100 h-100"
+                                                    src="../images/avatars/avatar9.jpg"></div>
+                                        </div>
+                                        <span class="badge bg-success rounded-1 px-2">High</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- card2 -->
+                        <div class="col-xxl-3 col-xl-4 col-md-6 col-12 mb-4">
+                            <div class="card h-100 mb-0 overflow-hidden">
+                                %%include('partials/components/deadlines_card.html',
+                                {
+                                    "date":"Mar 10,2026 ","days":"1 day left",
+                                    "projectName":"Website Redesign",
+                                    "statusBadgeColor":"bg-soft-success","status":"Complete",
+                                    "description":"This project focuses on modernizing the company’s existing website...",
+                                    "width":"98","progressBgColor":"bg-success"
+                                })
+                                <div class="card-footer bg-transparent border-0">
+                                    <hr>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                         <div class="avatar-group">
+                                            <div class="avatar rounded-circle avatar-sm overflow-hidden"
+                                                data-bs-toggle="tooltip" data-bs-placement="top" title="Nia Dubey">
+                                                <img alt="Nia Dubey" class="w-100 h-100"
+                                                    src="../images/avatars/avatar5.jpg">
+                                            </div>
+                                            <div class="avatar rounded-circle avatar-sm overflow-hidden"
+                                                data-bs-toggle="tooltip" data-bs-placement="top" title="Jaya Shah">
+                                                <img alt="Jaya Shah" class="w-100 h-100"
+                                                    src="../images/avatars/avatar8.jpg">
+                                            </div>
+                                            <div class="avatar rounded-circle avatar-sm overflow-hidden"
+                                                data-bs-toggle="tooltip" data-bs-placement="top" title="Rahul Sharma">
+                                                <img alt="Rahul Sharma" class="w-100 h-100"
+                                                    src="../images/avatars/avatar6.jpg">
+                                            </div>
+                                        </div>
+                                        <span class="badge bg-warning rounded-1 px-2">Medium</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- card3 -->
+                        <div class="col-xxl-3 col-xl-4 col-md-6 col-12 mb-4">
+                            <div class="card h-100 mb-0 overflow-hidden">
+                                %%include('partials/components/deadlines_card.html',
+                                {
+                                    "date":"Apr 20,2026 ","days":"4 days overdue",
+                                    "projectName":"CRM System Implementation",
+                                    "statusBadgeColor":"bg-soft-danger","status":"Overdue",
+                                    "description":"Development and deployment of a centralized CRM platform to manage leads,...",
+                                    "width":"35","progressBgColor":"bg-danger"
+                                })
+                                <div class="card-footer bg-transparent border-0">
+                                    <hr>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="avatar-group">
+                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                title="Jaya Shah"><img alt="Jaya Shah"
+                                                    class="w-100 h-100"
+                                                    src="../images/avatars/avatar8.jpg"></div>
+                                        </div>
+                                        <span class="badge bg-danger rounded-1 px-2">Low</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- card4 -->
+                        <div class="col-xxl-3 col-xl-4 col-md-6 col-12 mb-4">
+                            <div class="card h-100 mb-0 overflow-hidden">
+                                %%include('partials/components/deadlines_card.html',
+                                {
+                                    "date":"Mar 12,2026","days":"2 days left",
+                                    "projectName":"E-Commerce Platform Upgrade",
+                                    "statusBadgeColor":"bg-soft-success","status":"Complete",
+                                    "description":"Enhancement of existing online store with secure payment gateway integration, ...",
+                                    "width":"80","progressBgColor":"bg-success"
+                                })
+                                <div class="card-footer bg-transparent border-0">
+                                    <hr>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="avatar-group">
+                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                title="Shreya Kapoor"><img alt="Shreya Kapoor"
+                                                    class="w-100 h-100"
+                                                    src="../images/avatars/avatar8.jpg">
+                                            </div>
+                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                title="Ollivia Joy"><img alt="Ollivia Joy"
+                                                    class="w-100 h-100"
+                                                    src="../images/avatars/avatar7.jpg"></div>
+                                        </div>
+                                        <span class="badge bg-success rounded-1 px-2">High</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- card5 -->
+                        <div class="col-xxl-3 col-xl-4 col-md-6 col-12 mb-4">
+                            <div class="card h-100 mb-0 overflow-hidden">
+                                %%include('partials/components/deadlines_card.html',
+                                {
+                                    "date":"Feb 17,2026","days":"7 days overdue",
+                                    "projectName":"Digital Marketing Campaign",
+                                    "statusBadgeColor":"bg-soft-danger","status":" Overdue",
+                                    "description":"Execution of multi-channel marketing strategy including social media ads,...",
+                                    "width":"25","progressBgColor":"bg-danger"
+                                })
+                                <div class="card-footer bg-transparent border-0">
+                                    <hr>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="avatar-group">
+                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                title="Prem Mehta"><img alt="Prem Mehta"
+                                                    class="w-100 h-100"
+                                                    src="../images/avatars/avatar1.jpg"></div>
+                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                title="Mark Lee"><img alt="Mark Lee"
+                                                    class="w-100 h-100"
+                                                    src="../images/avatars/avatar10.jpg"></div>
+                                        </div>
+                                        <span class="badge bg-warning rounded-1 px-2">Medium</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- card6 -->
+                        <div class="col-xxl-3 col-xl-4 col-md-6 col-12 mb-4">
+                            <div class="card h-100 mb-0 overflow-hidden">
+                                %%include('partials/components/deadlines_card.html',
+                                {
+                                    "date":"Mar 10,2026","days":"5 days left",
+                                    "projectName":"Cloud Migration Project",
+                                    "statusBadgeColor":"bg-soft-warning","status":"Pending",
+                                    "description":"Migration of on-premise infrastructure to cloud environment with data security, ...",
+                                    "width":"55","progressBgColor":"bg-warning"
+                                })
+                                <div class="card-footer bg-transparent border-0">
+                                    <hr>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="avatar-group">
+                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                title="Ethan Ray"><img alt="Ethan Ray"
+                                                    class="w-100 h-100"
+                                                    src="../images/avatars/avatar2.jpg"></div>
+                                        </div>
+                                        <span class="badge bg-danger rounded-1 px-2">Low</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- card7 -->
+                        <div class="col-xxl-3 col-xl-4 col-md-6 col-12 mb-4">
+                            <div class="card h-100 mb-0 overflow-hidden">
+                                %%include('partials/components/deadlines_card.html',
+                                {
+                                    "date":"Feb 21,2026","days":"3 days left",
+                                    "projectName":"Employee Management System",
+                                    "statusBadgeColor":"bg-soft-success","status":"Complete",
+                                    "description":"Implementation of HR module covering attendance tracking, payroll integration, ...",
+                                    "width":"87","progressBgColor":"bg-success"
+                                })
+                                <div class="card-footer bg-transparent border-0">
+                                    <hr>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="avatar-group">
+                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                title="Prem Mehta"><img alt="Prem Mehta"
+                                                    class="w-100 h-100"
+                                                    src="../images/avatars/avatar1.jpg"></div>
+                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                title="Mark Lee"><img alt="Mark Lee"
+                                                    class="w-100 h-100"
+                                                    src="../images/avatars/avatar10.jpg"></div>
+                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                title="Ethan Ray"><img alt="Ethan Ray"
+                                                    class="w-100 h-100"
+                                                    src="../images/avatars/avatar2.jpg"></div>
+                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                title="Mark Lee"><img alt="Mark Lee"
+                                                    class="w-100 h-100"
+                                                    src="../images/avatars/avatar6.jpg"></div>
+                                        </div>
+                                        <span class="badge bg-warning rounded-1 px-2">Medium</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- card8 -->
+                        <div class="col-xxl-3 col-xl-4 col-md-6 col-12 mb-4">
+                            <div class="card h-100 mb-0 overflow-hidden">
+                                %%include('partials/components/deadlines_card.html',
+                                {
+                                    "date":"Feb 15,2026","days":"15 days overdue",
+                                    "projectName":"API Integration & Automation",
+                                    "statusBadgeColor":"bg-soft-danger","status":"Overdue",
+                                    "description":"Integration of third-party APIs for payment processing, SMS notifications, ...",
+                                    "width":"66","progressBgColor":"bg-warning"
+                                })
+                                <div class="card-footer bg-transparent border-0">
+                                    <hr>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="avatar-group">
+                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                title="Prem Mehta"><img alt="Prem Mehta"
+                                                    class="w-100 h-100"
+                                                    src="../images/avatars/avatar4.jpg"></div>
+                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                title="shreya Kapoor"><img alt="Mark Lee"
+                                                    class="w-100 h-100"
+                                                    src="../images/avatars/avatar8.jpg"></div>
+                                        </div>
+                                        <span class="badge bg-success rounded-1 px-2">High</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- card9 -->
+                        <div class="col-xxl-3 col-xl-4 col-md-6 col-12 mb-4">
+                            <div class="card h-100 mb-0 overflow-hidden">
+                                %%include('partials/components/deadlines_card.html',
+                                {
+                                    "date":"Feb 02,2026","days":"5 days overdue",
+                                    "projectName":"Product Launch Strategy",
+                                    "statusBadgeColor":"bg-soft-danger","status":"Overdue",
+                                    "description":"Planning and execution of product launch including branding, campaign management, ...",
+                                    "width":"24","progressBgColor":"bg-danger"
+                                })
+                                <div class="card-footer bg-transparent border-0">
+                                    <hr>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="avatar-group">
+                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                title="Prem Mehta"><img alt="Ollivia Joy"
+                                                    class="w-100 h-100"
+                                                    src="../images/avatars/avatar1.jpg"></div>
+                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                title="Nisha Shahu"><img alt="Mark Lee"
+                                                    class="w-100 h-100"
+                                                    src="../images/avatars/avatar3.jpg"></div>
+                                        </div>
+                                        <span class="badge bg-success rounded-1 px-2">High</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- card10 -->
+                        <div class="col-xxl-3 col-xl-4 col-md-6 col-12 mb-4">
+                            <div class="card h-100 mb-0 overflow-hidden">
+                                %%include('partials/components/deadlines_card.html',
+                                {
+                                    "date":"Jan 31,2026","days":"0 days left",
+                                    "projectName":"Sales Pipeline Optimization",
+                                    "statusBadgeColor":"bg-soft-success","status":"Complete",
+                                    "description":"Improvement of sales funnel stages with lead scoring, automated follow-ups,...",
+                                    "width":"94","progressBgColor":"bg-success"
+                                })
+                                <div class="card-footer bg-transparent border-0">
+                                    <hr>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="avatar-group">
+                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                title="Neha Mehta"><img alt="Neha Mehta"
+                                                    class="w-100 h-100"
+                                                    src="../images/avatars/avatar2.jpg"></div>
+                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                title="Pooja Khanna"><img alt="Pooja Khanna"
+                                                    class="w-100 h-100"
+                                                    src="../images/avatars/avatar7.jpg"></div>
+                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                title="Mark Lee"><img alt="Mark Lee"
+                                                    class="w-100 h-100"
+                                                    src="../images/avatars/avatar9.jpg"></div>
+                                        </div>
+                                        <span class="badge bg-warning rounded-1 px-2">Medium</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- card11 -->
+                        <div class="col-xxl-3 col-xl-4 col-md-6 col-12 mb-4">
+                            <div class="card h-100 mb-0 overflow-hidden">
+                                %%include('partials/components/deadlines_card.html',
+                                {
+                                    "date":"Apr 21,2026","days":"1 month 5 days left",
+                                    "projectName":"Corporate Website Development",
+                                    "statusBadgeColor":"bg-soft-warning","status":"Pending",
+                                    "description":"Design and development of a professional corporate website with company profile,...",
+                                    "width":"66","progressBgColor":"bg-warning"
+                                })
+                                <div class="card-footer bg-transparent border-0">
+                                    <hr>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="avatar-group">
+                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                title="Jiya Varma"><img alt="Jiya Varma"
+                                                    class="w-100 h-100"
+                                                    src="../images/avatars/avatar3.jpg"></div>
+                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                title="shreya Kapoor"><img alt="Mark Lee"
+                                                    class="w-100 h-100"
+                                                    src="../images/avatars/avatar8.jpg"></div>
+                                        </div>
+                                        <span class="badge bg-success rounded-1 px-2">High</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- card12 -->
+                        <div class="col-xxl-3 col-xl-4 col-md-6 col-12 mb-4">
+                            <div class="card h-100 mb-0 overflow-hidden">
+                                %%include('partials/components/deadlines_card.html',
+                                {
+                                    "date":"Feb 27,2026","days":"1 day left",
+                                    "projectName":"Mobile CRM Application",
+                                    "statusBadgeColor":"bg-soft-success","status":"Complete",
+                                    "description":"Development of mobile-friendly CRM app allowing sales teams to update leads...",
+                                    "width":"97","progressBgColor":"bg-success"
+                                })
+                                <div class="card-footer bg-transparent border-0">
+                                    <hr>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="avatar-group">
+                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                title="Neha Mehta"><img alt="Neha Mehta"
+                                                    class="w-100 h-100"
+                                                    src="../images/avatars/avatar2.jpg"></div>
+                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                title="Pooja Khanna"><img alt="Pooja Khanna"
+                                                    class="w-100 h-100"
+                                                    src="../images/avatars/avatar7.jpg"></div>
+                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                title="Mark Lee"><img alt="Mark Lee"
+                                                    class="w-100 h-100"
+                                                    src="../images/avatars/avatar9.jpg"></div>
+                                        </div>
+                                        <span class="badge bg-danger rounded-1 px-2">Low</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            %%include('./partials/layout/footer.html')
+        </div>
+    </div>
+
+     <!-- employee add modal -->
+    <div class="modal fade" id="addProjectModal" tabindex="-1" aria-labelledby="addProjectModalLabel">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="addProjectModalLabel">Add New Project Details</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <hr class="mt-2 mb-0">
+                <div class="modal-body">
+                    <form class="row">
+                        <div class="col-xl-4 col-lg-6 col-12 mb-4">
+                            <label for="addProID" class="form-label">Project ID:</label>
+                            <input type="text" class="form-control rounded-3" id="addProID" value="">
+                        </div>
+                        <div class="col-xl-8 col-lg-6 col-12 mb-4">
+                            <label for="addProTitle" class="form-label">Project Title:</label>
+                            <input type="text" class="form-control rounded-3" id="addProTitle">
+                        </div>
+                        <div class="col-12 mb-4">
+                            <label for="descriptionProTextarea" class="form-label">Description:</label>
+                            <textarea class="form-control rounded-3" id="descriptionProTextarea" rows="2"></textarea>
+                        </div>
+                        <div class="col-lg-6 col-12 mb-4">
+                            <label for="addDeadlineDate" class="form-label">Deadlines Date:</label>
+                            <div class="input-icon">
+                                <span class="cale-icon"><i class="bi bi-calendar4-event"></i></span>
+                                <input type="text" id="addDeadlineDate" placeholder="Deadline Date"
+                                    class="form-control rounded-3" />
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12 mb-4">
+                            <label for="addProPriority" class="form-label">Priority:</label>
+                            <select class="form-select rounded-3" aria-label="Select Priority" id="addProPriority">
+                                <option selected disabled>Select Project Priority</option>
+                                <option value="high">High</option>
+                                <option value="medium">Medium</option>
+                                <option value="low">Low</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Save & Continue</button>
+                    <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    %%include('./partials/layout/right-sidebar.html')
+
+    <!-- %%include('./partials/right-sidebar.html')
+    %%include('./partials/back-to-top.html') -->
+
+    %%include('./partials/layout/footer-js.html')
+    <script src="plugins/flatpickr/flatpickr.min.js"></script>
+    <script src="js/pages/deadlines.js"></script>
+
+</body>
+
+</html>

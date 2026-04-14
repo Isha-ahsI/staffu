@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <div class="page-layout">
+        %%include('./partials/layout/header.html')
+        %%include('./partials/layout/left-sidebar.html')
+
+        <div class="page-wrapper">
+            <div class="page-content">
+                %%include('./partials/components/page-title.html', { pageTitle: 'Dropdowns', pagePrTitle: 'UI Elements' })
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- default dropdowns -->
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Default Dropdowns</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2">
+                                        <!-- primary -->
+                                        <div class="dropdown">
+                                            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdown1"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                Primary
+                                                <i class="bi bi-chevron-down drop-caret"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdown1">
+                                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                            </ul>
+                                        </div>
+                                        <!-- Success -->
+                                        <div class="dropdown">
+                                            <button class="btn btn-success dropdown-toggle" type="button" id="dropdown2"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                Success
+                                                <i class="bi bi-chevron-down drop-caret"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdown2">
+                                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                            </ul>
+                                        </div>
+                                        <!-- Warning -->
+                                        <div class="dropdown">
+                                            <button class="btn btn-warning dropdown-toggle" type="button" id="dropdown3"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                Warning
+                                                <i class="bi bi-chevron-down drop-caret"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdown3">
+                                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                            </ul>
+                                        </div>
+                                        <!-- danger -->
+                                        <div class="dropdown">
+                                            <button class="btn btn-danger dropdown-toggle" type="button" id="dropdown4"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                Danger
+                                                <i class="bi bi-chevron-down drop-caret"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdown4">
+                                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                            </ul>
+                                        </div>
+                                        <!-- light -->
+                                        <div class="dropdown">
+                                            <button class="btn btn-light dropdown-toggle" type="button" id="dropdown5"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                Light
+                                                <i class="bi bi-chevron-down drop-caret"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdown5">
+                                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                            </ul>
+                                        </div>
+                                        <!-- dark -->
+                                        <div class="dropdown">
+                                            <button class="btn btn-dark dropdown-toggle" type="button" id="dropdown6"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                Dark
+                                                <i class="bi bi-chevron-down drop-caret"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdown6">
+                                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <h5 class="card-title mt-4">Dropdowns Rounded Pills</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2">
+                                        <!-- secondary -->
+                                        <div class="dropdown">
+                                            <button class="btn btn-secondary dropdown-toggle rounded-pill" type="button"
+                                                id="dropdown7" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Secondary
+                                                <i class="bi bi-chevron-down drop-caret"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdown7">
+                                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                            </ul>
+                                        </div>
+                                        <!-- Blue -->
+                                        <div class="dropdown">
+                                            <button class="btn btn-blue dropdown-toggle rounded-pill" type="button"
+                                                id="dropdown8" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Blue
+                                                <i class="bi bi-chevron-down drop-caret"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdown8">
+                                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                            </ul>
+                                        </div>
+                                        <!-- info -->
+                                        <div class="dropdown">
+                                            <button class="btn btn-info dropdown-toggle rounded-pill" type="button"
+                                                id="dropdown9" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Info
+                                                <i class="bi bi-chevron-down drop-caret"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdown9">
+                                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                            </ul>
+                                        </div>
+                                        <!-- orange -->
+                                        <div class="dropdown">
+                                            <button class="btn btn-orange dropdown-toggle rounded-pill" type="button"
+                                                id="dropdown10" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Orange
+                                                <i class="bi bi-chevron-down drop-caret"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdown10">
+                                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                            </ul>
+                                        </div>
+                                        <!-- light -->
+                                        <div class="dropdown">
+                                            <button class="btn btn-light dropdown-toggle rounded-pill" type="button"
+                                                id="dropdown11" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Light
+                                                <i class="bi bi-chevron-down drop-caret"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdown11">
+                                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                            </ul>
+                                        </div>
+                                        <!-- dark -->
+                                        <div class="dropdown">
+                                            <button class="btn btn-dark dropdown-toggle rounded-pill" type="button"
+                                                id="dropdown12" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Dark
+                                                <i class="bi bi-chevron-down drop-caret"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdown12">
+                                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- dropdowns outline -->
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Dropdowns Outline</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2">
+                                        <!-- secondary -->
+                                        <div class="dropdown">
+                                            <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                                id="dropdown13" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Secondary
+                                                <i class="bi bi-chevron-down drop-caret"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdown13">
+                                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- info -->
+                                        <div class="dropdown">
+                                            <button class="btn btn-outline-info dropdown-toggle rounded-pill" type="button"
+                                                id="dropdown14" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Info
+                                                <i class="bi bi-chevron-down drop-caret"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdown14">
+                                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- dropdowns Soft -->
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Dropdowns Soft</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2">
+                                        <!-- success -->
+                                        <div class="dropdown">
+                                            <button class="btn btn-soft-success dropdown-toggle" type="button"
+                                                id="dropdown15" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Success
+                                                <i class="bi bi-chevron-down drop-caret"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdown15">
+                                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- danger -->
+                                        <div class="dropdown">
+                                            <button class="btn btn-soft-danger dropdown-toggle rounded-pill" type="button"
+                                                id="dropdown16" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Danger
+                                                <i class="bi bi-chevron-down drop-caret"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdown16">
+                                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- dropdown gradient -->
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Dropdowns Gradient</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2">
+                                        <!-- primary -->
+                                        <div class="dropdown">
+                                            <button class="btn btn-gradient-primary dropdown-toggle" type="button"
+                                                id="dropdown17" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Primary
+                                                <i class="bi bi-chevron-down drop-caret"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdown17">
+                                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- Blue -->
+                                        <div class="dropdown">
+                                            <button class="btn btn-gradient-blue dropdown-toggle rounded-pill"
+                                                type="button" id="dropdown18" data-bs-toggle="dropdown"
+                                                aria-expanded="false">
+                                                Blue
+                                                <i class="bi bi-chevron-down drop-caret"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdown18">
+                                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- dropdown split -->
+                        <div class="col-xl-3 col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Split Button Dropdowns</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2">
+                                        <!-- danger -->
+                                        <div class="d-flex align-items-center flex-wrap gap-2">
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-danger">Danger</button>
+                                                <button type="button" id="dropdown19"
+                                                    class="btn btn-danger dropdown-toggle dropdown-toggle-split"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <i class="bi bi-chevron-down drop-caret"></i>
+                                                </button>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdown19">
+                                                    <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                    <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                    <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                    <li><a class="dropdown-item" href="#">Support</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <!-- success -->
+                                        <div class="d-flex align-items-center flex-wrap gap-2">
+                                            <div class="btn-group">
+                                                <button type="button"
+                                                    class="btn btn-success rounded-start-pill">Success</button>
+                                                <button type="button" id="dropdown20"
+                                                    class="btn btn-success dropdown-toggle dropdown-toggle-split rounded-end-pill"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <i class="bi bi-chevron-down drop-caret"></i>
+                                                </button>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdown20">
+                                                    <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                    <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                    <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                    <li><a class="dropdown-item" href="#">Support</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- dropdown split outline-->
+                        <div class="col-xl-3 col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Split Outline Button Dropdowns</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2">
+                                        <!-- secondary -->
+                                        <div class="d-flex align-items-center flex-wrap gap-2">
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-outline-secondary">Secondary</button>
+                                                <button type="button" id="dropdown21"
+                                                    class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <i class="bi bi-chevron-down drop-caret"></i>
+                                                </button>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdown21">
+                                                    <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                    <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                    <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                    <li><a class="dropdown-item" href="#">Support</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <!-- info -->
+                                        <div class="d-flex align-items-center flex-wrap gap-2">
+                                            <div class="btn-group">
+                                                <button type="button"
+                                                    class="btn btn-outline-info rounded-start-pill">Info</button>
+                                                <button type="button" id="dropdown22"
+                                                    class="btn btn-outline-info dropdown-toggle dropdown-toggle-split rounded-end-pill"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <i class="bi bi-chevron-down drop-caret"></i>
+                                                </button>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdown22">
+                                                    <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                    <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                    <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                    <li><a class="dropdown-item" href="#">Support</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- dropdown split soft -->
+                        <div class="col-xl-3 col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Split Soft Button Dropdowns</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2">
+                                        <!-- danger -->
+                                        <div class="d-flex align-items-center flex-wrap gap-2">
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-soft-danger">Danger</button>
+                                                <button type="button" id="dropdown23"
+                                                    class="btn btn-soft-danger dropdown-toggle dropdown-toggle-split"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <i class="bi bi-chevron-down drop-caret"></i>
+                                                </button>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdown23">
+                                                    <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                    <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                    <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                    <li><a class="dropdown-item" href="#">Support</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <!-- success -->
+                                        <div class="d-flex align-items-center flex-wrap gap-2">
+                                            <div class="btn-group">
+                                                <button type="button"
+                                                    class="btn btn-soft-success rounded-start-pill">Success</button>
+                                                <button type="button" id="dropdown24"
+                                                    class="btn btn-soft-success dropdown-toggle dropdown-toggle-split rounded-end-pill"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <i class="bi bi-chevron-down drop-caret"></i>
+                                                </button>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdown24">
+                                                    <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                    <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                    <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                    <li><a class="dropdown-item" href="#">Support</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- dropdown split gredient -->
+                        <div class="col-xl-3 col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Split Gradient Button Dropdowns</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2">
+                                        <!-- primary -->
+                                        <div class="d-flex align-items-center flex-wrap gap-2">
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-gradient-primary">Primary</button>
+                                                <button type="button" id="dropdown25"
+                                                    class="btn btn-gradient-primary dropdown-toggle dropdown-toggle-split"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <i class="bi bi-chevron-down drop-caret"></i>
+                                                </button>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdown25">
+                                                    <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                    <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                    <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                    <li><a class="dropdown-item" href="#">Support</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <!-- Blue -->
+                                        <div class="d-flex align-items-center flex-wrap gap-2">
+                                            <div class="btn-group">
+                                                <button type="button"
+                                                    class="btn btn-gradient-blue rounded-start-pill">Blue</button>
+                                                <button type="button" id="dropdown26"
+                                                    class="btn btn-gradient-blue dropdown-toggle dropdown-toggle-split rounded-end-pill"
+                                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <i class="bi bi-chevron-down drop-caret"></i>
+                                                </button>
+                                                <ul class="dropdown-menu" aria-labelledby="dropdown26">
+                                                    <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                    <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                    <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                    <li><a class="dropdown-item" href="#">Support</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- dropdown sizes -->
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <h5 class="card-title mb-0">Dropdowns sizes</h5>
+                        </div>
+                        <!-- large size -->
+                        <div class="col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Large Size</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2">
+                                        <div class="btn-group">
+                                            <button class="btn btn-primary btn-lg dropdown-toggle" id="dropdown-lg-1"
+                                                type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Large button <i class="bi bi-chevron-down drop-caret"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdown-lg-1">
+                                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="btn-group">
+                                            <button class="btn btn-primary btn-lg" type="button">
+                                                Large split button
+                                            </button>
+                                            <button type="button" id="dropdown-lg-2"
+                                                class="btn btn-lg btn-primary dropdown-toggle dropdown-toggle-split"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="bi bi-chevron-down drop-caret"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdown-lg-2">
+                                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- medium size -->
+                        <div class="col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Medium Size</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2">
+                                        <div class="btn-group">
+                                            <button class="btn btn-primary dropdown-toggle" id="dropdown-md-1" type="button"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                Medium button <i class="bi bi-chevron-down drop-caret"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdown-md-1">
+                                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="btn-group">
+                                            <button class="btn btn-primary" type="button">
+                                                Medium split button
+                                            </button>
+                                            <button type="button" id="dropdown-md-2"
+                                                class="btn btn-primary dropdown-toggle dropdown-toggle-split"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="bi bi-chevron-down drop-caret"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdown-md-2">
+                                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- small size -->
+                        <div class="col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Small Size</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2">
+                                        <div class="btn-group">
+                                            <button class="btn btn-primary btn-sm dropdown-toggle" id="dropdown-sm-1"
+                                                type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Small button <i class="bi bi-chevron-down drop-caret"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdown-sm-1">
+                                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="btn-group">
+                                            <button class="btn btn-primary btn-sm" type="button">
+                                                Small split button
+                                            </button>
+                                            <button type="button" id="dropdown-sm-2"
+                                                class="btn btn-sm btn-primary dropdown-toggle dropdown-toggle-split"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="bi bi-chevron-down drop-caret"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdown-sm-2">
+                                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- extra small size -->
+                        <div class="col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Extra Small Size</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2">
+                                        <div class="btn-group">
+                                            <button class="btn btn-primary btn-xs dropdown-toggle" id="dropdown-xs-1"
+                                                type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                Extra Small button <i class="bi bi-chevron-down drop-caret"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdown-xs-1">
+                                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="btn-group">
+                                            <button class="btn btn-primary btn-xs" type="button">
+                                                Extra Small split button
+                                            </button>
+                                            <button type="button" id="dropdown-xs-2"
+                                                class="btn btn-xs btn-primary dropdown-toggle dropdown-toggle-split"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="bi bi-chevron-down drop-caret"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdown-xs-1">
+                                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- dropdown directions -->
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <h5 class="card-title mb-0">Dropdowns Directions</h5>
+                        </div>
+                        <!-- Default dropdown direction -->
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Default Dropdown Direction</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2">
+                                        <!-- dropdown center -->
+                                        <div class="dropdown-center">
+                                            <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-centered">
+                                                Centered dropdown <i class="bi bi-chevron-down drop-caret"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdown-centered">
+                                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- dropup button  -->
+                                        <div class="btn-group dropup">
+                                            <button type="button" class="btn btn-secondary dropdown-toggle"
+                                                data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-dropup">
+                                                Dropup <i class="bi bi-chevron-up drop-caret"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdown-dropup">
+                                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- dropup centered -->
+                                        <div class="dropup-center dropup">
+                                            <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                data-bs-toggle="dropdown" aria-expanded="false" id="dropup-center">
+                                                Centered dropup <i class="bi bi-chevron-up drop-caret"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropup-center">
+                                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- dropend -->
+                                        <div class="btn-group dropend">
+                                            <button type="button" class="btn btn-secondary dropdown-toggle"
+                                                data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-dropend">
+                                                Dropend <i class="bi bi-chevron-right drop-caret"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdown-dropend">
+                                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- dropstart -->
+                                        <div class="btn-group dropstart">
+                                            <button type="button" class="btn btn-secondary dropdown-toggle"
+                                                data-bs-toggle="dropdown" aria-expanded="false" id="dropdown-dropstart">
+                                                <i class="bi bi-chevron-left drop-caret ms-0 me-1"></i> Dropstart
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="dropdown-dropstart">
+                                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <h5 class="card-title mt-4">Split Dropdown Direction</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2">
+                                        <!-- Split dropup button -->
+                                        <div class="btn-group dropup">
+                                            <button type="button" class="btn btn-outline-info">
+                                                Split dropup
+                                            </button>
+                                            <button type="button"
+                                                class="btn btn-outline-info dropdown-toggle dropdown-toggle-split"
+                                                data-bs-toggle="dropdown" aria-expanded="false" id="split-dropup">
+                                                <i class="bi bi-chevron-up drop-caret"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="split-dropup">
+                                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- Split dropdown button -->
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-outline-info">Split dropdown</button>
+                                            <button type="button" id="split-dropdown"
+                                                class="btn btn-outline-info dropdown-toggle dropdown-toggle-split"
+                                                data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="bi bi-chevron-down drop-caret"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="split-dropdown">
+                                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- Split dropend -->
+                                        <div class="btn-group dropend">
+                                            <button type="button" class="btn btn-outline-info">
+                                                Split dropend
+                                            </button>
+                                            <button type="button"
+                                                class="btn btn-outline-info dropdown-toggle dropdown-toggle-split"
+                                                data-bs-toggle="dropdown" aria-expanded="false" id="split-dropend">
+                                                <i class="bi bi-chevron-right drop-caret"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="split-dropend">
+                                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                            </ul>
+                                        </div>
+
+                                        <!-- Split dropstart -->
+                                        <div class="btn-group dropstart">
+                                            <button type="button"
+                                                class="btn btn-outline-info dropdown-toggle dropdown-toggle-split"
+                                                data-bs-toggle="dropdown" aria-expanded="false" id="split-dropstart">
+                                                <i class="bi bi-chevron-left drop-caret"></i>
+                                            </button>
+                                            <ul class="dropdown-menu" aria-labelledby="split-dropstart">
+                                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                            </ul>
+                                            <button type="button" class="btn btn-outline-info">
+                                                Split dropstart
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Alignment options -->
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Dropdown Menu Alignment</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-secondary dropdown-toggle"
+                                                data-bs-toggle="dropdown" aria-expanded="false" id="align-right">
+                                                Right-aligned menu <i class="bi bi-chevron-down drop-caret"></i>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="align-right">
+                                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-secondary dropdown-toggle"
+                                                data-bs-toggle="dropdown" aria-expanded="false" id="align-left">
+                                                Left-aligned menu <i class="bi bi-chevron-down drop-caret"></i>
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-start" aria-labelledby="align-left">
+                                                <li><a class="dropdown-item" href="#">Dashboard</a></li>
+                                                <li><a class="dropdown-item" href="#">User Management</a></li>
+                                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                                <li><a class="dropdown-item" href="#">Activity Log</a></li>
+                                                <li><a class="dropdown-item" href="#">Support</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            %%include('./partials/layout/footer.html')
+        </div>
+    </div>
+    
+    %%include('./partials/layout/right-sidebar.html')
+    <!-- %%include('./partials/right-sidebar.html')
+    %%include('./partials/back-to-top.html') -->
+
+    %%include('./partials/layout/footer-js.html')
+</body>
+
+</html>

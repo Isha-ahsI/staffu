@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <div class="page-layout">
+        %%include('./partials/layout/header.html')
+        %%include('./partials/layout/left-sidebar.html')
+        <div class="page-wrapper">
+            <div class="page-content">
+                %%include('./partials/components/page-title.html', { pageTitle: 'Employee Analytics', pagePrTitle:
+                'Dashboards' })
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xxl-7 col-12 mb-4">
+                            <div class="row">
+                                <!-- Total Employees -->
+                                <div class="col-lg-4 col-sm-6 col-12 mb-4">
+                                    <div class="card h-100 mb-0">
+                                        <div class="card-body">
+                                            <div class="d-flex gap-2 justify-content-between mb-4">
+                                                <div class="avatar avatar-xxxl avatar-soft-primary custom-avatar">
+                                                    <i class="ri-group-line fs-32"></i>
+                                                </div>
+                                                <div class="text-end">
+                                                    <h3 class="fw-bold mb-0">215</h3>
+                                                    <div>
+                                                        <span class="badge bg-soft-success"><i class="ri-arrow-up-line"></i> +5%</span>
+                                                        <small class="text-muted ms-1">vs last mo.</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr class="br-dashed">
+                                            <div>
+                                                <h5 class="mb-0 fs-18 fw-semibold">Total Employees</h5>
+                                                <small>Workforce headcount summary</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- New Hires -->
+                                <div class="col-lg-4 col-sm-6 col-12 mb-4">
+                                    <div class="card h-100 mb-0">
+                                        <div class="card-body">
+                                            <div class="d-flex gap-2 justify-content-between mb-4">
+                                                <div class="avatar avatar-xxxl avatar-soft-info custom-avatar">
+                                                    <i class="ri-user-add-line fs-32"></i>
+                                                </div>
+                                                <div class="text-end">
+                                                    <h3 class="fw-bold mb-0">5</h3>
+                                                    <div>
+                                                        <span class="badge bg-soft-success"><i class="ri-arrow-up-line"></i> +25%</span>
+                                                        <small class="text-muted ms-1">vs last mo.</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr class="br-dashed">
+                                            <div>
+                                                <h5 class="mb-0 fs-18 fw-semibold">New Hires (Month)</h5>
+                                                <small>Employees joined this period</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Attrition Rate -->
+                                <div class="col-lg-4 col-sm-6 col-12 mb-4">
+                                    <div class="card h-100 mb-0">
+                                        <div class="card-body">
+                                            <div class="d-flex gap-2 justify-content-between mb-4">
+                                                <div class="avatar avatar-xxxl avatar-soft-orange custom-avatar">
+                                                    <i class="ri-user-minus-line fs-32"></i>
+                                                </div>
+                                                <div class="text-end">
+                                                    <h3 class="fw-bold mb-0">1.4%</h3>
+                                                    <div>
+                                                        <span class="badge bg-soft-danger"><i class="ri-arrow-down-line"></i> -0.3%</span>
+                                                        <small class="text-muted ms-1">vs last mo.</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr class="br-dashed">
+                                            <div>
+                                                <h5 class="mb-0 fs-18 fw-semibold">Attrition Rate</h5>
+                                                <small>Employee turnover percentage</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Employee Satisfaction -->
+                                <div class="col-lg-4 col-sm-6 col-12 mb-xxl-0 mb-4">
+                                    <div class="card h-100 mb-0">
+                                        <div class="card-body">
+                                            <div class="d-flex gap-2 justify-content-between mb-4">
+                                                <div class="avatar avatar-xxxl avatar-soft-warning custom-avatar">
+                                                    <i class="ri-emotion-line fs-32"></i>
+                                                </div>
+                                                <div class="text-end">
+                                                    <h3 class="fw-bold mb-0">82%</h3>
+                                                    <div>
+                                                        <span class="badge bg-soft-success"><i class="ri-arrow-up-line"></i> +2%</span>
+                                                        <small class="text-muted ms-1">vs last mo.</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr class="br-dashed">
+                                            <div>
+                                                <h5 class="mb-0 fs-18 fw-semibold">Employee Satisfaction</h5>
+                                                <small>Workplace happiness index</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Employees on Leave -->
+                                <div class="col-lg-4 col-sm-6 col-12 mb-xxl-0 mb-4">
+                                    <div class="card h-100 mb-0">
+                                        <div class="card-body">
+                                            <div class="d-flex gap-2 justify-content-between mb-4">
+                                                <div class="avatar avatar-xxxl avatar-soft-danger custom-avatar">
+                                                    <i class="ri-user-unfollow-line fs-32"></i>
+                                                </div>
+                                                <div class="text-end">
+                                                    <h3 class="fw-bold mb-0">12</h3>
+                                                    <div>
+                                                        <span class="badge bg-soft-danger"><i class="ri-arrow-down-line"></i> -2%</span>
+                                                        <small class="text-muted ms-1">vs last mo.</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr class="br-dashed">
+                                            <div>
+                                                <h5 class="mb-0 fs-18 fw-semibold">Employees on Leave</h5>
+                                                <small>Staff currently on approved leave</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Attendance Rate -->
+                                <div class="col-lg-4 col-sm-6 col-12 mb-xxl-0 mb-4">
+                                    <div class="card h-100 mb-0">
+                                        <div class="card-body">
+                                            <div class="d-flex gap-2 justify-content-between mb-4">
+                                                <div class="avatar avatar-xxxl avatar-soft-success custom-avatar">
+                                                    <i class="ri-user-follow-line fs-32"></i>
+                                                </div>
+                                                <div class="text-end">
+                                                    <h3 class="fw-bold mb-0">198</h3>
+                                                    <div>
+                                                        <span class="badge bg-soft-success"><i class="ri-arrow-up-line"></i> +3%</span>
+                                                        <small class="text-muted ms-1">vs last mo.</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr class="br-dashed">
+                                            <div>
+                                                <h5 class="mb-0 fs-18 fw-semibold">Attendance Rate</h5>
+                                                <small>Overall employee presence</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Employee performance -->
+                        <div class="col-xxl-5 col-12 mb-4">
+                            <div class="card h-100 mb-0">
+                                <div class="card-body pb-0">
+                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                                        <h5 class="card-title mb-0">Employee Performance</h5>
+                                        <form>
+                                            <div class="input-select-icon">
+                                                <span class="text-muted">
+                                                    <i class="bi bi-calendar2-check input-icon"></i>
+                                                </span>
+                                                <select name="PerformanceYearSelect" class="form-select form-select-sm"
+                                                    id="PerformanceYearSelect">
+                                                    <option>Last Year</option>
+                                                    <option>This Month</option>
+                                                    <option>Last Month</option>
+                                                    <option>Last 6 Month</option>
+                                                </select>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div id="performanceBarChart" class="w-100"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- Employee Satisfaction -->
+                        <div class="col-12 col-lg-5 col-xxl-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-between mb-4">
+                                        <h5 class="card-title mb-0">Employee Satisfaction</h5>
+                                        <div class="dropdown">
+                                            <button type="button" id="empSatisDrop" aria-expanded="false" class="card-drop-icon dropdown-toggle btn" data-bs-toggle="dropdown"><i class="bi bi-three-dots fs-20"></i></button>
+                                            <div aria-labelledby="empSatisDrop" class="dropdown-menu dropdown-menu-end">
+                                                <a class="dropdown-item" href="#" data-discover="true"><i class="bi bi-arrow-clockwise me-1"></i> Reload Activity</a>
+                                                <a class="dropdown-item" href="#" data-discover="true"><i class="bi bi-arrow-repeat me-1"></i> Refresh This Week</a>
+                                                <a class="dropdown-item" href="#" data-discover="true"><i class="bi bi-trash3 me-1"></i> Clear History</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="satisfactionRadialChart"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- High Performance Employee List -->
+                        <div class="col-12 col-lg-7 col-xxl-8">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-start justify-content-between mb-3">
+                                        <h5 class="card-title mb-0">High Performance Employee List</h5>
+                                        <a class="btn btn-sm btn-outline-secondary rounded-2" href="./emp_per_reports.html" role="button">View More</a>
+                                    </div>
+
+                                    <div class="datatable-wrapper">
+                                        <table class="table table-hover table-nowrap mb-0 performTable">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>Employee ID</th>
+                                                    <th>Epmloyee Name</th>
+                                                    <th>Job Title</th>
+                                                    <th class="text-center">Employment type</th>
+                                                    <th class="text-center">KPI score</th>
+                                                    <th>Rating</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- emp1 -->
+                                                <tr class="align-middle">
+                                                    <td>EMP-0234</td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <div class="avatar avatar-sm">
+                                                                <img src="../../../images/avatars/avatar2.jpg"
+                                                                    alt="Emp1" class="w-100 h-100 custom-avatar">
+                                                            </div>
+                                                            Tiger Nixon
+                                                        </div>
+                                                    </td>
+                                                    <td>Marketing</td>
+                                                    <td class="text-center"><span
+                                                            class="badge bg-soft-primary">Full-time</span></td>
+                                                    <td class="text-center">9.5</td>
+                                                    <td><span class="text-warning me-1"><i
+                                                                class="bi bi-star-fill"></i></span>Excellent</td>
+                                                </tr>
+                                                <!-- emp2 -->
+                                                <tr class="align-middle">
+                                                    <td>EMP-0117</td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <div class="avatar avatar-sm">
+                                                                <img src="../../../images/avatars/avatar1.jpg"
+                                                                    alt="Emp1" class="w-100 h-100 custom-avatar">
+                                                            </div>
+                                                            Joyce Neal
+                                                        </div>
+                                                    </td>
+                                                    <td>Project Manager</td>
+                                                    <td class="text-center"><span
+                                                            class="badge bg-soft-primary">Part-time</span></td>
+                                                    <td class="text-center">8.0</td>
+                                                    <td><span class="text-warning me-1"><i
+                                                                class="bi bi-hand-thumbs-up-fill"></i></span>Very
+                                                        Good</td>
+                                                </tr>
+                                                <!-- emp3 -->
+                                                <tr class="align-middle">
+                                                    <td>EMP-0223</td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <div class="avatar avatar-sm">
+                                                                <img src="../../../images/avatars/avatar3.jpg"
+                                                                    alt="Emp1" class="w-100 h-100 custom-avatar">
+                                                            </div>
+                                                            Ethan Ray
+                                                        </div>
+                                                    </td>
+                                                    <td>Custmor Support</td>
+                                                    <td class="text-center"><span
+                                                            class="badge bg-soft-primary">Full-time</span></td>
+                                                    <td class="text-center">8.5</td>
+                                                    <td><span class="text-warning me-1"><i
+                                                                class="bi bi-star-fill"></i></span>Excellent</td>
+                                                </tr>
+                                                <!-- emp4 -->
+                                                <tr class="align-middle">
+                                                    <td>EMP-0458</td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <div class="avatar avatar-sm">
+                                                                <img src="../../../images/avatars/avatar4.jpg"
+                                                                    alt="Emp1" class="w-100 h-100 custom-avatar">
+                                                            </div>
+                                                            Kelvin Yia
+                                                        </div>
+                                                    </td>
+                                                    <td>Graphic Designer</td>
+                                                    <td class="text-center"><span
+                                                            class="badge bg-soft-primary">Full-time</span></td>
+                                                    <td class="text-center">6.5</td>
+                                                    <td><span class="text-warning me-1"><i
+                                                                class="bi bi-star-fill"></i></span>Good</td>
+                                                </tr>
+                                                <!-- emp5 -->
+                                                <tr class="align-middle">
+                                                    <td class="border-0">EMP-0348</td>
+                                                    <td class="border-0">
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <div class="avatar avatar-sm">
+                                                                <img src="../../../images/avatars/avatar5.jpg"
+                                                                    alt="Emp1" class="w-100 h-100 custom-avatar">
+                                                            </div>
+                                                            Ollivia Joy
+                                                        </div>
+                                                    </td>
+                                                    <td class="border-0">Site Supervisior</td>
+                                                    <td class="text-center border-0"><span
+                                                            class="badge bg-soft-secondary">Freelance</span></td>
+                                                    <td class="border-0 text-center">7.0</td>
+                                                    <td class="border-0"><span class="text-warning me-1"><i
+                                                                class="bi bi-hand-thumbs-up-fill"></i></span>Very
+                                                        Good</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-8 col-12">
+                            <div class="row">
+                                <!-- employeement types -->
+                                <div class="col-md-6 col-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                                <h5 class="card-title mb-0">Employeement Type</h5>
+                                                <div class="dropdown">
+                                                    <button type="button" id="empTypeDrop" aria-expanded="false" class="card-drop-icon dropdown-toggle btn" data-bs-toggle="dropdown"><i class="bi bi-three-dots fs-20"></i></button>
+                                                    <div aria-labelledby="empTypeDrop" class="dropdown-menu dropdown-menu-end">
+                                                        <a class="dropdown-item" href="#" data-discover="true">Reload Activity</a>
+                                                        <a class="dropdown-item" href="#" data-discover="true">Refresh This Week</a>
+                                                        <a class="dropdown-item" href="#" data-discover="true">Clear History</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-4">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <h6 class="fw-semibold mb-2">Full-time</h6>
+                                                    <h6 class="text-dark fw-semibold mb-2">78%</h6>
+                                                </div>
+                                                <div class="progress mb-3 rounded-pill" role="progressbar" aria-label="Full time" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100">
+                                                    <div class="progress-bar bg-primary" style="width: 78%"></div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-4">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <h6 class="fw-semibold mb-2">Part-time</h6>
+                                                    <h6 class="text-dark fw-semibold mb-2">50%</h6>
+                                                </div>
+                                                <div class="progress mb-3 rounded-pill" role="progressbar" aria-label="Part time" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
+                                                    <div class="progress-bar bg-info" style="width: 50%"></div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-4">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <h6 class="fw-semibold mb-2">Internship</h6>
+                                                    <h6 class="text-dark fw-semibold mb-2">35%</h6>
+                                                </div>
+                                                <div class="progress mb-3 rounded-pill" role="progressbar" aria-label="Internship" aria-valuenow="35" aria-valuemin="0" aria-valuemax="350">
+                                                    <div class="progress-bar bg-success" style="width: 35%"></div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <h6 class="fw-semibold mb-2">Freelance</h6>
+                                                    <h6 class="text-dark fw-warning mb-2">25%</h6>
+                                                </div>
+                                                <div class="progress mb-3 rounded-pill" role="progressbar" aria-label="Freelance" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
+                                                    <div class="progress-bar bg-warning" style="width: 25%"></div>
+                                                </div>
+                                            </div>
+                                             <div>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <h6 class="fw-semibold mb-2">Contract</h6>
+                                                    <h6 class="text-dark fw-semibold mb-2">10%</h6>
+                                                </div>
+                                                <div class="progress rounded-pill" role="progressbar" aria-label="Freelance" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+                                                    <div class="progress-bar bg-blue" style="width: 10%"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- by location -->
+                                <div class="col-md-6 col-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                                <h5 class="card-title mb-0">Employees by Location</h5>
+                                                <div class="dropdown">
+                                                    <button type="button" id="genderRatioDrop" aria-expanded="false"
+                                                        class="card-drop-icon dropdown-toggle btn"
+                                                        data-bs-toggle="dropdown"><i
+                                                            class="bi bi-three-dots fs-20"></i></button>
+                                                    <div aria-labelledby="genderRatioDrop"
+                                                        class="dropdown-menu dropdown-menu-end">
+                                                        <a class="dropdown-item" href="#" data-discover="true">All
+                                                            Locations</a>
+                                                        <a class="dropdown-item" href="#" data-discover="true">On-site
+                                                            Employees
+                                                            Week</a>
+                                                        <a class="dropdown-item" href="#" data-discover="true">Remote
+                                                            Employees</a>
+                                                        <a class="dropdown-item" href="#" data-discover="true">Hybrid
+                                                            Employees</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="map-wrapper text-center mb-4 w-100">
+                                                <div id="map" class="h-100 w-100"></div>
+                                            </div>
+                                            <div>
+                                                <p>City-wise distribution</p>
+                                                <div class="progress-stacked mb-4 rounded-4 map-dis-progress">
+                                                    <div class="progress" role="progressbar" aria-label="Segment one"
+                                                        aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"
+                                                        style="width: 35%">
+                                                        <div class="progress-bar bg-info">35%</div>
+                                                    </div>
+                                                    <div class="progress" role="progressbar" aria-label="Segment three"
+                                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"
+                                                        style="width: 25%">
+                                                        <div class="progress-bar bg-warning">25%</div>
+                                                    </div>
+                                                    <div class="progress" role="progressbar" aria-label="Segment three"
+                                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"
+                                                        style="width: 25%">
+                                                        <div class="progress-bar bg-blue">25%</div>
+                                                    </div>
+                                                    <div class="progress" role="progressbar" aria-label="Segment two"
+                                                        aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"
+                                                        style="width: 15%">
+                                                        <div class="progress-bar bg-orange">15%</div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                                        <p class="mb-0"><span class="text-info me-1"><i class="ri-circle-fill fs-10"></i></span>New York</p>
+                                                        <p class="mb-0"><span class="text-warning me-1"><i class="ri-circle-fill fs-10"></i></span>Bangalore</p>
+                                                    </div>
+                                                    <div class="d-flex align-items-center justify-content-between">
+                                                        <p class="mb-0"><span class="text-blue me-1"><i class="ri-circle-fill fs-10"></i></span>London</p>
+                                                        <p class="mb-0"><span class="text-orange me-1"><i class="ri-circle-fill fs-10"></i></span>San Francisco</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Low Performance Employee List -->
+                                <div class="col-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-start justify-content-between mb-3">
+                                                <h5 class="card-title mb-0">Low Performance Employee List</h5>
+                                                <a class="btn btn-sm btn-outline-secondary rounded-2" href="./emp_per_reports.html" role="button">View More</a>
+                                            </div>
+                                            <div class="datatable-wrapper">
+                                                <table class="table table-hover table-nowrap mb-0 performTable">
+                                                    <thead class="table-light">
+                                                        <tr>
+                                                            <th>Employee ID</th>
+                                                            <th>Epmloyee Name</th>
+                                                            <th>Job Title</th>
+                                                            <th class="text-center">Employment type</th>
+                                                            <th class="text-center">KPI score</th>
+                                                            <th>Rating</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <!-- emp1 -->
+                                                        <tr class="align-middle">
+                                                            <td>EMP-0897</td>
+                                                            <td>
+                                                                <div class="d-flex align-items-center gap-2">
+                                                                    <div class="avatar avatar-sm">
+                                                                        <img src="../../../images/avatars/avatar3.jpg"
+                                                                            alt="Emp1"
+                                                                            class="w-100 h-100 custom-avatar">
+                                                                    </div>
+                                                                    Sarah Khan
+                                                                </div>
+                                                            </td>
+                                                            <td>Engineering</td>
+                                                            <td class="text-center"><span
+                                                                    class="badge bg-soft-secondary">Internship</span>
+                                                            </td>
+                                                            <td class="text-center">5.5</td>
+                                                            <td><span class="text-warning me-1"><i
+                                                                        class="bi bi-circle-fill"></i></span>Coaching
+                                                                Required</td>
+                                                        </tr>
+                                                        <!-- emp2 -->
+                                                        <tr class="align-middle">
+                                                            <td>EMP-0742</td>
+                                                            <td>
+                                                                <div class="d-flex align-items-center gap-2">
+                                                                    <div class="avatar avatar-sm">
+                                                                        <img src="../../../images/avatars/avatar5.jpg"
+                                                                            alt="Emp1"
+                                                                            class="w-100 h-100 custom-avatar">
+                                                                    </div>
+                                                                    Emily Davis
+                                                                </div>
+                                                            </td>
+                                                            <td>Custmor Support</td>
+                                                            <td class="text-center"><span
+                                                                    class="badge bg-soft-primary">Full-time</span>
+                                                            </td>
+                                                            <td class="text-center">5.0</td>
+                                                            <td><span class="text-warning me-1"><i
+                                                                        class="bi bi-circle-fill"></i></span>Coaching
+                                                                Required</td>
+                                                        </tr>
+                                                        <!-- emp3 -->
+                                                        <tr class="align-middle">
+                                                            <td>EMP-0723</td>
+                                                            <td>
+                                                                <div class="d-flex align-items-center gap-2">
+                                                                    <div class="avatar avatar-sm">
+                                                                        <img src="../../../images/avatars/avatar6.jpg"
+                                                                            alt="Emp1"
+                                                                            class="w-100 h-100 custom-avatar">
+                                                                    </div>
+                                                                    Mark Lee
+                                                                </div>
+                                                            </td>
+                                                            <td>Data Scientist</td>
+                                                            <td class="text-center"><span
+                                                                    class="badge bg-soft-primary">Part-time</span>
+                                                            </td>
+                                                            <td class="text-center">4.5</td>
+                                                            <td><span class="text-info me-1"><i
+                                                                        class="bi bi-circle-fill"></i></span>Monitor
+                                                            </td>
+                                                        </tr>
+                                                        <!-- emp4 -->
+                                                        <tr class="align-middle">
+                                                            <td>EMP-0653</td>
+                                                            <td>
+                                                                <div class="d-flex align-items-center gap-2">
+                                                                    <div class="avatar avatar-sm">
+                                                                        <img src="../../../images/avatars/avatar1.jpg"
+                                                                            alt="Emp1"
+                                                                            class="w-100 h-100 custom-avatar">
+                                                                    </div>
+                                                                    Kelvin Yia
+                                                                </div>
+                                                            </td>
+                                                            <td>DevOps Engineer</td>
+                                                            <td class="text-center"><span
+                                                                    class="badge bg-soft-secondary">Freelance</span>
+                                                            </td>
+                                                            <td class="text-center">3</td>
+                                                            <td><span class="text-danger me-1"><i
+                                                                        class="bi bi-circle-fill"></i></span>Training
+                                                                Needed</td>
+                                                        </tr>
+                                                        <!-- emp5 -->
+                                                        <tr class="align-middle">
+                                                            <td class="border-0">EMP-0124</td>
+                                                            <td class="border-0">
+                                                                <div class="d-flex align-items-center gap-2">
+                                                                    <div class="avatar avatar-sm">
+                                                                        <img src="../../../images/avatars/avatar2.jpg"
+                                                                            alt="Emp1"
+                                                                            class="w-100 h-100 custom-avatar">
+                                                                    </div>
+                                                                    Ollivia Joy
+                                                                </div>
+                                                            </td>
+                                                            <td class="border-0">Frontend Developer</td>
+                                                            <td class="text-center border-0"><span
+                                                                    class="badge bg-soft-primary">Part-time</span>
+                                                            </td>
+                                                            <td class="border-0 text-center">4.0</td>
+                                                            <td class="border-0"><span class="text-danger me-1"><i
+                                                                        class="bi bi-circle-fill"></i></span>Training
+                                                                Needed</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-12">
+                            <div class="row">
+                                <!-- by gender -->
+                                <div class="col-xl-12 col-md-6 col-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                                <h5 class="card-title mb-0">Employee Gender Ratio</h5>
+                                                <div class="dropdown">
+                                                    <button type="button" id="genderRatioDrop" aria-expanded="false"
+                                                        class="card-drop-icon dropdown-toggle btn"
+                                                        data-bs-toggle="dropdown"><i
+                                                            class="bi bi-three-dots fs-20"></i></button>
+                                                    <div aria-labelledby="genderRatioDrop"
+                                                        class="dropdown-menu dropdown-menu-end">
+                                                        <a class="dropdown-item" href="#" data-discover="true">Reload
+                                                            Activity</a>
+                                                        <a class="dropdown-item" href="#" data-discover="true">Refresh
+                                                            This
+                                                            Week</a>
+                                                        <a class="dropdown-item" href="#" data-discover="true">Clear
+                                                            History</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="ratioDonutChart"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Active Employee -->
+                                <div class="col-xl-12 col-md-6 col-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                                <h5 class="card-title mb-0">Active Employees</h5>
+                                                <div class="dropdown">
+                                                    <button type="button" id="empSatisDrop" aria-expanded="false"
+                                                        class="card-drop-icon dropdown-toggle btn"
+                                                        data-bs-toggle="dropdown"><i
+                                                            class="bi bi-three-dots fs-20"></i></button>
+                                                    <div aria-labelledby="empSatisDrop"
+                                                        class="dropdown-menu dropdown-menu-end">
+                                                        <a class="dropdown-item" href="#" data-discover="true">Current
+                                                            Activity</a>
+                                                        <a class="dropdown-item" href="#" data-discover="true">Yasterday
+                                                            Activity</a>
+                                                        <a class="dropdown-item" href="#" data-discover="true">Clear
+                                                            History</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item bg-transparent mb-2 pb-3 px-0">
+                                                    <!--active emp1 -->
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="d-flex flex-wrap align-items-center gap-2">
+                                                            <div class="avatar avatar-xl custom-avatar overflow-hidden">
+                                                                <img alt="Active Employee" class="w-100 h-100"
+                                                                    src="../images/avatars/avatar3.jpg">
+                                                            </div>
+                                                            <div>
+                                                                <h6 class="mb-0 text-dark">Sarah Khan</h6>
+                                                                <small class="mb-0">Software Engineer</small>
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex flex-column">
+                                                            <div class="d-flex align-items-center gap-2">
+                                                                <p class="mb-1"><span class="text-primary me-1"><i
+                                                                            class="ri-circle-fill fs-12"></i></span>On-site
+                                                                </p>
+                                                                <button class="p-0 bg-transparent border-0">
+                                                                    <span class="lh-1"><i
+                                                                            class="ri-arrow-right-s-line fs-4"></i></span>
+                                                                </button>
+                                                            </div>
+                                                            <small><span><i
+                                                                        class="bi bi-clock-history me-1"></i></span>10
+                                                                Min Ago</small>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="list-group-item bg-transparent mb-2 pb-3 px-0">
+                                                    <!--active emp2 -->
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="d-flex flex-wrap align-items-center gap-2">
+                                                            <div class="avatar avatar-xl custom-avatar overflow-hidden">
+                                                                <img alt="Active Employee" class="w-100 h-100"
+                                                                    src="../images/avatars/avatar6.jpg">
+                                                            </div>
+                                                            <div>
+                                                                <h6 class="mb-0 text-dark">Mark Lee</h6>
+                                                                <small class="mb-0">Data Scientist</small>
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex flex-column">
+                                                            <div class="d-flex align-items-center gap-2">
+                                                                <p class="mb-1"><span class="text-primary me-1"><i
+                                                                            class="ri-square-fill fs-12"></i></span>Remote
+                                                                </p>
+                                                                <button class="p-0 bg-transparent border-0">
+                                                                    <span class="lh-1"><i
+                                                                            class="ri-arrow-right-s-line fs-4"></i></span>
+                                                                </button>
+                                                            </div>
+                                                            <small><span><i
+                                                                        class="bi bi-clock-history me-1"></i></span>30
+                                                                Min Ago</small>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="list-group-item bg-transparent mb-2 pb-3 px-0">
+                                                    <!--active emp3 -->
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="d-flex flex-wrap align-items-center gap-2">
+                                                            <div class="avatar avatar-xl custom-avatar overflow-hidden">
+                                                                <img alt="Active Employee" class="w-100 h-100"
+                                                                    src="../images/avatars/avatar2.jpg">
+                                                            </div>
+                                                            <div>
+                                                                <h6 class="mb-0 text-dark">Ollivia Joy</h6>
+                                                                <small class="mb-0">Frontend Developer</small>
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex flex-column">
+                                                            <div class="d-flex align-items-center gap-2">
+                                                                <p class="mb-1"><span class="text-primary me-1"><i
+                                                                            class="ri-circle-line fs-12"></i></span>Hybrid
+                                                                </p>
+                                                                <button class="p-0 bg-transparent border-0">
+                                                                    <span class="lh-1"><i
+                                                                            class="ri-arrow-right-s-line fs-4"></i></span>
+                                                                </button>
+                                                            </div>
+                                                            <small><span><i
+                                                                        class="bi bi-clock-history me-1"></i></span>45
+                                                                Min Ago</small>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="list-group-item bg-transparent mb-2 pb-3 px-0">
+                                                    <!--active emp3 -->
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="d-flex flex-wrap align-items-center gap-2">
+                                                            <div class="avatar avatar-xl custom-avatar overflow-hidden">
+                                                                <img alt="Active Employee" class="w-100 h-100"
+                                                                    src="../images/avatars/avatar1.jpg">
+                                                            </div>
+                                                            <div>
+                                                                <h6 class="mb-0 text-dark">Kelvin Yia</h6>
+                                                                <small class="mb-0">Backend Developer</small>
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex flex-column">
+                                                            <div class="d-flex align-items-center gap-2">
+                                                                <p class="mb-1"><span class="text-primary me-1"><i
+                                                                            class="ri-circle-fill fs-12"></i></span>On-site
+                                                                </p>
+                                                                <button class="p-0 bg-transparent border-0">
+                                                                    <span class="lh-1"><i
+                                                                            class="ri-arrow-right-s-line fs-4"></i></span>
+                                                                </button>
+                                                            </div>
+                                                            <small><span><i
+                                                                        class="bi bi-clock-history me-1"></i></span>1
+                                                                Hours Ago</small>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="list-group-item bg-transparent px-0">
+                                                    <div class="text-center">
+                                                        <a href="#" class="text-primary mb-0">View All<span><i
+                                                                    class="ri-arrow-right-long-line ms-1"></i></span></a>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            %%include('./partials/layout/footer.html')
+        </div>
+    </div>
+    %%include('./partials/layout/right-sidebar.html')
+
+    <!-- %%include('./partials/right-sidebar.html')
+    %%include('./partials/back-to-top.html') -->
+
+    %%include('./partials/layout/footer-js.html')
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="plugins/datatables.net/js/dataTables.min.js"></script>
+    <script src="plugins/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+    <script src="plugins/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="plugins/datatables.net-responsive-dt/js/responsive.dataTables.min.js"></script>
+    <script src="plugins/apexcharts/apexcharts.min.js"></script>
+    <script src="plugins/jsvectormap/jsvectormap.min.js"></script>
+    <script src="plugins/jsvectormap/maps/world.js"></script>
+    <script src="js/pages/emp_analytics.js"></script>
+</body>
+
+</html>

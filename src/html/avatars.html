@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <div class="page-layout">
+        %%include('./partials/layout/header.html')
+        %%include('./partials/layout/left-sidebar.html')
+        <div class="page-wrapper">
+            <div class="page-content">
+                %%include('./partials/components/page-title.html', { pageTitle: 'Avatars', pagePrTitle: 'UI Elements' })
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- default avatars -->
+                        <div class="col-lg-4 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Default Avatar</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-3">
+                                        <img alt="Rounded Avatar 1" class="avatar-img-md rounded-circle" src="../images/avatars/avatar1.jpg">
+                                        <img alt="Rounded Avatar 2" class="avatar-img-md rounded-circle" src="../images/avatars/avatar2.jpg">
+                                        <img alt="Rounded Avatar 3" class="avatar-img-md rounded-circle" src="../images/avatars/avatar3.jpg">
+                                        <img alt="Rounded Avatar 4" class="avatar-img-md rounded-circle" src="../images/avatars/avatar4.jpg">
+                                        <img alt="Rounded Avatar 5" class="avatar-img-md rounded-circle" src="../images/avatars/avatar5.jpg">
+                                        <img alt="Rounded Avatar 6" class="avatar-img-md rounded-circle" src="../images/avatars/avatar6.jpg">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- custom avatars -->
+                        <div class="col-lg-4 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Custom Avatar</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-3">
+                                        <img alt="custom Avatar 1" class="avatar-img-md custom-avatar" src="../images/avatars/avatar1.jpg">
+                                        <img alt="custom Avatar 2" class="avatar-img-md custom-avatar" src="../images/avatars/avatar2.jpg">
+                                        <img alt="custom Avatar 3" class="avatar-img-md custom-avatar" src="../images/avatars/avatar3.jpg">
+                                        <img alt="custom Avatar 4" class="avatar-img-md custom-avatar" src="../images/avatars/avatar4.jpg">
+                                        <img alt="custom Avatar 5" class="avatar-img-md custom-avatar" src="../images/avatars/avatar5.jpg">
+                                        <img alt="custom Avatar 6" class="avatar-img-md custom-avatar" src="../images/avatars/avatar6.jpg">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- bordered avatars -->
+                        <div class="col-lg-4 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Bordered Avatar</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-3">
+                                        <img alt="Bordered Avatar 1" class="avatar-img-md rounded-circle avatar-border-primary" src="../images/avatars/avatar1.jpg">
+                                        <img alt="Bordered Avatar 2" class="avatar-img-md rounded-circle  avatar-border-success" src="../images/avatars/avatar2.jpg">
+                                        <img alt="Bordered Avatar 3" class="avatar-img-md rounded-circle avatar-border-info" src="../images/avatars/avatar3.jpg">
+                                        <img alt="Bordered Avatar 4" class="avatar-img-md custom-avatar avatar-border-warning" src="../images/avatars/avatar4.jpg">
+                                        <img alt="Bordered Avatar 5" class="avatar-img-md custom-avatar avatar-border-danger" src="../images/avatars/avatar5.jpg">
+                                        <img alt="Bordered Avatar 6" class="avatar-img-md custom-avatar avatar-border-dark" src="../images/avatars/avatar6.jpg">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- avatars sizes -->
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Avatar Sizes</h5>
+                                    <div class="row">
+                                        <div class="col-lg-4 col-12">
+                                            <div class="d-flex align-items-center flex-wrap gap-3 mb-lg-0 mb-3">
+                                                <div class="avatar avatar-xxxl"><img alt="Avatar Img" class="w-100 h-100 rounded-circle" src="../images/avatars/avatar1.jpg"></div>
+                                                <div class="avatar avatar-xxl"><img alt="Avatar Img" class="w-100 h-100 rounded-circle" src="../images/avatars/avatar2.jpg"></div>
+                                                <div class="avatar avatar-xl"><img alt="Avatar Img" class="w-100 h-100 rounded-circle" src="../images/avatars/avatar3.jpg"></div>
+                                                <div class="avatar avatar-lg"><img alt="Avatar Img" class="w-100 h-100 rounded-circle" src="../images/avatars/avatar4.jpg"></div>
+                                                <div class="avatar avatar-md"><img alt="Avatar Img" class="w-100 h-100 rounded-circle" src="../images/avatars/avatar5.jpg"></div>
+                                                <div class="avatar avatar-sm"><img alt="Avatar Img" class="w-100 h-100 rounded-circle" src="../images/avatars/avatar6.jpg"></div>
+                                                <div class="avatar avatar-xs"><img alt="Avatar Img" class="w-100 h-100 rounded-circle" src="../images/avatars/avatar7.jpg"></div>
+                                                <div class="avatar avatar-xxs"><img alt="Avatar Img" class="w-100 h-100 rounded-circle" src="../images/avatars/avatar8.jpg"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-12">
+                                            <div class="d-flex align-items-center flex-wrap gap-3 mb-lg-0 mb-3">
+                                                <div class="avatar avatar-xxxl"><img alt="Avatar Img" class="w-100 h-100 custom-avatar" src="../images/avatars/avatar1.jpg"></div>
+                                                <div class="avatar avatar-xxl"><img alt="Avatar Img" class="w-100 h-100 custom-avatar" src="../images/avatars/avatar2.jpg"></div>
+                                                <div class="avatar avatar-xl"><img alt="Avatar Img" class="w-100 h-100 custom-avatar" src="../images/avatars/avatar3.jpg"></div>
+                                                <div class="avatar avatar-lg"><img alt="Avatar Img" class="w-100 h-100 custom-avatar" src="../images/avatars/avatar4.jpg"></div>
+                                                <div class="avatar avatar-md"><img alt="Avatar Img" class="w-100 h-100 custom-avatar" src="../images/avatars/avatar5.jpg"></div>
+                                                <div class="avatar avatar-sm"><img alt="Avatar Img" class="w-100 h-100 custom-avatar" src="../images/avatars/avatar6.jpg"></div>
+                                                <div class="avatar avatar-xs"><img alt="Avatar Img" class="w-100 h-100 custom-avatar" src="../images/avatars/avatar7.jpg"></div>
+                                                <div class="avatar avatar-xxs"><img alt="Avatar Img" class="w-100 h-100 custom-avatar" src="../images/avatars/avatar8.jpg"></div>
+                                            </div>
+                                        </div> 
+                                        <div class="col-lg-4 col-12">
+                                            <div class="d-flex align-items-center flex-wrap gap-3">
+                                                <div class="avatar avatar-xxxl"><img alt="Avatar Img" class="w-100 h-100 rounded-circle avatar-border-success" src="../images/avatars/avatar1.jpg"></div>
+                                                <div class="avatar avatar-xxl"><img alt="Avatar Img" class="w-100 h-100 rounded-circle avatar-border-info" src="../images/avatars/avatar2.jpg"></div>
+                                                <div class="avatar avatar-xl"><img alt="Avatar Img" class="w-100 h-100 rounded-circle avatar-border-warning" src="../images/avatars/avatar3.jpg"></div>
+                                                <div class="avatar avatar-lg"><img alt="Avatar Img" class="w-100 h-100 rounded-circle avatar-border-danger" src="../images/avatars/avatar4.jpg"></div>
+                                                <div class="avatar avatar-md"><img alt="Avatar Img" class="w-100 h-100 custom-avatar avatar-border-dark" src="../images/avatars/avatar5.jpg"></div>
+                                                <div class="avatar avatar-sm"><img alt="Avatar Img" class="w-100 h-100 custom-avatar avatar-border-secondary" src="../images/avatars/avatar6.jpg"></div>
+                                                <div class="avatar avatar-xs"><img alt="Avatar Img" class="w-100 h-100 custom-avatar avatar-border-orange" src="../images/avatars/avatar7.jpg"></div>
+                                                <div class="avatar avatar-xxs"><img alt="Avatar Img" class="w-100 h-100 custom-avatar avatar-border-blue" src="../images/avatars/avatar8.jpg"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Avatar Default Icon -->
+                        <div class="col-lg-4 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Avatar Default Icon</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-3">
+                                        <div class="avatar avatar-md avatar-primary rounded-circle"><i class="bi bi-emoji-smile"></i></div>
+                                        <div class="avatar avatar-md avatar-success rounded-circle"><i class="bi bi-droplet-half"></i></div>
+                                        <div class="avatar avatar-md avatar-info rounded-circle"><i class="bi bi-palette2"></i></div>
+                                        <div class="avatar avatar-md avatar-warning custom-avatar"><i class="bi bi-cone-striped"></i></div>
+                                        <div class="avatar avatar-md avatar-danger custom-avatar"><i class="bi bi-balloon-heart"></i></div>
+                                        <div class="avatar avatar-md avatar-secondary custom-avatar"><i class="bi bi-intersect"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Avatar Outline Icon -->
+                        <div class="col-lg-4 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Avatar Outline Icon</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-3">
+                                        <div class="avatar avatar-md avatar-outline-primary rounded-circle"><i class="bi bi-emoji-smile"></i></div>
+                                        <div class="avatar avatar-md avatar-outline-success rounded-circle"><i class="bi bi-droplet-half"></i></div>
+                                        <div class="avatar avatar-md avatar-outline-info rounded-circle"><i class="bi bi-palette2"></i></div>
+                                        <div class="avatar avatar-md avatar-outline-warning custom-avatar"><i class="bi bi-cone-striped"></i></div>
+                                        <div class="avatar avatar-md avatar-outline-danger custom-avatar"><i class="bi bi-balloon-heart"></i></div>
+                                        <div class="avatar avatar-md avatar-outline-secondary custom-avatar"><i class="bi bi-intersect"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Avatar Soft Icon -->
+                        <div class="col-lg-4 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Avatar Soft Icon</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-3">
+                                        <div class="avatar avatar-md avatar-soft-primary rounded-circle"><i class="bi bi-emoji-smile"></i></div>
+                                        <div class="avatar avatar-md avatar-soft-success rounded-circle"><i class="bi bi-droplet-half"></i></div>
+                                        <div class="avatar avatar-md avatar-soft-info rounded-circle"><i class="bi bi-palette2"></i></div>
+                                        <div class="avatar avatar-md avatar-soft-warning custom-avatar"><i class="bi bi-cone-striped"></i></div>
+                                        <div class="avatar avatar-md avatar-soft-danger custom-avatar"><i class="bi bi-balloon-heart"></i></div>
+                                        <div class="avatar avatar-md avatar-soft-secondary custom-avatar"><i class="bi bi-intersect"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Avatar Icon Size -->
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Avatar Icon Size</h5>
+                                    <div class="row">
+                                        <div class="col-lg-4 col-12">
+                                            <div class="d-flex align-items-center flex-wrap gap-3 mb-lg-0 mb-3">
+                                                <div class="avatar avatar-xxxl avatar-primary custom-avatar"><i class="ri-star-fill"></i></div>
+                                                <div class="avatar avatar-xxl avatar-success custom-avatar"><i class="ri-heart-3-fill"></i></div>
+                                                <div class="avatar avatar-xl avatar-info custom-avatar"><i class="ri-water-flash-fill"></i></div>
+                                                <div class="avatar avatar-lg avatar-warning custom-avatar"><i class="ri-music-2-fill"></i></div>
+                                                <div class="avatar avatar-md avatar-danger custom-avatar"><i class="ri-message-3-fill"></i></div>
+                                                <div class="avatar avatar-sm avatar-orange custom-avatar"><i class="ri-notification-4-fill"></i></div>
+                                                <div class="avatar avatar-xs avatar-dark custom-avatar"><i class="ri-sun-cloudy-fill"></i></div>
+                                                <div class="avatar avatar-xxs avatar-light custom-avatar"><i class="ri-check-double-fill"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-12">
+                                            <div class="d-flex align-items-center flex-wrap gap-3 mb-lg-0 mb-3">
+                                                <div class="avatar avatar-xxxl avatar-outline-primary custom-avatar"><i class="ri-star-fill"></i></div>
+                                                <div class="avatar avatar-xxl avatar-outline-success custom-avatar"><i class="ri-heart-3-fill"></i></div>
+                                                <div class="avatar avatar-xl avatar-outline-info custom-avatar"><i class="ri-water-flash-fill"></i></div>
+                                                <div class="avatar avatar-lg avatar-outline-warning custom-avatar"><i class="ri-music-2-fill"></i></div>
+                                                <div class="avatar avatar-md avatar-outline-danger custom-avatar"><i class="ri-message-3-fill"></i></div>
+                                                <div class="avatar avatar-sm avatar-outline-orange custom-avatar"><i class="ri-notification-4-fill"></i></div>
+                                                <div class="avatar avatar-xs avatar-outline-dark custom-avatar"><i class="ri-sun-cloudy-fill"></i></div>
+                                                <div class="avatar avatar-xxs avatar-outline-secondary custom-avatar"><i class="ri-check-double-fill"></i></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-12">
+                                            <div class="d-flex align-items-center flex-wrap gap-3">
+                                                <div class="avatar avatar-xxxl avatar-soft-primary custom-avatar"><i class="ri-star-fill"></i></div>
+                                                <div class="avatar avatar-xxl avatar-soft-success custom-avatar"><i class="ri-heart-3-fill"></i></div>
+                                                <div class="avatar avatar-xl avatar-soft-info custom-avatar"><i class="ri-water-flash-fill"></i></div>
+                                                <div class="avatar avatar-lg avatar-soft-warning custom-avatar"><i class="ri-music-2-fill"></i></div>
+                                                <div class="avatar avatar-md avatar-soft-danger custom-avatar"><i class="ri-message-3-fill"></i></div>
+                                                <div class="avatar avatar-sm avatar-soft-orange custom-avatar"><i class="ri-notification-4-fill"></i></div>
+                                                <div class="avatar avatar-xs avatar-soft-dark custom-avatar"><i class="ri-sun-cloudy-fill"></i></div>
+                                                <div class="avatar avatar-xxs avatar-soft-secondary custom-avatar"><i class="ri-check-double-fill"></i></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Avatar Letter -->
+                        <div class="col-lg-4 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Avatar Letter</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-3">
+                                        <div class="avatar avatar-md avatar-primary rounded-circle fw-semibold">JN</div>
+                                        <div class="avatar avatar-md avatar-success rounded-circle fw-semibold">AK</div>
+                                        <div class="avatar avatar-md avatar-info rounded-circle fw-semibold">BH</div>
+                                        <div class="avatar avatar-md avatar-danger custom-avatar fw-semibold">YM</div>
+                                        <div class="avatar avatar-md avatar-dark custom-avatar fw-semibold">IK</div>
+                                        <div class="avatar avatar-md avatar-light custom-avatar fw-semibold">RM</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Avatar Outline Letter -->
+                        <div class="col-lg-4 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Avatar Outline Letter</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-3">
+                                        <div class="avatar avatar-md avatar-outline-primary rounded-circle fw-semibold">JN</div>
+                                        <div class="avatar avatar-md avatar-outline-success rounded-circle fw-semibold">AK</div>
+                                        <div class="avatar avatar-md avatar-outline-info rounded-circle fw-semibold">BH</div>
+                                        <div class="avatar avatar-md avatar-outline-danger custom-avatar fw-semibold">YM</div>
+                                        <div class="avatar avatar-md avatar-outline-dark custom-avatar fw-semibold">IK</div>
+                                        <div class="avatar avatar-md avatar-outline-light custom-avatar fw-semibold">RM</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Avatar Soft Letter -->
+                        <div class="col-lg-4 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Avatar Soft Letter</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-3">
+                                        <div class="avatar avatar-md avatar-soft-primary rounded-circle fw-semibold">JD</div>
+                                        <div class="avatar avatar-md avatar-soft-success rounded-circle fw-semibold">AL</div>
+                                        <div class="avatar avatar-md avatar-soft-info rounded-circle fw-semibold">BK</div>
+                                        <div class="avatar avatar-md avatar-soft-danger custom-avatar fw-semibold">RM</div>
+                                        <div class="avatar avatar-md avatar-soft-dark custom-avatar fw-semibold">DK</div>
+                                        <div class="avatar avatar-md avatar-soft-light custom-avatar fw-semibold">EM</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Avatar Letter Size -->
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Avatar Letter Size</h5>
+                                    <div class="row">
+                                        <div class="col-lg-4 col-12">
+                                            <div class="d-flex align-items-center flex-wrap gap-3 mb-lg-0 mb-3">
+                                                <div class="avatar avatar-xxxl avatar-primary custom-avatar fw-semibold">JD</div>
+                                                <div class="avatar avatar-xxl avatar-success custom-avatar fw-semibold">AL</div>
+                                                <div class="avatar avatar-xl avatar-info custom-avatar fw-semibold">BK</div>
+                                                <div class="avatar avatar-lg avatar-warning custom-avatar fw-semibold">RM</div>
+                                                <div class="avatar avatar-md avatar-danger custom-avatar fw-semibold">DK</div>
+                                                <div class="avatar avatar-sm avatar-orange custom-avatar fw-semibold">EM</div>
+                                                <div class="avatar avatar-xs avatar-dark custom-avatar fw-semibold">PE</div>
+                                                <div class="avatar avatar-xxs avatar-light custom-avatar fw-semibold">KL</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-12">
+                                            <div class="d-flex align-items-center flex-wrap gap-3 mb-lg-0 mb-3">
+                                                <div class="avatar avatar-xxxl avatar-outline-primary custom-avatar fw-semibold">JD</div>
+                                                <div class="avatar avatar-xxl avatar-outline-success custom-avatar fw-semibold">AL</div>
+                                                <div class="avatar avatar-xl avatar-outline-info custom-avatar fw-semibold">BK</div>
+                                                <div class="avatar avatar-lg avatar-outline-warning custom-avatar fw-semibold">RM</div>
+                                                <div class="avatar avatar-md avatar-outline-danger custom-avatar fw-semibold">DK</div>
+                                                <div class="avatar avatar-sm avatar-outline-orange custom-avatar fw-semibold">EM</div>
+                                                <div class="avatar avatar-xs avatar-outline-dark custom-avatar fw-semibold">PE</div>
+                                                <div class="avatar avatar-xxs avatar-outline-light custom-avatar fw-semibold">KL</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-12">
+                                            <div class="d-flex align-items-center flex-wrap gap-3">
+                                                <div class="avatar avatar-xxxl avatar-soft-primary custom-avatar fw-semibold">JD</div>
+                                                <div class="avatar avatar-xxl avatar-soft-success custom-avatar fw-semibold">AL</div>
+                                                <div class="avatar avatar-xl avatar-soft-info custom-avatar fw-semibold">BK</div>
+                                                <div class="avatar avatar-lg avatar-soft-warning custom-avatar fw-semibold">RM</div>
+                                                <div class="avatar avatar-md avatar-soft-danger custom-avatar fw-semibold">DK</div>
+                                                <div class="avatar avatar-sm avatar-soft-orange custom-avatar fw-semibold">EM</div>
+                                                <div class="avatar avatar-xs avatar-soft-dark custom-avatar fw-semibold">PE</div>
+                                                <div class="avatar avatar-xxs avatar-soft-light custom-avatar fw-semibold">KL</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Avatar Group -->
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Avatar Group</h5>
+                                    <div class="row">
+                                        <div class="col-lg-4 col-12">
+                                            <div class="avatar-group mb-lg-3 mb-2">
+                                                <div class="avatar avatar-xxxl custom-avatar overflow-hidden"><img alt="Avatar 1" class="w-100 h-100" src="../images/avatars/avatar1.jpg"></div>
+                                                <div class="avatar avatar-xxl custom-avatar overflow-hidden"><img alt="Avatar 2" class="w-100 h-100" src="../images/avatars/avatar2.jpg"></div>
+                                                <div class="avatar avatar-xl custom-avatar overflow-hidden"><img alt="Avatar 3" class="w-100 h-100" src="../images/avatars/avatar3.jpg"></div>
+                                                <div class="avatar avatar-lg custom-avatar overflow-hidden"><img alt="Avatar 4" class="w-100 h-100" src="../images/avatars/avatar4.jpg"></div>
+                                                <div class="avatar avatar-md custom-avatar overflow-hidden"><img alt="Avatar 5" class="w-100 h-100" src="../images/avatars/avatar5.jpg"></div>
+                                                <div class="avatar avatar-sm custom-avatar overflow-hidden"><img alt="Avatar 6" class="w-100 h-100" src="../images/avatars/avatar6.jpg"></div>
+                                            </div>
+                                            <div class="avatar-group avatar-group-text mb-lg-0 mb-4">
+                                                <div class="avatar avatar-xxxl avatar-primary custom-avatar fw-semibold">JD</div>
+                                                <div class="avatar avatar-xxl avatar-success custom-avatar fw-semibold">AL</div>
+                                                <div class="avatar avatar-xl avatar-info custom-avatar fw-semibold">BK</div>
+                                                <div class="avatar avatar-lg avatar-danger custom-avatar fw-semibold">RM</div>
+                                                <div class="avatar avatar-md avatar-dark custom-avatar fw-semibold">DK</div>
+                                                <div class="avatar avatar-sm avatar-light custom-avatar fw-semibold">EM</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-12">
+                                            <div class="avatar-group mb-lg-3 mb-2">
+                                                <div class="avatar rounded-circle avatar-xxxl overflow-hidden"><img alt="Rounded Avatar 1" class="w-100 h-100" src="../images/avatars/avatar1.jpg"></div>
+                                                <div class="avatar rounded-circle avatar-xxl overflow-hidden"><img alt="Rounded Avatar 2" class="w-100 h-100" src="../images/avatars/avatar2.jpg"></div>
+                                                <div class="avatar rounded-circle avatar-xl overflow-hidden"><img alt="Rounded Avatar 3" class="w-100 h-100" src="../images/avatars/avatar3.jpg"></div>
+                                                <div class="avatar rounded-circle avatar-lg overflow-hidden"><img alt="Rounded Avatar 4" class="w-100 h-100" src="../images/avatars/avatar4.jpg"></div>
+                                                <div class="avatar rounded-circle avatar-md overflow-hidden"><img alt="Rounded Avatar 5" class="w-100 h-100" src="../images/avatars/avatar5.jpg"></div>
+                                                <div class="avatar rounded-circle avatar-sm overflow-hidden"><img alt="Rounded Avatar 6" class="w-100 h-100" src="../images/avatars/avatar6.jpg"></div>
+                                            </div>
+                                            <div class="avatar-group avatar-group-text mb-lg-0 mb-4">
+                                                <div class="avatar avatar-xxxl avatar-outline-primary rounded-circle fw-semibold">JD</div>
+                                                <div class="avatar avatar-xxl avatar-outline-success rounded-circle fw-semibold">AL</div>
+                                                <div class="avatar avatar-xl avatar-outline-info rounded-circle fw-semibold">BK</div>
+                                                <div class="avatar avatar-lg avatar-outline-danger rounded-circle fw-semibold">RM</div>
+                                                <div class="avatar avatar-md avatar-outline-dark rounded-circle fw-semibold">DK</div>
+                                                <div class="avatar avatar-sm avatar-outline-orange rounded-circle fw-semibold">EM</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-12">
+                                            <div class="avatar-group mb-lg-3 mb-2">
+                                                <div class="avatar  custom-avatar avatar-xxxl avarar-border-primary overflow-hidden"><img alt="Bordered Avatar 1" class="w-100 h-100" src="../images/avatars/avatar1.jpg"></div>
+                                                <div class="avatar  custom-avatar avatar-xxl avarar-border-success overflow-hidden"><img alt="Bordered Avatar 2" class="w-100 h-100" src="../images/avatars/avatar2.jpg"></div>
+                                                <div class="avatar  custom-avatar avatar-xl avarar-border-info overflow-hidden"><img alt="Bordered Avatar 3" class="w-100 h-100" src="../images/avatars/avatar3.jpg"></div>
+                                                <div class="avatar  custom-avatar avatar-lg avarar-border-warning overflow-hidden"><img alt="Bordered Avatar 4" class="w-100 h-100" src="../images/avatars/avatar4.jpg"></div>
+                                                <div class="avatar  custom-avatar avatar-md avarar-border-danger overflow-hidden"><img alt="Bordered Avatar 5" class="w-100 h-100" src="../images/avatars/avatar5.jpg"></div>
+                                                <div class="avatar  custom-avatar avatar-sm avarar-border-dark overflow-hidden"><img alt="Bordered Avatar 6" class="w-100 h-100" src="../images/avatars/avatar6.jpg"></div>
+                                            </div>
+                                            <div class="avatar-group avatar-group-text">
+                                                <div class="avatar avatar-xxxl avatar-soft-primary rounded-circle fw-semibold">JD</div>
+                                                <div class="avatar avatar-xxl avatar-soft-success rounded-circle fw-semibold">AL</div>
+                                                <div class="avatar avatar-xl avatar-soft-info rounded-circle fw-semibold">BK</div>
+                                                <div class="avatar avatar-lg avatar-soft-danger rounded-circle fw-semibold">RM</div>
+                                                <div class="avatar avatar-md avatar-soft-dark rounded-circle fw-semibold">DK</div>
+                                                <div class="avatar avatar-sm avatar-soft-orange rounded-circle fw-semibold">EM</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            %%include('./partials/layout/footer.html')
+        </div>
+    </div>
+    
+    %%include('./partials/layout/right-sidebar.html')
+    <!-- %%include('./partials/right-sidebar.html')
+    %%include('./partials/back-to-top.html') -->
+
+    %%include('./partials/layout/footer-js.html')
+</body>
+
+</html>

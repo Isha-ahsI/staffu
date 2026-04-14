@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <div class="page-layout">
+        %%include('./partials/layout/header.html')
+        %%include('./partials/layout/left-sidebar.html')
+        <div class="page-wrapper">
+            <div class="page-content">
+                %%include('./partials/components/page-title.html', { pageTitle: 'Data Tables', pagePrTitle: 'Tables' })
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- default table -->
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">Default Table</h5>
+                                </div>
+                                <div class="card-body">
+                                    %%include('partials/components/default_table.html')
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Sortable Table -->
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">Sortable Table</h5>
+                                </div>
+                                <div class="card-body">
+                                    %%include('partials/components/shortable_table.html')
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- filterable table -->
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">Filterable Table</h5>
+                                </div>
+                                <div class="card-body">
+                                    %%include('partials/components/filterable_table.html')
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- editable table -->
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">Editable Table</h5>
+                                </div>
+                                <div class="card-body">
+                                    %%include('partials/components/editable_table.html')
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- selection table -->
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="card-title mb-0">Selection Table</h5>
+                                </div>
+                                <div class="card-body">
+                                    %%include('partials/components/selection_table.html')
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            %%include('./partials/layout/footer.html')
+        </div>
+    </div>
+    %%include('./partials/layout/right-sidebar.html')
+
+    <!-- %%include('./partials/right-sidebar.html')
+    %%include('./partials/back-to-top.html') -->
+
+    %%include('./partials/layout/footer-js.html')
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="plugins/datatables.net/js/dataTables.min.js"></script>
+    <script src="plugins/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+    <script src="plugins/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="plugins/datatables.net-responsive-dt/js/responsive.dataTables.min.js"></script>
+    <script src="js/pages/data_table.js"></script>
+
+</body>
+
+</html>

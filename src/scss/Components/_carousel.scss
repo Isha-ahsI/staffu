@@ -1,0 +1,8 @@
+.carousel-no-animation .carousel-item {
+  transition: none !important;
+}
+.carousel-no-animation .carousel-item-next,
+.carousel-no-animation .carousel-item-prev {
+  position: relative;
+  transform: none !important;
+}

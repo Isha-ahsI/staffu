@@ -1,0 +1,10 @@
+.custom-tooltip {
+    &.bs-tooltip-top {
+        .tooltip-inner {
+            font-size: 14px;
+            font-weight: $font-weight-medium;
+            padding: 6px 12px;
+            border-radius: $border-radius-xl;
+        }
+    }
+}

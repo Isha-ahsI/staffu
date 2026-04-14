@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <div class="page-layout">
+        %%include('./partials/layout/header.html')
+        %%include('./partials/layout/left-sidebar.html')
+        <div class="page-wrapper">
+            <div class="page-content">
+                %%include('./partials/components/page-title.html', { pageTitle: 'Overview', pagePrTitle:
+                'Projects' })
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 mb-4">
+                            <div class="card-grid">
+                                <!-- Total Projects -->
+                                <div class="card bg-gradient-primary border-soft-primary shadow-none mb-0 h-100">
+                                    <div class="card-body">
+                                        <div class="d-flex flex-column align-items-center justify-content-center mb-2">
+                                            <div class="avatar avatar-xxl avatar-primary custom-avatar mb-3"><i class="ri-stack-fill"></i></div>
+                                            <p class="text-dark mb-1">Total Projects</p>
+                                            <h4 class="fw-bold text-primary mb-0">1950</h4>
+                                        </div>
+                                        <hr class="br-dashed br-w-1 border-primary opacity-40">
+                                        <div class="d-flex justify-content-between align-items-center text-muted fw-semibold">
+                                            <small>This Month</small>
+                                            <small>2.50%<span class="text-success ms-2"><i class="bi bi-graph-up-arrow"></i></span></small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Active Projects -->
+                                <div class="card bg-gradient-success border-soft-success shadow-none mb-0 h-100">
+                                    <div class="card-body">
+                                        <div class="d-flex flex-column align-items-center justify-content-center mb-2">
+                                            <div class="avatar avatar-xxl avatar-success custom-avatar mb-3"><i class="ri-pie-chart-2-fill"></i></div>
+                                            <p class="text-dark mb-1">Active Projects</p>
+                                            <h4 class="fw-bold text-success mb-0">49</h4>
+                                        </div>
+                                        <hr class="br-dashed br-w-1 border-success opacity-40">
+                                        <div class="d-flex justify-content-between align-items-center text-muted fw-semibold">
+                                            <small>Completed</small>
+                                            <small>2.50%<span class="text-success ms-2"><i class="bi bi-graph-up-arrow"></i></span></small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Due Tasks -->
+                                <div class="card bg-gradient-warning border-soft-warning shadow-none mb-0 h-100">
+                                    <div class="card-body">
+                                        <div class="d-flex flex-column align-items-center justify-content-center mb-2">
+                                            <div class="avatar avatar-xxl avatar-warning custom-avatar mb-3"><i class="ri-hourglass-fill"></i></div>
+                                            <p class="text-dark mb-1">Due Tasks</p>
+                                            <h4 class="fw-bold text-warning mb-0">120</h4>
+                                        </div>
+                                        <hr class="br-dashed br-w-1 border-warning opacity-40">
+                                        <div class="d-flex justify-content-between align-items-center text-muted fw-semibold">
+                                            <small>Incomplete</small>
+                                            <small>5.80%<span class="text-warning ms-2"><i class="bi bi-graph-up-arrow"></i></span></small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Productivity -->
+                                <div class="card bg-gradient-orange border-soft-orange shadow-none mb-0 h-100">
+                                    <div class="card-body">
+                                        <div class="d-flex flex-column align-items-center justify-content-center mb-2">
+                                            <div class="avatar avatar-xxl avatar-orange custom-avatar mb-3"><i class="ri-bar-chart-2-fill"></i></div>
+                                            <p class="text-dark mb-1">Productivity</p>
+                                            <h4 class="fw-bold text-orange mb-0">1950</h4>
+                                        </div>
+                                        <hr class="br-dashed br-w-1 border-orange opacity-40">
+                                        <div class="d-flex justify-content-between align-items-center text-muted fw-semibold">
+                                            <small>Increase</small>
+                                            <small>4.60%<span class="text-success ms-2"><i class="bi bi-graph-up-arrow"></i></span></small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Members -->
+                                <div class="card bg-gradient-info border-soft-info shadow-none mb-0 h-100">
+                                    <div class="card-body">
+                                        <div class="d-flex flex-column align-items-center justify-content-center mb-2">
+                                            <div class="avatar avatar-xxl avatar-info custom-avatar mb-3"><i class="ri-user-community-fill"></i></div>
+                                            <p class="text-dark mb-1">Members</p>
+                                            <h4 class="fw-bold text-info mb-0">110</h4>
+                                        </div>
+                                        <hr class="br-dashed br-w-1 border-info opacity-40">
+                                        <div class="d-flex justify-content-between align-items-center text-muted fw-semibold">
+                                            <small>Leads</small>
+                                            <small>2.70%<span class="text-danger ms-2"><i class="bi bi-graph-down-arrow"></i></span></small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <!-- To-do -->
+                            <div class="accordion mb-4" id="todoAccordion">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTodo">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseTodo" aria-expanded="true"
+                                            aria-controls="collapseTodo">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span><i class="bi bi-chevron-down fs-6"></i></span>
+                                                <h6
+                                                    class="mb-0 fw-bold fs-18 border-start border-3 border-secondary ps-2">
+                                                    To-do</h6>
+                                                <span class="badge bg-soft-secondary">3</span>
+                                            </div>
+                                            <div class="toggle-icon"><i class="ri-add-large-line"></i></div>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTodo" class="accordion-collapse collapse show"
+                                        aria-labelledby="headingTodo" data-bs-parent="#todoAccordion">
+                                        <div class="accordion-body pt-0">
+                                            <div class="datatable-wrapper">
+                                                <table id="todoListTable"
+                                                    class="table table-hover table-md-nowrap table-bordered overview-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="py-3">No.</th>
+                                                            <th class=" position-relative py-3"
+                                                                style="cursor: default;">
+                                                                <div class="d-flex align-items-center gap-2">
+                                                                    <div class=""><input aria-label="Select all"
+                                                                            class="form-check-input" type="checkbox">
+                                                                    </div>
+                                                                </div>
+                                                            </th>
+                                                            <th class="py-3"><span><i
+                                                                        class="ri-focus-2-line fw-normal"></i> Work item
+                                                            </th>
+                                                            <th class="py-3"><span><i
+                                                                        class="ri-file-list-2-line fw-normal"></i></span>
+                                                                Details</th>
+                                                            <th class="py-3"><span><i
+                                                                        class="ri-code-s-slash-line fw-normal"></i></span>
+                                                                Project type</th>
+                                                            <th class="py-3"><span><i
+                                                                        class="ri-calendar-line fw-normal"></i></span>
+                                                                Time estimate</th>
+                                                            <th class="py-3"><span><i
+                                                                        class="ri-dashboard-line fw-normal"></i></span>
+                                                                Category</th>
+                                                            <th class="py-3"><span><i
+                                                                        class="ri-group-line fw-normal"></i></span>
+                                                                People</th>
+                                                            <th class="py-3"><span><i
+                                                                        class="ri-flag-line fw-normal"></i></span>
+                                                                Priority</th>
+                                                            <th class="py-3"><span><i
+                                                                        class="ri-add-large-line fw-normal"></i></span>
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr class="align-middle">
+                                                            <td>1</td>
+                                                            <td>
+                                                                <div><input aria-label="Select row"
+                                                                        class="form-check-input" type="checkbox"></div>
+                                                            </td>
+                                                            <td class="fw-semibold text-dark">Website Redesign</td>
+                                                            <td>This project focuses on modernizing <br>
+                                                                the company’s existing website...</td>
+                                                            <td><span class="badge bg-outline-primary">In-House</span>
+                                                            </td>
+                                                            <td>Jan 14,2026 - Mar 08,2026</td>
+                                                            <td><span class="badge bg-soft-orange"><i
+                                                                        class="ri-window-line fw-normal"></i>
+                                                                    Website</span></td>
+                                                            <td>
+                                                                <div class="avatar-group">
+                                                                    <div class="avatar rounded-circle avatar-sm overflow-hidden"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Nia Dubey">
+                                                                        <img alt="Nia Dubey" class="w-100 h-100"
+                                                                            src="../images/avatars/avatar5.jpg">
+                                                                    </div>
+                                                                    <div class="avatar rounded-circle avatar-sm overflow-hidden"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Jaya Shah">
+                                                                        <img alt="Jaya Shah" class="w-100 h-100"
+                                                                            src="../images/avatars/avatar8.jpg">
+                                                                    </div>
+                                                                    <div class="avatar avatar-sm avatar-primary rounded-circle fw-semibold"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Neha Sharma">NS</div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <span class="badge bg-success rounded-pill">High</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="dropdown">
+                                                                    <button type="button" id="editDrop"
+                                                                        aria-expanded="false"
+                                                                        class="card-drop-icon dropdown-toggle btn"
+                                                                        data-bs-toggle="dropdown">
+                                                                        <i class="bi bi-three-dots fs-20"></i>
+                                                                    </button>
+                                                                    <ul class="dropdown-menu dropdown-menu-xxl-end"
+                                                                        aria-labelledby="proDropdown">
+                                                                        <li><a class="dropdown-item edit-item"
+                                                                                href="#"><i
+                                                                                    class="ri-edit-box-line me-1"></i>
+                                                                                Edit Data </a></li>
+                                                                        <li><a href="#"
+                                                                                class="dropdown-item delete-item text-danger"
+                                                                                role="button" tabindex="0"><i
+                                                                                    class="ri-delete-bin-7-line me-1"></i>
+                                                                                Delete</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="align-middle">
+                                                            <td>2</td>
+                                                            <td>
+                                                                <div><input aria-label="Select row"
+                                                                        class="form-check-input" type="checkbox"></div>
+                                                            </td>
+                                                            <td class="fw-semibold text-dark">Mobile App Development
+                                                            </td>
+                                                            <td>Design and build a cross-platform <br> mobile
+                                                                application
+                                                                with user authentication ...</td>
+                                                            <td><span class="badge bg-outline-primary">In-House</span>
+                                                            </td>
+                                                            <td>Jan 09,2026 - Fab 28,2026</td>
+                                                            <td><span class="badge bg-soft-blue"><i
+                                                                        class="ri-window-line fw-normal"></i>
+                                                                    Mobile App</span></td>
+                                                            <td>
+                                                                <div class="avatar-group">
+                                                                    <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Ollivia Joy"><img alt="Ollivia Joy"
+                                                                            class="w-100 h-100"
+                                                                            src="../images/avatars/avatar7.jpg"></div>
+                                                                    <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Mark Lee"><img alt="Mark Lee"
+                                                                            class="w-100 h-100"
+                                                                            src="../images/avatars/avatar9.jpg"></div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <span
+                                                                    class="badge bg-warning rounded-pill">Medium</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="dropdown">
+                                                                    <button type="button" id="editDrop"
+                                                                        aria-expanded="false"
+                                                                        class="card-drop-icon dropdown-toggle btn"
+                                                                        data-bs-toggle="dropdown">
+                                                                        <i class="bi bi-three-dots fs-20"></i>
+                                                                    </button>
+                                                                    <ul class="dropdown-menu dropdown-menu-xxl-end"
+                                                                        aria-labelledby="proDropdown">
+                                                                        <li><a class="dropdown-item edit-item"
+                                                                                href="#"><i
+                                                                                    class="ri-edit-box-line me-1"></i>
+                                                                                Edit Data </a></li>
+                                                                        <li><a href="#"
+                                                                                class="dropdown-item delete-item text-danger"
+                                                                                role="button" tabindex="0"><i
+                                                                                    class="ri-delete-bin-7-line me-1"></i>
+                                                                                Delete</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="align-middle">
+                                                            <td>3</td>
+                                                            <td>
+                                                                <div><input aria-label="Select row"
+                                                                        class="form-check-input" type="checkbox"></div>
+                                                            </td>
+                                                            <td class="fw-semibold text-dark">CRM System Implementation
+                                                            </td>
+                                                            <td>Development and deployment of a centralized <br> CRM
+                                                                platform
+                                                                to manage leads,...</td>
+                                                            <td><span
+                                                                    class="badge bg-outline-primary">Client-Based</span>
+                                                            </td>
+                                                            <td>Fab 19,2026 - Mar 20,2026</td>
+                                                            <td><span class="badge bg-soft-info"><i
+                                                                        class="ri-dashboard-line fw-normal"></i>
+                                                                    Dashboard</span></td>
+                                                            <td>
+                                                                <div class="avatar-group">
+                                                                    <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Jaya Shah"><img alt="Jaya Shah"
+                                                                            class="w-100 h-100"
+                                                                            src="../images/avatars/avatar8.jpg"></div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <span class="badge bg-danger rounded-pill">Low</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="dropdown">
+                                                                    <button type="button" id="editDrop"
+                                                                        aria-expanded="false"
+                                                                        class="card-drop-icon dropdown-toggle btn"
+                                                                        data-bs-toggle="dropdown">
+                                                                        <i class="bi bi-three-dots fs-20"></i>
+                                                                    </button>
+                                                                    <ul class="dropdown-menu dropdown-menu-xxl-end"
+                                                                        aria-labelledby="proDropdown">
+                                                                        <li><a class="dropdown-item edit-item" href="#"
+                                                                                role="button"><i
+                                                                                    class="ri-edit-box-line me-1"></i>
+                                                                                Edit Data </a></li>
+                                                                        <li><a href="#"
+                                                                                class="dropdown-item delete-item text-danger"
+                                                                                role="button" tabindex="0"><i
+                                                                                    class="ri-delete-bin-7-line me-1"></i>
+                                                                                Delete</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- In Progress -->
+                            <div class="accordion mb-4" id="progressAccordion">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingProgress">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseProgress" aria-expanded="true"
+                                            aria-controls="collapseProgress">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span><i class="bi bi-chevron-down fs-6"></i></span>
+                                                <h6 class="mb-0 fw-bold fs-18 border-start border-3 border-blue ps-2">
+                                                    In Progress</h6>
+                                                <span class="badge bg-soft-blue">3</span>
+                                            </div>
+                                            <div class="toggle-icon"><i class="ri-add-large-line"></i></div>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseProgress" class="accordion-collapse collapse show"
+                                        aria-labelledby="headingProgress" data-bs-parent="#progressAccordion">
+                                        <div class="accordion-body pt-0">
+                                            <div class="datatable-wrapper">
+                                                <table id="inProgressTable"
+                                                    class="table table-hover table-md-nowrap table-bordered overview-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="py-3">No.</th>
+                                                            <th class=" position-relative py-3"
+                                                                style="cursor: default;">
+                                                                <div class="d-flex align-items-center gap-2">
+                                                                    <div class=""><input aria-label="Select all"
+                                                                            class="form-check-input" type="checkbox">
+                                                                    </div>
+                                                                </div>
+                                                            </th>
+                                                            <th class="py-3"><span><i
+                                                                        class="ri-focus-2-line fw-normal"></i> Work item
+                                                            </th>
+                                                            <th class="py-3"><span><i
+                                                                        class="ri-file-list-2-line fw-normal"></i></span>
+                                                                Details</th>
+                                                            <th class="py-3"><span><i
+                                                                        class="ri-code-s-slash-line fw-normal"></i></span>
+                                                                Project type</th>
+                                                            <th class="py-3"><span><i
+                                                                        class="ri-calendar-line fw-normal"></i></span>
+                                                                Time estimate</th>
+                                                            <th class="py-3"><span><i
+                                                                        class="ri-dashboard-line fw-normal"></i></span>
+                                                                Category</th>
+                                                            <th class="py-3"><span><i
+                                                                        class="ri-group-line fw-normal"></i></span>
+                                                                People</th>
+                                                            <th class="py-3"><span><i
+                                                                        class="ri-flag-line fw-normal"></i></span>
+                                                                Priority</th>
+                                                            <th class="py-3"><span><i
+                                                                        class="ri-add-large-line fw-normal"></i></span>
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr class="align-middle">
+                                                            <td>1</td>
+                                                            <td>
+                                                                <div><input aria-label="Select row"
+                                                                        class="form-check-input" type="checkbox"></div>
+                                                            </td>
+                                                            <td class="fw-semibold text-dark">E-Commerce Platform
+                                                                Upgrade</td>
+                                                            <td>Enhancement of existing online store with <br> secure
+                                                                payment
+                                                                gateway integration, ...</td>
+                                                            <td><span
+                                                                    class="badge bg-outline-primary">Client-Based</span>
+                                                            </td>
+                                                            <td>Jan 26,2026 - Feb 17,2026</td>
+                                                            <td><span class="badge bg-soft-info"><i
+                                                                        class="ri-dashboard-line fw-normal"></i>
+                                                                    Dashboard</span></td>
+                                                            <td>
+                                                                <div class="avatar-group">
+                                                                    <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Prem Mehta"><img alt="Prem Mehta"
+                                                                            class="w-100 h-100"
+                                                                            src="../images/avatars/avatar1.jpg"></div>
+                                                                    <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Mark Lee"><img alt="Mark Lee"
+                                                                            class="w-100 h-100"
+                                                                            src="../images/avatars/avatar10.jpg"></div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <span
+                                                                    class="badge bg-warning rounded-pill">Medium</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="dropdown">
+                                                                    <button type="button" id="editDrop"
+                                                                        aria-expanded="false"
+                                                                        class="card-drop-icon dropdown-toggle btn"
+                                                                        data-bs-toggle="dropdown">
+                                                                        <i class="bi bi-three-dots fs-20"></i>
+                                                                    </button>
+                                                                    <ul class="dropdown-menu dropdown-menu-xxl-end"
+                                                                        aria-labelledby="proDropdown">
+                                                                        <li><a class="dropdown-item edit-item"
+                                                                                href="#"><i
+                                                                                    class="ri-edit-box-line me-1"></i>
+                                                                                Edit Data </a></li>
+                                                                        <li><a href="#"
+                                                                                class="dropdown-item delete-item text-danger"
+                                                                                role="button" tabindex="0"><i
+                                                                                    class="ri-delete-bin-7-line me-1"></i>
+                                                                                Delete</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="align-middle">
+                                                            <td>2</td>
+                                                            <td>
+                                                                <div><input aria-label="Select row"
+                                                                        class="form-check-input" type="checkbox"></div>
+                                                            </td>
+                                                            <td class="fw-semibold text-dark">Digital Marketing Campaign
+                                                            </td>
+                                                            <td>Execution of multi-channel marketing strategy <br>
+                                                                including
+                                                                social media ads,...</td>
+                                                            <td><span class="badge bg-outline-primary">In-House</span>
+                                                            </td>
+                                                            <td>Jan 10,2026 - Mar 05,2026</td>
+                                                            <td><span class="badge bg-soft-info"><i
+                                                                        class="ri-dashboard-line fw-normal"></i>
+                                                                    Dashboard</span></td>
+                                                            <td>
+                                                                <div class="avatar-group">
+                                                                    <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Shreya Kapoor"><img alt="Shreya Kapoor"
+                                                                            class="w-100 h-100"
+                                                                            src="../images/avatars/avatar8.jpg">
+                                                                    </div>
+                                                                    <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Ollivia Joy"><img alt="Ollivia Joy"
+                                                                            class="w-100 h-100"
+                                                                            src="../images/avatars/avatar7.jpg"></div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <span
+                                                                    class="badge bg-warning rounded-pill">Medium</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="dropdown">
+                                                                    <button type="button" id="editDrop"
+                                                                        aria-expanded="false"
+                                                                        class="card-drop-icon dropdown-toggle btn"
+                                                                        data-bs-toggle="dropdown">
+                                                                        <i class="bi bi-three-dots fs-20"></i>
+                                                                    </button>
+                                                                    <ul class="dropdown-menu dropdown-menu-xxl-end"
+                                                                        aria-labelledby="proDropdown">
+                                                                        <li><a class="dropdown-item edit-item"
+                                                                                href="#"><i
+                                                                                    class="ri-edit-box-line me-1"></i>
+                                                                                Edit Data </a></li>
+                                                                        <li><a href="#"
+                                                                                class="dropdown-item delete-item text-danger"
+                                                                                role="button" tabindex="0"><i
+                                                                                    class="ri-delete-bin-7-line me-1"></i>
+                                                                                Delete</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="align-middle">
+                                                            <td>3</td>
+                                                            <td>
+                                                                <div><input aria-label="Select row"
+                                                                        class="form-check-input" type="checkbox"></div>
+                                                            </td>
+                                                            <td class="fw-semibold text-dark">Cloud Migration Project
+                                                            </td>
+                                                            <td>Migration of on-premise infrastructure to cloud <br>
+                                                                environment with data security, ...</td>
+                                                            <td><span
+                                                                    class="badge bg-outline-primary">Client-Based</span>
+                                                            </td>
+                                                            <td>Fab 10,2026 - Mar 10,2026</td>
+                                                            <td><span class="badge bg-soft-blue"><i
+                                                                        class="ri-window-line fw-normal"></i>
+                                                                    Mobile App</span></td>
+                                                            <td>
+                                                                <div class="avatar-group">
+                                                                    <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Ethan Ray"><img alt="Ethan Ray"
+                                                                            class="w-100 h-100"
+                                                                            src="../images/avatars/avatar2.jpg"></div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <span class="badge bg-danger rounded-pill">Low</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="dropdown">
+                                                                    <button type="button" id="editDrop"
+                                                                        aria-expanded="false"
+                                                                        class="card-drop-icon dropdown-toggle btn"
+                                                                        data-bs-toggle="dropdown">
+                                                                        <i class="bi bi-three-dots fs-20"></i>
+                                                                    </button>
+                                                                    <ul class="dropdown-menu dropdown-menu-xxl-end"
+                                                                        aria-labelledby="proDropdown">
+                                                                        <li><a class="dropdown-item edit-item"
+                                                                                href="#"><i
+                                                                                    class="ri-edit-box-line me-1"></i>
+                                                                                Edit Data </a></li>
+                                                                        <li><a href="#"
+                                                                                class="dropdown-item delete-item text-danger"
+                                                                                role="button" tabindex="0"><i
+                                                                                    class="ri-delete-bin-7-line me-1"></i>
+                                                                                Delete</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- In Review -->
+                            <div class="accordion mb-4" id="reviewAccordion">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingReview">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseReview" aria-expanded="true"
+                                            aria-controls="collapseReview">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span><i class="bi bi-chevron-down fs-6"></i></span>
+                                                <h6 class="mb-0 fw-bold fs-18 border-start border-3 border-orange ps-2">
+                                                    In Review</h6>
+                                                <span class="badge bg-soft-orange">3</span>
+                                            </div>
+                                            <div class="toggle-icon"><i class="ri-add-large-line"></i></div>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseReview" class="accordion-collapse collapse show"
+                                        aria-labelledby="headingReview" data-bs-parent="#reviewAccordion">
+                                        <div class="accordion-body pt-0">
+                                            <div class="datatable-wrapper">
+                                                <table id="inReviewTable"
+                                                    class="table table-hover table-md-nowrap table-bordered overview-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="py-3">No.</th>
+                                                            <th class=" position-relative py-3"
+                                                                style="cursor: default;">
+                                                                <div class="d-flex align-items-center gap-2">
+                                                                    <div class=""><input aria-label="Select all"
+                                                                            class="form-check-input" type="checkbox">
+                                                                    </div>
+                                                                </div>
+                                                            </th>
+                                                            <th class="py-3"><span><i
+                                                                        class="ri-focus-2-line fw-normal"></i> Work item
+                                                            </th>
+                                                            <th class="py-3"><span><i
+                                                                        class="ri-file-list-2-line fw-normal"></i></span>
+                                                                Details</th>
+                                                            <th class="py-3"><span><i
+                                                                        class="ri-code-s-slash-line fw-normal"></i></span>
+                                                                Project type</th>
+                                                            <th class="py-3"><span><i
+                                                                        class="ri-calendar-line fw-normal"></i></span>
+                                                                Time estimate</th>
+                                                            <th class="py-3"><span><i
+                                                                        class="ri-dashboard-line fw-normal"></i></span>
+                                                                Category</th>
+                                                            <th class="py-3"><span><i
+                                                                        class="ri-group-line fw-normal"></i></span>
+                                                                People</th>
+                                                            <th class="py-3"><span><i
+                                                                        class="ri-flag-line fw-normal"></i></span>
+                                                                Priority</th>
+                                                            <th class="py-3"><span><i
+                                                                        class="ri-add-large-line fw-normal"></i></span>
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr class="align-middle">
+                                                            <td>1</td>
+                                                            <td>
+                                                                <div><input aria-label="Select row"
+                                                                        class="form-check-input" type="checkbox"></div>
+                                                            </td>
+                                                            <td class="fw-semibold text-dark">Employee Management System
+                                                            </td>
+                                                            <td>Implementation of HR module covering <br> attendance
+                                                                tracking, payroll integration, ...</td>
+                                                            <td><span
+                                                                    class="badge bg-outline-primary">Client-Based</span>
+                                                            </td>
+                                                            <td>Jan 02,2026 - Mar 20,2026</td>
+                                                            <td><span class="badge bg-soft-info"><i
+                                                                        class="ri-dashboard-line fw-normal"></i>
+                                                                    Dashboard</span></td>
+                                                            <td>
+                                                                <div class="avatar-group">
+                                                                    <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Prem Mehta"><img alt="Prem Mehta"
+                                                                            class="w-100 h-100"
+                                                                            src="../images/avatars/avatar1.jpg"></div>
+                                                                    <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Mark Lee"><img alt="Mark Lee"
+                                                                            class="w-100 h-100"
+                                                                            src="../images/avatars/avatar10.jpg"></div>
+                                                                    <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Ethan Ray"><img alt="Ethan Ray"
+                                                                            class="w-100 h-100"
+                                                                            src="../images/avatars/avatar2.jpg"></div>
+                                                                    <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Mark Lee"><img alt="Mark Lee"
+                                                                            class="w-100 h-100"
+                                                                            src="../images/avatars/avatar6.jpg"></div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <span class="badge bg-success rounded-pill">High</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="dropdown">
+                                                                    <button type="button" id="editDrop"
+                                                                        aria-expanded="false"
+                                                                        class="card-drop-icon dropdown-toggle btn"
+                                                                        data-bs-toggle="dropdown">
+                                                                        <i class="bi bi-three-dots fs-20"></i>
+                                                                    </button>
+                                                                    <ul class="dropdown-menu dropdown-menu-xxl-end"
+                                                                        aria-labelledby="proDropdown">
+                                                                        <li><a class="dropdown-item edit-item"
+                                                                                href="#"><i
+                                                                                    class="ri-edit-box-line me-1"></i>
+                                                                                Edit Data </a></li>
+                                                                        <li><a href="#"
+                                                                                class="dropdown-item delete-item text-danger"
+                                                                                role="button" tabindex="0"><i
+                                                                                    class="ri-delete-bin-7-line me-1"></i>
+                                                                                Delete</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="align-middle">
+                                                            <td>2</td>
+                                                            <td>
+                                                                <div><input aria-label="Select row"
+                                                                        class="form-check-input" type="checkbox"></div>
+                                                            </td>
+                                                            <td class="fw-semibold text-dark">API Integration &
+                                                                Automation
+                                                            </td>
+                                                            <td>Integration of third-party APIs for <br> payment
+                                                                processing,
+                                                                SMS notifications, ...</td>
+                                                            <td><span class="badge bg-outline-primary">In-House</span>
+                                                            </td>
+                                                            <td>Jan 01,2026 - Jan 30,2026</td>
+                                                            <td><span class="badge bg-soft-blue"><i
+                                                                        class="ri-window-line fw-normal"></i>
+                                                                    Mobile App</span></td>
+                                                            <td>
+                                                                <div class="avatar-group">
+                                                                    <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Prem Mehta"><img alt="Prem Mehta"
+                                                                            class="w-100 h-100"
+                                                                            src="../images/avatars/avatar4.jpg"></div>
+                                                                    <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="shreya Kapoor"><img alt="Mark Lee"
+                                                                            class="w-100 h-100"
+                                                                            src="../images/avatars/avatar8.jpg"></div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <span class="badge bg-danger rounded-pill">Low</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="dropdown">
+                                                                    <button type="button" id="editDrop"
+                                                                        aria-expanded="false"
+                                                                        class="card-drop-icon dropdown-toggle btn"
+                                                                        data-bs-toggle="dropdown">
+                                                                        <i class="bi bi-three-dots fs-20"></i>
+                                                                    </button>
+                                                                    <ul class="dropdown-menu dropdown-menu-xxl-end"
+                                                                        aria-labelledby="proDropdown">
+                                                                        <li><a class="dropdown-item edit-item"
+                                                                                href="#"><i
+                                                                                    class="ri-edit-box-line me-1"></i>
+                                                                                Edit Data </a></li>
+                                                                        <li><a href="#"
+                                                                                class="dropdown-item delete-item text-danger"
+                                                                                role="button" tabindex="0"><i
+                                                                                    class="ri-delete-bin-7-line me-1"></i>
+                                                                                Delete</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="align-middle">
+                                                            <td>3</td>
+                                                            <td>
+                                                                <div><input aria-label="Select row"
+                                                                        class="form-check-input" type="checkbox"></div>
+                                                            </td>
+                                                            <td class="fw-semibold text-dark">Product Launch Strategy
+                                                            </td>
+                                                            <td>Planning and execution of product launch including <br>
+                                                                branding, campaign management, ...</td>
+                                                            <td><span class="badge bg-outline-primary">In-House</span>
+                                                            </td>
+                                                            <td>Jan 20,2026 - Feb 20,2026</td>
+                                                            <td><span class="badge bg-soft-orange"><i
+                                                                        class="ri-window-line fw-normal"></i>
+                                                                    Website</span></td>
+                                                            <td>
+                                                                <div class="avatar-group">
+                                                                    <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Prem Mehta"><img alt="Ollivia Joy"
+                                                                            class="w-100 h-100"
+                                                                            src="../images/avatars/avatar1.jpg"></div>
+                                                                    <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Nisha Shahu"><img alt="Mark Lee"
+                                                                            class="w-100 h-100"
+                                                                            src="../images/avatars/avatar3.jpg"></div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <span
+                                                                    class="badge bg-warning rounded-pill">Medium</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="dropdown">
+                                                                    <button type="button" id="editDrop"
+                                                                        aria-expanded="false"
+                                                                        class="card-drop-icon dropdown-toggle btn"
+                                                                        data-bs-toggle="dropdown">
+                                                                        <i class="bi bi-three-dots fs-20"></i>
+                                                                    </button>
+                                                                    <ul class="dropdown-menu dropdown-menu-xxl-end"
+                                                                        aria-labelledby="proDropdown">
+                                                                        <li><a class="dropdown-item edit-item"
+                                                                                href="#"><i
+                                                                                    class="ri-edit-box-line me-1"></i>
+                                                                                Edit Data </a></li>
+                                                                        <li><a href="#"
+                                                                                class="dropdown-item delete-item text-danger"
+                                                                                role="button" tabindex="0"><i
+                                                                                    class="ri-delete-bin-7-line me-1"></i>
+                                                                                Delete</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Completed -->
+                            <div class="accordion mb-4" id="completedAccordion">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingCompleted">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseCompleted" aria-expanded="true"
+                                            aria-controls="collapseCompleted">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span><i class="bi bi-chevron-down fs-6"></i></span>
+                                                <h6
+                                                    class="mb-0 fw-bold fs-18 border-start border-3 border-success ps-2">
+                                                    Completed</h6>
+                                                <span class="badge bg-soft-success">3</span>
+                                            </div>
+                                            <div class="toggle-icon"><i class="ri-add-large-line"></i></div>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseCompleted" class="accordion-collapse collapse show"
+                                        aria-labelledby="headingCompleted" data-bs-parent="#completedAccordion">
+                                        <div class="accordion-body pt-0">
+                                            <div class="datatable-wrapper">
+                                                <table id="completedTable"
+                                                    class="table table-hover table-md-nowrap table-bordered overview-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="py-3">No.</th>
+                                                            <th class="position-relative py-3" style="cursor: default;">
+                                                                <div class="d-flex align-items-center gap-2">
+                                                                    <div class=""><input aria-label="Select all"
+                                                                            class="form-check-input" type="checkbox">
+                                                                    </div>
+                                                                </div>
+                                                            </th>
+                                                            <th class="py-3"><span><i
+                                                                        class="ri-focus-2-line fw-normal"></i> Work item
+                                                            </th>
+                                                            <th class="py-3"><span><i
+                                                                        class="ri-file-list-2-line fw-normal"></i></span>
+                                                                Details</th>
+                                                            <th class="py-3"><span><i
+                                                                        class="ri-code-s-slash-line fw-normal"></i></span>
+                                                                Project type</th>
+                                                            <th class="py-3"><span><i
+                                                                        class="ri-calendar-line fw-normal"></i></span>
+                                                                Time estimate</th>
+                                                            <th class="py-3"><span><i
+                                                                        class="ri-dashboard-line fw-normal"></i></span>
+                                                                Category</th>
+                                                            <th class="py-3"><span><i
+                                                                        class="ri-group-line fw-normal"></i></span>
+                                                                People</th>
+                                                            <th class="py-3"><span><i
+                                                                        class="ri-flag-line fw-normal"></i></span>
+                                                                Priority</th>
+                                                            <th class="py-3"><span><i
+                                                                        class="ri-add-large-line fw-normal"></i></span>
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr class="align-middle">
+                                                            <td>1</td>
+                                                            <td>
+                                                                <div><input aria-label="Select row"
+                                                                        class="form-check-input" type="checkbox"></div>
+                                                            </td>
+                                                            <td class="fw-semibold text-dark">Sales Pipeline
+                                                                Optimization
+                                                            </td>
+                                                            <td>Improvement of sales funnel stages with <br> lead
+                                                                scoring,
+                                                                automated follow-ups,...</td>
+                                                            <td><span class="badge bg-outline-primary">In-House</span>
+                                                            </td>
+                                                            <td>Dec 30,2025 - Jan 30,2026</td>
+                                                            <td><span class="badge bg-soft-info"><i
+                                                                        class="ri-dashboard-line fw-normal"></i>
+                                                                    Dashboard</span></td>
+                                                            <td>
+                                                                <div class="avatar-group">
+                                                                    <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Neha Mehta"><img alt="Neha Mehta"
+                                                                            class="w-100 h-100"
+                                                                            src="../images/avatars/avatar2.jpg"></div>
+                                                                    <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Pooja Khanna"><img alt="Pooja Khanna"
+                                                                            class="w-100 h-100"
+                                                                            src="../images/avatars/avatar7.jpg"></div>
+                                                                    <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Mark Lee"><img alt="Mark Lee"
+                                                                            class="w-100 h-100"
+                                                                            src="../images/avatars/avatar9.jpg"></div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <span class="badge bg-success rounded-pill">High</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="dropdown">
+                                                                    <button type="button" id="editDrop"
+                                                                        aria-expanded="false"
+                                                                        class="card-drop-icon dropdown-toggle btn"
+                                                                        data-bs-toggle="dropdown">
+                                                                        <i class="bi bi-three-dots fs-20"></i>
+                                                                    </button>
+                                                                    <ul class="dropdown-menu dropdown-menu-xxl-end"
+                                                                        aria-labelledby="proDropdown">
+                                                                        <li><a class="dropdown-item edit-item"
+                                                                                href="#"><i
+                                                                                    class="ri-edit-box-line me-1"></i>
+                                                                                Edit Data </a></li>
+                                                                        <li><a href="#"
+                                                                                class="dropdown-item delete-item text-danger"
+                                                                                role="button" tabindex="0"><i
+                                                                                    class="ri-delete-bin-7-line me-1"></i>
+                                                                                Delete</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="align-middle">
+                                                            <td>2</td>
+                                                            <td>
+                                                                <div><input aria-label="Select row"
+                                                                        class="form-check-input" type="checkbox"></div>
+                                                            </td>
+                                                            <td class="fw-semibold text-dark">Corporate Website
+                                                                Development
+                                                            </td>
+                                                            <td>Design and development of a professional <br> corporate
+                                                                website with company profile,...</td>
+                                                            <td><span class="badge bg-outline-primary">In-House</span>
+                                                            </td>
+                                                            <td>Jan 01,2026 - Jan 20,2026</td>
+                                                            <td><span class="badge bg-soft-orange"><i
+                                                                        class="ri-window-line fw-normal"></i>
+                                                                    Website</span></td>
+                                                            <td>
+                                                                <div class="avatar-group">
+                                                                    <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Prem Mehta"><img alt="Prem Mehta"
+                                                                            class="w-100 h-100"
+                                                                            src="../images/avatars/avatar4.jpg"></div>
+                                                                    <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="shreya Kapoor"><img alt="Mark Lee"
+                                                                            class="w-100 h-100"
+                                                                            src="../images/avatars/avatar8.jpg"></div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <span
+                                                                    class="badge bg-warning rounded-pill">Medium</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="dropdown">
+                                                                    <button type="button" id="editDrop"
+                                                                        aria-expanded="false"
+                                                                        class="card-drop-icon dropdown-toggle btn"
+                                                                        data-bs-toggle="dropdown">
+                                                                        <i class="bi bi-three-dots fs-20"></i>
+                                                                    </button>
+                                                                    <ul class="dropdown-menu dropdown-menu-xxl-end"
+                                                                        aria-labelledby="proDropdown">
+                                                                        <li><a class="dropdown-item edit-item"
+                                                                                href="#"><i
+                                                                                    class="ri-edit-box-line me-1"></i>
+                                                                                Edit Data </a></li>
+                                                                        <li><a href="#"
+                                                                                class="dropdown-item delete-item text-danger"
+                                                                                role="button" tabindex="0"><i
+                                                                                    class="ri-delete-bin-7-line me-1"></i>
+                                                                                Delete</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr class="align-middle">
+                                                            <td>3</td>
+                                                            <td>
+                                                                <div><input aria-label="Select row"
+                                                                        class="form-check-input" type="checkbox"></div>
+                                                            </td>
+                                                            <td class="fw-semibold text-dark">Mobile CRM Application
+                                                            </td>
+                                                            <td>Development of mobile-friendly CRM app <br> allowing
+                                                                sales teams to update leads...</td>
+                                                            <td><span
+                                                                    class="badge bg-outline-primary">Client-Based</span>
+                                                            </td>
+                                                            <td>Dec 25,2025 - Jan 15,2026</td>
+                                                            <td><span class="badge bg-soft-blue"><i
+                                                                        class="ri-window-line fw-normal"></i>
+                                                                    Mobile App</span></td>
+                                                            <td>
+                                                                <div class="avatar-group">
+                                                                    <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Raj Malhotra"><img alt="Raj Malhotra"
+                                                                            class="w-100 h-100"
+                                                                            src="../images/avatars/avatar6.jpg"></div>
+                                                                    <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Priya Sharma"><img alt="Priya Sharma"
+                                                                            class="w-100 h-100"
+                                                                            src="../images/avatars/avatar5.jpg"></div>
+                                                                    <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Prem Mehta"><img alt="Ollivia Joy"
+                                                                            class="w-100 h-100"
+                                                                            src="../images/avatars/avatar1.jpg"></div>
+                                                                    <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Nisha Shahu"><img alt="Mark Lee"
+                                                                            class="w-100 h-100"
+                                                                            src="../images/avatars/avatar7.jpg"></div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <span class="badge bg-success rounded-pill">high</span>
+                                                            </td>
+                                                            <td>
+                                                                <div class="dropdown">
+                                                                    <button type="button" id="editDrop"
+                                                                        aria-expanded="false"
+                                                                        class="card-drop-icon dropdown-toggle btn"
+                                                                        data-bs-toggle="dropdown">
+                                                                        <i class="bi bi-three-dots fs-20"></i>
+                                                                    </button>
+                                                                    <ul class="dropdown-menu dropdown-menu-xxl-end"
+                                                                        aria-labelledby="proDropdown">
+                                                                        <li><a class="dropdown-item edit-item"
+                                                                                href="#"><i
+                                                                                    class="ri-edit-box-line me-1"></i>
+                                                                                Edit Data </a></li>
+                                                                        <li><a href="#"
+                                                                                class="dropdown-item delete-item text-danger"
+                                                                                role="button" tabindex="0"><i
+                                                                                    class="ri-delete-bin-7-line me-1"></i>
+                                                                                Delete</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            %%include('./partials/layout/footer.html')
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal fade" id="deleteProjectModal" tabindex="-1" aria-labelledby="deleteProjectModalLabel"
+        data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteProjectModalLabel">Confirm Delete</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">Are you sure you want to delete this item?</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" id="confirmDelete">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    %%include('./partials/layout/right-sidebar.html')
+
+    <!-- %%include('./partials/right-sidebar.html')
+    %%include('./partials/back-to-top.html') -->
+
+    %%include('./partials/layout/footer-js.html')
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="plugins/datatables.net/js/dataTables.min.js"></script>
+    <script src="plugins/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+    <script src="plugins/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="plugins/datatables.net-responsive-dt/js/responsive.dataTables.min.js"></script>
+    <script src="js/pages/overview.js"></script>
+
+</body>
+
+</html>

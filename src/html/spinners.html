@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <div class="page-layout">
+        %%include('./partials/layout/header.html')
+        %%include('./partials/layout/left-sidebar.html')
+        <div class="page-wrapper">
+            <div class="page-content">
+                %%include('./partials/components/page-title.html', { pageTitle: 'Spinners', pagePrTitle: 'UI Elements' })
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- Default Spinner -->
+                        <div class="col-lg-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Default Spinner</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2">
+                                        <div class="spinner-border text-primary"></div>
+                                        <div class="spinner-border text-secondary"></div>
+                                        <div class="spinner-border text-success"></div>
+                                        <div class="spinner-border text-danger"></div>
+                                        <div class="spinner-border text-warning"></div>
+                                        <div class="spinner-border text-info"></div>
+                                        <div class="spinner-border text-orange"></div>
+                                        <div class="spinner-border text-blue"></div>
+                                        <div class="spinner-border text-light"></div>
+                                        <div class="spinner-border text-dark"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Default Grow -->
+                        <div class="col-lg-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Default Grow</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2">
+                                        <div class="spinner-grow text-primary"></div>
+                                        <div class="spinner-grow text-secondary"></div>
+                                        <div class="spinner-grow text-success"></div>
+                                        <div class="spinner-grow text-danger"></div>
+                                        <div class="spinner-grow text-warning"></div>
+                                        <div class="spinner-grow text-info"></div>
+                                        <div class="spinner-grow text-orange"></div>
+                                        <div class="spinner-grow text-blue"></div>
+                                        <div class="spinner-grow text-light"></div>
+                                        <div class="spinner-grow text-dark"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Spinner Sizes -->
+                        <div class="col-lg-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Spinner Sizes</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2">
+                                        <div class="mb-3 spinner-border spinner-border-xl text-dark"></div>
+                                        <div class="mb-3 spinner-border spinner-border-lg text-danger"></div>
+                                        <div class="mb-3 spinner-border text-success"></div>
+                                        <div class="mb-3 spinner-border spinner-border-sm text-primary"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Grow Size -->
+                        <div class="col-lg-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Grow Sizes</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2">
+                                        <div class="mb-3 spinner-grow spinner-grow-xl text-dark"></div>
+                                        <div class="mb-3 spinner-grow spinner-grow-lg text-danger"></div>
+                                        <div class="mb-3 spinner-grow text-success"></div>
+                                        <div class="mb-3 spinner-grow spinner-grow-sm text-primary"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Buttons With Spinner -->
+                        <div class="col-lg-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Buttons With Spinner</h5>
+                                    <div class="row">
+                                        <div class="col-md-6 col-12">
+                                            <div class="d-flex align-items-center flex-wrap gap-2 mb-3">
+                                                <button type="button" class="btn btn-primary"><span role="status"
+                                                        aria-hidden="true"
+                                                        class="spinner-border spinner-border-sm"></span></button>
+                                                <button type="button" class="btn btn-success"><span role="status"
+                                                        aria-hidden="true"
+                                                        class="spinner-border spinner-border-sm"></span></button>
+                                                <button type="button" class="btn btn-danger"><span role="status"
+                                                        aria-hidden="true"
+                                                        class="spinner-border spinner-border-sm"></span></button>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="d-flex align-items-center flex-wrap gap-2 mb-3">
+                                                <button type="button" class="btn btn-outline-primary"><span role="status"
+                                                        aria-hidden="true"
+                                                        class="spinner-border spinner-border-sm"></span></button>
+                                                <button type="button" class="btn btn-outline-success"><span role="status"
+                                                        aria-hidden="true"
+                                                        class="spinner-border spinner-border-sm"></span></button>
+                                                <button type="button" class="btn btn-outline-danger"><span role="status"
+                                                        aria-hidden="true"
+                                                        class="spinner-border spinner-border-sm"></span></button>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="d-flex align-items-center flex-wrap gap-2 mb-3">
+                                                <button type="button" class="btn btn-soft-primary"><span role="status"
+                                                        aria-hidden="true"
+                                                        class="spinner-border spinner-border-sm"></span></button>
+                                                <button type="button" class="btn btn-soft-success"><span role="status"
+                                                        aria-hidden="true"
+                                                        class="spinner-border spinner-border-sm"></span></button>
+                                                <button type="button" class="btn btn-soft-danger"><span role="status"
+                                                        aria-hidden="true"
+                                                        class="spinner-border spinner-border-sm"></span></button>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="d-flex align-items-center flex-wrap gap-2 mb-3">
+                                                <button type="button" class="btn btn-gradient-primary"><span role="status"
+                                                        aria-hidden="true"
+                                                        class="spinner-border spinner-border-sm"></span></button>
+                                                <button type="button" class="btn btn-gradient-success"><span role="status"
+                                                        aria-hidden="true"
+                                                        class="spinner-border spinner-border-sm"></span></button>
+                                                <button type="button" class="btn btn-gradient-danger"><span role="status"
+                                                        aria-hidden="true"
+                                                        class="spinner-border spinner-border-sm"></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Buttons With Glow -->
+                        <div class="col-lg-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Buttons With Glow</h5>
+                                    <div class="row">
+                                        <div class="col-md-6 col-12">
+                                            <div class="d-flex align-items-center flex-wrap gap-2 mb-3">
+                                                <button type="button" class="btn btn-primary"><span role="status"
+                                                        aria-hidden="true"
+                                                        class="spinner-grow spinner-grow-sm"></span></button>
+                                                <button type="button" class="btn btn-success"><span role="status"
+                                                        aria-hidden="true"
+                                                        class="spinner-grow spinner-grow-sm"></span></button>
+                                                <button type="button" class="btn btn-danger"><span role="status"
+                                                        aria-hidden="true"
+                                                        class="spinner-grow spinner-grow-sm"></span></button>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="d-flex align-items-center flex-wrap gap-2 mb-3">
+                                                <button type="button" class="btn btn-outline-primary"><span role="status"
+                                                        aria-hidden="true"
+                                                        class="spinner-grow spinner-grow-sm"></span></button>
+                                                <button type="button" class="btn btn-outline-success"><span role="status"
+                                                        aria-hidden="true"
+                                                        class="spinner-grow spinner-grow-sm"></span></button>
+                                                <button type="button" class="btn btn-outline-danger"><span role="status"
+                                                        aria-hidden="true"
+                                                        class="spinner-grow spinner-grow-sm"></span></button>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="d-flex align-items-center flex-wrap gap-2 mb-3">
+                                                <button type="button" class="btn btn-soft-primary"><span role="status"
+                                                        aria-hidden="true"
+                                                        class="spinner-grow spinner-grow-sm"></span></button>
+                                                <button type="button" class="btn btn-soft-success"><span role="status"
+                                                        aria-hidden="true"
+                                                        class="spinner-grow spinner-grow-sm"></span></button>
+                                                <button type="button" class="btn btn-soft-danger"><span role="status"
+                                                        aria-hidden="true"
+                                                        class="spinner-grow spinner-grow-sm"></span></button>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="d-flex align-items-center flex-wrap gap-2 mb-3">
+                                                <button type="button" class="btn btn-gradient-primary"><span role="status"
+                                                        aria-hidden="true"
+                                                        class="spinner-grow spinner-grow-sm"></span></button>
+                                                <button type="button" class="btn btn-gradient-success"><span role="status"
+                                                        aria-hidden="true"
+                                                        class="spinner-grow spinner-grow-sm"></span></button>
+                                                <button type="button" class="btn btn-gradient-danger"><span role="status"
+                                                        aria-hidden="true"
+                                                        class="spinner-grow spinner-grow-sm"></span></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Buttons Text With Spinner -->
+                        <div class="col-lg-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Buttons Text With Spinner</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2 mb-3">
+                                        <button type="button" class="btn btn-primary"><span role="status" aria-hidden="true" class="me-2 spinner-border spinner-border-sm"></span>Loading...</button>
+                                        <button type="button" class="btn btn-outline-success"><span role="status" aria-hidden="true" class="me-2 spinner-border spinner-border-sm"></span>Loading...</button>
+                                        <button type="button" class="btn btn-soft-danger"><span role="status" aria-hidden="true" class="me-2 spinner-border spinner-border-sm"></span>Loading...</button>
+                                        <button type="button" class="btn btn-gradient-info"><span role="status" aria-hidden="true" class="me-2 spinner-border spinner-border-sm"></span>Loading...</button>
+                                    </div>
+                                    <div class="d-flex align-items-center flex-wrap gap-2 ">
+                                        <button type="button" class="btn btn-primary" disabled><span role="status" aria-hidden="true" class="me-2 spinner-border spinner-border-sm"></span>Loading...</button>
+                                        <button type="button" class="btn btn-outline-success" disabled><span role="status" aria-hidden="true" class="me-2 spinner-border spinner-border-sm"></span>Loading...</button>
+                                        <button type="button" class="btn btn-soft-danger" disabled><span role="status" aria-hidden="true" class="me-2 spinner-border spinner-border-sm"></span>Loading...</button>
+                                        <button type="button" class="btn btn-gradient-info" disabled><span role="status" aria-hidden="true" class="me-2 spinner-border spinner-border-sm"></span>Loading...</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Buttons Text With Grow -->
+                        <div class="col-lg-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Buttons Text With Grow</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2 mb-3">
+                                        <button type="button" class="btn btn-primary"><span role="status" aria-hidden="true" class="me-2 spinner-grow spinner-grow-sm"></span>Loading...</button>
+                                        <button type="button" class="btn btn-outline-success"><span role="status" aria-hidden="true" class="me-2 spinner-grow spinner-grow-sm"></span>Loading...</button>
+                                        <button type="button" class="btn btn-soft-danger"><span role="status" aria-hidden="true" class="me-2 spinner-grow spinner-grow-sm"></span>Loading...</button>
+                                        <button type="button" class="btn btn-gradient-info"><span role="status" aria-hidden="true" class="me-2 spinner-grow spinner-grow-sm"></span>Loading...</button>
+                                    </div>
+                                    <div class="d-flex align-items-center flex-wrap gap-2 ">
+                                        <button type="button" class="btn btn-primary" disabled><span role="status" aria-hidden="true" class="me-2 spinner-grow spinner-grow-sm"></span>Loading...</button>
+                                        <button type="button" class="btn btn-outline-success" disabled><span role="status" aria-hidden="true" class="me-2 spinner-grow spinner-grow-sm"></span>Loading...</button>
+                                        <button type="button" class="btn btn-soft-danger" disabled><span role="status" aria-hidden="true" class="me-2 spinner-grow spinner-grow-sm"></span>Loading...</button>
+                                        <button type="button" class="btn btn-gradient-info" disabled><span role="status" aria-hidden="true" class="me-2 spinner-grow spinner-grow-sm"></span>Loading...</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            %%include('./partials/layout/footer.html')
+
+        </div>
+    </div>
+    %%include('./partials/layout/right-sidebar.html')
+
+    <!-- %%include('./partials/right-sidebar.html')
+    %%include('./partials/back-to-top.html') -->
+
+    %%include('./partials/layout/footer-js.html')
+
+</body>
+
+</html>

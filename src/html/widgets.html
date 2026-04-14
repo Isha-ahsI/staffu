@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <div class="page-layout">
+        %%include('./partials/layout/header.html')
+        %%include('./partials/layout/left-sidebar.html')
+        <div class="page-wrapper">
+            <div class="page-content">
+                %%include('./partials/components/page-title.html', { pageTitle: 'Widgets', pagePrTitle: 'Components' })
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- Total Employees -->
+                        <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-4">
+                            <div class="card h-100 mb-0">
+                                <div class="card-body">
+                                    <div class="d-flex gap-2 justify-content-between mb-4">
+                                        <div class="avatar avatar-xxxl avatar-soft-primary custom-avatar">
+                                            <i class="ri-group-line fs-32"></i>
+                                        </div>
+                                        <div class="text-end">
+                                            <h3 class="fw-bold mb-0">215</h3>
+                                            <div>
+                                                <span class="badge bg-soft-success"><i class="ri-arrow-up-line"></i>
+                                                    +5%</span>
+                                                <small class="text-muted ms-1">vs last mo.</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr class="br-dashed">
+                                    <div>
+                                        <h5 class="mb-0 fs-18 fw-semibold">Total Employees</h5>
+                                        <small>Workforce headcount summary</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- New Hires -->
+                        <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-4">
+                            <div class="card h-100 mb-0">
+                                <div class="card-body">
+                                    <div class="d-flex gap-2 justify-content-between mb-4">
+                                        <div class="avatar avatar-xxxl avatar-soft-info custom-avatar">
+                                            <i class="ri-user-add-line fs-32"></i>
+                                        </div>
+                                        <div class="text-end">
+                                            <h3 class="fw-bold mb-0">5</h3>
+                                            <div>
+                                                <span class="badge bg-soft-success"><i class="ri-arrow-up-line"></i>
+                                                    +25%</span>
+                                                <small class="text-muted ms-1">vs last mo.</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr class="br-dashed">
+                                    <div>
+                                        <h5 class="mb-0 fs-18 fw-semibold">New Hires (Month)</h5>
+                                        <small>Employees joined this period</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Total Sales / Revenue -->
+                        <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-4">
+                            <div class="card overflow-hidden h-100 mb-0">
+                                <div class="card-body pb-0">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <div class="mb-3">
+                                                <h5 class="text-dark fw-semibold mb-1">Total Sales / Revenue
+                                                </h5>
+                                                <p class="fs-15 mb-0">Total money earned in a period</p>
+                                            </div>
+                                            <h2 class="text-dark fw-bold mb-0">$1,245,000</h2>
+                                        </div>
+                                        <div class="dropdown">
+                                            <button type="button" id="genderRatioDrop" aria-expanded="false"
+                                                class="card-drop-icon dropdown-toggle btn" data-bs-toggle="dropdown"><i
+                                                    class="bi bi-three-dots fs-20"></i></button>
+                                            <div aria-labelledby="genderRatioDrop"
+                                                class="dropdown-menu dropdown-menu-end">
+                                                <a class="dropdown-item" href="#" data-discover="true">Weekly</a>
+                                                <a class="dropdown-item" href="#" data-discover="true">Monthly</a>
+                                                <a class="dropdown-item" href="#" data-discover="true">yearly</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-transparent border-0 p-0">
+                                    <div class="spark1"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Conversion Rate -->
+                        <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-4">
+                            <div class="card overflow-hidden h-100 mb-0">
+                                <div class="card-body pb-0">
+                                    <div class="d-flex justify-content-between">
+                                        <div>
+                                            <div class="mb-3">
+                                                <h5 class="text-dark fw-semibold mb-1">Conversion Rate</h5>
+                                                <p class="fs-15 mb-0">% of leads converted into customers</p>
+                                            </div>
+                                            <h2 class="text-dark fw-bold mb-0">23%</h2>
+                                        </div>
+                                        <div class="dropdown">
+                                            <button type="button" id="genderRatioDrop" aria-expanded="false"
+                                                class="card-drop-icon dropdown-toggle btn" data-bs-toggle="dropdown"><i
+                                                    class="bi bi-three-dots fs-20"></i></button>
+                                            <div aria-labelledby="genderRatioDrop"
+                                                class="dropdown-menu dropdown-menu-end">
+                                                <a class="dropdown-item" href="#" data-discover="true">Weekly</a>
+                                                <a class="dropdown-item" href="#" data-discover="true">Monthly</a>
+                                                <a class="dropdown-item" href="#" data-discover="true">yearly</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer bg-transparent border-0 p-0">
+                                    <div class="spark4"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Average Deal Size -->
+                        <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-4">
+                            <div class="card overflow-hidden h-100 mb-0">
+                                <div class="card-body pb-0">
+                                    <div class="d-flex flex-wrap justify-content-between gap-1">
+                                        <div>
+                                            <h6 class="text-dark mb-0 fw-semibold">Average Deal Size
+                                            </h6>
+                                            <small>Average revenue per deal</small>
+                                            <h3 class="text-dark fw-bold mt-3">$4,15,000</h3>
+                                        </div>
+                                        <div>
+                                            <div class="d-flex gap-1 lh-1 align-items-center">
+                                                <span class="badge bg-soft-success p-1 fs-10"><i
+                                                        class="ri-arrow-up-long-line"></i></span>
+                                                <p class="mb-0 text-success">8%</p>
+                                            </div>
+                                            <small>vs last month</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="averageDealChart"></div>
+                            </div>
+                        </div>
+                        <!-- Number of Deals Closed -->
+                        <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-4">
+                            <div class="card overflow-hidden h-100 mb-0">
+                                <div class="card-body pb-0">
+                                    <div class="d-flex flex-wrap justify-content-between gap-1">
+                                        <div>
+                                            <h6 class="text-dark mb-0 fw-semibold">Number of Deals Closed</h6>
+                                            <small>Total number of successfully closed deals</small>
+                                            <h3 class="text-dark fw-bold mt-3">30 Deals</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dealClosedChart"></div>
+                            </div>
+                        </div>
+                        <!-- Churn Rate  -->
+                        <div class="col-xl-3 col-sm-6 col-12 mb-4">
+                            <div class="card overflow-hidden h-100 mb-0">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap justify-content-between gap-1">
+                                        <div>
+                                            <h6 class="text-dark mb-0 fw-semibold">Churn Rate</h6>
+                                            <small>% of lost customers</small>
+                                            <h3 class="text-dark fw-bold mt-3">6%</h3>
+                                        </div>
+                                        <div>
+                                            <div class="d-flex gap-1 lh-1 align-items-center">
+                                                <span class="badge bg-soft-danger p-1 fs-10"><i
+                                                        class="ri-arrow-up-long-line"></i></span>
+                                                <p class="mb-0 text-danger">-2%</p>
+                                            </div>
+                                            <small>vs last month</small>
+                                        </div>
+                                    </div>
+                                    <div class="churnRateChart"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Win Rate  -->
+                        <div class="col-xl-3 col-sm-6 col-12 mb-4">
+                            <div class="card overflow-hidden h-100 mb-0">
+                                <div class="card-body">
+                                    <h6 class="text-dark fw-semibold">Win Rate/Lost Rate</h6>
+                                    <div class="winRateChart"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-8 col-12">
+                            <div class="row">
+                                <!-- employeement types -->
+                                <div class="col-md-6 col-12 mb-4">
+                                    <div class="card mb-0">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                                <h5 class="card-title mb-0">Employeement Type</h5>
+                                                <div class="dropdown">
+                                                    <button type="button" id="empTypeDrop" aria-expanded="false"
+                                                        class="card-drop-icon dropdown-toggle btn"
+                                                        data-bs-toggle="dropdown"><i
+                                                            class="bi bi-three-dots fs-20"></i></button>
+                                                    <div aria-labelledby="empTypeDrop"
+                                                        class="dropdown-menu dropdown-menu-end">
+                                                        <a class="dropdown-item" href="#" data-discover="true">Reload
+                                                            Activity</a>
+                                                        <a class="dropdown-item" href="#" data-discover="true">Refresh
+                                                            This
+                                                            Week</a>
+                                                        <a class="dropdown-item" href="#" data-discover="true">Clear
+                                                            History</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-4">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <h6 class="fw-semibold mb-2">Full-time</h6>
+                                                    <h6 class="text-dark fw-semibold mb-2">78%</h6>
+                                                </div>
+                                                <div class="progress mb-3 rounded-pill" role="progressbar"
+                                                    aria-label="Full time" aria-valuenow="78" aria-valuemin="0"
+                                                    aria-valuemax="100">
+                                                    <div class="progress-bar bg-primary" style="width: 78%"></div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-4">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <h6 class="fw-semibold mb-2">Part-time</h6>
+                                                    <h6 class="text-dark fw-semibold mb-2">50%</h6>
+                                                </div>
+                                                <div class="progress mb-3 rounded-pill" role="progressbar"
+                                                    aria-label="Part time" aria-valuenow="50" aria-valuemin="0"
+                                                    aria-valuemax="100">
+                                                    <div class="progress-bar bg-info" style="width: 50%"></div>
+                                                </div>
+                                            </div>
+                                            <div class="mb-4">
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <h6 class="fw-semibold mb-2">Internship</h6>
+                                                    <h6 class="text-dark fw-semibold mb-2">35%</h6>
+                                                </div>
+                                                <div class="progress mb-3 rounded-pill" role="progressbar"
+                                                    aria-label="Internship" aria-valuenow="35" aria-valuemin="0"
+                                                    aria-valuemax="350">
+                                                    <div class="progress-bar bg-success" style="width: 35%"></div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <h6 class="fw-semibold mb-2">Freelance</h6>
+                                                    <h6 class="text-dark fw-warning mb-2">25%</h6>
+                                                </div>
+                                                <div class="progress mb-3 rounded-pill" role="progressbar"
+                                                    aria-label="Freelance" aria-valuenow="25" aria-valuemin="0"
+                                                    aria-valuemax="100">
+                                                    <div class="progress-bar bg-warning" style="width: 25%"></div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="d-flex justify-content-between align-items-center">
+                                                    <h6 class="fw-semibold mb-2">Contract</h6>
+                                                    <h6 class="text-dark fw-semibold mb-2">10%</h6>
+                                                </div>
+                                                <div class="progress rounded-pill" role="progressbar"
+                                                    aria-label="Freelance" aria-valuenow="10" aria-valuemin="0"
+                                                    aria-valuemax="100">
+                                                    <div class="progress-bar bg-blue" style="width: 10%"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- by location -->
+                                <div class="col-md-6 col-12 mb-4">
+                                    <div class="card mb-0">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                                <h5 class="card-title mb-0">Employees by Location</h5>
+                                                <div class="dropdown">
+                                                    <button type="button" id="genderRatioDrop" aria-expanded="false"
+                                                        class="card-drop-icon dropdown-toggle btn"
+                                                        data-bs-toggle="dropdown"><i
+                                                            class="bi bi-three-dots fs-20"></i></button>
+                                                    <div aria-labelledby="genderRatioDrop"
+                                                        class="dropdown-menu dropdown-menu-end">
+                                                        <a class="dropdown-item" href="#" data-discover="true">All
+                                                            Locations</a>
+                                                        <a class="dropdown-item" href="#" data-discover="true">On-site
+                                                            Employees
+                                                            Week</a>
+                                                        <a class="dropdown-item" href="#" data-discover="true">Remote
+                                                            Employees</a>
+                                                        <a class="dropdown-item" href="#" data-discover="true">Hybrid
+                                                            Employees</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="map-wrapper text-center mb-4 w-100">
+                                                <div id="map" class="h-100 w-100"></div>
+                                            </div>
+                                            <div>
+                                                <p>City-wise distribution</p>
+                                                <div class="progress-stacked mb-4 rounded-4 map-dis-progress">
+                                                    <div class="progress" role="progressbar" aria-label="Segment one"
+                                                        aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"
+                                                        style="width: 35%">
+                                                        <div class="progress-bar bg-info">35%</div>
+                                                    </div>
+                                                    <div class="progress" role="progressbar" aria-label="Segment three"
+                                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"
+                                                        style="width: 25%">
+                                                        <div class="progress-bar bg-warning">25%</div>
+                                                    </div>
+                                                    <div class="progress" role="progressbar" aria-label="Segment three"
+                                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"
+                                                        style="width: 25%">
+                                                        <div class="progress-bar bg-blue">25%</div>
+                                                    </div>
+                                                    <div class="progress" role="progressbar" aria-label="Segment two"
+                                                        aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"
+                                                        style="width: 15%">
+                                                        <div class="progress-bar bg-orange">15%</div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                                        <p class="mb-0"><span class="text-info me-1"><i
+                                                                    class="ri-circle-fill fs-10"></i></span>New York</p>
+                                                        <p class="mb-0"><span class="text-warning me-1"><i
+                                                                    class="ri-circle-fill fs-10"></i></span>Bangalore
+                                                        </p>
+                                                    </div>
+                                                    <div class="d-flex align-items-center justify-content-between">
+                                                        <p class="mb-0"><span class="text-blue me-1"><i
+                                                                    class="ri-circle-fill fs-10"></i></span>London</p>
+                                                        <p class="mb-0"><span class="text-orange me-1"><i
+                                                                    class="ri-circle-fill fs-10"></i></span>San
+                                                            Francisco</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Revenue Breakdown -->
+                                <div class="col-md-6 col-12 mb-4">
+                                    <div class="card mb-0">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between mb-4">
+                                                <h5 class="card-title mb-0">Revenue Breakdown</h5>
+                                                <div class="dropdown">
+                                                    <button type="button" id="genderRatioDrop" aria-expanded="false"
+                                                        class="card-drop-icon dropdown-toggle btn"
+                                                        data-bs-toggle="dropdown"><i
+                                                            class="bi bi-three-dots fs-20"></i></button>
+                                                    <div aria-labelledby="genderRatioDrop"
+                                                        class="dropdown-menu dropdown-menu-end">
+                                                        <a class="dropdown-item" href="#" data-discover="true">Last
+                                                            Month</a>
+                                                        <a class="dropdown-item" href="#" data-discover="true">Last
+                                                            year</a>
+                                                        <a class="dropdown-item" href="#" data-discover="true">Last
+                                                            Week</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-end gap-2 mb-3">
+                                                <h1 class="text-dark fw-semibold mb-0">$1.32M</h1>
+                                                <p class="mb-1"><span class="text-success fw-bold">+</span> <span
+                                                        class="text-dark fw-semibold">13.2%</span> Last month</p>
+                                            </div>
+                                            <div class="progress-stacked mb-3 rounded-pill" style="height: 8px">
+                                                <div class="progress" role="progressbar" aria-label="Segment one"
+                                                    aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"
+                                                    style="width: 35%">
+                                                    <div class="progress-bar bg-orange"></div>
+                                                </div>
+                                                <div class="progress" role="progressbar" aria-label="Segment two"
+                                                    aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"
+                                                    style="width: 30%">
+                                                    <div class="progress-bar bg-blue"></div>
+                                                </div>
+                                                <div class="progress" role="progressbar" aria-label="Segment three"
+                                                    aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"
+                                                    style="width: 20%">
+                                                    <div class="progress-bar bg-warning"></div>
+                                                </div>
+                                                <div class="progress" role="progressbar" aria-label="Segment three"
+                                                    aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"
+                                                    style="width: 15%">
+                                                    <div class="progress-bar bg-secondary"></div>
+                                                </div>
+                                            </div>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item bg-transparent px-0">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <h6 class="mb-0 text-dark"><span class="me-1 text-orange"><i
+                                                                    class="ri-square-fill fs-10"></i></span>Website</h6>
+                                                        <div>
+                                                            <h6 class="fw-bold text-dark mb-0 text-end">$4,20,000</h6>
+                                                            <small class="mb-1">
+                                                                <span class="text-success"><i
+                                                                        class="ri-arrow-up-line"></i></span>
+                                                                12% Last month
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="list-group-item bg-transparent px-0 pt-3">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <p class="mb-0"><span class="me-1 text-blue"><i
+                                                                    class="ri-square-fill fs-10"></i></span>Campaign</p>
+                                                        <div>
+                                                            <h6 class="fw-bold text-dark mb-0 text-end">$3,80,000</h6>
+                                                            <small class="mb-1">
+                                                                <span class="text-success"><i
+                                                                        class="ri-arrow-up-line"></i></span>
+                                                                8% Last month
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="list-group-item bg-transparent px-0 pt-3">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <p class="mb-0"><span class="me-1 text-warning"><i
+                                                                    class="ri-square-fill fs-10"></i></span>Referral</p>
+                                                        <div>
+                                                            <h6 class="fw-bold text-dark mb-0 text-end">$2,00,000</h6>
+                                                            <small class="mb-1">
+                                                                <span class="text-success"><i
+                                                                        class="ri-arrow-up-line"></i></span>
+                                                                5% Last month
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="list-group-item bg-transparent px-0 pt-3">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <p class="mb-0"><span class="me-1 text-secondary"><i
+                                                                    class="ri-square-fill fs-10"></i></span>Others</p>
+                                                        <div>
+                                                            <h6 class="fw-bold text-dark mb-0 text-end">$90,000</h6>
+                                                            <small class="mb-1">
+                                                                <span class="text-success"><i
+                                                                        class="ri-arrow-up-line"></i></span>
+                                                                3% Last month
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- sales per week (Heat map) -->
+                                <div class="col-md-6 col-12 mb-4">
+                                    <div class="card mb-0">
+                                        <div class="card-body">
+                                            <h5 class="card-title mb-4">Sales per week</h5>
+                                            <div id="heatMapChart"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Attendance Summary -->
+                                <div class="col-12 mb-4">
+                                    <div class="card mb-0">
+                                        <div class="card-body">
+                                            <div
+                                                class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-3">
+                                                <h5 class="card-title mb-0">Attendance Summary</h5>
+                                                <form>
+                                                    <select name="attendenceSelect" class="form-select form-select-sm"
+                                                        id="attendenceSelect">
+                                                        <option>Today</option>
+                                                        <option>Previous day</option>
+                                                        <option>This week</option>
+                                                    </select>
+                                                </form>
+                                            </div>
+                                            <div class="row odd-border">
+                                                <div class="col-sm-6 col-12">
+                                                    <div class="p-4">
+                                                        <div class="d-flex align-items-center gap-3 pb-2">
+                                                            <div
+                                                                class="avatar avatar-xxxl avatar-soft-success custom-avatar">
+                                                                <i class="ri-check-double-line fs-32"></i>
+                                                            </div>
+                                                            <div>
+                                                                <h3 class="text-success fw-semibold mb-0">40</h3>
+                                                                <h6 class="mb-0">Present Today</h6>
+                                                            </div>
+                                                        </div>
+                                                        <hr class="hr-style-1">
+                                                        <p class="text-center mb-0">124 People Remaining</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 col-12">
+                                                    <div class="p-4">
+                                                        <div class="d-flex align-items-center gap-3 pb-2">
+                                                            <div
+                                                                class="avatar avatar-xxxl avatar-soft-primary custom-avatar">
+                                                                <i class="ri-suitcase-line fs-32"></i>
+                                                            </div>
+                                                            <div>
+                                                                <h3 class="text-primary fw-semibold mb-0">04</h3>
+                                                                <h6 class="mb-0">On Leave</h6>
+                                                            </div>
+                                                        </div>
+                                                        <hr class="hr-style-1">
+                                                        <p class="text-center mb-0">Approved Leave</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 col-12">
+                                                    <div class="p-4">
+                                                        <div class="d-flex align-items-center gap-3 pb-2">
+                                                            <div
+                                                                class="avatar avatar-xxxl avatar-soft-warning custom-avatar">
+                                                                <i class="ri-time-line fs-32"></i>
+                                                            </div>
+                                                            <div>
+                                                                <h3 class="text-warning fw-semibold mb-0">26</h3>
+                                                                <h6 class="mb-0">Late Entry</h6>
+                                                            </div>
+                                                        </div>
+                                                        <hr class="hr-style-1">
+                                                        <p class="text-center mb-0">Without Information</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 col-12">
+                                                    <div class="p-4">
+                                                        <div class="d-flex align-items-center gap-3 pb-2">
+                                                            <div
+                                                                class="avatar avatar-xxxl avatar-soft-danger custom-avatar">
+                                                                <i class="ri-emotion-unhappy-fill fs-32"></i>
+                                                            </div>
+                                                            <div>
+                                                                <h3 class="text-danger fw-semibold mb-0">01</h3>
+                                                                <h6 class="mb-0">Absent</h6>
+                                                            </div>
+                                                        </div>
+                                                        <hr class="hr-style-1">
+                                                        <p class="text-center mb-0">12 People are on time</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Meeting card 1 -->
+                                <div class="col-md-6 col-12 mb-4">
+                                    <div class="card bg-gradient-blue mb-0">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div>
+                                                    <h6 class="mb-0 text-dark fw-semibold">Meeting with James Brown</h6>
+                                                    <small>8:00-8:45 AM (UTC)</small>
+                                                </div>
+                                                <div class="dropdown">
+                                                    <button type="button" id="meetDrop" aria-expanded="false"
+                                                        class="card-drop-icon dropdown-toggle btn btn-soft-primary avatar avatar-xxs rounded-2"
+                                                        data-bs-toggle="dropdown"><span><i
+                                                                class="bi bi-chevron-down"></i></span></button>
+                                                    <ul class="dropdown-menu dropdown-menu-end"
+                                                        aria-labelledby="meetDrop">
+                                                        <li><a class="dropdown-item" href="#"><i
+                                                                    class="bi bi-eye me-2 text-primary"></i>View
+                                                                Details</a></li>
+                                                        <li><a class="dropdown-item" href="#"><i
+                                                                    class="bi bi-pencil me-2 text-info"></i>Edit
+                                                                Meeting</a></li>
+                                                        <li><a class="dropdown-item" href="#"><i
+                                                                    class="bi bi-person-plus me-2 text-success"></i>Add
+                                                                Member</a></li>
+                                                        <li>
+                                                            <hr class="dropdown-divider">
+                                                        </li>
+                                                        <li><a class="dropdown-item text-danger" href="#"><i
+                                                                    class="bi bi-trash me-2"></i>Cancel Meeting</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="avatar-wrap p-1 rounded-pill my-4 d-inline-block">
+                                                <div class="avatar-group">
+                                                    <div
+                                                        class="avatar avatar-xs avatar-soft-blue rounded-circle fw-semibold">
+                                                        EM</div>
+                                                    <div class="avatar avatar-xs"><img alt="Bordered Avatar 1"
+                                                            class="w-100 h-100 rounded-circle shadow"
+                                                            src="../images/avatars/avatar1.jpg"></div>
+                                                    <div class="avatar avatar-xs"><img alt="Bordered Avatar 2"
+                                                            class="w-100 h-100 rounded-circle shadow"
+                                                            src="../images/avatars/avatar2.jpg"></div>
+                                                    <div class="avatar avatar-xs"><img alt="Bordered Avatar 3"
+                                                            class="w-100 h-100 rounded-circle shadow"
+                                                            src="../images/avatars/avatar3.jpg"></div>
+                                                    <small class="mx-2 fw-semibold text-blue">+2</small>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="d-flex align-items-center gap-1">
+                                                    <img src="../images/lead_com_logos/googlemeet.png"
+                                                        alt="Google Meet">
+                                                    <small>On Google Meet</small>
+                                                </div>
+                                                <span class="badge bg-soft-blue rounded-pill py-1 px-2">Marketing</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Meeting card 2 -->
+                                <div class="col-md-6 col-12 mb-4">
+                                    <div class="card bg-gradient-orange mb-0">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-start">
+                                                <div>
+                                                    <h6 class="mb-0 text-dark fw-semibold">Meeting with James Brown</h6>
+                                                    <small>8:00-8:45 AM (UTC)</small>
+                                                </div>
+                                                <div class="dropdown">
+                                                    <button type="button" id="meetDrop1" aria-expanded="false"
+                                                        class="card-drop-icon dropdown-toggle btn btn-soft-orange avatar avatar-xxs rounded-2"
+                                                        data-bs-toggle="dropdown"><span><i
+                                                                class="bi bi-chevron-down"></i></span></button>
+                                                    <ul class="dropdown-menu dropdown-menu-end"
+                                                        aria-labelledby="meetDrop1">
+                                                        <li><a class="dropdown-item" href="#"><i
+                                                                    class="bi bi-eye me-2 text-primary"></i>View
+                                                                Details</a></li>
+                                                        <li><a class="dropdown-item" href="#"><i
+                                                                    class="bi bi-pencil me-2 text-info"></i>Edit
+                                                                Meeting</a></li>
+                                                        <li><a class="dropdown-item" href="#"><i
+                                                                    class="bi bi-person-plus me-2 text-success"></i>Add
+                                                                Member</a></li>
+                                                        <li>
+                                                            <hr class="dropdown-divider">
+                                                        </li>
+                                                        <li><a class="dropdown-item text-danger" href="#"><i
+                                                                    class="bi bi-trash me-2"></i>Cancel Meeting</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="avatar-wrap p-1 rounded-pill my-4 d-inline-block">
+                                                <div class="avatar-group">
+                                                    <div
+                                                        class="avatar avatar-xs avatar-soft-orange rounded-circle fw-semibold">
+                                                        EM</div>
+                                                    <div class="avatar avatar-xs"><img alt="Bordered Avatar 1"
+                                                            class="w-100 h-100 rounded-circle shadow"
+                                                            src="../images/avatars/avatar1.jpg"></div>
+                                                    <small class="mx-2 fw-semibold text-orange">+1</small>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="d-flex align-items-center gap-1">
+                                                    <img src="../images/lead_com_logos/zoom.png" alt="Google Meet">
+                                                    <small>On Zoom</small>
+                                                </div>
+                                                <span class="badge bg-soft-orange rounded-pill py-1 px-2">Product
+                                                    Manager</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Team Performance Overview -->
+                                <div class="col-12 mb-4">
+                                    <div class="card overflow-hidden mb-0">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center justify-content-between gap-2 mb-4">
+                                                <h5 class="card-title mb-0">Team Performance Overview</h5>
+                                                <div class="dropdown">
+                                                    <button type="button" id="highPerListDrop" aria-expanded="false"
+                                                        class="card-drop-icon dropdown-toggle btn"
+                                                        data-bs-toggle="dropdown">
+                                                        <i class="bi bi-three-dots fs-20"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu dropdown-menu-end"
+                                                        aria-labelledby="empDropdown">
+                                                        <li><a class="dropdown-item" href="#"><i
+                                                                    class="bi bi-arrow-clockwise me-2"></i>Refresh
+                                                                Report</a></li>
+                                                        <li><a href="#" class="dropdown-item" role="button"
+                                                                tabindex="0"><i class="bi bi-person me-2"></i>Manage
+                                                                Client</a></li>
+                                                        <li><a href="#" class="dropdown-item" role="button"
+                                                                tabindex="0"><i class="bi bi-gear me-2"></i>Details
+                                                                Settings</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="row g-3 mb-4">
+                                                <div class="col-md-6 col-12">
+                                                    <div class="p-3 border rounded-3 h-100">
+                                                        <div
+                                                            class="d-flex justify-content-between align-items-center mb-3">
+                                                            <h6 class="mb-0 text-dark fw-semibold">Overall Progress</h6>
+                                                            <span class="badge bg-soft-primary rounded-pill">78%</span>
+                                                        </div>
+                                                        <div class="mb-2 progress">
+                                                            <div role="progressbar"
+                                                                class="progress-bar progress-bar-striped progress-bar-animated"
+                                                                aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"
+                                                                style="width: 78%;"></div>
+                                                        </div>
+                                                        <small class="text-muted">12% increase from last month</small>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-12">
+                                                    <div class="p-3 border rounded-3 h-100">
+                                                        <div
+                                                            class="d-flex justify-content-between align-items-center mb-3">
+                                                            <h6 class="mb-0 text-dark fw-semibold">Tasks Completed</h6>
+                                                            <span
+                                                                class="badge bg-soft-success rounded-pill">156/200</span>
+                                                        </div>
+                                                        <div class="mb-2 progress">
+                                                            <div role="progressbar" class="progress-bar bg-success"
+                                                                aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"
+                                                                style="width: 78%;"></div>
+                                                        </div>
+                                                        <small class="text-muted">44 tasks remaining</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                                    <h6 class="mb-0 text-dark fw-semibold">Top Performers</h6><button
+                                                        type="button" class="p-0 btn btn-link btn-sm">View All</button>
+                                                </div>
+                                                <div data-simplebar style="max-height: 228px; overflow-y: auto;"
+                                                    class=" rounded-3">
+                                                    <div class="list-group list-group-flush">
+                                                        <div class="border-0 list-group-item py-3">
+                                                            <div class="d-flex align-items-center">
+                                                                <div
+                                                                    class="avatar avatar-sm avatar-title rounded-circle bg-soft-primary text-primary me-3">
+                                                                    JD</div>
+                                                                <div class="flex-grow-1">
+                                                                    <h6 class="mb-0 fw-semibold">John Doe</h6><small
+                                                                        class="text-muted">Project Manager</small>
+                                                                </div>
+                                                                <div class="text-end">
+                                                                    <div class="fw-medium text-muted">tasks</div>
+                                                                    <div class="d-flex column-gap-1">
+                                                                        <span
+                                                                            class="badge bg-soft-success align-middle fs-10 p-1"><i
+                                                                                class="ri-arrow-up-line"></i></span>
+                                                                        <small class="text-success">9%</small>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="border-0 list-group-item pb-3">
+                                                            <div class="d-flex align-items-center">
+                                                                <div
+                                                                    class="avatar avatar-sm avatar-title rounded-circle bg-soft-primary text-primary me-3">
+                                                                    As</div>
+                                                                <div class="flex-grow-1">
+                                                                    <h6 class="mb-0 fw-semibold">Alice Smith</h6><small
+                                                                        class="text-muted">UI/UX Designer</small>
+                                                                </div>
+                                                                <div class="text-end">
+                                                                    <div class="fw-medium text-muted">tasks</div>
+                                                                    <div class="d-flex  column-gap-1">
+                                                                        <span
+                                                                            class="badge bg-soft-success align-middle fs-10 p-1"><i
+                                                                                class="ri-arrow-up-line"></i></span>
+                                                                        <small class="text-success">17%</small>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="border-0 list-group-item pb-3">
+                                                            <div class="d-flex align-items-center">
+                                                                <div
+                                                                    class="avatar avatar-sm avatar-title rounded-circle bg-soft-primary text-primary me-3">
+                                                                    MJ</div>
+                                                                <div class="flex-grow-1">
+                                                                    <h6 class="mb-0 fw-semibold">Mike Johnson</h6><small
+                                                                        class="text-muted">Frontend Dev</small>
+                                                                </div>
+                                                                <div class="text-end">
+                                                                    <div class="fw-medium text-muted">tasks</div>
+                                                                    <div class="d-flex  column-gap-1">
+                                                                        <span
+                                                                            class="badge bg-soft-success align-middle fs-10 p-1"><i
+                                                                                class="ri-arrow-up-line"></i></span>
+                                                                        <small class="text-success">11%</small>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="border-0 list-group-item py-3">
+                                                            <div class="d-flex align-items-center">
+                                                                <div
+                                                                    class="avatar avatar-sm avatar-title rounded-circle bg-soft-primary text-primary me-3">
+                                                                    ML</div>
+                                                                <div class="flex-grow-1">
+                                                                    <h6 class="mb-0 fw-semibold">Mark Lee</h6><small
+                                                                        class="text-muted">Mobile App Launch</small>
+                                                                </div>
+                                                                <div class="text-end">
+                                                                    <div class="fw-medium text-muted">tasks</div>
+                                                                    <div class="d-flex  column-gap-1">
+                                                                        <span
+                                                                            class="badge bg-soft-success align-middle fs-10 p-1"><i
+                                                                                class="ri-arrow-up-line"></i></span>
+                                                                        <small class="text-success">10%</small>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="border-0 list-group-item py-3">
+                                                            <div class="d-flex align-items-center">
+                                                                <div
+                                                                    class="avatar avatar-sm avatar-title rounded-circle bg-soft-primary text-primary me-3">
+                                                                    JN</div>
+                                                                <div class="flex-grow-1">
+                                                                    <h6 class="mb-0 fw-semibold">Joyce Neal</h6><small
+                                                                        class="text-muted">SEO Optimization</small>
+                                                                </div>
+                                                                <div class="text-end">
+                                                                    <div class="fw-medium text-muted">tasks</div>
+                                                                    <div class="d-flex  column-gap-1">
+                                                                        <span
+                                                                            class="badge bg-soft-success align-middle fs-10 p-1"><i
+                                                                                class="ri-arrow-up-line"></i></span>
+                                                                        <small class="text-success">15%</small>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-12">
+                            <div class="row">
+                                <!-- Active Employees -->
+                                <div class="col-xl-12 col-md-6 col-12 mb-4">
+                                    <div class="card mb-0">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center justify-content-between mb-3">
+                                                <h5 class="card-title mb-0">Active Employees</h5>
+                                                <div class="dropdown">
+                                                    <button type="button" id="empSatisDrop" aria-expanded="false"
+                                                        class="card-drop-icon dropdown-toggle btn"
+                                                        data-bs-toggle="dropdown"><i
+                                                            class="bi bi-three-dots fs-20"></i></button>
+                                                    <div aria-labelledby="empSatisDrop"
+                                                        class="dropdown-menu dropdown-menu-end">
+                                                        <a class="dropdown-item" href="#" data-discover="true">Current
+                                                            Activity</a>
+                                                        <a class="dropdown-item" href="#" data-discover="true">Yasterday
+                                                            Activity</a>
+                                                        <a class="dropdown-item" href="#" data-discover="true">Clear
+                                                            History</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <ul class="list-group list-group-flush">
+                                                <li class="list-group-item bg-transparent mb-2 pb-3 px-0">
+                                                    <!--active emp1 -->
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="d-flex flex-wrap align-items-center gap-2">
+                                                            <div class="avatar avatar-xl custom-avatar overflow-hidden">
+                                                                <img alt="Active Employee" class="w-100 h-100"
+                                                                    src="../images/avatars/avatar3.jpg">
+                                                            </div>
+                                                            <div>
+                                                                <h6 class="mb-0 text-dark">Sarah Khan</h6>
+                                                                <small class="mb-0">Software Engineer</small>
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex flex-column">
+                                                            <div class="d-flex align-items-center gap-2">
+                                                                <p class="mb-1"><span class="text-primary me-1"><i
+                                                                            class="ri-circle-fill fs-12"></i></span>On-site
+                                                                </p>
+                                                                <button class="p-0 bg-transparent border-0">
+                                                                    <span class="lh-1"><i
+                                                                            class="ri-arrow-right-s-line fs-4"></i></span>
+                                                                </button>
+                                                            </div>
+                                                            <small><span><i
+                                                                        class="bi bi-clock-history me-1"></i></span>10
+                                                                Min Ago</small>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="list-group-item bg-transparent mb-2 pb-3 px-0">
+                                                    <!--active emp2 -->
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="d-flex flex-wrap align-items-center gap-2">
+                                                            <div class="avatar avatar-xl custom-avatar overflow-hidden">
+                                                                <img alt="Active Employee" class="w-100 h-100"
+                                                                    src="../images/avatars/avatar6.jpg">
+                                                            </div>
+                                                            <div>
+                                                                <h6 class="mb-0 text-dark">Mark Lee</h6>
+                                                                <small class="mb-0">Data Scientist</small>
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex flex-column">
+                                                            <div class="d-flex align-items-center gap-2">
+                                                                <p class="mb-1"><span class="text-primary me-1"><i
+                                                                            class="ri-square-fill fs-12"></i></span>Remote
+                                                                </p>
+                                                                <button class="p-0 bg-transparent border-0">
+                                                                    <span class="lh-1"><i
+                                                                            class="ri-arrow-right-s-line fs-4"></i></span>
+                                                                </button>
+                                                            </div>
+                                                            <small><span><i
+                                                                        class="bi bi-clock-history me-1"></i></span>30
+                                                                Min Ago</small>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="list-group-item bg-transparent mb-2 pb-3 px-0">
+                                                    <!--active emp3 -->
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="d-flex flex-wrap align-items-center gap-2">
+                                                            <div class="avatar avatar-xl custom-avatar overflow-hidden">
+                                                                <img alt="Active Employee" class="w-100 h-100"
+                                                                    src="../images/avatars/avatar2.jpg">
+                                                            </div>
+                                                            <div>
+                                                                <h6 class="mb-0 text-dark">Ollivia Joy</h6>
+                                                                <small class="mb-0">Frontend Developer</small>
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex flex-column">
+                                                            <div class="d-flex align-items-center gap-2">
+                                                                <p class="mb-1"><span class="text-primary me-1"><i
+                                                                            class="ri-circle-line fs-12"></i></span>Hybrid
+                                                                </p>
+                                                                <button class="p-0 bg-transparent border-0">
+                                                                    <span class="lh-1"><i
+                                                                            class="ri-arrow-right-s-line fs-4"></i></span>
+                                                                </button>
+                                                            </div>
+                                                            <small><span><i
+                                                                        class="bi bi-clock-history me-1"></i></span>45
+                                                                Min Ago</small>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="list-group-item bg-transparent mb-2 pb-3 px-0">
+                                                    <!--active emp3 -->
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <div class="d-flex flex-wrap align-items-center gap-2">
+                                                            <div class="avatar avatar-xl custom-avatar overflow-hidden">
+                                                                <img alt="Active Employee" class="w-100 h-100"
+                                                                    src="../images/avatars/avatar1.jpg">
+                                                            </div>
+                                                            <div>
+                                                                <h6 class="mb-0 text-dark">Kelvin Yia</h6>
+                                                                <small class="mb-0">Backend Developer</small>
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex flex-column">
+                                                            <div class="d-flex align-items-center gap-2">
+                                                                <p class="mb-1"><span class="text-primary me-1"><i
+                                                                            class="ri-circle-fill fs-12"></i></span>On-site
+                                                                </p>
+                                                                <button class="p-0 bg-transparent border-0">
+                                                                    <span class="lh-1"><i
+                                                                            class="ri-arrow-right-s-line fs-4"></i></span>
+                                                                </button>
+                                                            </div>
+                                                            <small><span><i
+                                                                        class="bi bi-clock-history me-1"></i></span>1
+                                                                Hours Ago</small>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="list-group-item bg-transparent px-0">
+                                                    <div class="text-center">
+                                                        <a href="#" class="text-primary mb-0">View All<span><i
+                                                                    class="ri-arrow-right-long-line ms-1"></i></span></a>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Client Satisfaction -->
+                                <div class="col-xl-12 col-md-6 col-12 mb-4">
+                                    <div class="card overflow-hidden mb-0">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <h5 class="card-title mb-0">Notes</h5>
+                                                <button class="btn btn-outline-secondary btn-xs rounded-1">+ Add
+                                                    Note</button>
+                                            </div>
+                                            <hr>
+                                            <div data-simplebar style="max-height: 310px; overflow-y: auto;"
+                                                class="rounded-3">
+                                                <ul class="list-group list-group-flush">
+                                                    <li class="list-group-item bg-transparent px-0">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input me-2" type="checkbox"
+                                                                value="" id="checkNote1">
+                                                            <label class="form-check-label w-100" for="checkNote1">
+                                                                <h6 class="text-dark mb-1">Text Input for Design
+                                                                    Syastem
+                                                                </h6>
+                                                                <small class="mb-3 d-block text-muted">Used to
+                                                                    capture short, single-line user input such
+                                                                    ...</small>
+                                                                <div
+                                                                    class="d-flex justify-content-between align-items-center gap-2 flex-wrap">
+                                                                    <div class="d-flex gap-2">
+                                                                        <span
+                                                                            class="badge badge-sm bg-info rounded-pill">Today</span>
+                                                                        <span
+                                                                            class="badge badge-sm bg-orange rounded-pill">To-do</span>
+                                                                    </div>
+                                                                    <small class="text-muted fs-12"><span
+                                                                            class="me-1 fs-6"><i
+                                                                                class="ri-calendar-line"></i></span>Aug
+                                                                        02</small>
+                                                                </div>
+                                                            </label>
+                                                        </div>
+                                                    </li>
+                                                    <li class="list-group-item bg-transparent px-0 pt-4">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input me-2" type="checkbox"
+                                                                value="" id="checkNote2">
+                                                            <label class="form-check-label w-100" for="checkNote2">
+                                                                <h6 class="text-dark mb-1">Meeting with Alice Smith
+                                                                </h6>
+                                                                <small class="mb-3 d-block text-muted">Discuss project
+                                                                    milestones, review current progress, ...</small>
+                                                                <div
+                                                                    class="d-flex justify-content-between align-items-center gap-2 flex-wrap">
+                                                                    <div class="d-flex gap-2">
+                                                                        <span
+                                                                            class="badge badge-sm bg-info rounded-pill">Today</span>
+                                                                        <span
+                                                                            class="badge badge-sm bg-orange rounded-pill">Meeting</span>
+                                                                    </div>
+                                                                    <small class="text-muted fs-12"><span
+                                                                            class="me-1 fs-6"><i
+                                                                                class="ri-calendar-line"></i></span>Mar
+                                                                        11</small>
+                                                                </div>
+                                                            </label>
+                                                        </div>
+                                                    </li>
+                                                    <li class="list-group-item bg-transparent px-0 pt-4">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input me-2" type="checkbox"
+                                                                value="" id="checkNote3" checked>
+                                                            <label class="form-check-label w-100" for="checkNote3">
+                                                                <h6 class="text-dark mb-1">UI Design Improvements
+                                                                </h6>
+                                                                <small class="mb-3 d-block text-muted">Observations and
+                                                                    recommendations to enhance layout ...</small>
+                                                                <div
+                                                                    class="d-flex justify-content-between align-items-center gap-2 flex-wrap">
+                                                                    <div class="d-flex gap-2">
+                                                                        <span
+                                                                            class="badge badge-sm bg-info rounded-pill">Today</span>
+                                                                        <span
+                                                                            class="badge badge-sm bg-orange rounded-pill">Meeting</span>
+                                                                    </div>
+                                                                    <small class="text-muted fs-12"><span
+                                                                            class="me-1 fs-6"><i
+                                                                                class="ri-calendar-line"></i></span>Jan
+                                                                        20</small>
+                                                                </div>
+                                                            </label>
+                                                        </div>
+                                                    </li>
+                                                    <li class="list-group-item bg-transparent px-0 pt-4">
+                                                        <div class="form-check">
+                                                            <input class="form-check-input me-2" type="checkbox"
+                                                                value="" id="checkNote3" checked disabled>
+                                                            <label class="form-check-label w-100" for="checkNote3">
+                                                                <h6 class="text-dark mb-1">Project Status Update
+                                                                </h6>
+                                                                <small class="mb-3 d-block text-muted">Current progress
+                                                                    overview, blockers, and milestones ...</small>
+                                                                <div
+                                                                    class="d-flex justify-content-between align-items-center gap-2 flex-wrap">
+                                                                    <div class="d-flex gap-2">
+                                                                        <span
+                                                                            class="badge badge-sm bg-info rounded-pill">Today</span>
+                                                                        <span
+                                                                            class="badge badge-sm bg-orange rounded-pill">To-do</span>
+                                                                    </div>
+                                                                    <small class="text-muted fs-12"><span
+                                                                            class="me-1 fs-6"><i
+                                                                                class="ri-calendar-line"></i></span>Fab
+                                                                        19</small>
+                                                                </div>
+                                                            </label>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Important News -->
+                                <div class="col-xl-12 col-md-6 col-12 mb-4">
+                                    <div class="card mb-0">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between mb-3">
+                                                <h5 class="card-title mb-0">Important News</h5>
+                                                <div class="dropdown">
+                                                    <button type="button" id="genderRatioDrop" aria-expanded="false"
+                                                        class="card-drop-icon dropdown-toggle btn"
+                                                        data-bs-toggle="dropdown"><i
+                                                            class="bi bi-three-dots fs-20"></i></button>
+                                                    <div aria-labelledby="genderRatioDrop"
+                                                        class="dropdown-menu dropdown-menu-end">
+                                                        <a class="dropdown-item" href="#" data-discover="true">Latest
+                                                            news</a>
+                                                        <a class="dropdown-item" href="#" data-discover="true">Previous
+                                                            news</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div data-simplebar style="max-height: 450px; overflow-y: auto;"
+                                                class="pt-1">
+                                                <div class="card news-card mb-3">
+                                                    <div class="card-body">
+                                                        <div class="d-flex gap-2">
+                                                            <div
+                                                                class="avatar avatar-lg avatar-outline-success rounded-circle fw-semibold">
+                                                                LC</div>
+                                                            <div>
+                                                                <h6 class="text-dark mb-0">Lead Conversion</h6>
+                                                                <p class="mb-0">Lead conversion rate increased 5%</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-end">
+                                                            <small>
+                                                                <span><i class="bi bi-clock me-1"></i></span>
+                                                                09:45
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card news-card mb-3">
+                                                    <div class="card-body">
+                                                        <div class="d-flex gap-2">
+                                                            <div
+                                                                class="avatar rounded-circle avatar-lg overflow-hidden">
+                                                                <img alt="Rounded Avatar 4" class="w-100 h-100"
+                                                                    src="../images/avatars/avatar4.jpg">
+                                                            </div>
+                                                            <div>
+                                                                <h6 class="text-dark mb-0">New lead added</h6>
+                                                                <p class="mb-0">New lead assigned to John Doe</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-end">
+                                                            <small>
+                                                                <span><i class="bi bi-clock me-1"></i></span>
+                                                                01:15
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card news-card mb-3">
+                                                    <div class="card-body">
+                                                        <div class="d-flex gap-2">
+                                                            <div
+                                                                class="avatar avatar-lg avatar-outline-danger rounded-circle fw-semibold">
+                                                                PX</div>
+                                                            <div>
+                                                                <h6 class="text-dark mb-0">Product X: Target Missed</h6>
+                                                                <p class="mb-0">Sales target missed for Product X</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-end">
+                                                            <small>
+                                                                <span><i class="bi bi-calendar-event me-1"></i></span>
+                                                                01/01/2026
+                                                            </small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card news-card mb-3">
+                                                    <div class="card-body">
+                                                        <div class="d-flex gap-2">
+                                                            <div
+                                                                class="avatar rounded-circle avatar-lg overflow-hidden">
+                                                                <img alt="Rounded Avatar 4" class="w-100 h-100"
+                                                                    src="../images/avatars/avatar5.jpg">
+                                                            </div>
+                                                            <div>
+                                                                <h6 class="text-dark mb-0">New lead added</h6>
+                                                                <p class="mb-0">New lead assigned to Ollivia Joy</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-end">
+                                                            <small><span><i
+                                                                        class="bi bi-calendar-event me-1"></i></span>05/01/2025</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card news-card mb-3">
+                                                    <div class="card-body">
+                                                        <div class="d-flex gap-2">
+                                                            <div
+                                                                class="avatar rounded-circle avatar-lg overflow-hidden">
+                                                                <img alt="Rounded Avatar 4" class="w-100 h-100"
+                                                                    src="../images/avatars/avatar6.jpg">
+                                                            </div>
+                                                            <div>
+                                                                <h6 class="text-dark mb-0">New lead added</h6>
+                                                                <p class="mb-0">New lead assigned to Ethan Ray</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-end">
+                                                            <small><span><i
+                                                                        class="bi bi-calendar-event me-1"></i></span>02/01/2025</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Client Satisfaction -->
+                                <div class="col-xl-12 col-md-6 col-12 mb-4">
+                                    <div class="card overflow-hidden mb-0">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center justify-content-between gap-2">
+                                                <h5 class="card-title mb-0">Client Satisfaction</h5>
+                                                <div class="dropdown">
+                                                    <button type="button" id="highPerListDrop" aria-expanded="false" class="card-drop-icon dropdown-toggle btn" data-bs-toggle="dropdown">
+                                                        <i class="bi bi-three-dots fs-20"></i>
+                                                    </button>
+                                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="empDropdown">
+                                                        <li><a class="dropdown-item" href="#"><i class="bi bi-arrow-clockwise me-2"></i>Refresh Report</a></li>
+                                                        <li><a href="#" class="dropdown-item" role="button" tabindex="0"><i class="bi bi-person me-2"></i>Manage Client</a></li>
+                                                        <li><a href="#" class="dropdown-item" role="button" tabindex="0"><i class="bi bi-gear me-2"></i>Details Settings</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div style="width: 100%; height: 260px; overflow: hidden;">
+                                                <div id="clientSatisfyChart"></div>
+                                            </div>
+                                            <div
+                                                class="table-responsive border border-1 border-secondary rounded-top-3 border-opacity-25">
+                                                <table id="client-satisfy-table"
+                                                    class="table mb-0 table-last-br-none">
+                                                    <thead class="table-light">
+                                                        <tr>
+                                                            <th>Category</th>
+                                                            <th>Propertion</th>
+                                                            <th>Count</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody></tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            %%include('./partials/layout/footer.html')
+
+        </div>
+    </div>
+    %%include('./partials/layout/right-sidebar.html')
+
+    <!-- %%include('./partials/right-sidebar.html')
+    %%include('./partials/back-to-top.html') -->
+
+    %%include('./partials/layout/footer-js.html')
+    <script src="plugins/apexcharts/apexcharts.min.js"></script>
+    <script src="plugins/jsvectormap/jsvectormap.min.js"></script>
+    <script src="plugins/jsvectormap/maps/world.js"></script>
+    <script src="js/pages/emp_analytics.js"></script>
+    <script src="js/pages/sales_lead.js"></script>
+    <script src="js/pages/performance.js"></script>
+
+
+</body>
+
+</html>

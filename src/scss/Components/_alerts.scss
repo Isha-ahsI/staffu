@@ -1,0 +1,90 @@
+// alerts.scss
+
+@each $color, $value in $theme-colors {
+    .alert-#{$color} {
+        color: rgba(var(--bs-#{$color}-rgb), 0.85);
+        background-color: rgba(var(--bs-#{$color}-rgb), 0.1);
+        border-color: rgba(var(--bs-#{$color}-rgb), .4) !important;
+
+        .alert-icon {
+            background-color: rgba(var(--bs-#{$color}-rgb), 0.1);
+        }
+
+        .alert-link {
+            color: rgba(var(--bs-#{$color}-rgb), 0.75);
+        }
+
+        hr {
+            border-color: rgba(var(--bs-#{$color}-rgb), .75);
+        }
+    }
+
+    .alert-outline-#{$color} {
+        --#{$prefix}alert-border-color: var(--bs-#{$color});
+        --#{$prefix}alert-color: var(--bs-#{$color});
+        --#{$prefix}alert-bg: transparent;
+
+        .alert-icon {
+            border:1px solid rgba(var(--bs-#{$color}-rgb), 0.7);
+        }
+
+        hr {
+            border-color: var(--bs-#{$color});
+        }
+    }
+}
+
+.alert {
+    position: relative;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: $font-weight-medium;
+
+    .btn-close {
+        top: auto;
+        transition: $transition;
+
+        &:hover {
+            transform: rotate(-90deg);
+        }
+    }
+
+    .alert-icon{
+        margin-right: .5rem;
+        padding: 0px 5px;
+        border-radius: $border-radius-2xl;
+    }
+
+    .alert-link {
+        margin-left: .25rem;
+        text-decoration: underline;
+    }
+}
+
+.alert-outline-light,
+.alert-light {
+    color: $dark;
+}
+
+[data-bs-theme="dark"] {
+
+    .alert-light,
+    .alert-outline-light {
+        color: $gray-100 !important;
+    }
+
+    .alert-dark {
+        background-color: tint-color($gray-900, 25%);
+        color: tint-color($gray-900, 75%);
+        border-color: $gray-700 !important;
+    }
+
+    .alert-outline-dark {
+        color: tint-color($gray-900, 75%);
+        border-color: $gray-700;
+        .alert-icon {
+            border:1px solid rgba($gray-700, 0.7);
+        }
+    }
+}

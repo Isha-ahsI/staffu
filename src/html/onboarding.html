@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <div class="page-layout">
+        %%include('./partials/layout/header.html')
+        %%include('./partials/layout/left-sidebar.html')
+        <div class="page-wrapper">
+            <div class="page-content">
+                %%include('./partials/components/page-title.html', { pageTitle: 'On/Off Boarding', pagePrTitle:
+                'Employees' })
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row mb-4">
+                                        <div class="col-12">
+                                            <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+                                                <div class="toggle-btn d-flex position-relative">
+                                                    <div class="btn-overlay"></div>
+                                                    <button class="toggle-option btn btn-link btn-sm active" id="onboardingBtn">Onboarding</button>
+                                                    <button class="toggle-option btn btn-link btn-sm" id="offboardingBtn">Offboarding</button>
+                                                </div>
+                                                <div class="d-flex flex-wrap align-items-center gap-2">
+                                                    <div class="input-icon">
+                                                        <span class="search-icon"><i class="bi bi-search"></i></span>
+                                                        <input class="form-control" type="text" placeholder="Search..." aria-label="employee search input" id="OnboardingSearchInput">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <!-- Bording cards group -->
+                                            <div class="boarding-cards">
+                                                <!-- Onborading Cards group -->
+                                                <div class="boarding-group" id="onBoarding">
+                                                    <div class="row">
+                                                        <!-- emp-1 -->
+                                                        <div class="col-xxl-3 col-xl-4 col-md-6 col-12">
+                                                            <div class="card onboarding-card">
+                                                                <div class="card-header py-3">
+                                                                    <div class="d-flex justify-content-between gap-2">
+                                                                        <div class="d-flex flex-wrap align-items-center gap-3">
+                                                                            <img alt="custom Avatar 1" class="avatar-img-xxxxl custom-avatar" src="../images/avatars/avatar1.jpg">
+                                                                            <div class="d-flex flex-column">
+                                                                                <h6 class="fw-bold fs-18 mb-1 text-dark">Joyce Neal</h6>
+                                                                                <small class="text-muted">Emp-112</small>
+                                                                                <small class="text-muted">Software Engineer</small>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="dropdown">
+                                                                            <button type="button" id="onBoardingDrop" aria-expanded="false" class="card-drop-icon dropdown-toggle btn btn-link-dark" data-bs-toggle="dropdown"><i class="bi bi-three-dots-vertical fs-20"></i></button>
+                                                                            <div aria-labelledby="onBoardingDrop" class="dropdown-menu dropdown-menu-end">
+                                                                                <a class="dropdown-item" href="#" data-discover="true"><i class="bi bi-person-check me-1"></i> Complete Onboarding</a>
+                                                                                <a class="dropdown-item" href="#" data-discover="true"><i class="bi bi-pencil me-1"></i> Edit Details</a>
+                                                                                <a class="dropdown-item" href="#" data-discover="true"><i class="bi bi-file-earmark-text me-1"></i> View Documents</a>
+                                                                                <hr class="dropdown-divider">
+                                                                                <a class="dropdown-item text-danger" href="#" data-discover="true"><i class="bi bi-trash me-1"></i> Remove Employee</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <h5 class="fw-semibold text-dark mb-3">Personal Details</h5>
+                                                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-2">
+                                                                        <p class="mb-0"><span class="me-1 fs-18"><i class="ri-mail-line me-1"></i></span>Email</p>
+                                                                        <p class="text-dark mb-0">joyce.neal@gmail.com</p>
+                                                                    </div>
+                                                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-2">
+                                                                        <p class="mb-0"><span class="me-1 fs-18"><i class="ri-smartphone-line me-1"></i></span>Phone No</p>
+                                                                        <p class="text-dark mb-0">+1 234 567 890</p>
+                                                                    </div>
+                                                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-1">
+                                                                        <p class="mb-0"><span class="me-1 fs-18"><i class="ri-phone-line me-1"></i></span>Emergency No</p>
+                                                                        <p class="text-dark mb-0">+0 890 567 890</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                                                                    <button type="button" class="btn btn-sm btn-gradient-alt-primary" data-bs-toggle="modal" data-bs-target="#onboardingEmpModal">View Details</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- emp-2 -->
+                                                        <div class="col-xxl-3 col-xl-4 col-md-6 col-12">
+                                                            <div class="card onboarding-card">
+                                                                <div class="card-header py-3">
+                                                                    <div class="d-flex justify-content-between gap-2">
+                                                                        <div class="d-flex flex-wrap align-items-center gap-3">
+                                                                            <img alt="custom Avatar 1" class="avatar-img-xxxxl custom-avatar" src="../images/avatars/avatar2.jpg">
+                                                                            <div class="d-flex flex-column">
+                                                                                <h6 class="fw-bold fs-18 mb-1 text-dark">Tiger Nixon</h6>
+                                                                                <small class="text-muted">Emp-120</small>
+                                                                                <small class="text-muted">Frontent Developer</small>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="dropdown">
+                                                                            <button type="button" id="onBoardingDrop" aria-expanded="false" class="card-drop-icon dropdown-toggle btn btn-link-dark" data-bs-toggle="dropdown"><i class="bi bi-three-dots-vertical fs-20"></i></button>
+                                                                            <div aria-labelledby="onBoardingDrop" class="dropdown-menu dropdown-menu-end">
+                                                                                <a class="dropdown-item" href="#" data-discover="true"><i class="bi bi-person-check me-1"></i> Complete Onboarding</a>
+                                                                                <a class="dropdown-item" href="#" data-discover="true"><i class="bi bi-pencil me-1"></i> Edit Details</a>
+                                                                                <a class="dropdown-item" href="#" data-discover="true"><i class="bi bi-file-earmark-text me-1"></i> View Documents</a>
+                                                                                <hr class="dropdown-divider">
+                                                                                <a class="dropdown-item text-danger" href="#" data-discover="true"><i class="bi bi-trash me-1"></i> Remove Employee</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <h5 class="fw-semibold text-dark mb-3">Personal Details</h5>
+                                                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-2">
+                                                                        <p class="mb-0"><span class="me-1 fs-18"><i class="ri-mail-line me-1"></i></span>Email</p>
+                                                                        <p class="text-dark mb-0">tiger.nixon@gmail.com</p>
+                                                                    </div>
+                                                                    <div
+                                                                        class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-2">
+                                                                        <p class="mb-0"><span class="me-1 fs-18"><i class="ri-smartphone-line me-1"></i></span>Phone No</p>
+                                                                        <p class="text-dark mb-0">+1 567 567 890</p>
+                                                                    </div>
+                                                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-1">
+                                                                        <p class="mb-0"><span class="me-1 fs-18"><i class="ri-phone-line me-1"></i></span>Emergency No</p>
+                                                                        <p class="text-dark mb-0">+0 478 567 890</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                                                                    <button type="button" class="btn btn-sm btn-gradient-alt-primary" data-bs-toggle="modal" data-bs-target="#onboardingEmpModal">View Details</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- emp-3 -->
+                                                        <div class="col-xxl-3 col-xl-4 col-md-6 col-12">
+                                                            <div class="card onboarding-card">
+                                                                <div class="card-header py-3">
+                                                                    <div class="d-flex justify-content-between gap-2">
+                                                                        <div class="d-flex flex-wrap align-items-center gap-3">
+                                                                            <img alt="custom Avatar 1" class="avatar-img-xxxxl custom-avatar" src="../images/avatars/avatar3.jpg">
+                                                                            <div class="d-flex flex-column">
+                                                                                <h6 class="fw-bold fs-18 mb-1 text-dark"> Ethan Ray</h6>
+                                                                                <small class="text-muted">Emp-128</small>
+                                                                                <small class="text-muted">Customer Support</small>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="dropdown">
+                                                                            <button type="button" id="onBoardingDrop" aria-expanded="false" class="card-drop-icon dropdown-toggle btn btn-link-dark" data-bs-toggle="dropdown"><i class="bi bi-three-dots-vertical fs-20"></i></button>
+                                                                            <div aria-labelledby="onBoardingDrop" class="dropdown-menu dropdown-menu-end">
+                                                                                <a class="dropdown-item" href="#" data-discover="true"><i class="bi bi-person-check me-1"></i> Complete Onboarding</a>
+                                                                                <a class="dropdown-item" href="#" data-discover="true"><i class="bi bi-pencil me-1"></i> Edit Details</a>
+                                                                                <a class="dropdown-item" href="#" data-discover="true"><i class="bi bi-file-earmark-text me-1"></i> View Documents</a>
+                                                                                <hr class="dropdown-divider">
+                                                                                <a class="dropdown-item text-danger" href="#" data-discover="true"><i class="bi bi-trash me-1"></i> Remove Employee</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <h5 class="fw-semibold text-dark mb-3">Personal Details</h5>
+                                                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-2">
+                                                                        <p class="mb-0"><span class="me-1 fs-18"><i class="ri-mail-line me-1"></i></span>Email</p>
+                                                                        <p class="text-dark mb-0">ethan.ray@gmail.com</p>
+                                                                    </div>
+                                                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-2">
+                                                                        <p class="mb-0"><span class="me-1 fs-18"><i class="ri-smartphone-line me-1"></i></span>Phone No</p>
+                                                                        <p class="text-dark mb-0">+1 965 567 890</p>
+                                                                    </div>
+                                                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-1">
+                                                                        <p class="mb-0"><span class="me-1 fs-18"><i class="ri-phone-line me-1"></i></span>Emergency No</p>
+                                                                        <p class="text-dark mb-0">+0 478 567 890</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                                                                    <button type="button" class="btn btn-sm btn-gradient-alt-primary" data-bs-toggle="modal" data-bs-target="#onboardingEmpModal">View Details</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- emp-4 -->
+                                                        <div class="col-xxl-3 col-xl-4 col-md-6 col-12">
+                                                            <div class="card onboarding-card">
+                                                                <div class="card-header py-3">
+                                                                    <div class="d-flex justify-content-between gap-2">
+                                                                        <div class="d-flex flex-wrap align-items-center gap-3">
+                                                                            <img alt="custom Avatar 1" class="avatar-img-xxxxl custom-avatar" src="../images/avatars/avatar4.jpg">
+                                                                            <div class="d-flex flex-column">
+                                                                                <h6 class="fw-bold fs-18 mb-1 text-dark">Kelvin Yia</h6>
+                                                                                <small class="text-muted">Emp-134</small>
+                                                                                <small class="text-muted">Graphic Designer</small>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="dropdown">
+                                                                            <button type="button" id="onBoardingDrop" aria-expanded="false" class="card-drop-icon dropdown-toggle btn btn-link-dark" data-bs-toggle="dropdown"><i class="bi bi-three-dots-vertical fs-20"></i></button>
+                                                                            <div aria-labelledby="onBoardingDrop" class="dropdown-menu dropdown-menu-end">
+                                                                                <a class="dropdown-item" href="#" data-discover="true"><i class="bi bi-person-check me-1"></i> Complete Onboarding</a>
+                                                                                <a class="dropdown-item" href="#" data-discover="true"><i class="bi bi-pencil me-1"></i> Edit Details</a>
+                                                                                <a class="dropdown-item" href="#" data-discover="true"><i class="bi bi-file-earmark-text me-1"></i> View Documents</a>
+                                                                                <hr class="dropdown-divider">
+                                                                                <a class="dropdown-item text-danger" href="#" data-discover="true"><i class="bi bi-trash me-1"></i> Remove Employee</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <h5 class="fw-semibold text-dark mb-3">Personal Details</h5>
+                                                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-2">
+                                                                        <p class="mb-0"><span class="me-1 fs-18"><i class="ri-mail-line me-1"></i></span>Email</p>
+                                                                        <p class="text-dark mb-0">kelvin.yia@yahoo.com</p>
+                                                                    </div>
+                                                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-2">
+                                                                        <p class="mb-0"><span class="me-1 fs-18"><i class="ri-smartphone-line me-1"></i></span>Phone No</p>
+                                                                        <p class="text-dark mb-0">+1 234 852 890</p>
+                                                                    </div>
+                                                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-1">
+                                                                        <p class="mb-0"><span class="me-1 fs-18"><i class="ri-phone-line me-1"></i></span>Emergency No</p>
+                                                                        <p class="text-dark mb-0">+0 890 567 456</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                                                                    <button type="button" class="btn btn-sm btn-gradient-alt-primary" data-bs-toggle="modal" data-bs-target="#onboardingEmpModal">View Details</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- emp-5 -->
+                                                        <div class="col-xxl-3 col-xl-4 col-md-6 col-12">
+                                                            <div class="card onboarding-card">
+                                                                <div class="card-header py-3">
+                                                                    <div class="d-flex justify-content-between gap-2">
+                                                                        <div class="d-flex flex-wrap align-items-center gap-3">
+                                                                            <img alt="custom Avatar 1" class="avatar-img-xxxxl custom-avatar" src="../images/avatars/avatar5.jpg">
+                                                                            <div class="d-flex flex-column">
+                                                                                <h6 class="fw-bold fs-18 mb-1 text-dark">Ollivia Joy</h6>
+                                                                                <small class="text-muted">Emp-127</small>
+                                                                                <small class="text-muted">Site Supervisior</small>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="dropdown">
+                                                                            <button type="button" id="onBoardingDrop" aria-expanded="false" class="card-drop-icon dropdown-toggle btn btn-link-dark" data-bs-toggle="dropdown"><i class="bi bi-three-dots-vertical fs-20"></i></button>
+                                                                            <div aria-labelledby="onBoardingDrop" class="dropdown-menu dropdown-menu-end">
+                                                                                <a class="dropdown-item" href="#" data-discover="true"><i class="bi bi-person-check me-1"></i> Complete Onboarding</a>
+                                                                                <a class="dropdown-item" href="#" data-discover="true"><i class="bi bi-pencil me-1"></i> Edit Details</a>
+                                                                                <a class="dropdown-item" href="#" data-discover="true"><i class="bi bi-file-earmark-text me-1"></i> View Documents</a>
+                                                                                <hr class="dropdown-divider">
+                                                                                <a class="dropdown-item text-danger" href="#" data-discover="true"><i class="bi bi-trash me-1"></i> Remove Employee</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <h5 class="fw-semibold text-dark mb-3">Personal Details</h5>
+                                                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-2">
+                                                                        <p class="mb-0"><span class="me-1 fs-18"><i class="ri-mail-line me-1"></i></span>Email</p>
+                                                                        <p class="text-dark mb-0">ollivia.joy@yahoo.com</p>
+                                                                    </div>
+                                                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-2">
+                                                                        <p class="mb-0"><span class="me-1 fs-18"><i class="ri-smartphone-line me-1"></i></span>Phone No</p>
+                                                                        <p class="text-dark mb-0">+1 234 567 852</p>
+                                                                    </div>
+                                                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-1">
+                                                                        <p class="mb-0"><span class="me-1 fs-18"><i class="ri-phone-line me-1"></i></span>Emergency No</p>
+                                                                        <p class="text-dark mb-0">+0 890 456 890</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                                                                    <button type="button" class="btn btn-sm btn-gradient-alt-primary" data-bs-toggle="modal" data-bs-target="#onboardingEmpModal">View Details</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- emp-6 -->
+                                                        <div class="col-xxl-3 col-xl-4 col-md-6 col-12">
+                                                            <div class="card onboarding-card">
+                                                                <div class="card-header py-3">
+                                                                    <div class="d-flex justify-content-between gap-2">
+                                                                        <div class="d-flex flex-wrap align-items-center gap-3">
+                                                                            <img alt="custom Avatar 1" class="avatar-img-xxxxl custom-avatar" src="../images/avatars/avatar6.jpg">
+                                                                            <div class="d-flex flex-column">
+                                                                                <h6 class="fw-bold fs-18 mb-1 text-dark">Mark Lee</h6>
+                                                                                <small class="text-muted">Emp-125</small>
+                                                                                <small class="text-muted">Data Scientist</small>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="dropdown">
+                                                                            <button type="button" id="onBoardingDrop" aria-expanded="false" class="card-drop-icon dropdown-toggle btn btn-link-dark" data-bs-toggle="dropdown"><i class="bi bi-three-dots-vertical fs-20"></i></button>
+                                                                            <div aria-labelledby="onBoardingDrop" class="dropdown-menu dropdown-menu-end">
+                                                                                <a class="dropdown-item" href="#" data-discover="true"><i class="bi bi-person-check me-1"></i> Complete Onboarding</a>
+                                                                                <a class="dropdown-item" href="#" data-discover="true"><i class="bi bi-pencil me-1"></i> Edit Details</a>
+                                                                                <a class="dropdown-item" href="#" data-discover="true"><i class="bi bi-file-earmark-text me-1"></i> View Documents</a>
+                                                                                <hr class="dropdown-divider">
+                                                                                <a class="dropdown-item text-danger" href="#" data-discover="true"><i class="bi bi-trash me-1"></i> Remove Employee</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <h5 class="fw-semibold text-dark mb-3">Personal Details</h5>
+                                                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-2">
+                                                                        <p class="mb-0"><span class="me-1 fs-18"><i class="ri-mail-line me-1"></i></span>Email</p>
+                                                                        <p class="text-dark mb-0">mark.lee@yahoo.com</p>
+                                                                    </div>
+                                                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-2">
+                                                                        <p class="mb-0"><span class="me-1 fs-18"><i class="ri-smartphone-line me-1"></i></span>Phone No</p>
+                                                                        <p class="text-dark mb-0">+1 234 753 890</p>
+                                                                    </div>
+                                                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-1">
+                                                                        <p class="mb-0"><span class="me-1 fs-18"><i class="ri-phone-line me-1"></i></span>Emergency No</p>
+                                                                        <p class="text-dark mb-0">+0 890 567 951</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                                                                    <button type="button" class="btn btn-sm btn-gradient-alt-primary" data-bs-toggle="modal" data-bs-target="#onboardingEmpModal">View Details</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- emp-7 -->
+                                                        <div class="col-xxl-3 col-xl-4 col-md-6 col-12">
+                                                            <div class="card onboarding-card">
+                                                                <div class="card-header py-3">
+                                                                    <div class="d-flex justify-content-between gap-2">
+                                                                        <div class="d-flex flex-wrap align-items-center gap-3">
+                                                                            <img alt="custom Avatar 1" class="avatar-img-xxxxl custom-avatar" src="../images/avatars/avatar7.jpg">
+                                                                            <div class="d-flex flex-column">
+                                                                                <h6 class="fw-bold fs-18 mb-1 text-dark">Sophia Jackson</h6>
+                                                                                <small class="text-muted">Emp-131</small>
+                                                                                <small class="text-muted">DevOps Engineer</small>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="dropdown">
+                                                                            <button type="button" id="onBoardingDrop" aria-expanded="false" class="card-drop-icon dropdown-toggle btn btn-link-dark" data-bs-toggle="dropdown"><i class="bi bi-three-dots-vertical fs-20"></i></button>
+                                                                            <div aria-labelledby="onBoardingDrop" class="dropdown-menu dropdown-menu-end">
+                                                                                <a class="dropdown-item" href="#" data-discover="true"><i class="bi bi-person-check me-1"></i> Complete Onboarding</a>
+                                                                                <a class="dropdown-item" href="#" data-discover="true"><i class="bi bi-pencil me-1"></i> Edit Details</a>
+                                                                                <a class="dropdown-item" href="#" data-discover="true"><i class="bi bi-file-earmark-text me-1"></i> View Documents</a>
+                                                                                <hr class="dropdown-divider">
+                                                                                <a class="dropdown-item text-danger" href="#" data-discover="true"><i class="bi bi-trash me-1"></i> Remove Employee</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <h5 class="fw-semibold text-dark mb-3">Personal Details</h5>
+                                                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-2">
+                                                                        <p class="mb-0"><span class="me-1 fs-18"><i class="ri-mail-line me-1"></i></span>Email</p>
+                                                                        <p class="text-dark mb-0">sophia.jackson@yahoo.com</p>
+                                                                    </div>
+                                                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-2">
+                                                                        <p class="mb-0"><span class="me-1 fs-18"><i class="ri-smartphone-line me-1"></i></span>Phone No</p>
+                                                                        <p class="text-dark mb-0">+1 842 567 890</p>
+                                                                    </div>
+                                                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-1">
+                                                                        <p class="mb-0"><span class="me-1 fs-18"><i class="ri-phone-line me-1"></i></span>Emergency No</p>
+                                                                        <p class="text-dark mb-0">+0 862 567 890</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                                                                    <button type="button" class="btn btn-sm btn-gradient-alt-primary" data-bs-toggle="modal" data-bs-target="#onboardingEmpModal">View Details</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- emp-8 -->
+                                                        <div class="col-xxl-3 col-xl-4 col-md-6 col-12">
+                                                            <div class="card onboarding-card">
+                                                                <div class="card-header py-3">
+                                                                    <div class="d-flex justify-content-between gap-2">
+                                                                        <div class="d-flex flex-wrap align-items-center gap-3">
+                                                                            <img alt="custom Avatar 1" class="avatar-img-xxxxl custom-avatar" src="../images/avatars/avatar8.jpg">
+                                                                            <div class="d-flex flex-column">
+                                                                                <h6 class="fw-bold fs-18 mb-1 text-dark">Laura Taylor</h6>
+                                                                                <small class="text-muted">Emp-136</small>
+                                                                                <small class="text-muted">Frontend Developer</small>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="dropdown">
+                                                                            <button type="button" id="onBoardingDrop" aria-expanded="false" class="card-drop-icon dropdown-toggle btn btn-link-dark" data-bs-toggle="dropdown"><i class="bi bi-three-dots-vertical fs-20"></i></button>
+                                                                            <div aria-labelledby="onBoardingDrop" class="dropdown-menu dropdown-menu-end">
+                                                                                <a class="dropdown-item" href="#" data-discover="true"><i class="bi bi-person-check me-1"></i> Complete Onboarding</a>
+                                                                                <a class="dropdown-item" href="#" data-discover="true"><i class="bi bi-pencil me-1"></i> Edit Details</a>
+                                                                                <a class="dropdown-item" href="#" data-discover="true"><i class="bi bi-file-earmark-text me-1"></i> View Documents</a>
+                                                                                <hr class="dropdown-divider">
+                                                                                <a class="dropdown-item text-danger" href="#" data-discover="true"><i class="bi bi-trash me-1"></i> Remove Employee</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <h5 class="fw-semibold text-dark mb-3">Personal Details</h5>
+                                                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-2">
+                                                                        <p class="mb-0"><span class="me-1 fs-18"><i class="ri-mail-line me-1"></i></span>Email</p>
+                                                                        <p class="text-dark mb-0">laura.taylor@yahoo.com</p>
+                                                                    </div>
+                                                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-2">
+                                                                        <p class="mb-0"><span class="me-1 fs-18"><i class="ri-smartphone-line me-1"></i></span>Phone No</p>
+                                                                        <p class="text-dark mb-0">+1 234 567 268</p>
+                                                                    </div>
+                                                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-1">
+                                                                        <p class="mb-0"><span class="me-1 fs-18"><i class="ri-phone-line me-1"></i></span>Emergency No</p>
+                                                                        <p class="text-dark mb-0">+0 890 567 248</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                                                                    <button type="button" class="btn btn-sm btn-gradient-alt-primary" data-bs-toggle="modal" data-bs-target="#onboardingEmpModal">View Details</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- emp-9 -->
+                                                        <div class="col-xxl-3 col-xl-4 col-md-6 col-12">
+                                                            <div class="card onboarding-card">
+                                                                <div class="card-header py-3">
+                                                                    <div class="d-flex justify-content-between gap-2">
+                                                                        <div class="d-flex flex-wrap align-items-center gap-3">
+                                                                            <img alt="custom Avatar 1" class="avatar-img-xxxxl custom-avatar" src="../images/avatars/avatar9.jpg">
+                                                                            <div class="d-flex flex-column">
+                                                                                <h6 class="fw-bold fs-18 mb-1 text-dark">Daniel Miller</h6>
+                                                                                <small class="text-muted">Emp-139</small>
+                                                                                <small class="text-muted">Finance Analyst</small>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="dropdown">
+                                                                            <button type="button" id="onBoardingDrop" aria-expanded="false" class="card-drop-icon dropdown-toggle btn btn-link-dark" data-bs-toggle="dropdown"><i class="bi bi-three-dots-vertical fs-20"></i></button>
+                                                                            <div aria-labelledby="onBoardingDrop" class="dropdown-menu dropdown-menu-end">
+                                                                                <a class="dropdown-item" href="#" data-discover="true"><i class="bi bi-person-check me-1"></i> Complete Onboarding</a>
+                                                                                <a class="dropdown-item" href="#" data-discover="true"><i class="bi bi-pencil me-1"></i> Edit Details</a>
+                                                                                <a class="dropdown-item" href="#" data-discover="true"><i class="bi bi-file-earmark-text me-1"></i> View Documents</a>
+                                                                                <hr class="dropdown-divider">
+                                                                                <a class="dropdown-item text-danger" href="#" data-discover="true"><i class="bi bi-trash me-1"></i> Remove Employee</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <h5 class="fw-semibold text-dark mb-3">Personal Details</h5>
+                                                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-2">
+                                                                        <p class="mb-0"><span class="me-1 fs-18"><i class="ri-mail-line me-1"></i></span>Email</p>
+                                                                        <p class="text-dark mb-0">daniel.miller@yahoo.com</p>
+                                                                    </div>
+                                                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-2">
+                                                                        <p class="mb-0"><span class="me-1 fs-18"><i class="ri-smartphone-line me-1"></i></span>Phone No</p>
+                                                                        <p class="text-dark mb-0">+1 234 567 740</p>
+                                                                    </div>
+                                                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-1">
+                                                                        <p class="mb-0"><span class="me-1 fs-18"><i class="ri-phone-line me-1"></i></span>Emergency No</p>
+                                                                        <p class="text-dark mb-0">+0 890 567 899</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                                                                    <button type="button" class="btn btn-sm btn-gradient-alt-primary" data-bs-toggle="modal" data-bs-target="#onboardingEmpModal">View Details</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- emp-10 -->
+                                                        <div class="col-xxl-3 col-xl-4 col-md-6 col-12">
+                                                            <div class="card onboarding-card mb-0">
+                                                                <div class="card-header py-3">
+                                                                    <div class="d-flex justify-content-between gap-2">
+                                                                        <div class="d-flex flex-wrap align-items-center gap-3">
+                                                                            <img alt="custom Avatar 1" class="avatar-img-xxxxl custom-avatar" src="../images/avatars/avatar10.jpg">
+                                                                            <div class="d-flex flex-column">
+                                                                                <h6 class="fw-bold fs-18 mb-1 text-dark">Priya Sharma</h6>
+                                                                                <small class="text-muted">Emp-140</small>
+                                                                                <small class="text-muted">Sales Executive</small>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="dropdown">
+                                                                            <button type="button" id="onBoardingDrop" aria-expanded="false" class="card-drop-icon dropdown-toggle btn btn-link-dark" data-bs-toggle="dropdown"><i class="bi bi-three-dots-vertical fs-20"></i></button>
+                                                                            <div aria-labelledby="onBoardingDrop" class="dropdown-menu dropdown-menu-end">
+                                                                                <a class="dropdown-item" href="#" data-discover="true"><i class="bi bi-person-check me-1"></i> Complete Onboarding</a>
+                                                                                <a class="dropdown-item" href="#" data-discover="true"><i class="bi bi-pencil me-1"></i> Edit Details</a>
+                                                                                <a class="dropdown-item" href="#" data-discover="true"><i class="bi bi-file-earmark-text me-1"></i> View Documents</a>
+                                                                                <hr class="dropdown-divider">
+                                                                                <a class="dropdown-item text-danger" href="#" data-discover="true"><i class="bi bi-trash me-1"></i> Remove Employee</a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <h5 class="fw-semibold text-dark mb-3">Personal Details</h5>
+                                                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-2">
+                                                                        <p class="mb-0"><span class="me-1 fs-18"><i class="ri-mail-line me-1"></i></span>Email</p>
+                                                                        <p class="text-dark mb-0">priya.sharma@gmail.com</p>
+                                                                    </div>
+                                                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-2">
+                                                                        <p class="mb-0"><span class="me-1 fs-18"><i class="ri-smartphone-line me-1"></i></span>Phone No</p>
+                                                                        <p class="text-dark mb-0">+1 234 967 890</p>
+                                                                    </div>
+                                                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-1">
+                                                                        <p class="mb-0"><span class="me-1 fs-18"><i class="ri-phone-line me-1"></i></span>Emergency No</p>
+                                                                        <p class="text-dark mb-0">+0 890 507 890</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-footer bg-transparent border-0 pt-0 pb-3">
+                                                                    <button type="button" class="btn btn-sm btn-gradient-alt-primary" data-bs-toggle="modal" data-bs-target="#onboardingEmpModal">View Details</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Offborading Cards group -->
+                                                <div class="boarding-group d-none" id="offBoarding">
+                                                    <div class="row">
+                                                        <!-- emp-1 -->
+                                                        <div class="col-xxl-3 col-lg-4 col-md-6 col-12">
+                                                            <div class="card offboarding-card">
+                                                                <div class="card-body">
+                                                                    <div
+                                                                        class="d-flex flex-column justify-content-center align-items-center mb-4">
+                                                                        <img alt="custom Avatar 1" class="avatar-img-xxxxl custom-avatar mb-3" src="../images/avatars/avatar10.jpg">
+                                                                        <h5 class="fw-bold mb-1 text-dark">Priya Sharma</h5>
+                                                                        <div class="d-flex align-items-center gap-1">
+                                                                            <span class="me-1 fs-18 text-dark"><i class="ri-mail-line"></i></span>
+                                                                            <p class="text-dark mb-0">priya.sharma@gmail.com</p>
+                                                                        </div>
+
+                                                                        <div class="d-flex align-items-center gap-1">
+                                                                            <span class="me-1 fs-18 text-dark"><i class="ri-phone-line fs-18"></i></span>
+                                                                            <p class="text-dark mb-0">+1 234 967 890</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <hr class="hr-style-1">
+                                                                    <div class="d-flex flex-wrap align-items-end justify-content-between gap-3">
+                                                                        <div class="d-flex flex-column gap-1">
+                                                                            <small><span class="me-1 fs-18"><i class="ri-calendar-event-line"></i></span>Resignation Date</small>
+                                                                            <p class="text-dark mb-0">20 January,2026</p>
+                                                                        </div>
+                                                                        <button type="button" class="btn btn-sm btn-gradient-alt-primary" data-bs-toggle="modal" data-bs-target="#offboardingEmpModal">View Details</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- emp-2 -->
+                                                        <div class="col-xxl-3 col-lg-4 col-md-6 col-12">
+                                                            <div class="card offboarding-card">
+                                                                <div class="card-body">
+                                                                    <div class="d-flex flex-column justify-content-center align-items-center mb-4">
+                                                                        <img alt="custom Avatar 1" class="avatar-img-xxxxl custom-avatar mb-3" src="../images/avatars/avatar9.jpg">
+                                                                        <h5 class="fw-bold mb-1 text-dark">Daniel Miller</h5>
+                                                                        <div class="d-flex align-items-center gap-1">
+                                                                            <span class="me-1 fs-18 text-dark"><i class="ri-mail-line"></i></span>
+                                                                            <p class="text-dark mb-0">daniel.miller@yahoo.com</p>
+                                                                        </div>
+                                                                        <div class="d-flex align-items-center gap-1">
+                                                                            <span class="me-1 fs-18 text-dark"><i class="ri-phone-line fs-18"></i></span>
+                                                                            <p class="text-dark mb-0">+1 741 967 890</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <hr class="hr-style-1">
+                                                                    <div class="d-flex flex-wrap align-items-end justify-content-between gap-3">
+                                                                        <div class="d-flex flex-column gap-1">
+                                                                            <small><span class="me-1 fs-18"><i class="ri-calendar-event-line"></i></span>Resignation Date</small>
+                                                                            <p class="text-dark mb-0">31 January,2026</p>
+                                                                        </div>
+                                                                        <button type="button" class="btn btn-sm btn-gradient-alt-primary" data-bs-toggle="modal" data-bs-target="#offboardingEmpModal">View Details</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- emp-3 -->
+                                                        <div class="col-xxl-3 col-lg-4 col-md-6 col-12">
+                                                            <div class="card offboarding-card">
+                                                                <div class="card-body">
+                                                                    <div class="d-flex flex-column justify-content-center align-items-center mb-4">
+                                                                        <img alt="custom Avatar 1" class="avatar-img-xxxxl custom-avatar mb-3" src="../images/avatars/avatar8.jpg">
+                                                                        <h5 class="fw-bold mb-1 text-dark">Laura Taylor</h5>
+                                                                        <div class="d-flex align-items-center gap-1">
+                                                                            <span class="me-1 fs-18 text-dark"><i class="ri-mail-line"></i></span>
+                                                                            <p class="text-dark mb-0">laura.taylor@yahoo.com</p>
+                                                                        </div>
+                                                                        <div class="d-flex align-items-center gap-1">
+                                                                            <span class="me-1 fs-18 text-dark"><i class="ri-phone-line fs-18"></i></span>
+                                                                            <p class="text-dark mb-0">+1 234 456 890</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <hr class="hr-style-1">
+                                                                    <div class="d-flex flex-wrap align-items-end justify-content-between gap-3">
+                                                                        <div class="d-flex flex-column gap-1">
+                                                                            <small><span class="me-1 fs-18"><i class="ri-calendar-event-line"></i></span>Resignation Date</small>
+                                                                            <p class="text-dark mb-0">28 Febuary,2026</p>
+                                                                        </div>
+                                                                        <button type="button" class="btn btn-sm btn-gradient-alt-primary" data-bs-toggle="modal" data-bs-target="#offboardingEmpModal">View Details</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- emp-4 -->
+                                                        <div class="col-xxl-3 col-lg-4 col-md-6 col-12">
+                                                            <div class="card offboarding-card">
+                                                                <div class="card-body">
+                                                                    <div class="d-flex flex-column justify-content-center align-items-center mb-4">
+                                                                        <img alt="custom Avatar 1" class="avatar-img-xxxxl custom-avatar mb-3" src="../images/avatars/avatar7.jpg">
+                                                                        <h5 class="fw-bold mb-1 text-dark">Sophia Jackson</h5>
+                                                                        <div class="d-flex align-items-center gap-1">
+                                                                            <span class="me-1 fs-18 text-dark"><i class="ri-mail-line"></i></span>
+                                                                            <p class="text-dark mb-0">sophia.jackson@yahoo.com</p>
+                                                                        </div>
+                                                                        <div class="d-flex align-items-center gap-1">
+                                                                            <span class="me-1 fs-18 text-dark"><i class="ri-phone-line fs-18"></i></span>
+                                                                            <p class="text-dark mb-0">+1 234 967 417</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <hr class="hr-style-1">
+                                                                    <div class="d-flex flex-wrap align-items-end justify-content-between gap-3">
+                                                                        <div class="d-flex flex-column gap-1">
+                                                                            <small><span class="me-1 fs-18"><i class="ri-calendar-event-line"></i></span>Resignation Date</small>
+                                                                            <p class="text-dark mb-0">10 December,2025</p>
+                                                                        </div>
+                                                                        <button type="button" class="btn btn-sm btn-gradient-alt-primary" data-bs-toggle="modal" data-bs-target="#offboardingEmpModal">View Details</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- emp-5 -->
+                                                        <div class="col-xxl-3 col-lg-4 col-md-6 col-12">
+                                                            <div class="card offboarding-card">
+                                                                <div class="card-body">
+                                                                    <div class="d-flex flex-column justify-content-center align-items-center mb-4">
+                                                                        <img alt="custom Avatar 1" class="avatar-img-xxxxl custom-avatar mb-3" src="../images/avatars/avatar6.jpg">
+                                                                        <h5 class="fw-bold mb-1 text-dark">Mark Lee</h5>
+                                                                        <div class="d-flex align-items-center gap-1">
+                                                                            <span class="me-1 fs-18 text-dark"><i class="ri-mail-line"></i></span>
+                                                                            <p class="text-dark mb-0">mark.lee@yahoo.com</p>
+                                                                        </div>
+                                                                        <div class="d-flex align-items-center gap-1">
+                                                                            <span class="me-1 fs-18 text-dark"><i class="ri-phone-line fs-18"></i></span>
+                                                                            <p class="text-dark mb-0">+1 234 890 890</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <hr class="hr-style-1">
+                                                                    <div class="d-flex flex-wrap align-items-end justify-content-between gap-3">
+                                                                        <div class="d-flex flex-column gap-1">
+                                                                            <small><span class="me-1 fs-18"><i class="ri-calendar-event-line"></i></span>Resignation Date</small>
+                                                                            <p class="text-dark mb-0">25 November,2025</p>
+                                                                        </div>
+                                                                        <button type="button" class="btn btn-sm btn-gradient-alt-primary" data-bs-toggle="modal" data-bs-target="#offboardingEmpModal">View Details</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- emp-6 -->
+                                                        <div class="col-xxl-3 col-lg-4 col-md-6 col-12">
+                                                            <div class="card offboarding-card">
+                                                                <div class="card-body">
+                                                                    <div class="d-flex flex-column justify-content-center align-items-center mb-4">
+                                                                        <img alt="custom Avatar 1" class="avatar-img-xxxxl custom-avatar mb-3" src="../images/avatars/avatar5.jpg">
+                                                                        <h5 class="fw-bold mb-1 text-dark">Ollivia Joy</h5>
+                                                                        <div class="d-flex align-items-center gap-1">
+                                                                            <span class="me-1 fs-18 text-dark"><i class="ri-mail-line"></i></span>
+                                                                            <p class="text-dark mb-0">ollivia.joy@yahoo.com</p>
+                                                                        </div>
+                                                                        <div class="d-flex align-items-center gap-1">
+                                                                            <span class="me-1 fs-18 text-dark"><i class="ri-phone-line fs-18"></i></span>
+                                                                            <p class="text-dark mb-0">+1 234 967 415</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <hr class="hr-style-1">
+                                                                    <div class="d-flex flex-wrap align-items-end justify-content-between gap-3">
+                                                                        <div class="d-flex flex-column gap-1">
+                                                                            <small><span class="me-1 fs-18"><i class="ri-calendar-event-line"></i></span>Resignation Date</small>
+                                                                            <p class="text-dark mb-0">31 December,2025</p>
+                                                                        </div>
+                                                                        <button type="button" class="btn btn-sm btn-gradient-alt-primary" data-bs-toggle="modal" data-bs-target="#offboardingEmpModal">View Details</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- emp-7 -->
+                                                        <div class="col-xxl-3 col-lg-4 col-md-6 col-12">
+                                                            <div class="card offboarding-card">
+                                                                <div class="card-body">
+                                                                    <div class="d-flex flex-column justify-content-center align-items-center mb-4">
+                                                                        <img alt="custom Avatar 1" class="avatar-img-xxxxl custom-avatar mb-3" src="../images/avatars/avatar4.jpg">
+                                                                        <h5 class="fw-bold mb-1 text-dark">Kelvin Yia</h5>
+                                                                        <div class="d-flex align-items-center gap-1">
+                                                                            <span class="me-1 fs-18 text-dark"><i class="ri-mail-line"></i></span>
+                                                                            <p class="text-dark mb-0">kelvin.yia@yahoo.com</p>
+                                                                        </div>
+                                                                        <div class="d-flex align-items-center gap-1">
+                                                                            <span class="me-1 fs-18 text-dark"><i class="ri-phone-line fs-18"></i></span>
+                                                                            <p class="text-dark mb-0">+1 748 967 890</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <hr class="hr-style-1">
+                                                                    <div class="d-flex flex-wrap align-items-end justify-content-between gap-3">
+                                                                        <div class="d-flex flex-column gap-1">
+                                                                            <small><span class="me-1 fs-18"><i class="ri-calendar-event-line"></i></span>Resignation Date</small>
+                                                                            <p class="text-dark mb-0">06 January,2026 </p>
+                                                                        </div>
+                                                                        <button type="button" class="btn btn-sm btn-gradient-alt-primary" data-bs-toggle="modal" data-bs-target="#offboardingEmpModal">View Details</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- emp-8 -->
+                                                        <div class="col-xxl-3 col-lg-4 col-md-6 col-12">
+                                                            <div class="card offboarding-card">
+                                                                <div class="card-body">
+                                                                    <div class="d-flex flex-column justify-content-center align-items-center mb-4">
+                                                                        <img alt="custom Avatar 1" class="avatar-img-xxxxl custom-avatar mb-3" src="../images/avatars/avatar10.jpg">
+                                                                        <h5 class="fw-bold mb-1 text-dark">Ethan Ray</h5>
+                                                                        <div class="d-flex align-items-center gap-1">
+                                                                            <span class="me-1 fs-18 text-dark"><i class="ri-mail-line"></i></span>
+                                                                            <p class="text-dark mb-0">ethan.ray@yahoo.com</p>
+                                                                        </div>
+                                                                        <div class="d-flex align-items-center gap-1">
+                                                                            <span class="me-1 fs-18 text-dark"><i class="ri-phone-line fs-18"></i></span>
+                                                                            <p class="text-dark mb-0">+1 234 482 890</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <hr class="hr-style-1">
+                                                                    <div class="d-flex flex-wrap align-items-end justify-content-between gap-3">
+                                                                        <div class="d-flex flex-column gap-1">
+                                                                            <small><span class="me-1 fs-18"><i class="ri-calendar-event-line"></i></span>Resignation Date</small>
+                                                                            <p class="text-dark mb-0">14 Febuary,2026</p>
+                                                                        </div>
+                                                                        <button type="button" class="btn btn-sm btn-gradient-alt-primary" data-bs-toggle="modal" data-bs-target="#offboardingEmpModal">View Details</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- emp-9 -->
+                                                        <div class="col-xxl-3 col-lg-4 col-md-6 col-12">
+                                                            <div class="card offboarding-card">
+                                                                <div class="card-body">
+                                                                    <div class="d-flex flex-column justify-content-center align-items-center mb-4">
+                                                                        <img alt="custom Avatar 1" class="avatar-img-xxxxl custom-avatar mb-3" src="../images/avatars/avatar2.jpg">
+                                                                        <h5 class="fw-bold mb-1 text-dark">Joyce Neal</h5>
+                                                                        <div class="d-flex align-items-center gap-1">
+                                                                            <span class="me-1 fs-18 text-dark"><i class="ri-mail-line"></i></span>
+                                                                            <p class="text-dark mb-0">joyce.neal@yahoo.com</p>
+                                                                        </div>
+                                                                        <div class="d-flex align-items-center gap-1">
+                                                                            <span class="me-1 fs-18 text-dark"><i class="ri-phone-line fs-18"></i></span>
+                                                                            <p class="text-dark mb-0">+1 234 967 632</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <hr class="hr-style-1">
+                                                                    <div class="d-flex flex-wrap align-items-end justify-content-between gap-3">
+                                                                        <div class="d-flex flex-column gap-1">
+                                                                            <small><span class="me-1 fs-18"><i class="ri-calendar-event-line"></i></span>Resignation Date</small>
+                                                                            <p class="text-dark mb-0">15 December,2025</p>
+                                                                        </div>
+                                                                        <button type="button" class="btn btn-sm btn-gradient-alt-primary" data-bs-toggle="modal" data-bs-target="#offboardingEmpModal">View Details</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- emp-10 -->
+                                                        <div class="col-xxl-3 col-lg-4 col-md-6 col-12">
+                                                            <div class="card offboarding-card">
+                                                                <div class="card-body">
+                                                                    <div class="d-flex flex-column justify-content-center align-items-center mb-4">
+                                                                        <img alt="custom Avatar 1" class="avatar-img-xxxxl custom-avatar mb-3" src="../images/avatars/avatar1.jpg">
+                                                                        <h5 class="fw-bold mb-1 text-dark">Tiger Nixon</h5>
+                                                                        <div class="d-flex align-items-center gap-1">
+                                                                            <span class="me-1 fs-18 text-dark"><i class="ri-mail-line"></i></span>
+                                                                            <p class="text-dark mb-0">tiger.nixon@yahoo.com</p>
+                                                                        </div>
+                                                                        <div class="d-flex align-items-center gap-1">
+                                                                            <span class="me-1 fs-18 text-dark"><i class="ri-phone-line fs-18"></i></span>
+                                                                            <p class="text-dark mb-0">+1 745 967 890</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <hr class="hr-style-1">
+                                                                    <div class="d-flex flex-wrap align-items-end justify-content-between gap-3">
+                                                                        <div class="d-flex flex-column gap-1">
+                                                                            <small><span class="me-1 fs-18"><i class="ri-calendar-event-line"></i></span>Resignation Date</small>
+                                                                            <p class="text-dark mb-0">27 November,2026</p>
+                                                                        </div>
+                                                                        <button type="button" class="btn btn-sm btn-gradient-alt-primary" data-bs-toggle="modal" data-bs-target="#offboardingEmpModal">View Details</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            %%include('./partials/layout/footer.html')
+
+        </div>
+    </div>
+
+
+    <!-- onboarding emp modal -->
+    <div class="modal fade" id="onboardingEmpModal" tabindex="-1" aria-labelledby="onboardingEmpModalLabel">
+        <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 fw-semibold" id="onboardingEmpModalLabel">Employee Details</h1>
+                    <p class="mb-1">Onboarding Information.</p>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="d-flex flex-wrap justify-content-between align-items-end gap-3">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <img alt="custom Avatar 1" class="avatar-img-xxxxl custom-avatar"
+                                            src="../images/avatars/avatar1.jpg">
+                                        <div>
+                                            <small class="text-muted mb-1">Emp-112</small>
+                                            <h5 class="fw-bold text-dark">Joyce Neal</h5>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <button type="button" class="btn btn-sm btn-primary rounded-3"><span
+                                                class="me-1 lh-1 align-middle"><i
+                                                    class="bi bi-cloud-arrow-down fs-5"></i></span>Documnets</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row grid-border-lg">
+                            <div class="col-lg-6 col-12">
+                                <!-- personal info -->
+                                <h5 class="fw-semibold text-dark">Personal Details</h5>
+                                <div class="d-flex justify-content-between align-items-center gap-1 mb-2">
+                                    <small><span class="me-1 fs-18"><i class="ri-mail-line"></i></span>Email</small>
+                                    <p class="text-dark mb-0 text-end">joyce.neal@gmail.com
+                                    </p>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center gap-1 mb-2">
+                                    <small><span class="me-1 fs-18"><i class="ri-smartphone-line fs-18"></i></span>Phone
+                                        No</small>
+                                    <p class="text-dark mb-0 text-end">+1 234 567 890</p>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center gap-1">
+                                    <small><span class="me-1 fs-18"><i class="ri-phone-line fs-18"></i></span>Emergency
+                                        No</small>
+                                    <p class="text-dark mb-0 text-end">+0 890 567 890</p>
+                                </div>
+                                <hr class="mt-4 br-dashed">
+                                <!-- Job Details -->
+                                <h5 class="fw-semibold text-dark">Job Details</h5>
+                                <div class="d-flex justify-content-between align-items-center gap-1 mb-2">
+                                    <small><span class="me-1 fs-18"><i
+                                                class="ri-building-line"></i></span>Designation</small>
+                                    <p class="text-dark mb-0 text-end">Software Engineer</p>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center gap-1 mb-2">
+                                    <small><span class="me-1 fs-18"><i
+                                                class="ri-suitcase-line"></i></span>Department</small>
+                                    <p class="text-dark mb-0 text-end">Engineering</p>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center gap-1 mb-2">
+                                    <small><span class="me-1 fs-18"><i class="ri-user-6-line"></i></span>Reporting
+                                        Manager</small>
+                                    <p class="text-dark mb-0 text-end">Amit Patel</p>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center gap-1">
+                                    <small><span class="me-1 fs-18"><i class="ri-calendar-line fs-18"></i></span>Joining
+                                        Date</small>
+                                    <p class="text-dark mb-0 text-end">20 Jan,2026</p>
+                                </div>
+                                <hr class="mt-4 br-dashed">
+                                <!-- Asset Allocation -->
+                                <h5 class="fw-semibold text-dark mb-3">Asset Allocation</h5>
+                                <div class="d-flex flex-wrap align-items-center gap-2 mb-lg-3">
+                                    <span
+                                        class="badge bg-soft-success border-0 fs-14 fw-normal rounded-pill px-3">Laptop</span>
+                                    <span
+                                        class="badge bg-soft-danger border-0 fs-14 fw-normal rounded-pill px-3">Mouse</span>
+                                    <span
+                                        class="badge bg-soft-danger border-0 fs-14 fw-normal rounded-pill px-3">Headset</span>
+                                </div>
+                            </div>
+                            <hr class="mt-4 br-dashed d-lg-none d-block">
+                            <div class="col-lg-6 col-12">
+                                <!-- Document Checklist -->
+                                <h5 class="fw-semibold text-dark mb-3">Document Checklist</h5>
+                                <!-- Aadhar/PAN Card -->
+                                <div class="d-flex justify-content-between align-items-center doc-item"
+                                    data-status="true">
+                                    <p class="mb-0 text-dark">Aadhar/PAN
+                                        Card</p>
+                                    <span class="status-icon doc-one">
+                                        <i class="ri-checkbox-fill fs-5"></i>
+                                    </span>
+                                    <span class="status-icon doc-two">
+                                        <i class="ri-close-circle-fill fs-5"></i>
+                                    </span>
+                                </div>
+                                <!-- igned Offer Letter -->
+                                <div class="d-flex justify-content-between align-items-center doc-item"
+                                    data-status="false">
+                                    <p class="mb-0 text-dark">Signed Offer
+                                        Letter
+                                    </p>
+                                    <span class="status-icon doc-one">
+                                        <i class="ri-checkbox-fill fs-5"></i>
+                                    </span>
+                                    <span class="status-icon doc-two">
+                                        <i class="ri-close-circle-fill fs-5"></i>
+                                    </span>
+                                </div>
+                                <!-- Educational Certificates -->
+                                <div class="d-flex justify-content-between align-items-center doc-item"
+                                    data-status="true">
+                                    <p class="mb-0 text-dark">Educational
+                                        Certificates</p>
+                                    <span class="status-icon doc-one">
+                                        <i class="ri-checkbox-fill fs-5"></i>
+                                    </span>
+                                    <span class="status-icon doc-two">
+                                        <i class="ri-close-circle-fill fs-5"></i>
+                                    </span>
+                                </div>
+                                <hr class="mt-4 br-dashed">
+                                <!-- IT Setup Status -->
+                                <h5 class="fw-semibold text-dark mb-3">IT Setup Status</h5>
+                                <div class="progress-stacked">
+                                    <div class="progress" role="progressbar" aria-label="Company Email Created"
+                                        aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"
+                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                        title="Company Email Created: 40%" data-bs-custom-class="custom-tooltip">
+                                        <div class="progress-bar bg-success">
+                                        </div>
+                                    </div>
+                                    <div class="progress" role="progressbar"
+                                        aria-label="Slack / Teams Access In Progress" aria-valuenow="25"
+                                        aria-valuemin="0" aria-valuemax="100" style="width: 25%"
+                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                        title="Slack / Teams Access In Progress: 25%">
+                                        <div class="progress-bar bg-warning">
+                                        </div>
+                                    </div>
+                                    <div class="progress" role="progressbar" aria-label="CRM login access"
+                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%"
+                                        data-bs-toggle="tooltip" data-bs-placement="top" title="CRM login access: 25%">
+                                        <div class="progress-bar bg-blue">
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="mt-4 br-dashed">
+                                <!-- Training Progress -->
+                                <h5 class="fw-semibold text-dark mb-3">Training Progress</h5>
+                                <div class="progress mb-3" role="progressbar" aria-label="Training Progress"
+                                    aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                                    <div class="progress-bar  progress-bar-striped progress-bar-animated bg-primary"
+                                        style="width: 60%">60%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- offboarding emp modal -->
+    <div class="modal fade" id="offboardingEmpModal" tabindex="-1" aria-labelledby="offboardingEmpModalLabel">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 fw-semibold" id="offboardingEmpModalLabel">Employee Details</h1>
+                    <p class="mb-1">Offboarding Information.</p>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="d-flex flex-wrap justify-content-between align-items-end gap-3">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <img alt="custom Avatar 1" class="avatar-img-xxxxl custom-avatar"
+                                            src="../images/avatars/avatar10.jpg">
+                                        <div class="d-flex flex-column">
+                                            <h6 class="fw-bold text-dark mb-1"><span><i class="ri-user-line"></i></span>
+                                                Priya Sharma</h6>
+                                            <small class="text-muted"><span><i class="ri-mail-line"></i></span>
+                                                priya.sharma@gmail.com</small>
+                                            <small class="text-muted"><span><i class="ri-phone-line fs-18"></i></span>+1
+                                                234 967 890</small>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <button type="button" class="btn btn-sm btn-primary rounded-3"><span
+                                                class="me-1 lh-1 align-middle"><i
+                                                    class="bi bi-cloud-arrow-down fs-5"></i></span>Documnets</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- Resignation Date -->
+                        <div class="d-flex justify-content-between align-items-center gap-1 mb-3">
+                            <small><span class="me-1 fs-18 text-dark"><i
+                                        class="ri-calendar-event-line"></i></span>Resignation
+                                Date</small>
+                            <p class="text-dark mb-0 fw-semibold">20 January,2026</p>
+                        </div>
+                        <!-- Asset Recovery Checklist -->
+                        <h5 class="fw-semibold text-dark mb-3">Asset Allocation</h5>
+                        <div class="d-flex flex-wrap align-items-center gap-2 mb-lg-3">
+                            <span class="badge bg-soft-success border-0 fs-14 fw-normal rounded-pill px-3">Laptop</span>
+                            <span
+                                class="badge bg-soft-success border-0 fs-14 fw-normal rounded-pill px-3">Headset</span>
+                            <span class="badge bg-soft-danger border-0 fs-14 fw-normal rounded-pill px-3">ID Card</span>
+                        </div>
+                        <hr class="br-dashed">
+                        <!-- Access Revocation -->
+                        <h5 class="fw-semibold text-dark mb-3">Access Revocation</h5>
+                        <!-- CRM access disable -->
+                        <div class="d-flex justify-content-between align-items-center doc-item" data-status="true">
+                            <p class="mb-0 text-dark">CRM access disable</p>
+                            <span class="status-icon doc-one">
+                                <i class="ri-checkbox-fill fs-5"></i>
+                            </span>
+                            <span class="status-icon doc-two">
+                                <i class="ri-close-circle-fill fs-5"></i>
+                            </span>
+                        </div>
+                        <!-- Email account block -->
+                        <div class="d-flex justify-content-between align-items-center doc-item" data-status="false">
+                            <p class="mb-0 text-dark">Email account block</p>
+                            <span class="status-icon doc-one">
+                                <i class="ri-checkbox-fill fs-5"></i>
+                            </span>
+                            <span class="status-icon doc-two">
+                                <i class="ri-close-circle-fill fs-5"></i>
+                            </span>
+                        </div>
+                        <!-- Server access remove -->
+                        <div class="d-flex justify-content-between align-items-center doc-item" data-status="true">
+                            <p class="mb-0 text-dark">Server access remove</p>
+                            <span class="status-icon doc-one">
+                                <i class="ri-checkbox-fill fs-5"></i>
+                            </span>
+                            <span class="status-icon doc-two">
+                                <i class="ri-close-circle-fill fs-5"></i>
+                            </span>
+                        </div>
+                        <hr class="br-dashed">
+                        <!-- Full & Final (F&F) Settlement -->
+                        <h5 class="fw-semibold text-dark mb-3">Full & Final Settlement</h5>
+                        <!-- Salary dues -->
+                        <div class="d-flex justify-content-between align-items-center doc-item" data-status="true">
+                            <p class="mb-0 text-dark">Salary dues</p>
+                            <span class="status-icon doc-one">
+                                <i class="ri-checkbox-fill fs-5"></i>
+                            </span>
+                            <span class="status-icon doc-two">
+                                <i class="ri-close-circle-fill fs-5"></i>
+                            </span>
+                        </div>
+                        <!-- Experience Letter -->
+                        <div class="d-flex justify-content-between align-items-center doc-item" data-status="true">
+                            <p class="mb-0 text-dark">Experience Letter</p>
+                            <span class="status-icon doc-one">
+                                <i class="ri-checkbox-fill fs-5"></i>
+                            </span>
+                            <span class="status-icon doc-two">
+                                <i class="ri-close-circle-fill fs-5"></i>
+                            </span>
+                        </div>
+                        <!-- Gratuity -->
+                        <div class="d-flex justify-content-between align-items-center doc-item" data-status="false">
+                            <p class="mb-0 text-dark">Gratuity</p>
+                            <span class="status-icon doc-one">
+                                <i class="ri-checkbox-fill fs-5"></i>
+                            </span>
+                            <span class="status-icon doc-two">
+                                <i class="ri-close-circle-fill fs-5"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    %%include('./partials/layout/right-sidebar.html')
+
+    <!-- %%include('./partials/right-sidebar.html')
+    %%include('./partials/back-to-top.html') -->
+
+    %%include('./partials/layout/footer-js.html')
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="plugins/datatables.net/js/dataTables.min.js"></script>
+    <script src="plugins/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+    <script src="plugins/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="plugins/datatables.net-responsive-dt/js/responsive.dataTables.min.js"></script>
+    <script src="js/pages/onboarding.js"></script>
+
+</body>
+
+</html>

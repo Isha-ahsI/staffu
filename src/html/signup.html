@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <section class="auth-page">
+        <div class="overlay"></div>
+        <div class="container position-relative z-3">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card auth-card rounded-5 overflow-hidden">
+                        <div class="card-body p-0">
+                            <div class="row">
+                                <div class="col-lg-6 col-12 d-lg-block d-none">
+                                    <div class="p-4 auth-sec-border rounded-5 bg-dark h-100">
+                                        <div class="swiper authSwiper overflow-hidden h-100 w-100" id="authSignUpSwiper">
+                                            <!-- Additional required wrapper -->
+                                            <div class="swiper-wrapper">
+                                                <!-- Slides -->
+                                                <div class="swiper-slide">
+                                                    <div class="m-4">
+                                                        <h4 class="text-center mb-1 fw-bold text-light mb-5">Visualize
+                                                            trends, track key metrics, and gain real-time insights to
+                                                            make faster, data-driven decisions that drive growth.</h4>
+                                                        <img src="../images/dashboard_img/dash1.jpg" alt=""
+                                                            class="img-fluid rounded-3 dash-img-shadow">
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="m-4">
+                                                        <h4 class="text-center mb-1 fw-bold text-light mb-5">Accelerate
+                                                            Your Sales Pipeline With Real-Time Performance Tracking</h4>
+                                                        <img src="../images/dashboard_img/dash2.jpg" alt=""
+                                                            class="img-fluid rounded-3 dash-img-shadow">
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="m-4">
+                                                        <h4 class="text-center mb-1 fw-bold text-light mb-5">Simplify
+                                                            Attendance Management With Smart Tracking Tools</h4>
+                                                        <img src="../images/dashboard_img/dash3.jpg" alt=""
+                                                            class="img-fluid rounded-3 dash-img-shadow">
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="m-4">
+                                                        <h4 class="text-center mb-1 fw-bold text-light mb-5">Measure,
+                                                            Analyze, and Improve Team Performance Seamlessly</h4>
+                                                        <img src="../images/dashboard_img/dash4.jpg" alt=""
+                                                            class="img-fluid rounded-3 dash-img-shadow">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- If we need pagination -->
+                                            <div class="swiper-pagination"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-12">
+                                    <div class="m-4">
+                                        <div class="p-xl-4">
+                                            <div class="d-flex align-items-center justify-content-center mb-4">
+                                                <img src="images/logos/logo_light.png" height="30" alt="Light Logo">
+                                            </div>
+                                            <h1 class="text-white fw-bold mb-1">Sign Up</h1>
+                                            <p class="text-light text-opacity-75">Start your 30-days trial.</p>
+                                            <form class="auth-form">
+                                                <div class="mb-4">
+                                                    <label for="authUsername" class="form-label text-light fw-light">Username</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text bg-light bg-opacity-75 border-0 text-dark"><i class="bi bi-person-fill fs-5"></i></span>
+                                                        <input placeholder="Enter Your Username" required="" id="authUsername"
+                                                            class="form-control auth-control" type="text" value="Joyce Neal" name="userName" autocomplete="username">
+                                                    </div>
+                                                </div>
+    
+                                                <div class="mb-4">
+                                                    <label for="authEmail" class="form-label text-light fw-light">Email ID</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text bg-light bg-opacity-75 border-0 text-dark"><i class="bi bi-envelope-at-fill fs-5"></i></span>
+                                                        <input placeholder="Enter Your Email ID" required="" id="authEmail"
+                                                            class="form-control auth-control" type="email" value="joyce.neal@example.com"
+                                                            name="emailId">
+                                                    </div>
+                                                    <div id="emailHelp" class="form-text text-secondary">We'll never share your
+                                                        email with
+                                                        anyone else.</div>
+                                                </div>
+    
+                                                <div class="mb-4">
+                                                    <label for="authPassword" class="form-label text-light fw-light">Password</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text bg-light bg-opacity-75 border-0 text-dark toggle-password" data-target="authPassword"><i class="bi bi-eye-slash-fill fs-5"></i></span>
+                                                        <input placeholder="Create password" required="" id="authPassword"
+                                                            class="form-control auth-control" type="password" value="012345678"
+                                                            name="password">
+                                                    </div>
+                                                    <div id="pswHelp" class="form-text text-secondary">Must be at least 8 characters</div>
+                                                </div>
+    
+                                                <div class="mb-2">
+                                                    <label for="authConfirmPsw" class="form-label text-light fw-light">Confirm
+                                                        Password</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text bg-light bg-opacity-75 border-0 text-dark toggle-password" data-target="authConfirmPsw"><i class="bi bi-eye-slash-fill fs-5"></i></span>
+                                                        <input placeholder="Re-enter password" required="" id="authConfirmPsw"
+                                                            class="form-control auth-control" type="password" value="012345678"
+                                                            name="confirmPsw">
+                                                    </div>
+                                                </div>
+    
+                                                <div class="form-check ms-1 mb-4">
+                                                    <input class="form-check-input" type="checkbox" required="" checked=""
+                                                        name="termsAccepted" id="checkTerms&Condition">
+                                                    <label class="form-check-label" for="checkTerms&Condition">
+                                                        <span class="small text-light">I agree to the
+                                                            <a href="/terms"
+                                                                class="text-white text-decoration-underline fw-semibold">Terms
+                                                                of Service</a> and
+                                                            <a href="/privacy"
+                                                                class="text-white text-decoration-underline fw-semibold">Privacy
+                                                                Policy</a>
+                                                        </span>
+                                                    </label>
+                                                </div>
+    
+                                                <button class="btn btn-primary w-100 mb-3" type="submit">Create Account</button>
+                                                <button class="btn btn-primary w-100 btn btn-light btn-google" type="button">
+                                                    <img src="../images/b_logo/google.png" alt="google" height="20">
+                                                    <span class="ms-2">Sign Up with Google</span>
+                                                </button> 
+                                            </form>
+                                        </div>
+                                        <div class="mb-1 d-flex flex-wrap align-items-center justify-content-center mt-xl-0 mt-4 gap-1">
+                                            <p class="mb-0 text-secondary text-center">Already have an account ? </p>
+                                            <a href="signin.html" class="text-primary fw-semibold">Log in</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="plugins/swiper/swiper-bundle.min.js"></script>
+    <script src="js/combined.min.js"></script>
+    <script src="js/pages/signup.js"></script>
+
+</body>
+
+</html>

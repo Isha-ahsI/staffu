@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <div class="page-layout">
+        %%include('./partials/layout/header.html')
+        %%include('./partials/layout/left-sidebar.html')
+        <div class="page-wrapper">
+            <div class="page-content">
+                %%include('./partials/components/page-title.html', { pageTitle: 'Notes & Tasks', pagePrTitle:
+                'Clients' })
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+                                        <div class="input-icon">
+                                            <span class="cale-icon"><i class="bi bi-calendar4-event"></i></span>
+                                            <input type="text" id="notesDatePicker" placeholder="Select date" class="form-control" />
+                                        </div>
+                                        <div class="d-flex flex-wrap align-items-center gap-3">
+                                            <div class="dropdown">
+                                                <button class="btn btn-dark dropdown-toggle" type="button" id="filterbtn" data-bs-toggle="dropdown" aria-expanded="false">
+                                                    <span><i class="bi bi-funnel"></i></span> filter
+                                                    <span><i class="bi bi-chevron-down drop-caret"></i></span>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="filterbtn">
+                                                    <li><a class="dropdown-item" href="#">High</a></li>
+                                                    <li><a class="dropdown-item" href="#">Medium</a></li>
+                                                    <li><a class="dropdown-item" href="#">Low</a></li>
+                                                </ul>
+                                            </div>
+                                            <button id="addNoteDefault" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#addNoteKanbanModal"><span class="me-2"><i class="bi bi-plus-square-dotted"></i></span>Add kanban</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div data-simplebar style="max-width: 100%; overflow-x: auto;">
+                                        <div id="clientNotesKanban" class="kanboard"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            %%include('./partials/layout/footer.html')
+        </div>
+    </div>
+
+    <!-- add kanban modal -->
+    <div class="modal fade" id="addNoteKanbanModal" tabindex="-1" aria-labelledby="addNoteKanbanModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="addNoteKanbanModalLabel">Add Kanban Board</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <hr>
+                <div class="modal-body">
+                    <form class="row">
+                        <div class="col-12 mb-3">
+                            <label for="note-title" class="col-form-label">Title:</label>
+                            <input type="text" class="form-control rounded-3" id="note-title">
+                        </div>
+                        <div class="col-sm-6 col-12 mb-3">
+                            <label for="kanbanBgColorInput" class="col-form-label">Choose Background color:</label>
+                            <input type="color" class="form-control form-control-color rounded-3 w-100" id="kanbanBgColorInput"
+                                value="#4666e1" title="Choose your color">
+                        </div>
+                        <div class="col-sm-6 col-12 mb-3">
+                            <div>
+                                <label for="noteBoardDateSchedulePicker" class="col-form-label">Schedule:</label>
+                                <div class="input-icon">
+                                    <span class="cale-icon"><i class="bi bi-calendar4-event"></i></span>
+                                    <input type="text" id="noteBoardDateSchedulePicker" placeholder="Select date"
+                                        class="form-control noteSchedulePicker" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label for="note-text" class="col-form-label">Note/Task:</label>
+                            <textarea class="form-control rounded-3" id="note-text"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- add new card modal in board -->
+    <div class="modal fade" id="addNoteKanbanItemModal" tabindex="-1" aria-labelledby="addNoteKanbanItemModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="addNoteKanbanItemModalLabel">Add Notes/Task</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <hr>
+                <div class="modal-body">
+                    <form class="row">
+                        <div class="col-12 mb-3">
+                            <label for="note-title" class="col-form-label">Title:</label>
+                            <input type="text" class="form-control rounded-3" id="note-title">
+                        </div>
+                        <div class="col-12 mb-3">
+                            <label for="note-text" class="col-form-label">Note/Task:</label>
+                            <textarea class="form-control rounded-3" id="note-text"></textarea>
+                        </div>
+                        <div class="col-sm-6 col-12">
+                            <label for="noteCardDateSchedulePicker" class="col-form-label">Schedule:</label>
+                            <div class="input-icon">
+                                <span class="cale-icon"><i class="bi bi-calendar4-event"></i></span>
+                                <input type="text" id="noteCardDateSchedulePicker" placeholder="Select date"
+                                    class="form-control noteSchedulePicker" />
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-12">
+                            <label for="statusSelect" class="col-form-label">Choose Status:</label>
+                            <select class="form-select rounded-3" aria-label="Status select" id="statusSelect">
+                                <option selected disabled>Select Status</option>
+                                <option value="high">High</option>
+                                <option value="medium">Medium</option>
+                                <option value="low">Low</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="saveNoteBtn" class="btn btn-outline-success"
+                        data-bs-dismiss="modal">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    %%include('./partials/layout/right-sidebar.html')
+
+    <!-- %%include('./partials/right-sidebar.html')
+    %%include('./partials/back-to-top.html') -->
+
+    %%include('./partials/layout/footer-js.html')
+    <script src="plugins/jkanban/jkanban.min.js"></script>
+    <script src="plugins/flatpickr/flatpickr.min.js"></script>
+    <script src="js/pages/notes.js"></script>
+
+</body>
+
+</html>

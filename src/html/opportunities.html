@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <div class="page-layout">
+        %%include('./partials/layout/header.html')
+        %%include('./partials/layout/left-sidebar.html')
+        <div class="page-wrapper">
+            <div class="page-content">
+                %%include('./partials/components/page-title.html', { pageTitle: 'Opportunities', pagePrTitle:
+                'Clients' })
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                                        <div class="input-icon">
+                                            <span class="search-icon"><i class="bi bi-search"></i></span>
+                                            <input class="form-control" type="text" placeholder="Search..." aria-label="attendence search input" id="oppoListSearchInput">
+                                        </div>
+                                        <div role="group" class="btn-group">
+                                            <input class="btn-check" id="all" type="radio" value="" name="probability" checked>
+                                            <label tabindex="0" for="all" class="btn btn-outline-secondary">All</label>
+                                            <input class="btn-check" id="high" type="radio" value="high" name="probability">
+                                            <label tabindex="0" for="high" class="btn btn-outline-secondary">Hight</label>
+                                            <input class="btn-check" id="medium" type="radio" value="medium" name="probability">
+                                            <label tabindex="0" for="medium" class="btn btn-outline-secondary">Medium</label>
+                                            <input class="btn-check" id="low" type="radio" value="low" name="probability">
+                                            <label tabindex="0" for="low" class="btn btn-outline-secondary">Low</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                    
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="datatable-wrapper">
+                                        <table id="oppoListTable" class="table table-hover table-nowrap table-cell-padding-lg opportunities-table">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th class="py-3">Opportunity Name</th>
+                                                    <th class="py-3">Client Details</th>
+                                                    <th class="py-3 text-center">Deal Value</th>
+                                                    <th class="py-3 text-center">Stage History</th>
+                                                    <th class="py-3 text-center">Assigned Team</th>
+                                                    <th class="py-3">Notes / Activities</th>
+                                                    <th class="py-3 text-center">Probability</th>
+                                                    <th class="py-3">Expected Close Date</th>
+                                                    <th class="py-3">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- tr1 -->
+                                                <tr class="align-middle">
+                                                    <td>
+                                                        <h6 class="mb-0 text-dark fw-semibold">E-commerce Platform</h6>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex flex-column">
+                                                            <h6 class="mb-0 fw-semibold text-dark"><span>Tiger
+                                                                    Nixon</span></h6>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <h6 class="text-dark mb-0">$55,000</h6>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <span class="badge bg-outline-primary fw-medium">New</span>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <div class="avatar-group justify-content-center">
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top" title="Nia Dubey">
+                                                                <img alt="Nia Dubey" class="w-100 h-100" src="../images/avatars/avatar5.jpg">
+                                                            </div>
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top" title="Jaya Shah">
+                                                                <img alt="Jaya Shah" class="w-100 h-100" src="../images/avatars/avatar8.jpg">
+                                                            </div>
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top" title="Rahul Sharma"><img alt="Rahul Sharma"
+                                                                    class="w-100 h-100" src="../images/avatars/avatar6.jpg">
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0">Discussed contract terms and delivery
+                                                            schedule.<br>
+                                                            Follow-up next week.</p>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <span class="badge bg-success fw-medium">High</span>
+                                                    </td>
+                                                    <td>
+                                                        <h6 class="mb-0">21 January,2026</h6>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <a href="#" class="btn btn-outline-secondary avatar avatar-xs p-0"><span><i
+                                                                        class="ri-mail-send-line fw-normal"></i></span></a>
+                                                            <a href="#" class="btn btn-outline-secondary avatar avatar-xs p-0"><span><i
+                                                                        class="ri-phone-line fw-normal"></i></span></a>
+                                                            <a href="#" class="btn btn-outline-secondary avatar avatar-xs p-0"><span><i
+                                                                        class="ri-sticky-note-add-line fw-normal"></i></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!-- tr2 -->
+                                                <tr class="align-middle">
+                                                    <td>
+                                                        <h6 class="mb-0 text-dark fw-semibold">Market Analysis</h6>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex flex-column">
+                                                            <h6 class="mb-0 fw-semibold text-dark"><span>Vestige
+                                                                    Marketing Pvt.
+                                                                    Ltd.</span></h6>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <h6 class="text-dark mb-0">$45,000</h6>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <span class="badge bg-soft-success">Qualified</span>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <div class="avatar-group justify-content-center">
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top" title="Joyce Neal"><img alt="Joyce Neal" class="w-100 h-100"
+                                                                    src="../images/avatars/avatar4.jpg"></div>
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top" title="Nisha Shahu"><img alt="Nisha Shahu"
+                                                                    class="w-100 h-100" src="../images/avatars/avatar3.jpg"></div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0">Scheduled demo for 15th Feb.</p>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <span class="badge bg-danger fw-medium">Low</span>
+                                                    </td>
+                                                    <td>
+                                                        <h6 class="mb-0">30 March,2026</h6>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <a href="#" class="btn btn-outline-secondary avatar avatar-xs p-0"><span><i
+                                                                        class="ri-mail-send-line fw-normal"></i></span></a>
+                                                            <a href="#" class="btn btn-outline-secondary avatar avatar-xs p-0"><span><i
+                                                                        class="ri-phone-line fw-normal"></i></span></a>
+                                                            <a href="#" class="btn btn-outline-secondary avatar avatar-xs p-0"><span><i
+                                                                        class="ri-sticky-note-add-line fw-normal"></i></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!-- tr3 -->
+                                                <tr class="align-middle">
+                                                    <td>
+                                                        <h6 class="mb-0 text-dark fw-semibold">ERP Implementation</h6>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex flex-column">
+                                                            <h6 class="mb-0 fw-semibold text-dark"><span>Ollivia
+                                                                    Joy</span></h6>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <h6 class="text-dark mb-0">$40,000</h6>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <span class="badge bg-soft-info">Contacted</span>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <div class="avatar-group justify-content-center">
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top" title="Prem Mehta"><img alt="Prem Mehta" class="w-100 h-100"
+                                                                    src="../images/avatars/avatar1.jpg"></div>
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top" title="Mark Lee"><img alt="Mark Lee" class="w-100 h-100"
+                                                                    src="../images/avatars/avatar10.jpg"></div>
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top" title="Nia Dubey"><img alt="Nia Dubey" class="w-100 h-100"
+                                                                    src="../images/avatars/avatar5.jpg"></div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0">Send contract draft by Friday.</p>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <span class="badge bg-warning fw-medium">Medium</span>
+                                                    </td>
+                                                    <td>
+                                                        <h6 class="mb-0">20 April,2026</h6>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <a href="#" class="btn btn-outline-secondary avatar avatar-xs p-0"><span><i
+                                                                        class="ri-mail-send-line fw-normal"></i></span></a>
+                                                            <a href="#" class="btn btn-outline-secondary avatar avatar-xs p-0"><span><i
+                                                                        class="ri-phone-line fw-normal"></i></span></a>
+                                                            <a href="#" class="btn btn-outline-secondary avatar avatar-xs p-0"><span><i
+                                                                        class="ri-sticky-note-add-line fw-normal"></i></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!-- tr4 -->
+                                                <tr class="align-middle">
+                                                    <td>
+                                                        <h6 class="mb-0 text-dark fw-semibold">Digital Marketing
+                                                            Campaign</h6>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex flex-column">
+                                                            <h6 class="mb-0 fw-semibold text-dark"><span>Stellar
+                                                                    Marketing</span></h6>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <h6 class="text-dark mb-0">$60,000</h6>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <span class="badge bg-soft-warning">Proposal</span>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <div class="avatar-group justify-content-center">
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top" title="Joyce Neal"><img alt="Joyce Neal" class="w-100 h-100"
+                                                                    src="../images/avatars/avatar4.jpg"></div>
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top" title="Nisha Shahu"><img alt="Nisha Shahu"
+                                                                    class="w-100 h-100" src="../images/avatars/avatar3.jpg"></div>
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top" title="Ethan Ray"><img alt="Ethan Ray" class="w-100 h-100"
+                                                                    src="../images/avatars/avatar2.jpg"></div>
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top" title="Nia Dubey"><img alt="Nia Dubey" class="w-100 h-100"
+                                                                    src="../images/avatars/avatar5.jpg"></div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0">Uploaded signed NDA.</p>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <span class="badge bg-success fw-medium">High</span>
+                                                    </td>
+                                                    <td>
+                                                        <h6 class="mb-0">27 Febuary,2026</h6>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <a href="#" class="btn btn-outline-secondary avatar avatar-xs p-0"><span><i
+                                                                        class="ri-mail-send-line fw-normal"></i></span></a>
+                                                            <a href="#" class="btn btn-outline-secondary avatar avatar-xs p-0"><span><i
+                                                                        class="ri-phone-line fw-normal"></i></span></a>
+                                                            <a href="#" class="btn btn-outline-secondary avatar avatar-xs p-0"><span><i
+                                                                        class="ri-sticky-note-add-line fw-normal"></i></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!-- tr5 -->
+                                                <tr class="align-middle">
+                                                    <td>
+                                                        <h6 class="mb-0 text-dark fw-semibold">SEO Optimization</h6>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex flex-column">
+                                                            <h6 class="mb-0 fw-semibold text-dark"><span>Joyce
+                                                                    Neal</span></h6>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <h6 class="text-dark mb-0">$25,000</h6>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <span class="badge bg-soft-success">Qualified</span>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <div class="avatar-group justify-content-center">
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top" title="Ollivia Joy"><img alt="Ollivia Joy"
+                                                                    class="w-100 h-100" src="../images/avatars/avatar7.jpg"></div>
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top" title="Mark Lee"><img alt="Mark Lee" class="w-100 h-100"
+                                                                    src="../images/avatars/avatar9.jpg"></div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0">Sent revised quotation email.</p>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <span class="badge bg-success fw-medium">High</span>
+                                                    </td>
+                                                    <td>
+                                                        <h6 class="mb-0">30 December,2025</h6>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <a href="#" class="btn btn-outline-secondary avatar avatar-xs p-0"><span><i
+                                                                        class="ri-mail-send-line fw-normal"></i></span></a>
+                                                            <a href="#" class="btn btn-outline-secondary avatar avatar-xs p-0"><span><i
+                                                                        class="ri-phone-line fw-normal"></i></span></a>
+                                                            <a href="#" class="btn btn-outline-secondary avatar avatar-xs p-0"><span><i
+                                                                        class="ri-sticky-note-add-line fw-normal"></i></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!-- tr6 -->
+                                                <tr class="align-middle">
+                                                    <td>
+                                                        <h6 class="mb-0 text-dark fw-semibold">Software Integration</h6>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex flex-column">
+                                                            <h6 class="mb-0 fw-semibold text-dark"><span>Atom
+                                                                    Solution</span></h6>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <h6 class="text-dark mb-0">$35,000</h6>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <span class="badge bg-soft-warning">Proposal</span>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <div class="avatar-group justify-content-center">
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top" title="Nia Dubey"><img alt="Nia Dubey" class="w-100 h-100"
+                                                                    src="../images/avatars/avatar5.jpg"></div>
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top" title="Jaya Shah"><img alt="Jaya Shah" class="w-100 h-100"
+                                                                    src="../images/avatars/avatar8.jpg"></div>
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top" title="Rahul Sharma"><img alt="Rahul Sharma"
+                                                                    class="w-100 h-100" src="../images/avatars/avatar6.jpg"></div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0">Phone call with client to review proposal.</p>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <span class="badge bg-danger fw-medium">Low</span>
+                                                    </td>
+                                                    <td>
+                                                        <h6 class="mb-0">25 January,2026</h6>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <a href="#" class="btn btn-outline-secondary avatar avatar-xs p-0"><span><i
+                                                                        class="ri-mail-send-line fw-normal"></i></span></a>
+                                                            <a href="#" class="btn btn-outline-secondary avatar avatar-xs p-0"><span><i
+                                                                        class="ri-phone-line fw-normal"></i></span></a>
+                                                            <a href="#" class="btn btn-outline-secondary avatar avatar-xs p-0"><span><i
+                                                                        class="ri-sticky-note-add-line fw-normal"></i></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!-- tr7 -->
+                                                <tr class="align-middle">
+                                                    <td>
+                                                        <h6 class="mb-0 text-dark fw-semibold">Website Redesign</h6>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex flex-column">
+                                                            <h6 class="mb-0 fw-semibold text-dark"><span>Kelvin
+                                                                    Yia</span></h6>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <h6 class="text-dark mb-0">$30,000</h6>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <span class="badge bg-soft-info">Contacted</span>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <div class="avatar-group justify-content-center">
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top" title="Ollivia Joy"><img alt="Ollivia Joy"
+                                                                    class="w-100 h-100" src="../images/avatars/avatar3.jpg"></div>
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top" title="Mark Lee"><img alt="Mark Lee" class="w-100 h-100"
+                                                                    src="../images/avatars/avatar6.jpg"></div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0">Send contract draft by Wednesday.</p>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <span class="badge bg-warning fw-medium">Medium</span>
+                                                    </td>
+                                                    <td>
+                                                        <h6 class="mb-0">20 April,2026</h6>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <a href="#" class="btn btn-outline-secondary avatar avatar-xs p-0"><span><i
+                                                                        class="ri-mail-send-line fw-normal"></i></span></a>
+                                                            <a href="#" class="btn btn-outline-secondary avatar avatar-xs p-0"><span><i
+                                                                        class="ri-phone-line fw-normal"></i></span></a>
+                                                            <a href="#" class="btn btn-outline-secondary avatar avatar-xs p-0"><span><i
+                                                                        class="ri-sticky-note-add-line fw-normal"></i></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!-- tr8 -->
+                                                <tr class="align-middle">
+                                                    <td>
+                                                        <h6 class="mb-0 text-dark fw-semibold">3D Architectural
+                                                            Rendering</h6>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex flex-column">
+                                                            <h6 class="mb-0 fw-semibold text-dark"><span>Lumion
+                                                                    B.V.</span></h6>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <h6 class="text-dark mb-0">$75,000</h6>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <span class="badge bg-outline-primary fw-medium">New</span>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <div class="avatar-group justify-content-center">
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top" title="Nia Dubey">
+                                                                <img alt="Nia Dubey" class="w-100 h-100" src="../images/avatars/avatar8.jpg">
+                                                            </div>
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top" title="Rahul Sharma">
+                                                                <img alt="Rahul Sharma" class="w-100 h-100" src="../images/avatars/avatar4.jpg">
+                                                            </div>
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top" title="Jaya Shah"><img alt="Jaya Shah" class="w-100 h-100"
+                                                                    src="../images/avatars/avatar10.jpg"></div>
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top" title="Sunny Mehta"><img alt="Sunny Mehta"
+                                                                    class="w-100 h-100" src="../images/avatars/avatar1.jpg"></div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0">Discussed contract terms and delivery
+                                                            schedule.<br>
+                                                            Follow-up next week.</p>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <span class="badge bg-warning fw-medium">Medium</span>
+                                                    </td>
+                                                    <td>
+                                                        <h6 class="mb-0">13 January,2026</h6>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <a href="#" class="btn btn-outline-secondary avatar avatar-xs p-0"><span><i
+                                                                        class="ri-mail-send-line fw-normal"></i></span></a>
+                                                            <a href="#" class="btn btn-outline-secondary avatar avatar-xs p-0"><span><i
+                                                                        class="ri-phone-line fw-normal"></i></span></a>
+                                                            <a href="#" class="btn btn-outline-secondary avatar avatar-xs p-0"><span><i
+                                                                        class="ri-sticky-note-add-line fw-normal"></i></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!-- tr9 -->
+                                                <tr class="align-middle">
+                                                    <td>
+                                                        <h6 class="mb-0 text-dark fw-semibold">Product Launch</h6>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex flex-column">
+                                                            <h6 class="mb-0 fw-semibold text-dark"><span>Ethan Ray</span></h6>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <h6 class="text-dark mb-0">$27,000</h6>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <span class="badge bg-soft-success">Qualified</span>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <div class="avatar-group justify-content-center">
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top" title="Mark Lee"><img alt="Mark Lee" class="w-100 h-100"
+                                                                    src="../images/avatars/avatar9.jpg"></div>
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top" title="Ollivia Joy"><img alt="Ollivia Joy"
+                                                                    class="w-100 h-100" src="../images/avatars/avatar2.jpg"></div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0">Phone call with client to review proposal.</p>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <span class="badge bg-danger fw-medium">Low</span>
+                                                    </td>
+                                                    <td>
+                                                        <h6 class="mb-0">20 March,2026</h6>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <a href="#" class="btn btn-outline-secondary avatar avatar-xs p-0"><span><i
+                                                                        class="ri-mail-send-line fw-normal"></i></span></a>
+                                                            <a href="#" class="btn btn-outline-secondary avatar avatar-xs p-0"><span><i
+                                                                        class="ri-phone-line fw-normal"></i></span></a>
+                                                            <a href="#" class="btn btn-outline-secondary avatar avatar-xs p-0"><span><i
+                                                                        class="ri-sticky-note-add-line fw-normal"></i></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!-- tr10 -->
+                                                <tr class="align-middle">
+                                                    <td>
+                                                        <h6 class="mb-0 text-dark fw-semibold">Mobile App Development</h6>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex flex-column">
+                                                            <h6 class="mb-0 fw-semibold text-dark"><span>Global Infotech</span>
+                                                            </h6>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <h6 class="text-dark mb-0">$32,000</h6>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <span class="badge bg-soft-info">Contacted</span>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <div class="avatar-group justify-content-center">
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top" title="Mark Lee"><img alt="Mark Lee" class="w-100 h-100"
+                                                                    src="../images/avatars/avatar3.jpg"></div>
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top" title="Prem Mehta"><img alt="Prem Mehta" class="w-100 h-100"
+                                                                    src="../images/avatars/avatar4.jpg"></div>
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden" data-bs-toggle="tooltip"
+                                                                data-bs-placement="top" title="Nia Dubey"><img alt="Nia Dubey" class="w-100 h-100"
+                                                                    src="../images/avatars/avatar7.jpg"></div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0">Send contract draft by Friday.</p>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <span class="badge bg-success fw-medium">High</span>
+                                                    </td>
+                                                    <td>
+                                                        <h6 class="mb-0">10 April,2026</h6>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <a href="#" class="btn btn-outline-secondary avatar avatar-xs p-0"><span><i
+                                                                        class="ri-mail-send-line fw-normal"></i></span></a>
+                                                            <a href="#" class="btn btn-outline-secondary avatar avatar-xs p-0"><span><i
+                                                                        class="ri-phone-line fw-normal"></i></span></a>
+                                                            <a href="#" class="btn btn-outline-secondary avatar avatar-xs p-0"><span><i
+                                                                        class="ri-sticky-note-add-line fw-normal"></i></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div
+                                        class="table-bottom d-flex flex-wrap justify-content-center justify-content-sm-between align-items-center gap-3 mt-4">
+                                        <div id="table-info" class="order-sm-1 order-2"></div>
+                                        <div id="table-pagination" class="order-sm-2 order-1">
+                                            <nav aria-label="Employee list pagination">
+                                                <ul class="pagination mb-0">
+                                                    <li class="page-item disabled">
+                                                        <a class="page-link" href="#" aria-label="Previous">
+                                                            <span aria-hidden="true"><i class="ri-arrow-left-double-line"></i></span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="page-item mx-1 disabled"><a class="page-link" href="#" aria-label="Previous">
+                                                            <span aria-hidden="true"><i class="ri-arrow-left-s-line"></i></span>
+                                                        </a></li>
+                                                    <li class="page-item"><a class="page-link px-3" href="#">1</a></li>
+                                                    <li class="page-item mx-1 disabled"><a class="page-link" href="#" aria-label="Next">
+                                                            <span aria-hidden="true"><i class="ri-arrow-right-s-line"></i></span>
+                                                        </a></li>
+                                                    <li class="page-item disabled">
+                                                        <a class="page-link" href="#" aria-label="Next">
+                                                            <span aria-hidden="true"><i class="ri-arrow-right-double-line"></i></span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            %%include('./partials/layout/footer.html')
+
+        </div>
+    </div>
+    %%include('./partials/layout/right-sidebar.html')
+
+    <!-- %%include('./partials/right-sidebar.html')
+    %%include('./partials/back-to-top.html') -->
+
+    %%include('./partials/layout/footer-js.html')
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="plugins/datatables.net/js/dataTables.min.js"></script>
+    <script src="plugins/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+    <script src="plugins/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="plugins/datatables.net-responsive-dt/js/responsive.dataTables.min.js"></script>
+    <script src="js/pages/opportunities.js"></script>
+
+</body>
+
+</html>

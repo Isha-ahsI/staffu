@@ -1,0 +1,46 @@
+// quill.scss
+.quill {
+    .ql-toolbar {
+        &.ql-snow {
+            border-color: transparent !important;
+
+            .ql-stroke,
+            .ql-fill {
+                stroke: var(--bs-text-dark);
+            }
+
+            .ql-picker-label::before,
+            .ql-picker {
+                color: var(--bs-text-dark)
+            }
+
+            button {
+                &:hover {
+                    color: $primary !important;
+                }
+            }
+        }
+    }
+
+    .ql-container {
+        &.ql-snow {
+            border: $border-width $border-style $gray-400 !important;
+            border-radius: $border-radius-lg;
+
+            .ql-editor {
+                min-height: 200px;
+                color: var(--bs-text-dark);
+
+                &.ql-blank {
+                    &::before {
+                        color: tint-color($gray-900, 70%);
+                    }
+                }
+
+                img {
+                    max-width: 50%;
+                }
+            }
+        }
+    }
+}

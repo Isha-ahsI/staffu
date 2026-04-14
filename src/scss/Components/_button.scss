@@ -1,0 +1,287 @@
+// button.scss
+
+.btn {
+    &.btn-sm {
+        font-size: $font-size-sm;
+    }
+
+    &.btn-xs {
+        --bs-btn-padding-x: 0.75rem;
+        --bs-btn-padding-y: 0.25rem;
+        --bs-btn-font-size: 0.75rem;
+    }
+
+    &.btn-custom-light {
+        color: $gray-600;
+        background-color: $light;
+        border: $border-width solid $gray-300;
+        box-shadow: none;
+
+        &:hover {
+            background-color: rgba($danger, 0.15);
+            border-color: rgba($danger, 0.05);
+            color: $danger;
+        }
+    }
+    &.btn-link-dark,
+    &.btn-link-dark:hover,
+    &.btn-link-dark:focus {
+        color: var(--bs-text-dark);
+    }
+}
+
+@each $color, $value in $theme-colors {
+    .btn {
+        transition: transform 0.5s linear, color 0.1s ease;
+
+        &.btn-soft-#{$color},
+        &.btn-#{$color},
+        &.btn-outline-#{$color} {
+            position: relative;
+            overflow: hidden;
+
+            &:hover {
+                box-shadow: 0px 4px 10px 0px rgba(var(--bs-#{$color}-rgb), 0.25);
+            }
+
+            @if $color =='light' {
+                color: $dark !important;
+            }
+        }
+
+        &.btn-soft-#{$color} {
+            transition: $transition-base;
+            background: linear-gradient(to right, rgba(var(--bs-#{$color}-rgb), 0.15) 1%, transparent 50%, rgba(var(--bs-#{$color}-rgb), 0.15) 100%);
+            border-color: rgba(var(--bs-#{$color}-rgb), 0.3);
+            color: var(--bs-#{$color});
+
+            &::before {
+                content: "";
+                position: absolute;
+                left: -4em;
+                width: 4em;
+                height: 100%;
+                top: 0;
+                transition: transform .4s ease-in-out;
+                background: linear-gradient(to right, transparent 1%, rgba(var(--bs-#{$color}-rgb), 0.15) 40%, rgba(var(--bs-#{$color}-rgb), 0.15) 60%, transparent 100%);
+            }
+
+            &:hover {
+                border-color: rgba(var(--bs-#{$color}-rgb), 0.6);
+
+                &::before {
+                    transform: translateX(15em);
+                }
+            }
+
+        }
+
+        &.btn-#{$color} {
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.320, 1);
+            border-color: transparent;
+            z-index: 2;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 120%;
+                height: 120%;
+                background-color: var(--bs-#{$color});
+                opacity: 0;
+                transition: all 0.8s cubic-bezier(0.23, 1, 0.320, 1);
+                z-index: 1;
+            }
+
+            &:hover {
+                color: var(--bs-#{$color});
+                background-color: transparent;
+                border-color: var(--bs-#{$color});
+
+                &::before {
+                    background-color: transparent;
+                    transform: translate(-50%, -50%) rotate(45deg);
+                    opacity: 1;
+                }
+            }
+        }
+
+        &.btn-outline-#{$color} {
+            z-index: 1;
+            background-color: transparent;
+            transition: color 0.5s;
+            color: var(--bs-#{$color});
+
+            &::before {
+                content: "";
+                position: absolute;
+                z-index: -1;
+                background-color: var(--bs-#{$color});
+                height: 200%;
+                width: 200%;
+                top: 100%;
+                left: 100%;
+                border-radius: $border-radius-2xl;
+                transition: all 0.5s;
+            }
+
+            &:hover:not(.btn-group>.btn){
+                &::before {
+                    top: -30%;
+                    left: -30%;
+                }
+                color: $light;
+            }
+
+            &:active {
+                background-color: var(--bs-#{$color});
+                transition: background-color 0s;
+            }
+        }
+
+        &:hover:not(.dropdown-toggle):not(.btn-group>.btn):not(.input-group>.btn):not(.btn-load):not(.price-btn):not(.grid-btn) {
+            transform: scale(0.90);
+        }
+    }
+}
+
+
+
+@mixin gradient-bg {
+    background-size: 200% auto;
+    background-position: left center;
+    transition: background-position 0.6s ease-in-out, transform 0.3s ease;
+    color: $white;
+
+    &:hover {
+        background-position: right center;
+        color: $white;
+        box-shadow: 0 4px 12px rgba($black, 0.15);
+    }
+
+    &:active {
+        transform: translateY(0);
+        transition: transform 0.1s ease;
+        border-color: transparent;
+    }
+}
+
+
+.btn {
+    @each $name, $colors in $bg-gradients {
+        &.btn-gradient-#{$name} {
+            /* rtl:begin:ignore */
+            background-image: linear-gradient(to right, nth($colors, 1) 0%, nth($colors, 2) 50%, nth($colors, 3) 100%);
+            /* rtl:end:ignore */
+            @include gradient-bg;
+
+            @if $name =='light' {
+                color: $dark !important;
+            }
+        }
+    }
+
+    @each $name, $colors in $bg-gradients-alt {
+        &.btn-gradient-alt-#{$name} {
+            /* rtl:begin:ignore */
+            background-image: linear-gradient(to right, nth($colors, 1) 0%, nth($colors, 2) 50%, nth($colors, 3) 100%);
+            /* rtl:end:ignore */
+            @include gradient-bg;
+
+            @if $name =='light' {
+                color: $dark !important;
+            }
+        }
+    }
+}
+
+[data-bs-theme="dark"] {
+    .btn {
+        &.btn-light {
+            color: $gray-100 !important;
+            background-color: tint-color($gray-900, 25%);
+            &:hover {
+                color: $gray-100 !important;
+                background-color: transparent;
+                border-color: tint-color($gray-900, 25%) !important;
+            }
+        }
+        &.btn-dark {
+            background-color: $gray-100;
+            color: $gray-900 !important;
+            &:hover {
+                background-color: transparent;
+                color: $gray-100 !important;
+                border-color: $gray-100 !important;
+                &::before {
+                    border-color: $gray-100 !important;
+                }
+            }
+        }
+        &.btn-outline-light {
+            color: $gray-200 !important;
+            border-color: tint-color($gray-900, 25%) !important;
+            &:hover {
+                color: $gray-100 !important;
+            }
+            &::before {
+                background-color: tint-color($gray-900, 25%) !important;
+            }
+        }
+
+        &.btn-outline-dark {
+            border-color: $gray-100;
+            color: $gray-100 !important;
+            &::before {
+                border-color: $gray-100 !important;
+                background-color: $gray-100;
+            }
+            &:hover {
+                color: $gray-900 !important;
+            }
+        }
+
+        &.btn-soft-light {
+            color: $gray-200 !important;
+            border-color: tint-color($gray-900, 25%) !important;
+            background: linear-gradient(to right, rgba(tint-color($gray-900, 50%), 0.15) 1%, transparent 50%, rgba(tint-color($gray-900, 50%), 0.15) 100%);
+        }
+
+        &.btn-soft-dark {
+            border-color: rgba($gray-100, .3) !important;
+            color: $gray-100 !important;
+            background: linear-gradient(to right, rgba(tint-color($gray-900, 50%), 0.15) 1%, transparent 50%, rgba(tint-color($gray-900, 50%), 0.15) 100%);
+            &::before {
+                background: linear-gradient(to right,transparent 1%,rgba(tint-color($gray-900, 50%),.15) 40%,rgba(tint-color($gray-900, 50%),.15) 60%,transparent 100%);
+            }
+        }
+    }
+}
+
+
+// Override Bootstrap's hardcoded button colors to use CSS variables
+@each $color, $value in $theme-colors {
+    .btn-#{$color} {
+        --bs-btn-bg: var(--bs-#{$color});
+        --bs-btn-border-color: var(--bs-#{$color});
+        --bs-btn-hover-bg: rgba(var(--bs-#{$color}-rgb), 0.85);
+        --bs-btn-hover-border-color: rgba(var(--bs-#{$color}-rgb), 0.85);
+        --bs-btn-active-bg: rgba(var(--bs-#{$color}-rgb), 0.75);
+        --bs-btn-active-border-color: rgba(var(--bs-#{$color}-rgb), 0.75);
+        --bs-btn-disabled-bg: var(--bs-#{$color});
+        --bs-btn-disabled-border-color: var(--bs-#{$color});
+    }
+
+    .btn-outline-#{$color} {
+        --bs-btn-color: var(--bs-#{$color});
+        --bs-btn-border-color: var(--bs-#{$color});
+        --bs-btn-hover-bg: var(--bs-#{$color});
+        --bs-btn-hover-border-color: var(--bs-#{$color});
+        --bs-btn-active-bg: var(--bs-#{$color});
+        --bs-btn-active-border-color: var(--bs-#{$color});
+        --bs-btn-disabled-color: var(--bs-#{$color});
+        --bs-btn-disabled-border-color: var(--bs-#{$color});
+    }
+}

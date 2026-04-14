@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <div class="page-layout">
+        %%include('./partials/layout/header.html')
+        %%include('./partials/layout/left-sidebar.html')
+        <div class="page-wrapper">
+            <div class="page-content">
+                %%include('./partials/components/page-title.html', { pageTitle: 'Invoices', pagePrTitle:
+                'Payroll' })
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 mb-4">
+                            <div class="d-flex flex-wrap justify-content-end align-items-center gap-2">
+                                <button type="button" class="rounded-3 btn btn-outline-primary"><span><i
+                                            class="ri-printer-line fw-normal"></i></span> Print</button>
+                                <button type="button" class="rounded-3 btn btn-success"><span><i
+                                            class="ri-download-2-line fw-normal"></i></span> Download</button>
+                                <button type="button" class="rounded-3 btn btn-gradient-primary"><span><i
+                                            class="ri-mail-send-line fw-normal"></i></span> Send Email</button>
+                            </div>
+                        </div>
+                        <div class="col-xl-8 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <!-- company basic info -->
+                                    <div class="d-flex flex-wrap justify-content-between gap-3">
+                                        <div class="d-flex flex-column align-items-start gap-1">
+                                            <div class="invoice-card-logo mb-1">
+                                                <a href="/" class="logo-dark"><img src="images/logos/logo_dark.png"
+                                                        height="24" alt="Dark Logo"></a>
+                                                <a href="/" class="logo-light"><img src="images/logos/logo_light.png"
+                                                        height="24" alt="Light Logo"></a>
+                                            </div>
+                                            <p class="mb-0">Email: info@staffuu.com</p>
+                                        </div>
+                                        <div class="d-flex flex-column gap-1">
+                                            <small>123 Business Street</small>
+                                            <small>Banglore, Karnataka 12345</small>
+                                            <small>Phone: (123) 456-7890</small>
+                                        </div>
+                                    </div>
+                                    <hr class="br-dashed">
+                                    <!-- employee details -->
+                                    <div>
+                                        <h5 class="mb-3 border-start border-secondary border-4 ps-2 py-1 card-title">
+                                            Employee Details
+                                        </h5>
+                                        <div class="ps-3">
+                                            <div
+                                                class="mb-2 d-flex flex-wrap align-items-center justify-content-between gap-2">
+                                                <strong>Name:</strong>
+                                                <strong class="mb-0 text-dark fw-semibold">John Doe</strong>
+                                            </div>
+                                            <div
+                                                class="mb-2 d-flex flex-wrap align-items-center justify-content-between gap-2">
+                                                <strong>Employee ID:</strong>
+                                                <strong class="mb-0 text-dark fw-semibold">EMP-0123</strong>
+                                            </div>
+                                            <div
+                                                class="mb-2 d-flex flex-wrap align-items-center justify-content-between gap-2">
+                                                <strong>Department:</strong>
+                                                <strong class="mb-0 text-dark fw-semibold">Engineering</strong>
+                                            </div>
+                                            <div
+                                                class="mb-2 d-flex flex-wrap align-items-center justify-content-between gap-2">
+                                                <strong>Position:</strong>
+                                                <strong class="mb-0 text-dark fw-semibold">Senior Developer</strong>
+                                            </div>
+                                            <div
+                                                class="mb-2 d-flex flex-wrap align-items-center justify-content-between gap-2">
+                                                <strong>Bank Account:</strong>
+                                                <strong class="mb-0 text-dark fw-semibold">****6789</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <!-- Payroll Breakdown Table -->
+                                    <div class="table-responsive">
+                                        <table class="table table-hover table-bordered table-nowrap">
+                                            <thead class="table-dark">
+                                                <tr>
+                                                    <th>Description</th>
+                                                    <th class="text-center">Rate</th>
+                                                    <th class="text-center">Hours/Units</th>
+                                                    <th class="text-end">Amount</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- Earnings -->
+                                                <tr class="bg-secondary bg-opacity-25">
+                                                    <td colspan="4" class="text-dark"><strong>EARNINGS</strong></td>
+                                                </tr>
+
+                                                <!-- Basic Salary -->
+                                                <tr>
+                                                    <td>Basic Salary</td>
+                                                    <td class="text-center">$50.00/hr</td>
+                                                    <td class="text-center">160</td>
+                                                    <td class="text-end">$8,000.00</td>
+                                                </tr>
+
+                                                <!-- Overtime -->
+                                                <tr>
+                                                    <td>Overtime (1.5x)</td>
+                                                    <td class="text-center">$75.00/hr</td>
+                                                    <td class="text-center">10</td>
+                                                    <td class="text-end">$750.00</td>
+                                                </tr>
+
+                                                <!-- Bonus -->
+                                                <tr>
+                                                    <td>Bonus</td>
+                                                    <td class="text-center">-</td>
+                                                    <td class="text-center">-</td>
+                                                    <td class="text-end">$500.00</td>
+                                                </tr>
+
+                                                <!-- Allowances -->
+                                                <tr>
+                                                    <td>Allowances (Travel, Food)</td>
+                                                    <td class="text-center">-</td>
+                                                    <td class="text-center">-</td>
+                                                    <td class="text-end">$300.00</td>
+                                                </tr>
+
+                                                <!-- total earning -->
+                                                <tr>
+                                                    <td colspan="3"
+                                                        class="text-dark text-end bg-secondary bg-opacity-10">
+                                                        <strong>Total
+                                                            Earning</strong>
+                                                    </td>
+                                                    <td class="text-end text-dark bg-secondary bg-opacity-10">
+                                                        <strong>$9,550.00</strong>
+                                                    </td>
+                                                </tr>
+
+
+                                                <!-- DEDUCTIONS -->
+                                                <tr class="bg-secondary bg-opacity-25">
+                                                    <td colspan="4" class="text-dark"><strong>DEDUCTIONS</strong></td>
+                                                </tr>
+
+                                                <!-- Income Tax -->
+                                                <tr>
+                                                    <td>Income Tax</td>
+                                                    <td class="text-center">-</td>
+                                                    <td class="text-center">-</td>
+                                                    <td class="text-end">$1,200.00</td>
+                                                </tr>
+
+                                                <!-- Health Insurance -->
+                                                <tr>
+                                                    <td>Health Insurance</td>
+                                                    <td class="text-center">-</td>
+                                                    <td class="text-center">-</td>
+                                                    <td class="text-end">$250.00</td>
+                                                </tr>
+
+                                                <!-- Provident Fund -->
+                                                <tr>
+                                                    <td>Provident Fund</td>
+                                                    <td class="text-center">-</td>
+                                                    <td class="text-center">-</td>
+                                                    <td class="text-end">$400.00</td>
+                                                </tr>
+
+                                                <!-- Loan Repayment -->
+                                                <tr>
+                                                    <td>Loan Repayment</td>
+                                                    <td class="text-center">-</td>
+                                                    <td class="text-center">-</td>
+                                                    <td class="text-end">$100.00</td>
+                                                </tr>
+
+                                                <!-- Total Deductions-->
+                                                <tr>
+                                                    <td colspan="3"
+                                                        class="text-end text-dark bg-secondary bg-opacity-10">
+                                                        <strong>Total
+                                                            Deductions</strong>
+                                                    </td>
+                                                    <td class="text-end text-dark bg-secondary bg-opacity-10">
+                                                        <strong>$2,550.00</strong>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td colspan="3"
+                                                        class="text-end fs-5 text-dark bg-dark bg-opacity-25">
+                                                        <strong>NET
+                                                            PAY</strong>
+                                                    </td>
+                                                    <td class="text-end fs-5 text-dark bg-dark bg-opacity-25">
+                                                        <strong>$7,000.00</strong>
+                                                    </td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+
+                                    <!-- Notes -->
+                                    <div class="alert alert-dark flex-wrap align-items-start mb-4 mt-3">
+                                        <h6 class="alert-heading text-nowrap mb-0"><span
+                                                class="badge bg-dark">Notes</span> : </h6>
+                                        <p class="mb-0 fs-14 ms-1">This is a computer-generated payroll invoice. Please
+                                            verify all details. For any discrepancies, contact HR within 7 days.
+                                        </p>
+                                    </div>
+
+                                    <!-- Authorized Signature -->
+                                    <div class="d-flex flex-wrap gap-3 align-items-end justify-content-between">
+                                        <div>
+                                            <small class="text-muted mb-1">Authorized Signature</small>
+                                            <form class="mb-1">
+                                                <input type="text"
+                                                    class="form-control bg-transparent border-0 border-bottom border-dark rounded-0"
+                                                    id="signatureInput">
+                                            </form>
+                                            <small class="text-dark"><strong>HR Manager</strong></small>
+                                        </div>
+                                        <div class="d-flex flex-column gap-2">
+                                            <small class="text-muted">Generated on: Feb 23, 2026 10:30 AM</small>
+                                            <small class="text-muted">Questions? Contact: hr@company.com</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 col-12">
+                            <div class="row">
+                                <div class="col-xl-12 col-md-6 col-12 mb-4">
+                                    <!-- Payroll Invoice -->
+                                    <div class="card bg-secondary bg-opacity-10 h-100 mb-0">
+                                        <div class="card-body">
+                                            <div
+                                                class="d-flex flex-wrap align-items-start justify-content-between gap-2">
+                                                <h4 class="text-dark fw-semibold mb-0">Payroll Invoice</h4>
+                                                <span class="badge bg-soft-success">PAID</span>
+                                            </div>
+                                            <hr class="hr-style-1">
+                                            <div
+                                                class="mb-3 d-flex flex-wrap align-items-center justify-content-between gap-2">
+                                                <h6 class="mb-0">Invoice #:</h6>
+                                                <strong class="text-dark">PAY-2026-001</strong>
+                                            </div>
+                                            <div
+                                                class="mb-3 d-flex flex-wrap align-items-center justify-content-between gap-2">
+                                                <h6 class="mb-0">Invoice Date:</h6>
+                                                <strong class="text-dark">23 February, 2026</strong>
+                                            </div>
+                                            <div
+                                                class="mb-3 d-flex flex-wrap align-items-center justify-content-between gap-2">
+                                                <h6 class="mb-0">Pay Period:</h6>
+                                                <strong class="text-dark">15 Jan,2025 To 15 Feb,2026</strong>
+                                            </div>
+                                            <div
+                                                class="d-flex flex-wrap align-items-center justify-content-between gap-2">
+                                                <h6 class="mb-0">Payment Due:</h6>
+                                                <strong class="text-dark">Feb 28, 2026</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 col-md-6 col-12 mb-4">
+                                    <!-- Payment Method -->
+                                    <div class="card bg-secondary bg-opacity-10 h-100 mb-0">
+                                        <div class="card-body">
+                                            <div
+                                                class="d-flex flex-wrap align-items-start justify-content-between gap-2">
+                                                <h4 class="text-dark fw-semibold mb-0">Payment Method</h4>
+                                                <div class="dropdown">
+                                                    <button type="button" id="paymentMethodDrop" aria-expanded="false"
+                                                        class="card-drop-icon dropdown-toggle btn"
+                                                        data-bs-toggle="dropdown"><i
+                                                            class="bi bi-three-dots fs-20"></i></button>
+                                                    <div aria-labelledby="paymentMethodDrop"
+                                                        class="dropdown-menu dropdown-menu-end">
+                                                        <a class="dropdown-item" href="#" data-discover="true"><i
+                                                                class="ri-bank-line me-1"></i> Bank
+                                                            Transfer</a>
+                                                        <a class="dropdown-item" href="#" data-discover="true"><i
+                                                                class="ri-cash-line me-1"></i> Traditional
+                                                            Methods</a>
+                                                        <a class="dropdown-item" href="#" data-discover="true"><i
+                                                                class="ri-qr-scan-2-line me-1"></i> Digital Wallets</a>
+                                                        <a class="dropdown-item" href="#" data-discover="true"><i
+                                                                class="ri-bank-card-line me-1"></i> Payroll Cards</a>
+                                                        <a class="dropdown-item" href="#" data-discover="true"><i
+                                                                class="ri-money-rupee-circle-line me-1"></i> Others</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr class="hr-style-1">
+                                            <div
+                                                class="mb-3 d-flex flex-wrap align-items-center justify-content-between gap-2">
+                                                <h6 class="mb-0">Payment Method:</h6>
+                                                <strong class="text-dark">Bank Transfer</strong>
+                                            </div>
+                                            <div
+                                                class="mb-3 d-flex flex-wrap align-items-center justify-content-between gap-2">
+                                                <h6 class="mb-0">Bank Name:</h6>
+                                                <strong class="text-dark">Chase Bank</strong>
+                                            </div>
+                                            <div
+                                                class="mb-3 d-flex flex-wrap align-items-center justify-content-between gap-2">
+                                                <h6 class="mb-0">Account No:</h6>
+                                                <strong class="text-dark"> ****6789</strong>
+                                            </div>
+                                            <div
+                                                class="d-flex flex-wrap align-items-center justify-content-between gap-2">
+                                                <h6 class="mb-0">Transaction ID:</h6>
+                                                <strong class="text-dark">TXN123456789</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 col-md-6 col-12 mb-4">
+                                    <!-- Tax Summary -->
+                                    <div class="card bg-secondary bg-opacity-10 h-100 mb-0">
+                                        <div class="card-body">
+                                            <h4 class="text-dark fw-semibold mb-0">Tax Summary</h4>
+                                            <hr class="hr-style-1">
+                                            <div
+                                                class="mb-3 d-flex flex-wrap align-items-center justify-content-between gap-2">
+                                                <h6 class="mb-0">Taxable Income:</h6>
+                                                <strong class="text-dark">$9,550<span
+                                                        class="text-muted">.00</span></strong>
+                                            </div>
+                                            <div
+                                                class="mb-3 d-flex flex-wrap align-items-center justify-content-between gap-2">
+                                                <h6 class="mb-0">Tax Rate:</h6>
+                                                <strong class="text-dark">12.57 <span
+                                                        class="text-muted">%</span></strong>
+                                            </div>
+                                            <div
+                                                class="d-flex flex-wrap align-items-center justify-content-between gap-2">
+                                                <h6 class="mb-0">Total Tax:</h6>
+                                                <strong class="text-dark">$1,200<span
+                                                        class="text-muted">.00</span></strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            %%include('./partials/layout/footer.html')
+
+        </div>
+    </div>
+    %%include('./partials/layout/right-sidebar.html')
+
+    <!-- %%include('./partials/right-sidebar.html')
+    %%include('./partials/back-to-top.html') -->
+
+    %%include('./partials/layout/footer-js.html')
+
+</body>
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <div class="page-layout">
+        %%include('./partials/layout/header.html')
+        %%include('./partials/layout/left-sidebar.html')
+        <div class="page-wrapper">
+            <div class="page-content">
+                %%include('./partials/components/page-title.html', { pageTitle: 'Gallery', pagePrTitle: 'Pages' })
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="dashboard-gallery mt-4">
+                                <div
+                                    class="d-flex flex-wrap justify-content-sm-between justify-content-center align-items-center gap-3 mx-3 mb-4">
+                                    <div>
+                                        <h5 class="text-dark mb-0 text-semibold">March 25th, 2025 - <span
+                                                class="text-normal text-muted">19 Images</span></h5>
+                                    </div>
+                                    <div class="grid-buttons d-flex align-items-center justify-content-end gap-2">
+                                        <button data-grid="large" class="btn grid-btn"><i
+                                                class="bi bi-app fs-4"></i></button>
+                                        <button data-grid="medium" class="btn grid-btn active"><i
+                                                class="bi bi-grid fs-4"></i></button>
+                                        <button data-grid="small" class="btn grid-btn"><i
+                                                class="bi bi-grid-3x3-gap fs-4"></i></button>
+                                    </div>
+                                </div>
+
+                                <div class="gallery-masonry medium-grid">
+                                    %%include('partials/components/gallery_card.html',{
+                                    'image':'img7'
+                                    })
+
+                                    %%include('partials/components/gallery_card.html',{
+                                    'image':'img2'
+                                    })
+
+                                    %%include('partials/components/gallery_card.html',{
+                                    'image':'img3'
+                                    })
+
+                                    %%include('partials/components/gallery_card.html',{
+                                    'image':'img7'
+                                    })
+
+                                    %%include('partials/components/gallery_card.html',{
+                                    'image':'img1'
+                                    })
+
+                                    %%include('partials/components/gallery_card.html',{
+                                    'image':'img6'
+                                    })
+
+                                    %%include('partials/components/gallery_card.html',{
+                                    'image':'img4'
+                                    })
+
+                                    %%include('partials/components/gallery_card.html',{
+                                    'image':'img7'
+                                    })
+
+                                    %%include('partials/components/gallery_card.html',{
+                                    'image':'img5'
+                                    })
+
+                                    %%include('partials/components/gallery_card.html',{
+                                    'image':'img3'
+                                    })
+
+                                    %%include('partials/components/gallery_card.html',{
+                                    'image':'img7'
+                                    })
+
+                                    %%include('partials/components/gallery_card.html',{
+                                    'image':'img6'
+                                    })
+
+                                    %%include('partials/components/gallery_card.html',{
+                                    'image':'img2'
+                                    })
+
+                                    %%include('partials/components/gallery_card.html',{
+                                    'image':'img3'
+                                    })
+
+                                    %%include('partials/components/gallery_card.html',{
+                                    'image':'img5'
+                                    })
+
+                                    %%include('partials/components/gallery_card.html',{
+                                    'image':'img1'
+                                    })
+
+                                    %%include('partials/components/gallery_card.html',{
+                                    'image':'img7'
+                                    })
+
+                                    %%include('partials/components/gallery_card.html',{
+                                    'image':'img4'
+                                    })
+
+                                    %%include('partials/components/gallery_card.html',{
+                                    'image':'img6'
+                                    })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 my-4">
+                            <button type="button" class="btn border-0 btn-load w-100">
+                                <span class="spinner-border spinner-border-sm border-2 me-1" aria-hidden="true"></span>
+                                <span role="status">Loading more...</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            %%include('./partials/layout/footer.html')
+
+        </div>
+    </div>
+    %%include('./partials/layout/right-sidebar.html')
+
+    <!-- %%include('./partials/right-sidebar.html')
+    %%include('./partials/back-to-top.html') -->
+
+    %%include('./partials/layout/footer-js.html')
+    <script src="plugins/@fancyapps/ui/fancybox/fancybox.umd.js"></script>
+    <script src="js/pages/gallery.js"></script>
+
+</body>
+
+</html>

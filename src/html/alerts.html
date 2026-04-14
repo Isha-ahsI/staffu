@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <div class="page-layout">
+        %%include('./partials/layout/header.html')
+        %%include('./partials/layout/left-sidebar.html')
+        <div class="page-wrapper">
+            <div class="page-content">
+                %%include('./partials/components/page-title.html', { pageTitle: 'Alerts', pagePrTitle: 'UI Elements' })
+                <div class="container-fluid">
+                    <div class="row g-3">
+                        <div class="col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-body pb-1">
+                                    <h5 class="card-title">Default Alerts</h5>
+                                    <div role="alert" class="fade alert alert-primary alert-dismissible show"><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>A simple primary alert—check it out!</div>
+                                    <div role="alert" class="fade alert alert-secondary alert-dismissible show"><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>A simple secondary alert—something subtle!</div>
+                                    <div role="alert" class="fade alert alert-success alert-dismissible show"><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>A simple success alert—great job!</div>
+                                    <div role="alert" class="fade alert alert-danger alert-dismissible show"><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>A simple danger alert—be cautious!</div>
+                                    <div role="alert" class="fade alert alert-warning alert-dismissible show"><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>A simple warning alert—pay attention!</div>
+                                    <div role="alert" class="fade alert alert-info alert-dismissible show"><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>A simple info alert—stay informed!</div>
+                                    <div role="alert" class="fade alert alert-light alert-dismissible show"><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>A simple light alert—easy on the eyes!</div>
+                                    <div role="alert" class="fade alert alert-dark alert-dismissible show"><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>A simple dark alert—strong and bold!</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="card">
+                                <div class="pb-1 card-body">
+                                    <h5 class="card-title">Outline Alerts</h5>
+                                    <div role="alert" class="fade alert alert-outline-primary alert-dismissible show"><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>This is a Primary alert—check it out!</div>
+                                    <div role="alert" class="fade alert alert-outline-secondary alert-dismissible show"><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>This is a Secondary alert—something subtle!</div>
+                                    <div role="alert" class="fade alert alert-outline-success alert-dismissible show"><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>This is a Success alert—great job!</div>
+                                    <div role="alert" class="fade alert alert-outline-danger alert-dismissible show"><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>This is a Danger alert—be cautious!</div>
+                                    <div role="alert" class="fade alert alert-outline-warning alert-dismissible show"><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>This is a Warning alert—pay attention!</div>
+                                    <div role="alert" class="fade alert alert-outline-info alert-dismissible show"><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>This is an Info alert—stay informed!</div>
+                                    <div role="alert" class="fade alert alert-outline-light alert-dismissible show"><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>This is a Light alert—easy on the eyes!</div>
+                                    <div role="alert" class="fade alert alert-outline-dark alert-dismissible show"><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>This is a Dark alert—strong and bold!</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="card h-100">
+                                <div class="pb-1 card-body">
+                                    <h5 class="card-title">Alerts With Icon</h5>
+                                    <div role="alert" class="fade alert alert-primary alert-dismissible show">
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>
+                                        <span class="alert-icon"><i class="ri-information-line fs-5"></i></span>
+                                        <div>This is a Primary alert—check it out!</div>
+                                    </div>
+                                    <div role="alert" class="fade alert alert-secondary alert-dismissible show">
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>
+                                        <span class="alert-icon"><i class="ri-file-list-2-line fs-5"></i></span>
+                                        <div>This is a Secondary alert—something subtle!</div>
+                                    </div>
+                                    <div role="alert" class="fade alert alert-success alert-dismissible show">
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>
+                                        <span class="alert-icon"><i class="ri-checkbox-circle-line fs-5"></i></span>
+                                        <div>This is a Success alert—great job!</div>
+                                    </div>
+                                    <div role="alert" class="fade alert alert-danger alert-dismissible show">
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>
+                                        <span class="alert-icon"><i class="ri-error-warning-line fs-5"></i></span>
+                                        <div>This is a Danger alert—be cautious!</div>
+                                    </div>
+                                    <div role="alert" class="fade alert alert-warning alert-dismissible show">
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>
+                                        <span class="alert-icon"><i class="ri-alert-line fs-5"></i></span>
+                                        <div>This is a Warning alert—pay attention!</div>
+                                    </div>
+                                    <div role="alert" class="fade alert alert-info alert-dismissible show">
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>
+                                        <span class="alert-icon"><i class="ri-lightbulb-line fs-5"></i></span>
+                                        <div>This is an Info alert—stay informed!</div>
+                                    </div>
+                                    <div role="alert" class="fade alert alert-light alert-dismissible show">
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>
+                                        <span class="alert-icon"><i class="ri-sun-line fs-5"></i></span>
+                                        <div>This is a Light alert—easy on the eyes!</div>
+                                    </div>
+                                    <div role="alert" class="fade alert alert-dark alert-dismissible show">
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>
+                                        <span class="alert-icon"><i class="ri-moon-line fs-5"></i></span>
+                                        <div>This is a Dark alert—strong and bold!</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="card h-100">
+                                <div class="pb-1 card-body">
+                                    <h5 class="card-title">Alerts Outline With Icon</h5>
+                                    <div role="alert" class="fade alert alert-outline-primary alert-dismissible show">
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>
+                                        <span class="alert-icon"><i class="ri-information-fill fs-5"></i></span>
+                                        <div>This is a Primary alert—check it out!</div>
+                                    </div>
+                                    <div role="alert" class="fade alert alert-outline-secondary alert-dismissible show">
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>
+                                        <span class="alert-icon"><i class="ri-file-list-2-fill fs-5"></i></span>
+                                        <div>This is a Secondary alert—something subtle!</div>
+                                    </div>
+                                    <div role="alert" class="fade alert alert-outline-success alert-dismissible show">
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>
+                                        <span class="alert-icon"><i class="ri-checkbox-circle-fill"></i></span>
+                                        <div>This is a Success alert—great job!</div>
+                                    </div>
+                                    <div role="alert" class="fade alert alert-outline-danger alert-dismissible show">
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>
+                                        <span class="alert-icon"><i class="ri-error-warning-fill fs-5"></i></span>
+                                        <div>This is a Danger alert—be cautious!</div>
+                                    </div>
+                                    <div role="alert" class="fade alert alert-outline-warning alert-dismissible show">
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>
+                                        <span class="alert-icon"><i class="ri-alert-fill fs-5"></i></span>
+                                        <div>This is a Warning alert—pay attention!</div>
+                                    </div>
+                                    <div role="alert" class="fade alert alert-outline-info alert-dismissible show">
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>
+                                        <span class="alert-icon"><i class="ri-lightbulb-fill fs-5"></i></span>
+                                        <div>This is an Info alert—stay informed!</div>
+                                    </div>
+                                    <div role="alert" class="fade alert alert-outline-light alert-dismissible show">
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>
+                                        <span class="alert-icon"><i class="ri-sun-fill fs-5"></i></span>
+                                        <div>This is a Light alert—easy on the eyes!</div>
+                                    </div>
+                                    <div role="alert" class="fade alert alert-outline-dark alert-dismissible show">
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>
+                                        <span class="alert-icon"><i class="ri-moon-fill fs-5"></i></span>
+                                        <div>This is a Dark alert—strong and bold!</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="card">
+                                <div class="pb-1 card-body">
+                                    <h5 class="card-title">Links Alerts</h5>
+                                    <div role="alert" class="fade alert alert-primary alert-dismissible show">
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>This is a Primary alert—check it out! <a class="alert-link" href="#" role="button" tabindex="0">Learn more</a>
+                                    </div>
+                                    <div role="alert" class="fade alert alert-secondary alert-dismissible show">
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>This is a Secondary alert—something subtle! <a class="alert-link" href="#" role="button" tabindex="0">Explore details</a>
+                                    </div>
+                                    <div role="alert" class="fade alert alert-success alert-dismissible show">
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>This is a Success alert—great job! <a class="alert-link" href="#" role="button" tabindex="0">Celebrate here</a>
+                                    </div>
+                                    <div role="alert" class="fade alert alert-danger alert-dismissible show">
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>This is a Danger alert—be cautious! <a class="alert-link" href="#" role="button" tabindex="0">Take action</a>
+                                    </div>
+                                    <div role="alert" class="fade alert alert-warning alert-dismissible show">
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>This is a warning alert—be cautious! <a class="alert-link" href="#" role="button" tabindex="0">Be cautious</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="card">
+                                <div class="pb-1 card-body">
+                                    <h5 class="card-title">Links Outline Alerts</h5>
+                                    <div role="alert" class="fade alert alert-outline-primary alert-dismissible show">
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>This is a Primary alert—check it out! <a class="alert-link" href="#" role="button" tabindex="0">Learn more</a>
+                                    </div>
+                                    <div role="alert" class="fade alert alert-outline-secondary alert-dismissible show">
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>This is a Secondary alert—something subtle! <a class="alert-link" href="#" role="button" tabindex="0">Explore details</a>
+                                    </div>
+                                    <div role="alert" class="fade alert alert-outline-success alert-dismissible show">
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>This is a Success alert—great job! <a class="alert-link" href="#" role="button" tabindex="0">Celebrate here</a>
+                                    </div>
+                                    <div role="alert" class="fade alert alert-outline-danger alert-dismissible show">
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>This is a Danger alert—be cautious! <a class="alert-link" href="#" role="button" tabindex="0">Take action</a>
+                                    </div>
+                                    <div role="alert" class="fade alert alert-outline-warning alert-dismissible show">
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>This is a warning alert—be cautious! <a class="alert-link" href="#" role="button" tabindex="0">Please warn</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="pb-1 card-body">
+                                    <h5 class="card-title">Additional content</h5>
+                                    <div role="alert" class="fade alert d-block alert-success alert-dismissible show"><button type="button" class="btn-close pt-1" data-bs-dismiss="alert" aria-label="Close alert"></button>
+                                        <h4 class="alert-heading fw-bold">Hey, nice to see you</h4>
+                                        <p class="fw-normal">Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+                                        <hr>
+                                        <p class="mb-0 fw-normal">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="pb-1 card-body">
+                                    <h5 class="card-title">Additional Content Outline</h5>
+                                    <div role="alert" class="fade alert d-block alert-outline-danger alert-dismissible show">
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close alert"></button>
+                                        <h4 class="alert-heading fw-bold">Oops! Something went wrong</h4>
+                                        <p class="fw-normal">Oh no! Something went wrong while processing your request. This error message is intentionally a bit longer so you can clearly see how spacing and layout behave inside a danger alert when the content spans multiple lines.</p>
+                                        <hr>
+                                        <p class="mb-0 fw-normal">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            %%include('./partials/layout/footer.html')
+        </div>
+    </div>
+    
+    %%include('./partials/layout/right-sidebar.html')
+    <!-- %%include('./partials/right-sidebar.html')
+    %%include('./partials/back-to-top.html') -->
+
+    %%include('./partials/layout/footer-js.html')
+</body>
+
+</html>

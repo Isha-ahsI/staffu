@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <div class="page-layout">
+        %%include('./partials/layout/header.html')
+        %%include('./partials/layout/left-sidebar.html')
+        <div class="page-wrapper">
+            <div class="page-content">
+                %%include('./partials/components/page-title.html', { pageTitle: 'Email', pagePrTitle: 'Apps' })
+                <div class="container-fluid">
+                    <div class="row mb-4 align-items-stretch">
+                        <div class="col-xl-3 col-lg-4 col-12">
+                            <div class="d-none d-lg-block h-100">
+                                %%include("partials/components/email_sidebar.html")
+                            </div>
+                        </div>
+                        <div class="col-xl-9 col-lg-8 col-12">
+                            <div class="card mb-0 h-100">
+                                <div class="card-body p-0">
+                                    <div class="row g-0">
+                                        <div class="col-xl-11 col-lg-10 col-md-11 col-sm-10 col-12">
+                                            <div>
+                                                <div class="px-3 pb-3 pt-4 border-bottom">
+                                                    <div
+                                                        class="d-flex flex-sm-row flex-column align-items-sm-center gap-2 mb-3">
+                                                        <div
+                                                            class="d-flex align-items-sm-center justify-content-between gap-2">
+                                                            <button type="button"
+                                                                class="d-lg-none me-3 avatar avatar-md p-0 border-0 btn bg-soft-secondary text-dark rounded-circle"
+                                                                data-bs-toggle="offcanvas"
+                                                                data-bs-target="#emailOffcanvas"
+                                                                aria-controls="emailOffcanvas"
+                                                                aria-label="Open email sidebar">
+                                                                <i class="ri-menu-line fs-5"></i>
+                                                            </button>
+                                                            <div class="ms-auto d-sm-none d-block">
+                                                                <button type="button"
+                                                                    class="avatar avatar-md p-0 rounded-circle btn btn-soft-warning"><img
+                                                                        alt="Avatar Img"
+                                                                        class="w-100 h-100 rounded-circle"
+                                                                        src="../images/avatars/avatar1.jpg"></button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="position-relative w-100 d-block">
+                                                            <span
+                                                                class="position-absolute top-50 translate-middle start-0 ms-4"><i
+                                                                    class="bi bi-search"></i></span>
+                                                            <input class="form-control ps-5" type="email"
+                                                                placeholder="Search Mail"
+                                                                aria-label="Email Search input" id="emailsearch">
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex flex-wrap align-items-center justify-content-between gap-1">
+                                                        <div class="d-flex align-items-center mx-3 gap-3">
+                                                            <input class="form-check-input mt-0" type="checkbox"
+                                                                id="selectAll">
+                                                            <div class="vr opacity-25"></div>
+                                                            <div class="dropdown">
+                                                                <button
+                                                                    class="px-2 py-1 border-0 rounded-circle dropdown-toggle btn btn-light btn-sm"
+                                                                    type="button" data-bs-toggle="dropdown">
+                                                                    <i class="ri-arrow-down-s-fill"></i>
+                                                                </button>
+                                                                <ul class="dropdown-menu">
+                                                                    <li><a class="dropdown-item" href="#"><i
+                                                                                class="ri-check-line me-2"></i>All</a>
+                                                                    </li>
+                                                                    <li><a class="dropdown-item" href="#"><i
+                                                                                class="ri-close-line me-2"></i>None</a>
+                                                                    </li>
+                                                                    <li><a class="dropdown-item" href="#"><i
+                                                                                class="ri-mail-open-line me-2"></i>Read</a>
+                                                                    </li>
+                                                                    <li><a class="dropdown-item" href="#"><i
+                                                                                class="ri-mail-line me-2"></i>Unread</a>
+                                                                    </li>
+                                                                    <li><a class="dropdown-item" href="#"><i
+                                                                                class="ri-star-line me-2"></i>Starred</a>
+                                                                    </li>
+                                                                    <li><a class="dropdown-item" href="#"><i
+                                                                                class="ri-star-off-line me-2"></i>Unstarred</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <button class="btn btn-sm" data-bs-toggle="tooltip"
+                                                                data-bs-placement="bottom" data-bs-title="Refresh"><i
+                                                                    class="ri-refresh-line fw-semibold"></i></button>
+                                                        </div>
+                                                        <div
+                                                            class="d-flex align-items-center justify-content-end ms-auto gap-3">
+                                                            <small class="text-muted me-3" id="emailCount">10
+                                                                mails</small>
+                                                            <button
+                                                                class="btn btn-sm btn-light px-2 py-1 border-0 rounded-circle"
+                                                                data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                                                data-bs-title="Newer"><i
+                                                                    class="bi bi-chevron-left"></i></button>
+                                                            <button
+                                                                class="btn btn-sm btn-light px-2 py-1 border-0 rounded-circle"
+                                                                data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                                                data-bs-title="Older"><i
+                                                                    class="bi bi-chevron-right"></i></button>
+                                                            <div class="vr opacity-25"></div>
+                                                            <div class="dropdown">
+                                                                <button type="button" id="emailDrop"
+                                                                    aria-expanded="false"
+                                                                    class="card-drop-icon dropdown-toggle btn"
+                                                                    data-bs-toggle="dropdown"><i
+                                                                        class="bi bi-three-dots fs-20"></i></button>
+                                                                <div aria-labelledby="emailDrop"
+                                                                    class="dropdown-menu dropdown-menu-end">
+                                                                    <a class="dropdown-item" href="#"
+                                                                        data-discover="true">Display Density</a>
+                                                                    <a class="dropdown-item" href="#"
+                                                                        data-discover="true">Comfortable</a>
+                                                                    <a class="dropdown-item" href="#"
+                                                                        data-discover="true">Cozy</a>
+                                                                    <a class="dropdown-item" href="#"
+                                                                        data-discover="true">Compact</a>
+                                                                    <hr class="dropdown-divider">
+                                                                    <a class="dropdown-item" href="#"
+                                                                        data-discover="true">Setting</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Email List Container -->
+                                                <div class="email-msg">
+                                                    <div class="border-0 list-group list-group-flush mx-3 email-item"
+                                                        id="emailList">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-1 col-lg-2 col-md-1 col-sm-2 col-12 d-sm-block d-none border-start border-2">
+                                            <div class="px-3 py-4">
+                                                <div
+                                                    class="d-flex jusitfy-content-center flex-column align-items-center gap-3">
+                                                    <button type="button"
+                                                        class="avatar avatar-lg p-0 rounded-circle btn btn-soft-warning mb-3"><img
+                                                            alt="Avatar Img" class="w-100 h-100 rounded-circle"
+                                                            src="../images/avatars/avatar1.jpg"></button>
+                                                    <button type="button"
+                                                        class="avatar avatar-md p-0 rounded-circle btn border-0 bg-soft-secondary"
+                                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                                        data-bs-title="Calender"><i
+                                                            class="bi bi-calendar-event"></i></button>
+                                                    <button type="button"
+                                                        class="avatar avatar-md p-0 rounded-circle btn border-0 bg-soft-secondary"
+                                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                                        data-bs-title="Tasks"><i
+                                                            class="bi bi-check-all text-success"></i></button>
+                                                    <button type="button"
+                                                        class="avatar avatar-md p-0 rounded-circle btn border-0 bg-soft-secondary"
+                                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                                        data-bs-title="Contacts"><i
+                                                            class="bi bi-person-fill text-blue"></i></button>
+                                                </div>
+                                                <hr>
+                                                <div
+                                                    class="d-flex jusitfy-content-center flex-column align-items-center">
+                                                    <button type="button"
+                                                        class="avatar avatar-md p-0 rounded-circle btn border-0 p-0 bg-transparent"
+                                                        data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                                        data-bs-title="Get Add-ons"><i
+                                                            class="bi bi-plus-lg text-muted"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer py-3">
+                                    <div
+                                        class="d-flex flex-md-row flex-column justify-content-md-between align-items-md-start align-items-center justifu-content-center gap-3">
+                                        <div
+                                            class="storage-badge bg-soft-secondary border border-1 border-secondary  border-opacity-10 rounded-3 py-2 px-3">
+                                            <p class="mb-2 text-muted fs-14"><span class="text-dark fw-bold">7.02 GB Of
+                                                </span>15 GB used</p>
+                                            <div class="progress" role="progressbar" aria-label="Example 1px high"
+                                                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"
+                                                style="height: 6px">
+                                                <div class="progress-bar w-47"></div>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="d-flex flex-md-column flex-row align-items-md-end align-items-center gap-2">
+                                            <small class="d-block">Last account activity : 18 minutes ago</small>
+                                            <a href="#" class="text-dark">Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            %%include('./partials/layout/footer.html')
+        </div>
+    </div>
+
+
+    <!-- Compose Email Modal -->
+    <div class="modal fade" id="composeModal" tabindex="-1">
+        <div class="modal-dialog modal-lg modal-dialog-centered overflow-hidden" id="modalEmailDialog">
+            <div class="modal-content border-0 overflow-hidden">
+                <div
+                    class="modal-header d-flex justify-content-between align-items-center bg-secondary bg-opacity-10 py-2">
+                    <h5 class="modal-title">New Message</h5>
+                    <div class="d-flex align-items-center gap-2">
+                        <button type="button" class="btn p-2 border-0" id="minimizeBtn"><i
+                                class="bi bi-dash-lg"></i></button>
+                        <button type="button" class="btn p-2 border-0" id="maximizeBtn"><i
+                                class="bi bi-arrows-angle-expand"></i></button>
+                        <button type="button" class="btn p-2 border-0" data-bs-dismiss="modal" aria-label="Close"><i
+                                class="bi bi-x-lg"></i></button>
+                    </div>
+                </div>
+                <form id="composeForm">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <div class="input-group">
+                                <input type="email" id="recipients"
+                                    class="form-control bg-transparent border-0 border-bottom rounded-0 ps-1"
+                                    placeholder="To" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="input-group">
+                                <input type="text" id="subject"
+                                    class="form-control bg-transparent border-0 border-bottom rounded-0 ps-1"
+                                    placeholder="Subject">
+                            </div>
+                        </div>
+                        <div class="flex-grow-1 quill" style="min-height: 300px;">
+                            <div id="editor" style="height: 300px;"></div>
+                        </div>
+                    </div>
+                    <div class="modal-footer bg-secondary bg-opacity-10 p-3 d-flex justify-content-between">
+                        <div class="d-flex align-items-center">
+                            <div class="btn-group ms-2">
+                                <button type="button" class="btn btn-light text-muted border"
+                                    onclick="triggerFileInput()"><i class="ri-attachment-line"></i></button>
+                                <input id="fileEmailInput" class="d-none" multiple type="file">
+                                <div class="dropdown">
+                                    <button type="button"
+                                        class="btn btn-light text-muted border dropdown-toggle rounded-start-0"
+                                        id="emojiEmailBtn" data-bs-toggle="dropdown" aria-expanded="false"><i
+                                            class="ri-emotion-line"></i></button>
+                                    <div class="dropdown-menu dropdown-menu-start" aria-labelledby="emojiEmailBtn">
+                                        <emoji-picker id="emojiEmailPicker"></emoji-picker>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary px-3 d-flex align-items-center">
+                            <i class="ri-send-plane-line me-2"></i> Send
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Email Detail Offcanvas -->
+    <div class="offcanvas offcanvas-end email-detail-offcanvas" tabindex="-1" id="emailDetailOffcanvas">
+        <div class="border-bottom bg-secondary bg-opacity-10 py-3 offcanvas-header">
+            <div class="d-flex w-100 align-items-sm-center align-items-start">
+                <button type="button" class="btn btn-link p-0 text-dark me-3">
+                    <i class="ri-arrow-left-wide-line fs-5"></i>
+                </button>
+                <div class="d-flex align-items-sm-center align-items-start flex-grow-1">
+                    <div class="d-flex flex-wrap align-items-center gap-3">
+                        <div class="position-relative">
+                            <img src="images/avatars/avatar1.jpg" alt="" class="avatar-img-lg rounded-circle shadow-sm"
+                                id="emailAvatar">
+                        </div>
+                        <div>
+                            <div class="d-flex flex-wrap align-items-center mb-1 column-gap-3">
+                                <h5 class="mb-0 fw-semibold">
+                                    <span id="emailSender">Sender Name</span>
+                                </h5>
+                                <p class="mb-0"><span id="emailId" class="badge badge-sm bg-soft-dark">Sender Mail
+                                        Id</span></p>
+                            </div>
+                            <div class="d-flex flex-wrap align-items-center column-gap-3">
+                                <small class="text-muted">to me</small>
+                                <div>
+                                    <small class="fs-14 text-muted"><span id="emailTime"></span></small>
+                                    <small class="fs-14 text-muted">,</small>
+                                    <small class="fs-14 text-muted"><span id="emailDate"></span></small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ms-auto d-flex align-items-center gap-3">
+                        <button type="button" class="btn btn-link p-0 text-danger" id="deleteButton">
+                            <i class="ri-delete-bin-line fs-5 text-danger"></i>
+                        </button>
+                        <button type="button" class="btn btn-link p-0 text-muted" id="starButton">
+                            <i class="fs-5 ri-star-line" id="starIcon"></i>
+                        </button>
+                        <div class="dropdown">
+                            <button type="button" id="emailDrop" aria-expanded="true"
+                                class="card-drop-icon dropdown-toggle btn" data-bs-toggle="dropdown"><i
+                                    class="bi bi-three-dots fs-20"></i></button>
+                            <div aria-labelledby="emailDrop" class="dropdown-menu dropdown-menu-end"
+                                data-popper-placement="bottom-end"
+                                style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate(0px, 32px);">
+                                <a class="dropdown-item" href="#" data-discover="true"><span class="me-1"><i
+                                            class="ri-reply-line"></i></span>Reply</a>
+                                <a class="dropdown-item" href="#" data-discover="true"><span class="me-1"><i
+                                            class="ri-share-forward-line"></i></span>Forward</a>
+                                <hr class="dropdown-divider">
+                                <a class="dropdown-item" href="#" data-discover="true"><span class="me-1"><i
+                                            class="ri-delete-bin-2-line"></i></span>Delete</a>
+                                <a class="dropdown-item" href="#" data-discover="true"><span class="me-1"><i
+                                            class="ri-mail-unread-line"></i></span>Mark as unread</a>
+                                <hr class="dropdown-divider">
+                                <a class="dropdown-item" href="#" data-discover="true"><span class="me-1"><i
+                                            class="ri-error-warning-line"></i></span>Report spam</a>
+                                <a class="dropdown-item" href="#" data-discover="true"><span class="me-1"><i
+                                            class="ri-error-warning-line"></i></span>Report phishing</a>
+                                <hr class="dropdown-divider">
+                                <a class="dropdown-item" href="#" data-discover="true"><span class="me-1"><i
+                                            class="ri-printer-line"></i></span>Print</a>
+                                <a class="dropdown-item" href="#" data-discover="true"><span class="me-1"><i
+                                            class="ri-download-2-line"></i></span>Download message</a>
+                                <a class="dropdown-item" href="#" data-discover="true"><span class="me-1"><i
+                                            class="ri-code-line"></i></span>Show origin</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="offcanvas-body p-4" id="emailDetailContent">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h6 class="fw-semibold mb-4" id="emailSubject">Email Subject</h6>
+                    <p class="mb-4 fs-14 lead" id="emailPreview"></p>
+                    <div class="mb-4 fs-14">
+                        <p>Thank you for your message. I've received the information you sent and will review it
+                            shortly. Please let me know if you need any additional assistance.</p>
+                    </div>
+                    <div class="d-flex align-items-center border-top pt-3">
+                        <div class="flex-grow-1">
+                            <p class="mb-0 fs-14">Best regards,<br><strong id="emailSenderFooter"></strong></p>
+                        </div>
+                        <span class="badge" id="emailCategory"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-4" id="attachmentCard">
+                <div class="card-header bg-secondary bg-opacity-10 d-flex align-items-center">
+                    <i class="ri-attachment-2 me-2 text-primary fs-5"></i>
+                    <h6 class="mb-0 text-muted">Attachments (2)</h6>
+                </div>
+                <div class="card-body">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="card mb-0">
+                                <div class="card-body p-3 d-flex flex-wrap gap-3 align-items-center">
+                                    <div class="avatar avatar-xxxxl bg-soft-danger rounded-circle me-3">
+                                        <i class="ri-file-pdf-line text-danger"></i>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <h6 class="mb-1">Document.pdf</h6>
+                                        <div class="d-flex align-items-center">
+                                            <span class="badge bg-soft-secondary me-2">PDF</span>
+                                            <span class="text-muted small">0.8 MB</span>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="avatar avatar-md p-0 btn btn-light rounded-circle"><i
+                                            class="bi bi-download"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card mb-0">
+                                <div class="card-body p-3 d-flex flex-wrap gap-3 align-items-center">
+                                    <div class="avatar avatar-xxxxl bg-soft-success rounded-circle me-3">
+                                        <i class="ri-image-line text-success"></i>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <h6 class="mb-1">Image.jpg</h6>
+                                        <div class="d-flex align-items-center">
+                                            <span class="badge bg-soft-secondary me-2">Image</span>
+                                            <span class="text-muted small">1.2 MB</span>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="avatar avatar-md p-0 btn btn-light rounded-circle"><i
+                                            class="bi bi-download"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card mb-4">
+                <div class="p-3 card-body">
+                    <form class="">
+                        <div class="mb-3">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="position-relative">
+                                    <div
+                                        class="bg-primary avatar-sm avatar rounded-circle text-white me-2 d-flex align-items-center justify-content-center">
+                                        <span class="fw-medium">U</span>
+                                    </div>
+                                    <span
+                                        class="position-absolute bottom-0 end-0 me-2 border border-white rounded-circle p-1 badge bg-success"><span
+                                            class="visually-hidden">Online</span></span>
+                                </div>
+                                <div>
+                                    <small class="text-muted">From: <span
+                                            class="text-dark fw-medium">user@example.com</span></small>
+                                    <button type="button" class="p-0 ms-2 text-muted btn btn-link btn-sm"><i
+                                            class="ri-arrow-down-s-line"></i></button>
+                                </div>
+                                <div class="ms-auto">
+                                    <button type="button" class="p-0 text-muted btn btn-link btn-sm"><i
+                                            class="ri-subtract-line"></i></button>
+                                </div>
+                            </div>
+                            <div class="mb-2 input-group">
+                                <input placeholder="Subject: Re: {selectedEmail?.subject}" class="border form-control"
+                                    id="subjectre">
+                            </div>
+                            <textarea rows="4" placeholder="Type your reply here..." id="emailtext"
+                                class="border rounded form-control"></textarea>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div class="d-flex flex-wrap gap-3 ms-3">
+                                <button type="button" class="btn btn-link text-dark p-0">
+                                    <i class="ri-image-line me-1 fs-5"></i>
+                                </button>
+                                <button type="button" id="dropdown-more-options-reply" aria-expanded="false"
+                                    class="btn btn-link text-dark p-0"><i class="ri-more-fill me-1 fs-5"></i>
+                                </button>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <button type="button" class="me-2 d-flex align-items-center btn btn-primary btn-sm">
+                                    <i class="ri-send-plane-line me-1 fw-medium"></i> Send
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="d-flex align-items-center gap-2">
+                <button type="button" class="btn btn-outline-primary btn-sm d-flex align-items-center rounded-pill">
+                    <i class="ri-reply-line me-1 fw-medium"></i> Reply
+                </button>
+                <button type="button" class="btn btn-outline-secondary btn-sm d-flex align-items-center rounded-pill">
+                    <i class="ri-share-forward-line me-1 fw-medium"></i> Forward
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Sidebar Offcanvas -->
+    <div class="offcanvas offcanvas-start d-lg-none d-block chat-offcanvas" tabindex="-1" id="emailOffcanvas">
+        <div class="offcanvas-header pb-0">
+            <div class="mb-2 d-flex align-items-end gap-3">
+                <img src="../../../images/b_logo/gmail.png" alt="gmail logo" class="img-fluid">
+                <h3 class="mb-0 fw-semibold text-dark">Email</h3>
+            </div>
+            <button type="button" class="btn-close d-flex align-items-center justify-content-center"
+                data-bs-dismiss="offcanvas" aria-label="Close"><span><i class="ri-close-large-line"></i></span></button>
+        </div>
+        <div class="offcanvas-body p-0">
+            <div class="email-offcanvas-sidebar">
+                <div data-simplebar style="height: 100%; overflow-y: auto;">
+                    %%include("partials/components/email_sidebar.html")
+                </div>
+            </div>
+        </div>
+        <div class="offcanvas-footer p-3">
+            <div class="list-group list-group-flush email-option-list-group mb-3">
+                <li class="list-group-item px-2">
+                    <a href="#"><span class="align-middle me-1"><i
+                                class="bi bi-gear"></i></span><span>Setting</span></a>
+                </li>
+                <li class="list-group-item px-2">
+                    <a href="#"><span class="align-middle me-1"><i class="bi bi-headset"></i></span><span>Help
+                            Center</span></a>
+                </li>
+            </div>
+            <button class="btn btn-outline-dark btn-sm w-100 d-flex align-items-center justify-content-between">
+                <span class="d-flex align-items-center">
+                    <span class="badge bg-dark rounded-circle me-2">1</span>
+                    Upgrade
+                </span>
+                <span><i class="ri-arrow-right-long-fill fs-5"></i></span>
+            </button>
+        </div>
+    </div>
+
+
+    %%include('./partials/layout/right-sidebar.html')
+
+    <!-- %%include('./partials/right-sidebar.html')
+    %%include('./partials/back-to-top.html') -->
+
+    %%include('./partials/layout/footer-js.html')
+    <script src="plugins/quill/quill.js"></script>
+    <script type="module" src="plugins/emoji-picker-element/index.js"></script>
+    <script src="js/pages/email_data.js"></script>
+    <script src="js/pages/email.js"></script>
+
+</body>
+
+</html>

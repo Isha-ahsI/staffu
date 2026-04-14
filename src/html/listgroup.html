@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <div class="page-layout">
+        %%include('./partials/layout/header.html')
+        %%include('./partials/layout/left-sidebar.html')
+
+        <div class="page-wrapper">
+            <div class="page-content">
+                %%include('./partials/components/page-title.html', { pageTitle: 'List Groups', pagePrTitle: 'UI Elements' })
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- default items-->
+                        <div class="col-lg-4 col-sm-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Default Items</h5>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">General Overview</li>
+                                        <li class="list-group-item">User Management</li>
+                                        <li class="list-group-item">Analytics Dashboard</li>
+                                        <li class="list-group-item">System Settings</li>
+                                        <li class="list-group-item">Support and Feedback</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- active items-->
+                        <div class="col-lg-4 col-sm-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Active Items</h5>
+                                    <ul class="list-group">
+                                        <li class="list-group-item active">General Overview</li>
+                                        <li class="list-group-item">User Management</li>
+                                        <li class="list-group-item">Analytics Dashboard</li>
+                                        <li class="list-group-item">System Settings</li>
+                                        <li class="list-group-item">Support and Feedback</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- disabled items -->
+                        <div class="col-lg-4 col-sm-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Disabled Items</h5>
+                                    <ul class="list-group">
+                                        <li tabindex="-1" aria-disabled="true" class="list-group-item disabled">General
+                                            Overview</li>
+                                        <li class="list-group-item">User Management</li>
+                                        <li class="list-group-item">Analytics Dashboard</li>
+                                        <li class="list-group-item">System Settings</li>
+                                        <li class="list-group-item">Support and Feedback</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- flush items -->
+                        <div class="col-lg-4 col-sm-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Flush Items</h5>
+                                    <ul class="list-group list-group-flush">
+                                        <li class="list-group-item bg-transparent">General Overview</li>
+                                        <li class="list-group-item bg-transparent">User Management</li>
+                                        <li class="list-group-item bg-transparent">Analytics Dashboard</li>
+                                        <li class="list-group-item bg-transparent">System Settings</li>
+                                        <li class="list-group-item bg-transparent">Support and Feedback</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- number items -->
+                        <div class="col-lg-4 col-sm-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Numbered Items</h5>
+                                    <ol class="list-group list-group-numbered">
+                                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                                            <div class="ms-2 me-auto">
+                                                <div class="fw-bold">Subheading</div>
+                                                Content for list item
+                                            </div>
+                                            <span class="badge rounded-pill bg-primary">14</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                                            <div class="ms-2 me-auto">
+                                                <div class="fw-bold">Subheading</div>
+                                                Content for list item
+                                            </div>
+                                            <span class="badge rounded-pill bg-outline-success">14</span>
+                                        </li>
+                                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                                            <div class="ms-2 me-auto">
+                                                <div class="fw-bold">Subheading</div>
+                                                Content for list item
+                                            </div>
+                                            <span class="badge rounded-pill bg-soft-danger">14</span>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- horizontal list-group -->
+                        <div class="col-lg-4 col-sm-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Horizontal Listgroups</h5>
+                                    <div class="flex-wrap mb-3 list-group list-group-horizontal">
+                                        <div class="list-group-item">Dashboard</div>
+                                        <div class="list-group-item">Management</div>
+                                        <div class="list-group-item">Settings</div>
+                                    </div>
+                                    <div class="flex-wrap mb-3 list-group list-group-horizontal">
+                                        <div class="list-group-item">Notifications</div>
+                                        <div class="list-group-item">Support</div>
+                                        <div class="list-group-item">Integration</div>
+                                    </div>
+                                    <div class="flex-wrap mb-3 list-group list-group-horizontal">
+                                        <div class="list-group-item">Projects</div>
+                                        <div class="list-group-item">Analytics</div>
+                                        <div class="list-group-item">Profile</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- listgroup with radio butttons -->
+                        <div class="col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Radio Items</h5>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">
+                                            <input class="form-check-input me-1" type="radio" name="listGroupRadio" value=""
+                                                id="firstRadio" checked>
+                                            <label class="form-check-label" for="firstRadio">First radio</label>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <input class="form-check-input me-1" type="radio" name="listGroupRadio" value=""
+                                                id="secondRadio">
+                                            <label class="form-check-label" for="secondRadio">Second radio</label>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <input class="form-check-input me-1" type="radio" name="listGroupRadio" value=""
+                                                id="thirdRadio">
+                                            <label class="form-check-label" for="thirdRadio">Third radio</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- list with checkbox -->
+                        <div class="col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Checkbox Items</h5>
+                                    <ul class="list-group">
+                                        <li class="list-group-item">
+                                            <input class="form-check-input me-1" type="checkbox" value=""
+                                                id="firstCheckboxStretched" checked>
+                                            <label class="form-check-label stretched-link"
+                                                for="firstCheckboxStretched">First checkbox</label>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <input class="form-check-input me-1" type="checkbox" value=""
+                                                id="secondCheckboxStretched" checked>
+                                            <label class="form-check-label stretched-link"
+                                                for="secondCheckboxStretched">Second checkbox</label>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <input class="form-check-input me-1" type="checkbox" value=""
+                                                id="thirdCheckboxStretched">
+                                            <label class="form-check-label stretched-link"
+                                                for="thirdCheckboxStretched">Third checkbox</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Variants -->
+                        <div class="col-sm-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Contextual classes</h5>
+                                    <div class="list-group">
+                                        <div class="list-group-item fw-semibold">No style</div>
+                                        <div class="list-group-item list-group-item-primary fw-semibold">Primary</div>
+                                        <div class="list-group-item list-group-item-secondary fw-semibold">Secondary</div>
+                                        <div class="list-group-item list-group-item-success fw-semibold">Success</div>
+                                        <div class="list-group-item list-group-item-danger fw-semibold">Danger</div>
+                                        <div class="list-group-item list-group-item-warning fw-semibold">Warning</div>
+                                        <div class="list-group-item list-group-item-info fw-semibold">Info</div>
+                                        <div class="list-group-item list-group-item-light fw-semibold">Light</div>
+                                        <div class="list-group-item list-group-item-dark fw-semibold">Dark</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Contextual classes</h5>
+                                    <div class="list-group">
+                                        <button class="list-group-item list-group-item-action fw-semibold">No style</button>
+                                        <button class="list-group-item list-group-item-primary list-group-item-action fw-semibold">Primary</button>
+                                        <button class="list-group-item list-group-item-secondary list-group-item-action fw-semibold">Secondary</button>
+                                        <button class="list-group-item list-group-item-success list-group-item-action fw-semibold">Success</button>
+                                        <button class="list-group-item list-group-item-danger list-group-item-action fw-semibold">Danger</button>
+                                        <button class="list-group-item list-group-item-warning list-group-item-action fw-semibold">Warning</button>
+                                        <button class="list-group-item list-group-item-info list-group-item-action fw-semibold">Info</button>
+                                        <button class="list-group-item list-group-item-light list-group-item-action fw-semibold">Light</button>
+                                        <button class="list-group-item list-group-item-dark list-group-item-action fw-semibold">Dark</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+            %%include('./partials/layout/footer.html')
+        </div>
+    </div>
+    
+    %%include('./partials/layout/right-sidebar.html')
+    <!-- %%include('./partials/right-sidebar.html')
+    %%include('./partials/back-to-top.html') -->
+
+    %%include('./partials/layout/footer-js.html')
+</body>
+
+</html>

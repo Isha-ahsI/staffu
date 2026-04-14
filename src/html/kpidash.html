@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <div class="page-layout">
+        %%include('./partials/layout/header.html')
+        %%include('./partials/layout/left-sidebar.html')
+        <div class="page-wrapper">
+            <div class="page-content">
+                %%include('./partials/components/page-title.html', { pageTitle: 'KPI Dashboards', pagePrTitle:
+                'Reports' })
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row">
+                                <!-- Total Employees -->
+                                <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-4">
+                                    <div class="card h-100 mb-0">
+                                        <div class="card-body">
+                                            <div class="d-flex gap-2 justify-content-between mb-4">
+                                                <div class="avatar avatar-xxxl avatar-soft-primary custom-avatar">
+                                                    <i class="ri-group-line fs-32"></i>
+                                                </div>
+                                                <div class="text-end">
+                                                    <h3 class="fw-bold mb-0">215</h3>
+                                                    <div>
+                                                        <span class="badge bg-soft-success"><i
+                                                                class="ri-arrow-up-line"></i> +5%</span>
+                                                        <small class="text-muted ms-1">vs last mo.</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr class="br-dashed">
+                                            <div>
+                                                <h5 class="mb-0 fs-18 fw-semibold">Total Employees</h5>
+                                                <small>Workforce headcount summary</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- New Hires -->
+                                <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-4">
+                                    <div class="card h-100 mb-0">
+                                        <div class="card-body">
+                                            <div class="d-flex gap-2 justify-content-between mb-4">
+                                                <div class="avatar avatar-xxxl avatar-soft-info custom-avatar">
+                                                    <i class="ri-user-add-line fs-32"></i>
+                                                </div>
+                                                <div class="text-end">
+                                                    <h3 class="fw-bold mb-0">5</h3>
+                                                    <div>
+                                                        <span class="badge bg-soft-success"><i
+                                                                class="ri-arrow-up-line"></i> +25%</span>
+                                                        <small class="text-muted ms-1">vs last mo.</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr class="br-dashed">
+                                            <div>
+                                                <h5 class="mb-0 fs-18 fw-semibold">New Hires (Month)</h5>
+                                                <small>Employees joined this period</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Attrition Rate -->
+                                <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-4">
+                                    <div class="card h-100 mb-0">
+                                        <div class="card-body">
+                                            <div class="d-flex gap-2 justify-content-between mb-4">
+                                                <div class="avatar avatar-xxxl avatar-soft-orange custom-avatar">
+                                                    <i class="ri-user-minus-line fs-32"></i>
+                                                </div>
+                                                <div class="text-end">
+                                                    <h3 class="fw-bold mb-0">1.4%</h3>
+                                                    <div>
+                                                        <span class="badge bg-soft-danger"><i
+                                                                class="ri-arrow-down-line"></i> -0.3%</span>
+                                                        <small class="text-muted ms-1">vs last mo.</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr class="br-dashed">
+                                            <div>
+                                                <h5 class="mb-0 fs-18 fw-semibold">Attrition Rate</h5>
+                                                <small>Employee turnover percentage</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Employee Satisfaction -->
+                                <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-4">
+                                    <div class="card h-100 mb-0">
+                                        <div class="card-body">
+                                            <div class="d-flex gap-2 justify-content-between mb-4">
+                                                <div class="avatar avatar-xxxl avatar-soft-warning custom-avatar">
+                                                    <i class="ri-emotion-line fs-32"></i>
+                                                </div>
+                                                <div class="text-end">
+                                                    <h3 class="fw-bold mb-0">82%</h3>
+                                                    <div>
+                                                        <span class="badge bg-soft-success"><i
+                                                                class="ri-arrow-up-line"></i> +2%</span>
+                                                        <small class="text-muted ms-1">vs last mo.</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr class="br-dashed">
+                                            <div>
+                                                <h5 class="mb-0 fs-18 fw-semibold">Employee Satisfaction</h5>
+                                                <small>Workplace happiness index</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Employees on Leave -->
+                                <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-4">
+                                    <div class="card h-100 mb-0">
+                                        <div class="card-body">
+                                            <div class="d-flex gap-2 justify-content-between mb-4">
+                                                <div class="avatar avatar-xxxl avatar-soft-danger custom-avatar">
+                                                    <i class="ri-user-unfollow-line fs-32"></i>
+                                                </div>
+                                                <div class="text-end">
+                                                    <h3 class="fw-bold mb-0">12</h3>
+                                                    <div>
+                                                        <span class="badge bg-soft-danger"><i
+                                                                class="ri-arrow-down-line"></i> -2%</span>
+                                                        <small class="text-muted ms-1">vs last mo.</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr class="br-dashed">
+                                            <div>
+                                                <h5 class="mb-0 fs-18 fw-semibold">Employees on Leave</h5>
+                                                <small>currently on approved leave</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Attendance Rate -->
+                                <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-4">
+                                    <div class="card h-100 mb-0">
+                                        <div class="card-body">
+                                            <div class="d-flex gap-2 justify-content-between mb-4">
+                                                <div class="avatar avatar-xxxl avatar-soft-success custom-avatar">
+                                                    <i class="ri-user-follow-line fs-32"></i>
+                                                </div>
+                                                <div class="text-end">
+                                                    <h3 class="fw-bold mb-0">198</h3>
+                                                    <div>
+                                                        <span class="badge bg-soft-success"><i
+                                                                class="ri-arrow-up-line"></i> +3%</span>
+                                                        <small class="text-muted ms-1">vs last mo.</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr class="br-dashed">
+                                            <div>
+                                                <h5 class="mb-0 fs-18 fw-semibold">Attendance Rate</h5>
+                                                <small>Overall employee presence</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <!-- Total Sales / Revenue -->
+                                <div class="col-xl-3 col-sm-6 col-12 mb-4">
+                                    <div class="card overflow-hidden h-100 mb-0">
+                                        <div class="card-body pb-0">
+                                            <div class="d-flex justify-content-between">
+                                                <div>
+                                                    <div class="mb-3">
+                                                        <h5 class="text-dark fw-semibold mb-1">Total Sales / Revenue
+                                                        </h5>
+                                                        <p class="fs-15 mb-0">Total money earned in a period</p>
+                                                    </div>
+                                                    <h2 class="text-dark fw-bold mb-0">$1,245,000</h2>
+                                                </div>
+                                                <div class="dropdown">
+                                                    <button type="button" id="genderRatioDrop" aria-expanded="false"
+                                                        class="card-drop-icon dropdown-toggle btn"
+                                                        data-bs-toggle="dropdown"><i
+                                                            class="bi bi-three-dots fs-20"></i></button>
+                                                    <div aria-labelledby="genderRatioDrop"
+                                                        class="dropdown-menu dropdown-menu-end">
+                                                        <a class="dropdown-item" href="#"
+                                                            data-discover="true">Weekly</a>
+                                                        <a class="dropdown-item" href="#"
+                                                            data-discover="true">Monthly</a>
+                                                        <a class="dropdown-item" href="#"
+                                                            data-discover="true">yearly</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer bg-transparent border-0 p-0">
+                                            <div class="spark1"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Total Leads -->
+                                <div class="col-xl-3 col-sm-6 col-12 mb-4">
+                                    <div class="card overflow-hidden h-100 mb-0">
+                                        <div class="card-body pb-0">
+                                            <div class="d-flex justify-content-between">
+                                                <div>
+                                                    <div class="mb-3">
+                                                        <h5 class="text-dark fw-semibold mb-1">Total Leads</h5>
+                                                        <p class="fs-15 mb-0">Number of new leads captured</p>
+                                                    </div>
+                                                    <h2 class="text-dark fw-bold mb-0">1,820</h2>
+                                                </div>
+                                                <div class="dropdown">
+                                                    <button type="button" id="genderRatioDrop" aria-expanded="false"
+                                                        class="card-drop-icon dropdown-toggle btn"
+                                                        data-bs-toggle="dropdown"><i
+                                                            class="bi bi-three-dots fs-20"></i></button>
+                                                    <div aria-labelledby="genderRatioDrop"
+                                                        class="dropdown-menu dropdown-menu-end">
+                                                        <a class="dropdown-item" href="#"
+                                                            data-discover="true">Weekly</a>
+                                                        <a class="dropdown-item" href="#"
+                                                            data-discover="true">Monthly</a>
+                                                        <a class="dropdown-item" href="#"
+                                                            data-discover="true">yearly</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer bg-transparent border-0 p-0">
+                                            <div class="spark2"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Revenue per Lead -->
+                                <div class="col-xl-3 col-sm-6 col-12 mb-4">
+                                    <div class="card overflow-hidden h-100 mb-0">
+                                        <div class="card-body pb-0">
+                                            <div class="d-flex justify-content-between">
+                                                <div>
+                                                    <div class="mb-3">
+                                                        <h5 class="text-dark fw-semibold mb-1">Revenue per Lead</h5>
+                                                        <p class="fs-15 mb-0">Based on 1,820 total leads captured</p>
+                                                    </div>
+                                                    <h2 class="text-dark fw-bold mb-0">$215</h2>
+                                                </div>
+                                                <div class="dropdown">
+                                                    <button type="button" id="genderRatioDrop" aria-expanded="false"
+                                                        class="card-drop-icon dropdown-toggle btn"
+                                                        data-bs-toggle="dropdown"><i
+                                                            class="bi bi-three-dots fs-20"></i></button>
+                                                    <div aria-labelledby="genderRatioDrop"
+                                                        class="dropdown-menu dropdown-menu-end">
+                                                        <a class="dropdown-item" href="#"
+                                                            data-discover="true">Weekly</a>
+                                                        <a class="dropdown-item" href="#"
+                                                            data-discover="true">Monthly</a>
+                                                        <a class="dropdown-item" href="#"
+                                                            data-discover="true">yearly</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer bg-transparent border-0 p-0">
+                                            <div class="spark3"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Conversion Rate -->
+                                <div class="col-xl-3 col-sm-6 col-12 mb-4">
+                                    <div class="card overflow-hidden h-100 mb-0">
+                                        <div class="card-body pb-0">
+                                            <div class="d-flex justify-content-between">
+                                                <div>
+                                                    <div class="mb-3">
+                                                        <h5 class="text-dark fw-semibold mb-1">Conversion Rate</h5>
+                                                        <p class="fs-15 mb-0">% of leads converted into customers</p>
+                                                    </div>
+                                                    <h2 class="text-dark fw-bold mb-0">23%</h2>
+                                                </div>
+                                                <div class="dropdown">
+                                                    <button type="button" id="genderRatioDrop" aria-expanded="false"
+                                                        class="card-drop-icon dropdown-toggle btn"
+                                                        data-bs-toggle="dropdown"><i
+                                                            class="bi bi-three-dots fs-20"></i></button>
+                                                    <div aria-labelledby="genderRatioDrop"
+                                                        class="dropdown-menu dropdown-menu-end">
+                                                        <a class="dropdown-item" href="#"
+                                                            data-discover="true">Weekly</a>
+                                                        <a class="dropdown-item" href="#"
+                                                            data-discover="true">Monthly</a>
+                                                        <a class="dropdown-item" href="#"
+                                                            data-discover="true">yearly</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer bg-transparent border-0 p-0">
+                                            <div class="spark4"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-xl-6 col-12 mb-4">
+                                    <div class="card h-100 mb-0">
+                                        <div class="card-body">
+                                            <div
+                                                class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-3">
+                                                <h5 class="card-title mb-0">Attendance Summary</h5>
+                                                <form>
+                                                    <select name="attendenceSelect" class="form-select form-select-sm"
+                                                        id="attendenceSelect">
+                                                        <option>Today</option>
+                                                        <option>Previous day</option>
+                                                        <option>This week</option>
+                                                    </select>
+                                                </form>
+                                            </div>
+                                            <div class="row odd-border">
+                                                <div class="col-sm-6 col-12">
+                                                    <div class="p-4">
+                                                        <div class="d-flex align-items-center gap-3 pb-2">
+                                                            <div
+                                                                class="avatar avatar-xxxl avatar-soft-success custom-avatar">
+                                                                <i class="ri-check-double-line fs-32"></i>
+                                                            </div>
+                                                            <div>
+                                                                <h3 class="text-success fw-semibold mb-0">40</h3>
+                                                                <h6 class="mb-0">Present Today</h6>
+                                                            </div>
+                                                        </div>
+                                                        <hr class="hr-style-1">
+                                                        <p class="text-center mb-0">124 People Remaining</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 col-12">
+                                                    <div class="p-4">
+                                                        <div class="d-flex align-items-center gap-3 pb-2">
+                                                            <div
+                                                                class="avatar avatar-xxxl avatar-soft-primary custom-avatar">
+                                                                <i class="ri-suitcase-line fs-32"></i>
+                                                            </div>
+                                                            <div>
+                                                                <h3 class="text-primary fw-semibold mb-0">04</h3>
+                                                                <h6 class="mb-0">On Leave</h6>
+                                                            </div>
+                                                        </div>
+                                                        <hr class="hr-style-1">
+                                                        <p class="text-center mb-0">Approved Leave</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 col-12">
+                                                    <div class="p-4">
+                                                        <div class="d-flex align-items-center gap-3 pb-2">
+                                                            <div
+                                                                class="avatar avatar-xxxl avatar-soft-warning custom-avatar">
+                                                                <i class="ri-time-line fs-32"></i>
+                                                            </div>
+                                                            <div>
+                                                                <h3 class="text-warning fw-semibold mb-0">26</h3>
+                                                                <h6 class="mb-0">Late Entry</h6>
+                                                            </div>
+                                                        </div>
+                                                        <hr class="hr-style-1">
+                                                        <p class="text-center mb-0">Without Information</p>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-6 col-12">
+                                                    <div class="p-4">
+                                                        <div class="d-flex align-items-center gap-3 pb-2">
+                                                            <div
+                                                                class="avatar avatar-xxxl avatar-soft-danger custom-avatar">
+                                                                <i class="ri-emotion-unhappy-fill fs-32"></i>
+                                                            </div>
+                                                            <div>
+                                                                <h3 class="text-danger fw-semibold mb-0">01</h3>
+                                                                <h6 class="mb-0">Absent</h6>
+                                                            </div>
+                                                        </div>
+                                                        <hr class="hr-style-1">
+                                                        <p class="text-center mb-0">12 People are on time</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-12 mb-4 ">
+                                    <div class="row h-100">
+                                        <!-- Present Today -->
+                                        <div class="col-xl-6 col-lg-3 col-sm-6 col-12 mb-4">
+                                            <div class="card h-100 mb-0">
+                                                <div class="card-header bg-primary text-light fw-medium">
+                                                    <div class="d-flex align-items-center justify-content-between">
+                                                        Present Today <span><i
+                                                                class="bi bi-person-check fs-5"></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <h3 class="text-dark fw-bold mb-0">93</h3>
+                                                        <small><span
+                                                                class="badge badge-sm bg-soft-primary border-0 text-primary">+4</span>
+                                                            vs yesterday</small>
+                                                    </div>
+                                                    <small class="mb-1 text-dark">Employees present today</small>
+                                                    <div
+                                                        class="d-flex flex-wrap justify-content-between align-items-center mt-3 bg-secondary bg-opacity-10 p-2  rounded-3">
+                                                        <small class="fs-12"><span
+                                                                class="fs-14 fw-semibold text-primary me-1">82</span>On-time</small>
+                                                        <small class="fs-12"><span
+                                                                class="fs-14 fw-semibold text-primary me-1">11</span>Late</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Absent -->
+                                        <div class="col-xl-6 col-lg-3 col-sm-6 col-12 mb-4">
+                                            <div class="card h-100 mb-0">
+                                                <div class="card-header bg-info text-light fw-medium">
+                                                    <div class="d-flex align-items-center justify-content-between">
+                                                        Absent Today <span><i
+                                                                class="bi bi-person-exclamation fs-5"></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <h3 class="text-dark fw-bold mb-0">2</h3>
+                                                        <small><span
+                                                                class="badge badge-sm bg-soft-info border-0 text-info">-2</span>
+                                                            vs yesterday</small>
+                                                    </div>
+                                                    <small class="mb-1 text-dark">Employees absent today</small>
+                                                    <div
+                                                        class="d-flex flex-wrap justify-content-between align-items-center mt-3 bg-secondary bg-opacity-10 p-2  rounded-3">
+                                                        <small class="fs-12"><span
+                                                                class="fs-14 fw-semibold text-info me-1">02</span>Not
+                                                            present today</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- On leave -->
+                                        <div class="col-xl-12 col-lg-6 col-12 mb-xl-0 mb-4">
+                                            <div class="card h-100 mb-0">
+                                                <div class="card-header bg-danger text-light fw-medium">
+                                                    <div class="d-flex align-items-center justify-content-between">
+                                                        On Leave
+                                                        <span><i class="bi bi-person-x fs-5"></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <h3 class="text-dark fw-bold mb-0">6</h3>
+                                                        <small><span
+                                                                class="badge badge-sm bg-soft-danger border-0 text-danger">-1</span>
+                                                            vs yesterday</small>
+                                                    </div>
+                                                    <small class="mb-1 text-dark">Employees on leave today</small>
+                                                    <div
+                                                        class="d-flex flex-wrap justify-content-between align-items-center mt-3 bg-secondary bg-opacity-10 p-2 rounded-3">
+                                                        <small class="fs-12"><span
+                                                                class="fs-14 fw-semibold text-danger me-1">03</span>Annual
+                                                            leave</small>
+                                                        <small class="fs-12"><span
+                                                                class="fs-14 fw-semibold text-danger me-1">02</span>Sick
+                                                            leave</small>
+                                                        <small class="fs-12"><span
+                                                                class="fs-14 fw-semibold text-danger me-1">01</span>Others</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <!-- Total Sales Revenue -->
+                                <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-4">
+                                    <div class="card overflow-hidden h-100 mb-0">
+                                        <div class="card-body pb-0">
+                                            <div class="d-flex flex-wrap justify-content-between gap-1">
+                                                <div>
+                                                    <h6 class="text-dark mb-0 fw-semibold">Total Sales Revenue</h6>
+                                                    <small>total value of deals closed in a period</small>
+                                                    <h3 class="text-dark fw-bold mt-3">$12,450,000</h3>
+                                                </div>
+                                                <div>
+                                                    <div class="d-flex gap-1 lh-1 align-items-center">
+                                                        <span class="badge bg-soft-success p-1 fs-10"><i
+                                                                class="ri-arrow-up-long-line"></i></span>
+                                                        <p class="mb-0 text-success">18%</p>
+                                                    </div>
+                                                    <small>vs last month</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="revenueChart"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Average Deal Size -->
+                                <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-4">
+                                    <div class="card overflow-hidden h-100 mb-0">
+                                        <div class="card-body pb-0">
+                                            <div class="d-flex flex-wrap justify-content-between gap-1">
+                                                <div>
+                                                    <h6 class="text-dark mb-0 fw-semibold">Average Deal Size
+                                                    </h6>
+                                                    <small>Average revenue per deal</small>
+                                                    <h3 class="text-dark fw-bold mt-3">$4,15,000</h3>
+                                                </div>
+                                                <div>
+                                                    <div class="d-flex gap-1 lh-1 align-items-center">
+                                                        <span class="badge bg-soft-success p-1 fs-10"><i
+                                                                class="ri-arrow-up-long-line"></i></span>
+                                                        <p class="mb-0 text-success">8%</p>
+                                                    </div>
+                                                    <small>vs last month</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="averageDealChart"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Number of Deals Closed -->
+                                <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-4">
+                                    <div class="card overflow-hidden h-100 mb-0">
+                                        <div class="card-body pb-0">
+                                            <div class="d-flex flex-wrap justify-content-between gap-1">
+                                                <div>
+                                                    <h6 class="text-dark mb-0 fw-semibold">Number of Deals Closed</h6>
+                                                    <small>Total number of successfully closed deals</small>
+                                                    <h3 class="text-dark fw-bold mt-3">30 Deals</h3>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="dealClosedChart"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Win Rate  -->
+                                <div class="col-xl-3 col-sm-6 col-12 mb-4">
+                                    <div class="card overflow-hidden h-100 mb-0">
+                                        <div class="card-body">
+                                            <h6 class="text-dark fw-semibold">Win Rate/Lost Rate</h6>
+                                            <div class="winRateChart"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Customer Acquisition Rate -->
+                                <div class="col-xl-4 col-md-6 col-12 mb-4">
+                                    <div class="card overflow-hidden h-100 mb-0">
+                                        <div class="card-body">
+                                            <div class="d-flex flex-wrap justify-content-between gap-1">
+                                                <div>
+                                                    <h6 class="text-dark mb-0 fw-semibold">Customer Acquisition Rate
+                                                    </h6>
+                                                    <small>new customers gained</small>
+                                                    <h3 class="text-dark fw-bold mt-3">45 Customers</h3>
+                                                </div>
+                                                <div>
+                                                    <div class="d-flex gap-1 lh-1 align-items-center">
+                                                        <span class="badge bg-soft-success p-1 fs-10"><i
+                                                                class="ri-arrow-up-long-line"></i></span>
+                                                        <p class="mb-0 text-success">+10%</p>
+                                                    </div>
+                                                    <small>vs last month</small>
+                                                </div>
+                                            </div>
+                                            <div class="cusAcquisitionChart"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Churn Rate  -->
+                                <div class="col-xl-4 col-md-6 col-12 mb-4">
+                                    <div class="card overflow-hidden h-100 mb-0">
+                                        <div class="card-body">
+                                            <div class="d-flex flex-wrap justify-content-between gap-1">
+                                                <div>
+                                                    <h6 class="text-dark mb-0 fw-semibold">Churn Rate</h6>
+                                                    <small>% of lost customers</small>
+                                                    <h3 class="text-dark fw-bold mt-3">6%</h3>
+                                                </div>
+                                                <div>
+                                                    <div class="d-flex gap-1 lh-1 align-items-center">
+                                                        <span class="badge bg-soft-danger p-1 fs-10"><i
+                                                                class="ri-arrow-up-long-line"></i></span>
+                                                        <p class="mb-0 text-danger">-2%</p>
+                                                    </div>
+                                                    <small>vs last month</small>
+                                                </div>
+                                            </div>
+                                            <div class="churnRateChart"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Customer Lifetime Value (CLV) -->
+                                <div class="col-xl-4 col-md-6 col-12 mb-4">
+                                    <div class="card overflow-hidden h-100 mb-0">
+                                        <div class="card-body">
+                                            <div class="d-flex flex-wrap justify-content-between gap-1">
+                                                <div>
+                                                    <h6 class="text-dark mb-0 fw-semibold">Customer Lifetime Value (CLV)
+                                                    </h6>
+                                                    <small>predicted revenue from a customer</small>
+                                                    <h3 class="text-dark fw-bold mt-3">$45,000</h3>
+                                                </div>
+                                                <div>
+                                                    <div class="d-flex gap-1 lh-1 align-items-center">
+                                                        <span class="badge bg-soft-success p-1 fs-10"><i
+                                                                class="ri-arrow-up-long-line"></i></span>
+                                                        <p class="mb-0 text-success">1.5%</p>
+                                                    </div>
+                                                    <small>vs last month</small>
+                                                </div>
+                                            </div>
+                                            <div class="clvChart"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <!-- Approval Status -->
+                                <div class="col-xl-6 col-12 mb-4">
+                                    <div class="card h-100 mb-0">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                                <h5 class="card-title mb-0"><span class="me-1"><i
+                                                            class="bi bi-clipboard-check"></i></span>Approval Status
+                                                </h5>
+                                                <div class="dropdown">
+                                                    <button type="button" id="lowPerListDrop" aria-expanded="false"
+                                                        class="card-drop-icon dropdown-toggle btn"
+                                                        data-bs-toggle="dropdown"><i
+                                                            class="bi bi-three-dots fs-20"></i></button>
+                                                    <ul class="dropdown-menu dropdown-menu-end"
+                                                        aria-labelledby="empDropdown">
+                                                        <li><a class="dropdown-item" href="#"><i
+                                                                    class="bi bi-arrow-clockwise me-2"></i> Refresh
+                                                                Report</a>
+                                                        </li>
+                                                        <li><a href="#" class="dropdown-item" role="button"
+                                                                tabindex="0"><i class="bi bi-gear me-2"></i>Details
+                                                                Settings</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <p class="mb-1 d-sm-block d-none">Requested</p>
+                                                </div>
+                                                <div class="col-3">
+                                                    <p class="mb-1 d-sm-block d-none">Approved</p>
+                                                </div>
+                                                <div class="col-3">
+                                                    <p class="mb-1 d-sm-block d-none">Rejected</p>
+                                                </div>
+                                                <div class="col-3">
+                                                    <p class="mb-1 d-sm-block d-none">Pending</p>
+                                                </div>
+                                            </div>
+                                            <div class="row grid-border-sm">
+                                                <div class="col-sm-3 col-6 mb-sm-0 mb-4">
+                                                    <p class="mb-1 d-sm-none d-block">Requested</p>
+                                                    <h2 class="text-dark fw-semibold mb-1">265</h2>
+                                                    <small class="d-sm-none d-block"><span
+                                                            class="text-success fw-semibold">+ 12
+                                                        </span>vs yesterday</small>
+                                                </div>
+                                                <div class="col-sm-3 col-6 mb-sm-0 mb-4">
+                                                    <p class="mb-1 d-sm-none d-block">Approved</p>
+                                                    <h2 class="text-dark fw-semibold mb-1">2</h2>
+                                                    <small class="d-sm-none d-block"><span
+                                                            class="text-danger fw-semibold">- 6
+                                                        </span>vs yesterday</small>
+                                                </div>
+
+                                                <div class="col-sm-3 col-6">
+                                                    <p class="mb-1 d-sm-none d-block">Rejected</p>
+                                                    <h2 class="text-dark fw-semibold mb-1">4</h2>
+                                                    <small class="d-sm-none d-block"><span
+                                                            class="text-danger fw-semibold">- 2
+                                                        </span>vs yesterday</small>
+                                                </div>
+                                                <div class="col-sm-3 col-6">
+                                                    <p class="mb-1 d-sm-none d-block">Pending</p>
+                                                    <h2 class="text-dark fw-semibold mb-1">18</h2>
+                                                    <small class="d-sm-none d-block"><span
+                                                            class="text-danger fw-semibold">- 6
+                                                        </span>vs yesterday</small>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <small class="d-sm-block d-none"><span
+                                                            class="text-success fw-semibold">+ 12
+                                                        </span>vs yesterday</small>
+                                                </div>
+                                                <div class="col-3">
+                                                    <small class="d-sm-block d-none"><span
+                                                            class="text-danger fw-semibold">- 6
+                                                        </span>vs yesterday</small>
+                                                </div>
+                                                <div class="col-3">
+                                                    <small class="d-sm-block d-none"><span
+                                                            class="text-danger fw-semibold">- 2
+                                                        </span>vs yesterday</small>
+                                                </div>
+                                                <div class="col-3">
+                                                    <small class="d-sm-block d-none"><span
+                                                            class="text-danger fw-semibold">- 6
+                                                        </span>vs yesterday</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Overtime Hours summary -->
+                                <div class="col-xl-6 col-12 mb-4">
+                                    <div class="card h-100 mb-0">
+                                        <div class="card-body">
+                                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                                <h5 class="card-title mb-0"><span class="me-1"><i
+                                                            class="bi bi-stopwatch"></i></span>Overtime Hours summary
+                                                </h5>
+                                                <div class="dropdown">
+                                                    <button type="button" id="lowPerListDrop" aria-expanded="false"
+                                                        class="card-drop-icon dropdown-toggle btn"
+                                                        data-bs-toggle="dropdown"><i
+                                                            class="bi bi-three-dots fs-20"></i></button>
+                                                    <ul class="dropdown-menu dropdown-menu-end"
+                                                        aria-labelledby="empDropdown">
+                                                        <li><a class="dropdown-item" href="#"><i
+                                                                    class="bi bi-arrow-clockwise me-2"></i> Refresh
+                                                                Report</a>
+                                                        </li>
+                                                        <li><a href="#" class="dropdown-item" role="button"
+                                                                tabindex="0"><i class="bi bi-gear me-2"></i>Details
+                                                                Settings</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <p class="mb-1 d-sm-block d-none">Overtime Hours</p>
+                                                </div>
+                                                <div class="col-3">
+                                                    <p class="mb-1 d-sm-block d-none">Compensation</p>
+                                                </div>
+                                                <div class="col-3">
+                                                    <p class="mb-1 d-sm-block d-none">Average Overtime</p>
+                                                </div>
+                                                <div class="col-3">
+                                                    <p class="mb-1 d-sm-block d-none">Overtime by Job Title</p>
+                                                </div>
+                                            </div>
+                                            <div class="row grid-border-sm">
+                                                <div class="col-sm-3 col-6 mb-sm-0 mb-4">
+                                                    <p class="mb-1 d-sm-none d-block">Overtime Hours</p>
+                                                    <h2 class="text-dark fw-semibold mb-1">42</h2>
+                                                    <small class="d-sm-none d-block"><span
+                                                            class="text-success fw-semibold">+ 12
+                                                        </span>vs yesterday</small>
+                                                </div>
+                                                <div class="col-sm-3 col-6 mb-sm-0 mb-4">
+                                                    <p class="mb-1 d-sm-none d-block">Approved</p>
+                                                    <h2 class="text-dark fw-semibold mb-1">5</h2>
+                                                    <small class="d-sm-none d-block"><span
+                                                            class="text-success fw-semibold">+ 12
+                                                        </span>vs yesterday</small>
+                                                </div>
+
+                                                <div class="col-sm-3 col-6">
+                                                    <p class="mb-1 d-sm-none d-block">Average Overtime</p>
+                                                    <h2 class="text-dark fw-semibold mb-1">21</h2>
+                                                    <small class="d-sm-none d-block"><span
+                                                            class="text-danger fw-semibold">- 2
+                                                        </span>vs yesterday</small>
+                                                </div>
+                                                <div class="col-sm-3 col-6">
+                                                    <p class="mb-1 d-sm-none d-block">Overtime by Job Title</p>
+                                                    <h2 class="text-dark fw-semibold mb-1">21</h2>
+                                                    <small class="d-sm-none d-block"><span
+                                                            class="text-danger fw-semibold">- 6
+                                                        </span>vs yesterday</small>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <small class="d-sm-block d-none"><span
+                                                            class="text-success fw-semibold">+ 12
+                                                        </span>vs yesterday</small>
+                                                </div>
+                                                <div class="col-3">
+                                                    <small class="d-sm-block d-none"><span
+                                                            class="text-success fw-semibold">+ 12
+                                                        </span>vs yesterday</small>
+                                                </div>
+                                                <div class="col-3">
+                                                    <small class="d-sm-block d-none"><span
+                                                            class="text-danger fw-semibold">- 2
+                                                        </span>vs yesterday</small>
+                                                </div>
+                                                <div class="col-3">
+                                                    <small class="d-sm-block d-none"><span
+                                                            class="text-danger fw-semibold">- 6
+                                                        </span>vs yesterday</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <!-- On hold -->
+                                <div class="col-xl-3 col-sm-6 col-12 mb-4">
+                                    <div class="card h-100 mb-0">
+                                        <div class="card-body">
+                                            <div class="d-flex flex-wrap justify-content-between align-items-end gap-1">
+                                                <div class="d-flex align-items-center gap-3">
+                                                    <div class="avatar avatar-lg avatar-outline-primary custom-avatar">
+                                                        <i class="ri-pause-circle-line"></i>
+                                                    </div>
+                                                    <div>
+                                                        <p class="mb-1">On hold</p>
+                                                        <h4 class="mb-0 text-dark fw-semibold">8</h4>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <small><span class="text-danger fw-semibold"><i
+                                                                class="ri-arrow-right-down-long-line"></i>1.2% </span>vs
+                                                        last
+                                                        month</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Rejected -->
+                                <div class="col-xl-3 col-sm-6 col-12 mb-4">
+                                    <div class="card h-100 mb-0">
+                                        <div class="card-body">
+                                            <div class="d-flex flex-wrap justify-content-between align-items-end gap-1">
+                                                <div class="d-flex align-items-center gap-3">
+                                                    <div class="avatar avatar-lg avatar-outline-danger custom-avatar"><i
+                                                            class="ri-delete-bin-7-line"></i></div>
+                                                    <div>
+                                                        <p class="mb-1">Rejected</p>
+                                                        <h4 class="mb-0 text-dark fw-semibold">17</h4>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <small><span class="text-danger fw-semibold"><i
+                                                                class="ri-arrow-right-down-long-line"></i>0.3% </span>vs
+                                                        last
+                                                        month</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Completed -->
+                                <div class="col-xl-3 col-sm-6 col-12 mb-4">
+                                    <div class="card h-100 mb-0">
+                                        <div class="card-body">
+                                            <div class="d-flex flex-wrap justify-content-between align-items-end gap-1">
+                                                <div class="d-flex align-items-center gap-3">
+                                                    <div class="avatar avatar-lg avatar-outline-success custom-avatar">
+                                                        <i class="ri-pause-circle-line"></i>
+                                                    </div>
+                                                    <div>
+                                                        <p class="mb-1">Completed</p>
+                                                        <h4 class="mb-0 text-dark fw-semibold">301</h4>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <small><span class="text-success fw-semibold"><i
+                                                                class="ri-arrow-right-up-long-line"></i>2.9% </span>vs
+                                                        last
+                                                        month</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Canceled -->
+                                <div class="col-xl-3 col-sm-6 col-12 mb-4">
+                                    <div class="card h-100 mb-0">
+                                        <div class="card-body">
+                                            <div class="d-flex flex-wrap justify-content-between align-items-end gap-1">
+                                                <div class="d-flex align-items-center gap-3">
+                                                    <div class="avatar avatar-lg avatar-outline-orange custom-avatar"><i
+                                                            class="ri-close-line"></i></div>
+                                                    <div>
+                                                        <p class="mb-1">Canceled</p>
+                                                        <h4 class="mb-0 text-dark fw-semibold">23</h4>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <small><span class="text-danger fw-semibold"><i
+                                                                class="ri-arrow-right-down-long-line"></i>0.1% </span>vs
+                                                        last
+                                                        month</small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-xl-3 col-sm-6 col-12">
+                                    <div class="card bg-soft-primary border border-soft-primary shadow-none">
+                                        <div class="card-body">
+                                            <div
+                                                class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                                                <div>
+                                                    <p class="mb-0">Total Customers</p>
+                                                    <h4 class="text-dark fw-bold mb-0">25</h4>
+                                                </div>
+                                                <div
+                                                    class="avatar avatar-xl fw-normal avatar-soft-primary rounded-circle">
+                                                    <i class="bi bi-people"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-sm-6 col-12">
+                                    <div class="card bg-soft-success border border-soft-success shadow-none">
+                                        <div class="card-body">
+                                            <div
+                                                class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                                                <div>
+                                                    <p class="mb-0">Active Customers</p>
+                                                    <h4 class="text-dark fw-bold mb-0">15</h4>
+                                                </div>
+                                                <div
+                                                    class="avatar avatar-xl fw-normal avatar-soft-success rounded-circle">
+                                                    <i class="bi bi-person-check"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-sm-6 col-12">
+                                    <div class="card bg-soft-orange border border-soft-orange shadow-none">
+                                        <div class="card-body">
+                                            <div
+                                                class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                                                <div>
+                                                    <p class="mb-0">Inactive Customers</p>
+                                                    <h4 class="text-dark fw-bold mb-0">06</h4>
+                                                </div>
+                                                <div
+                                                    class="avatar avatar-xl fw-normal avatar-soft-orange rounded-circle">
+                                                    <i class="bi bi-person-slash"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-sm-6 col-12">
+                                    <div class="card bg-soft-info border border-soft-info shadow-none">
+                                        <div class="card-body">
+                                            <div
+                                                class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                                                <div>
+                                                    <p class="mb-0">Contacts Login In</p>
+                                                    <h4 class="text-dark fw-bold mb-0">04</h4>
+                                                </div>
+                                                <div class="avatar avatar-xl fw-normal avatar-soft-info rounded-circle">
+                                                    <i class="bi bi-box-arrow-in-right"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12 mb-4">
+                                    <div class="card-grid">
+                                        <!-- Total Projects -->
+                                        <div
+                                            class="card bg-gradient-primary border-soft-primary shadow-none mb-0 h-100">
+                                            <div class="card-body">
+                                                <div
+                                                    class="d-flex flex-column align-items-center justify-content-center mb-2">
+                                                    <div class="avatar avatar-xxl avatar-primary custom-avatar mb-3"><i
+                                                            class="ri-stack-fill"></i></div>
+                                                    <p class="text-dark mb-1">Total Projects</p>
+                                                    <h4 class="fw-bold text-primary mb-0">1950</h4>
+                                                </div>
+                                                <hr class="br-dashed br-w-1 border-primary opacity-40">
+                                                <div
+                                                    class="d-flex justify-content-between align-items-center text-muted fw-semibold">
+                                                    <small>This Month</small>
+                                                    <small>2.50%<span class="text-success ms-2"><i
+                                                                class="bi bi-graph-up-arrow"></i></span></small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Active Projects -->
+                                        <div
+                                            class="card bg-gradient-success border-soft-success shadow-none mb-0 h-100">
+                                            <div class="card-body">
+                                                <div
+                                                    class="d-flex flex-column align-items-center justify-content-center mb-2">
+                                                    <div class="avatar avatar-xxl avatar-success custom-avatar mb-3"><i
+                                                            class="ri-pie-chart-2-fill"></i></div>
+                                                    <p class="text-dark mb-1">Active Projects</p>
+                                                    <h4 class="fw-bold text-success mb-0">49</h4>
+                                                </div>
+                                                <hr class="br-dashed br-w-1 border-success opacity-40">
+                                                <div
+                                                    class="d-flex justify-content-between align-items-center text-muted fw-semibold">
+                                                    <small>Completed</small>
+                                                    <small>2.50%<span class="text-success ms-2"><i
+                                                                class="bi bi-graph-up-arrow"></i></span></small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Due Tasks -->
+                                        <div
+                                            class="card bg-gradient-warning border-soft-warning shadow-none mb-0 h-100">
+                                            <div class="card-body">
+                                                <div
+                                                    class="d-flex flex-column align-items-center justify-content-center mb-2">
+                                                    <div class="avatar avatar-xxl avatar-warning custom-avatar mb-3"><i
+                                                            class="ri-hourglass-fill"></i></div>
+                                                    <p class="text-dark mb-1">Due Tasks</p>
+                                                    <h4 class="fw-bold text-warning mb-0">120</h4>
+                                                </div>
+                                                <hr class="br-dashed br-w-1 border-warning opacity-40">
+                                                <div
+                                                    class="d-flex justify-content-between align-items-center text-muted fw-semibold">
+                                                    <small>Incomplete</small>
+                                                    <small>5.80%<span class="text-warning ms-2"><i
+                                                                class="bi bi-graph-up-arrow"></i></span></small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Productivity -->
+                                        <div class="card bg-gradient-orange border-soft-orange shadow-none mb-0 h-100">
+                                            <div class="card-body">
+                                                <div
+                                                    class="d-flex flex-column align-items-center justify-content-center mb-2">
+                                                    <div class="avatar avatar-xxl avatar-orange custom-avatar mb-3"><i
+                                                            class="ri-bar-chart-2-fill"></i></div>
+                                                    <p class="text-dark mb-1">Productivity</p>
+                                                    <h4 class="fw-bold text-orange mb-0">1950</h4>
+                                                </div>
+                                                <hr class="br-dashed br-w-1 border-orange opacity-40">
+                                                <div
+                                                    class="d-flex justify-content-between align-items-center text-muted fw-semibold">
+                                                    <small>Increase</small>
+                                                    <small>4.60%<span class="text-success ms-2"><i
+                                                                class="bi bi-graph-up-arrow"></i></span></small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Members -->
+                                        <div class="card bg-gradient-info border-soft-info shadow-none mb-0 h-100">
+                                            <div class="card-body">
+                                                <div
+                                                    class="d-flex flex-column align-items-center justify-content-center mb-2">
+                                                    <div class="avatar avatar-xxl avatar-info custom-avatar mb-3"><i
+                                                            class="ri-user-community-fill"></i></div>
+                                                    <p class="text-dark mb-1">Members</p>
+                                                    <h4 class="fw-bold text-info mb-0">110</h4>
+                                                </div>
+                                                <hr class="br-dashed br-w-1 border-info opacity-40">
+                                                <div
+                                                    class="d-flex justify-content-between align-items-center text-muted fw-semibold">
+                                                    <small>Leads</small>
+                                                    <small>2.70%<span class="text-danger ms-2"><i
+                                                                class="bi bi-graph-down-arrow"></i></span></small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <!-- Total Tasks -->
+                                <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
+                                    <div
+                                        class="card bg-soft-purple border-0 border-start border-4 border-purple mb-0 h-100 shadow-none">
+                                        <div class="card-body p-3">
+                                            <h2 class="fw-semibold text-purple">128</h2>
+                                            <h6 class="mb-0">Total Tasks</h6>
+                                            <hr class="br-dashed border-purple br-w-1 opacity-40">
+                                            <small class="text-muted">Total number of tasks created in the selected
+                                                period/project.</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Completed Tasks -->
+                                <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
+                                    <div
+                                        class="card bg-soft-success border-0 border-start border-4 border-success mb-0 h-100 shadow-none">
+                                        <div class="card-body p-3">
+                                            <h2 class="fw-semibold text-success">82</h2>
+                                            <h6 class="mb-0">Completed Tasks</h6>
+                                            <hr class="br-dashed border-success br-w-1 opacity-40">
+                                            <small class="text-muted">Tasks successfully finished before or on
+                                                deadline.</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- In Progress Tasks -->
+                                <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
+                                    <div
+                                        class="card bg-soft-warning border-0 border-start border-4 border-warning mb-0 h-100 shadow-none">
+                                        <div class="card-body p-3">
+                                            <h2 class="fw-semibold text-warning">25</h2>
+                                            <h6 class="mb-0">In Progress Tasks</h6>
+                                            <hr class="br-dashed border-warning br-w-1 opacity-40">
+                                            <small class="text-muted">Tasks currently being worked on.</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Overdue Tasks -->
+                                <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
+                                    <div
+                                        class="card bg-soft-danger border-0 border-start border-4 border-danger mb-0 h-100 shadow-none">
+                                        <div class="card-body p-3">
+                                            <h2 class="fw-semibold text-danger">12</h2>
+                                            <h6 class="mb-0">Overdue Tasks</h6>
+                                            <hr class="br-dashed border-danger br-w-1 opacity-40">
+                                            <small class="text-muted">Tasks not completed by their due date.</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Pending Tasks -->
+                                <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
+                                    <div
+                                        class="card bg-soft-orange border-0 border-start border-4 border-orange mb-0 h-100 shadow-none">
+                                        <div class="card-body p-3">
+                                            <h2 class="fw-semibold text-orange">9</h2>
+                                            <h6 class="mb-0">Pending Tasks</h6>
+                                            <hr class="br-dashed border-orange br-w-1 opacity-40">
+                                            <small class="text-muted">Tasks not yet started.</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Completion Rate(%) -->
+                                <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
+                                    <div
+                                        class="card bg-soft-info border-0 border-start border-4 border-info mb-0 h-100 shadow-none">
+                                        <div class="card-body p-3">
+                                            <h2 class="fw-semibold text-info">64%</h2>
+                                            <h6 class="mb-0">Completion Rate(%)</h6>
+                                            <hr class="br-dashed border-info br-w-1 opacity-40">
+                                            <small class="text-muted">Percentage of completed tasks out of total
+                                                tasks.</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-4 col-sm-6 mb-4">
+                                    <div class="card bg-gradient-primary mb-0 h-100 h-xl-0 border-0">
+                                        <div class="card-body">
+                                            <div class="d-flex flex-wrap align-items-center gap-2 mb-4">
+                                                <div class="avatar avatar-xs avatar-outline-primary custom-avatar"><i
+                                                        class="ri-exchange-dollar-line"></i></div>
+                                                <h6 class="mb-0 fw-semibold">Monthaly Payroll</h6>
+                                            </div>
+                                            <div class="d-flex flex-wrap align-items-center gap-2">
+                                                <h3 class="text-dark fw-bold mb-0">$3,230,250.<span
+                                                        class="text-secondary text-opacity-25">00</span></h3>
+                                                <span class="badge bg-soft-success rounded-pill">- 12.5%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-sm-6 mb-4">
+                                    <div class="card bg-gradient-blue mb-0 h-100 h-xl-0 border-0">
+                                        <div class="card-body">
+                                            <div class="d-flex flex-wrap align-items-center gap-2 mb-4">
+                                                <div class="avatar avatar-xs avatar-outline-blue custom-avatar"><i
+                                                        class="ri-timer-2-line"></i></div>
+                                                <h6 class="mb-0 fw-semibold">Overtime</h6>
+                                            </div>
+                                            <div class="d-flex flex-wrap align-items-center gap-2">
+                                                <h3 class="text-dark fw-bold mb-0">$220,500.<span
+                                                        class="text-secondary text-opacity-25">00</span></h3>
+                                                <span class="badge bg-soft-success rounded-pill">- 5.3%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-sm-6 mb-4">
+                                    <div class="card bg-gradient-info mb-0 h-100 h-xl-0 border-0">
+                                        <div class="card-body">
+                                            <div class="d-flex flex-wrap align-items-center gap-2 mb-4">
+                                                <div class="avatar avatar-xs avatar-outline-info custom-avatar"><i
+                                                        class="ri-gift-line"></i></div>
+                                                <h6 class="mb-0 fw-semibold">Bonuses & Incentives</h6>
+                                            </div>
+                                            <div class="d-flex flex-wrap align-items-center gap-2">
+                                                <h3 class="text-dark fw-bold mb-0">$150,00.<span
+                                                        class="text-secondary text-opacity-25">00</span></h3>
+                                                <span class="badge bg-soft-danger rounded-pill">+ 12.3%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <!-- Total Expenses -->
+                                <div class="col-xl-3 col-md-4 col-sm-6 col-12 mb-4">
+                                    <div
+                                        class="card bg-purple bg-opacity-10 border-purple border-opacity-25 mb-0 h-100">
+                                        <div class="card-body pb-2">
+                                            <div class="d-flex align-items-start mb-1">
+                                                <div class="d-flex flex-column">
+                                                    <h4 class="mb-0 fw-bold text-purple">$45,680.00</h4>
+                                                    <small class="text-muted">Total Expenses</small>
+                                                </div>
+                                                <div class="flex-grow-1 d-flex justify-content-end">
+                                                    <div class="avatar avatar-xl rounded-3 bg-purple bg-opacity-25">
+                                                        <i class="ri-cash-line fs-3 text-purple"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <small class="text-muted"><span
+                                                    class="text-success badge badge-sm bg-soft-success rounded-pill align-middle"><i
+                                                        class="ri-arrow-down-long-fill"></i>5.2% </span> from last
+                                                month</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Approved -->
+                                <div class="col-xl-3 col-md-4 col-sm-6 col-12 mb-4">
+                                    <div
+                                        class="card bg-success bg-opacity-10 border-success border-opacity-25 mb-0 h-100">
+                                        <div class="card-body pb-2">
+                                            <div class="d-flex align-items-start mb-1">
+                                                <div class="d-flex flex-column">
+                                                    <h4 class="mb-0 fw-bold text-success">$38,200.00</h4>
+                                                    <small class="text-muted">Approved</small>
+                                                </div>
+                                                <div class="flex-grow-1 d-flex justify-content-end">
+                                                    <div class="avatar avatar-xl rounded-3 bg-success bg-opacity-25">
+                                                        <i class="ri-checkbox-circle-line fs-3 text-success"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <small class="text-muted"><span class="text-dark fw-semibold">156
+                                                </span>expenses</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Pending -->
+                                <div class="col-xl-3 col-md-4 col-sm-6 col-12 mb-4">
+                                    <div
+                                        class="card bg-warning bg-opacity-10 border-warning border-opacity-25 mb-0 h-100">
+                                        <div class="card-body pb-2">
+                                            <div class="d-flex align-items-start mb-1">
+                                                <div class="d-flex flex-column">
+                                                    <h4 class="mb-0 fw-bold text-warning">$5,980.00</h4>
+                                                    <small class="text-muted">Pending</small>
+                                                </div>
+                                                <div class="flex-grow-1 d-flex justify-content-end">
+                                                    <div class="avatar avatar-xl rounded-3 bg-warning bg-opacity-25">
+                                                        <i class="ri-history-line fs-3 text-warning"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <small class="text-muted"><span class="text-dark fw-semibold">23
+                                                </span>expenses</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Rejected -->
+                                <div class="col-xl-3 col-md-4 col-sm-6 col-12 mb-4">
+                                    <div
+                                        class="card bg-danger bg-opacity-10 border-danger border-opacity-25 mb-0 h-100">
+                                        <div class="card-body pb-2">
+                                            <div class="d-flex align-items-start mb-1">
+                                                <div class="d-flex flex-column">
+                                                    <h4 class="mb-0 fw-bold text-danger">$1,500.00</h4>
+                                                    <small class="text-muted">Rejected</small>
+                                                </div>
+                                                <div class="flex-grow-1 d-flex justify-content-end">
+                                                    <div class="avatar avatar-xl rounded-3 bg-danger bg-opacity-25">
+                                                        <i class="ri-close-circle-line fs-3 text-danger"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <small class="text-muted"><span class="text-dark fw-semibold">8
+                                                </span>expenses</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <!-- Sales -->
+                                <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+                                    %%include('partials/components/team_card.html',{
+                                    'color':'blue','icon':'bi bi-graph-up-arrow',
+                                    'department':'Sales','count':'25','percentage':"80"
+                                    })
+                                </div>
+                                <!-- Marketing -->
+                                <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+                                    %%include('partials/components/team_card.html',{
+                                    'color':'orange','icon':'bi bi-megaphone',
+                                    'department':'Marketing','count':'15','percentage':"75"
+                                    })
+                                </div>
+                                <!--  Development -->
+                                <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+                                    %%include('partials/components/team_card.html',{
+                                    'color':'purple','icon':'bi bi-code-slash',
+                                    'department':'Development','count':'40','percentage':"95"
+                                    })
+                                </div>
+                                <!-- HR -->
+                                <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+                                    %%include('partials/components/team_card.html',{
+                                    'color':'info','icon':'bi bi-people',
+                                    'department':'HR','count':'10','percentage':"90"
+                                    })
+                                </div>
+                                <!-- Finance -->
+                                <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+                                    %%include('partials/components/team_card.html',{
+                                    'color':'success','icon':'bi bi-cash-stack',
+                                    'department':'Finance','count':'12','percentage':"83"
+                                    })
+                                </div>
+                                <!-- Customer Support -->
+                                <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+                                    %%include('partials/components/team_card.html',{
+                                    'color':'warning','icon':'bi bi-headset',
+                                    'department':'Customer Support','count':'18','percentage':"89"
+                                    })
+                                </div>
+                                <!-- Operations -->
+                                <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+                                    %%include('partials/components/team_card.html',{
+                                    'color':'secondary','icon':'bi bi-gear',
+                                    'department':'Operations','count':'20','percentage':"85"
+                                    })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            %%include('./partials/layout/footer.html')
+
+        </div>
+    </div>
+    %%include('./partials/layout/right-sidebar.html')
+
+    <!-- %%include('./partials/right-sidebar.html')
+    %%include('./partials/back-to-top.html') -->
+
+    %%include('./partials/layout/footer-js.html')
+    <script src="plugins/apexcharts/apexcharts.min.js"></script>
+    <script src="js/pages/sales_lead.js"></script>
+    <script src="js/pages/performance.js"></script>
+
+</body>
+
+</html>

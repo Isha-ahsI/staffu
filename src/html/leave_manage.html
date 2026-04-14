@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <div class="page-layout">
+        %%include('./partials/layout/header.html')
+        %%include('./partials/layout/left-sidebar.html')
+        <div class="page-wrapper">
+            <div class="page-content">
+                %%include('./partials/components/page-title.html', { pageTitle: 'Leaves', pagePrTitle: 'Employees' })
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- Approval Status -->
+                        <div class="col-xl-6 col-12 mb-4">
+                            <div class="card h-100 mb-0">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-between mb-4">
+                                        <h5 class="card-title mb-0"><span class="me-1"><i
+                                                    class="bi bi-clipboard-check"></i></span>Approval Status</h5>
+                                        <div class="dropdown">
+                                            <button type="button" id="lowPerListDrop" aria-expanded="false"
+                                                class="card-drop-icon dropdown-toggle btn" data-bs-toggle="dropdown"><i
+                                                    class="bi bi-three-dots fs-20"></i></button>
+                                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="empDropdown">
+                                                <li><a class="dropdown-item" href="#"><i
+                                                            class="bi bi-arrow-clockwise me-2"></i> Refresh
+                                                        Report</a>
+                                                </li>
+                                                <li><a href="#" class="dropdown-item" role="button" tabindex="0"><i
+                                                            class="bi bi-gear me-2"></i>Details
+                                                        Settings</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <p class="mb-1 d-sm-block d-none">Requested</p>
+                                        </div>
+                                        <div class="col-3">
+                                            <p class="mb-1 d-sm-block d-none">Approved</p>
+                                        </div>
+                                        <div class="col-3">
+                                            <p class="mb-1 d-sm-block d-none">Rejected</p>
+                                        </div>
+                                        <div class="col-3">
+                                            <p class="mb-1 d-sm-block d-none">Pending</p>
+                                        </div>
+                                    </div>
+                                    <div class="row grid-border-sm">
+                                        <div class="col-sm-3 col-6 mb-sm-0 mb-4">
+                                            <p class="mb-1 d-sm-none d-block">Requested</p>
+                                            <h2 class="text-dark fw-semibold mb-1">265</h2>
+                                            <small class="d-sm-none d-block"><span class="text-success fw-semibold">+ 12
+                                                </span>vs yesterday</small>
+                                        </div>
+                                        <div class="col-sm-3 col-6 mb-sm-0 mb-4">
+                                            <p class="mb-1 d-sm-none d-block">Approved</p>
+                                            <h2 class="text-dark fw-semibold mb-1">2</h2>
+                                            <small class="d-sm-none d-block"><span class="text-danger fw-semibold">- 6
+                                                </span>vs yesterday</small>
+                                        </div>
+
+                                        <div class="col-sm-3 col-6">
+                                            <p class="mb-1 d-sm-none d-block">Rejected</p>
+                                            <h2 class="text-dark fw-semibold mb-1">4</h2>
+                                            <small class="d-sm-none d-block"><span class="text-danger fw-semibold">- 2
+                                                </span>vs yesterday</small>
+                                        </div>
+                                        <div class="col-sm-3 col-6">
+                                            <p class="mb-1 d-sm-none d-block">Pending</p>
+                                            <h2 class="text-dark fw-semibold mb-1">18</h2>
+                                            <small class="d-sm-none d-block"><span class="text-danger fw-semibold">- 6
+                                                </span>vs yesterday</small>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <small class="d-sm-block d-none"><span class="text-success fw-semibold">+ 12
+                                                </span>vs yesterday</small>
+                                        </div>
+                                        <div class="col-3">
+                                            <small class="d-sm-block d-none"><span class="text-danger fw-semibold">- 6
+                                                </span>vs yesterday</small>
+                                        </div>
+                                        <div class="col-3">
+                                            <small class="d-sm-block d-none"><span class="text-danger fw-semibold">- 2
+                                                </span>vs yesterday</small>
+                                        </div>
+                                        <div class="col-3">
+                                            <small class="d-sm-block d-none"><span class="text-danger fw-semibold">- 6
+                                                </span>vs yesterday</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Overtime Hours summary -->
+                        <div class="col-xl-6 col-12 mb-4">
+                            <div class="card h-100 mb-0">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center justify-content-between mb-4">
+                                        <h5 class="card-title mb-0"><span class="me-1"><i
+                                                    class="bi bi-stopwatch"></i></span>Overtime Hours summary</h5>
+                                        <div class="dropdown">
+                                            <button type="button" id="lowPerListDrop" aria-expanded="false"
+                                                class="card-drop-icon dropdown-toggle btn" data-bs-toggle="dropdown"><i
+                                                    class="bi bi-three-dots fs-20"></i></button>
+                                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="empDropdown">
+                                                <li><a class="dropdown-item" href="#"><i
+                                                            class="bi bi-arrow-clockwise me-2"></i> Refresh
+                                                        Report</a>
+                                                </li>
+                                                <li><a href="#" class="dropdown-item" role="button" tabindex="0"><i
+                                                            class="bi bi-gear me-2"></i>Details
+                                                        Settings</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <p class="mb-1 d-sm-block d-none">Overtime Hours</p>
+                                        </div>
+                                        <div class="col-3">
+                                            <p class="mb-1 d-sm-block d-none">Compensation</p>
+                                        </div>
+                                        <div class="col-3">
+                                            <p class="mb-1 d-sm-block d-none">Average Overtime</p>
+                                        </div>
+                                        <div class="col-3">
+                                            <p class="mb-1 d-sm-block d-none">Overtime by Job Title</p>
+                                        </div>
+                                    </div>
+                                    <div class="row grid-border-sm">
+                                        <div class="col-sm-3 col-6 mb-sm-0 mb-4">
+                                            <p class="mb-1 d-sm-none d-block">Overtime Hours</p>
+                                            <h2 class="text-dark fw-semibold mb-1">42</h2>
+                                            <small class="d-sm-none d-block"><span class="text-success fw-semibold">+ 12
+                                                </span>vs yesterday</small>
+                                        </div>
+                                        <div class="col-sm-3 col-6 mb-sm-0 mb-4">
+                                            <p class="mb-1 d-sm-none d-block">Approved</p>
+                                            <h2 class="text-dark fw-semibold mb-1">5</h2>
+                                            <small class="d-sm-none d-block"><span class="text-success fw-semibold">+ 12
+                                                </span>vs yesterday</small>
+                                        </div>
+
+                                        <div class="col-sm-3 col-6">
+                                            <p class="mb-1 d-sm-none d-block">Average Overtime</p>
+                                            <h2 class="text-dark fw-semibold mb-1">21</h2>
+                                            <small class="d-sm-none d-block"><span class="text-danger fw-semibold">- 2
+                                                </span>vs yesterday</small>
+                                        </div>
+                                        <div class="col-sm-3 col-6">
+                                            <p class="mb-1 d-sm-none d-block">Overtime by Job Title</p>
+                                            <h2 class="text-dark fw-semibold mb-1">21</h2>
+                                            <small class="d-sm-none d-block"><span class="text-danger fw-semibold">- 6
+                                                </span>vs yesterday</small>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-3">
+                                            <small class="d-sm-block d-none"><span class="text-success fw-semibold">+ 12
+                                                </span>vs yesterday</small>
+                                        </div>
+                                        <div class="col-3">
+                                            <small class="d-sm-block d-none"><span class="text-success fw-semibold">+ 12
+                                                </span>vs yesterday</small>
+                                        </div>
+                                        <div class="col-3">
+                                            <small class="d-sm-block d-none"><span class="text-danger fw-semibold">- 2
+                                                </span>vs yesterday</small>
+                                        </div>
+                                        <div class="col-3">
+                                            <small class="d-sm-block d-none"><span class="text-danger fw-semibold">- 6
+                                                </span>vs yesterday</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Employee leave table -->
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+                                        <h5 class="card-title mb-0">Employees On Leave</h5>
+                                        <div class="d-flex flex-wrap align-items-center gap-2">
+                                            <!--Leave Type filter dropdown -->
+                                            <div class="dropdown type-dropdown position-relative me-2">
+                                                <button type="button"
+                                                    class="btn btn-soft-dark z-1 rounded-3 dropdown-toggle"
+                                                    id="leaveTypeFilter" data-bs-toggle="dropdown"
+                                                    aria-expanded="false"><span class="me-1"><i
+                                                            class="bi bi-filter"></i></span> <span class="filter-label">All Type</span> <span><i class="bi bi-chevron-down drop-caret"></i></span></button>
+                                                <div aria-labelledby="leaveTypeFilter"
+                                                    class="dropdown-menu dropdown-menu-end">
+                                                    <a class="dropdown-item" href="#" data-discover="true"
+                                                        data-status="">All Type</a>
+                                                    <a class="dropdown-item" href="#" data-discover="true"
+                                                        data-status="Sick">Sick Leave</a>
+                                                    <a class="dropdown-item" href="#" data-discover="true"
+                                                        data-status="Annual">Annual Leave</a>
+                                                    <a class="dropdown-item" href="#" data-discover="true"
+                                                        data-status="Personal">Personal Leave</a>
+                                                </div>
+                                            </div>
+                                            <!--Leave status filter dropdown -->
+                                            <div class="dropdown status-dropdown position-relative me-2">
+                                                <button type="button"
+                                                    class="btn btn-soft-dark z-1 rounded-3 dropdown-toggle"
+                                                    id="leaveStatusFilter" data-bs-toggle="dropdown"
+                                                    aria-expanded="false"><span class="me-1"><i
+                                                            class="bi bi-filter"></i></span> <span class="filter-label">All Status</span> <span><i class="bi bi-chevron-down drop-caret"></i></span></button>
+                                                <div aria-labelledby="leaveStatusFilter"
+                                                    class="dropdown-menu dropdown-menu-end">
+                                                    <a class="dropdown-item" href="#" data-discover="true"
+                                                        data-status="">All Status</a>
+                                                    <a class="dropdown-item" href="#" data-discover="true"
+                                                        data-status="Approved">Approved</a>
+                                                    <a class="dropdown-item" href="#" data-discover="true"
+                                                        data-status="Pending">Pending</a>
+                                                    <a class="dropdown-item" href="#" data-discover="true"
+                                                        data-status="Rejected">Rejected</a>
+                                                </div>
+                                            </div>
+                                            <!-- leave request apply -->
+                                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                                data-bs-target="#leaveReqModal">
+                                                <span class="me-1"><i class="bi bi-plus-circle"></i></span>Add Leave
+                                                Request
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="datatable-wrapper">
+                                        <table id="empLeaveTable" class="table table-hover table-nowrap">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th class="py-3">Employee ID</th>
+                                                    <th class="py-3">Employee Name</th>
+                                                    <th class="py-3 text-center">Leave Type</th>
+                                                    <th class="py-3">Applied On</th>
+                                                    <th class="py-3">Leave From</th>
+                                                    <th class="py-3">Leave To</th>
+                                                    <th class="py-3">Days</th>
+                                                    <th class="py-3">Reason</th>
+                                                    <th class="py-3">Status</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- emp1 -->
+                                                <tr class="align-middle">
+                                                    <td>EMP-<span class="fw-semibold text-dark">0234</span></td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <div class="avatar avatar-lg">
+                                                                <img src="images/avatars/avatar2.jpg" alt="Employee Img"
+                                                                    class="w-100 h-100 rounded-circle">
+                                                            </div>
+                                                            <div>
+                                                                <h6 class="mb-0 fw-semibold"><span>Tiger Nixon</span>
+                                                                </h6>
+                                                                <small>Software Engineer</small>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center"><span
+                                                            class="badge bg-soft-primary fs-14 fw-semibold">Sick
+                                                            Leave</span> </td>
+                                                    <td class="fw-medium text-dark">17 Jan 2026</td>
+                                                    <td class="fw-medium text-dark">17 January 2026</td>
+                                                    <td class="fw-medium text-dark">18 January 2026</td>
+                                                    <td><span class="fw-medium text-dark">2 </span>days</td>
+                                                    <td class="text-wrap">
+                                                        <p class="fs-6 mb-0"> I am feeling unwell and need to take a
+                                                            sick day to rest and
+                                                            recover.</p>
+                                                    </td>
+                                                    <td>
+                                                        <span
+                                                            class="badge bg-success rounded-pill lh-1 fs-14 fw-semibold"><i
+                                                                class="bi bi-check2-circle"></i> Approved</span>
+                                                    </td>
+                                                </tr>
+                                                <!-- emp2 -->
+                                                <tr class="align-middle">
+                                                    <td>EMP-<span class="fw-semibold text-dark">0117</span></td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <div class="avatar avatar-lg">
+                                                                <img src="images/avatars/avatar1.jpg" alt="Employee Img"
+                                                                    class="w-100 h-100 rounded-circle">
+                                                            </div>
+                                                            <div>
+                                                                <h6 class="mb-0 fw-semibold"><span>Joyce Neal</span>
+                                                                </h6>
+                                                                <small>Project Manager</small>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center"><span
+                                                            class="badge bg-soft-primary fs-14 fw-semibold">Annual
+                                                            Leave</span> </td>
+                                                    <td class="fw-medium text-dark">18 Jan 2026</td>
+                                                    <td class="fw-medium text-dark">20 January 2026</td>
+                                                    <td class="fw-medium text-dark">26 January 2026</td>
+                                                    <td><span class="fw-medium text-dark">7 </span>days</td>
+                                                    <td class="text-wrap">
+                                                        <p class="fs-6 mb-0">I would like to request annual leave from
+                                                            20/01/2026 to 26/01/2026 <br> for a personal vacation.</p>
+                                                    </td>
+                                                    <td>
+                                                        <span
+                                                            class="badge bg-warning rounded-pill lh-1 fs-14 fw-semibold"><i
+                                                                class="bi bi-stopwatch"></i> Pending</span>
+                                                    </td>
+                                                </tr>
+                                                <!-- emp3 -->
+                                                <tr class="align-middle">
+                                                    <td>EMP-<span class="fw-semibold text-dark">0897</span></td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <div class="avatar avatar-lg">
+                                                                <img src="images/avatars/avatar6.jpg" alt="Employee Img"
+                                                                    class="w-100 h-100 rounded-circle">
+                                                            </div>
+                                                            <div>
+                                                                <h6 class="mb-0 fw-semibold"><span>Mark Lee</span>
+                                                                </h6>
+                                                                <small>Data Scientist</small>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center"><span
+                                                            class="badge bg-soft-primary fs-14 fw-semibold">Personal
+                                                            Leave</span> </td>
+                                                    <td class="fw-medium text-dark">22 Jan 2026</td>
+                                                    <td class="fw-medium text-dark">22 January 2026</td>
+                                                    <td class="fw-medium text-dark">22 January 2026</td>
+                                                    <td><span class="fw-medium text-dark">Second Half</td>
+                                                    <td class="text-wrap">
+                                                        <p class="fs-6 mb-0"> Personal matters that require my
+                                                            attention.</p>
+                                                    </td>
+                                                    <td>
+                                                        <span
+                                                            class="badge bg-success rounded-pill lh-1 fs-14 fw-semibold"><i
+                                                                class="bi bi-check2-circle"></i> Approved</span>
+                                                    </td>
+                                                </tr>
+                                                <!-- emp4 -->
+                                                <tr class="align-middle">
+                                                    <td>EMP-<span class="fw-semibold text-dark">0124</span></td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <div class="avatar avatar-lg">
+                                                                <img src="images/avatars/avatar9.jpg" alt="Employee Img"
+                                                                    class="w-100 h-100 rounded-circle">
+                                                            </div>
+                                                            <div>
+                                                                <h6 class="mb-0 fw-semibold"><span>Daniel Miller</span>
+                                                                </h6>
+                                                                <small>Finance Analyst</small>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center"><span
+                                                            class="badge bg-soft-primary fs-14 fw-semibold">Annual
+                                                            Leave</span> </td>
+                                                    <td class="fw-medium text-dark">20 Jan 2026</td>
+                                                    <td class="fw-medium text-dark">22 January 2026</td>
+                                                    <td class="fw-medium text-dark">26 January 2026</td>
+                                                    <td><span class="fw-medium text-dark">4 </span>days</td>
+                                                    <td class="text-wrap">
+                                                        <p class="fs-6 mb-0"> I am requesting annual leave to attend a
+                                                            family event.</p>
+                                                    </td>
+                                                    <td>
+                                                        <span
+                                                            class="badge bg-danger rounded-pill lh-1 fs-14 fw-semibold"><i
+                                                                class="bi bi-x-circle"></i> Rejected</span>
+                                                    </td>
+                                                </tr>
+                                                <!-- emp5 -->
+                                                <tr class="align-middle">
+                                                    <td>EMP-<span class="fw-semibold text-dark">0223</span></td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <div class="avatar avatar-lg">
+                                                                <img src="images/avatars/avatar3.jpg" alt="Employee Img"
+                                                                    class="w-100 h-100 rounded-circle">
+                                                            </div>
+                                                            <div>
+                                                                <h6 class="mb-0 fw-semibold"><span>Ethan Ray</span>
+                                                                </h6>
+                                                                <small>Customer Support</small>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center"><span
+                                                            class="badge bg-soft-primary fs-14 fw-semibold">Personal
+                                                            Leave</span> </td>
+                                                    <td class="fw-medium text-dark">19 Jan 2026</td>
+                                                    <td class="fw-medium text-dark">20 January 2026</td>
+                                                    <td class="fw-medium text-dark">22 January 2026</td>
+                                                    <td><span class="fw-medium text-dark">3 </span>days</td>
+                                                    <td class="text-wrap">
+                                                        <p class="fs-6 mb-0">Requesting personal leave for personal
+                                                            commitments that require <br> my attention.</p>
+                                                    </td>
+                                                    <td>
+                                                        <span
+                                                            class="badge bg-warning rounded-pill lh-1 fs-14 fw-semibold"><i
+                                                                class="bi bi-stopwatch"></i> Pending</span>
+                                                    </td>
+                                                </tr>
+                                                <!-- emp6 -->
+                                                <tr class="align-middle">
+                                                    <td>EMP-<span class="fw-semibold text-dark">0742</span></td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <div class="avatar avatar-lg">
+                                                                <img src="images/avatars/avatar7.jpg" alt="Employee Img"
+                                                                    class="w-100 h-100 rounded-circle">
+                                                            </div>
+                                                            <div>
+                                                                <h6 class="mb-0 fw-semibold"><span>Sophia Jackson</span>
+                                                                </h6>
+                                                                <small>DevOps Engineer</small>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center"><span
+                                                            class="badge bg-soft-primary fs-14 fw-semibold">Sick
+                                                            Leave</span> </td>
+                                                    <td class="fw-medium text-dark">15 Jan 2026</td>
+                                                    <td class="fw-medium text-dark">15 January 2026</td>
+                                                    <td class="fw-medium text-dark">15 January 2026</td>
+                                                    <td><span class="fw-medium text-dark">1 </span>days</td>
+                                                    <td class="text-wrap">
+                                                        <p class="fs-6 mb-0">I am feeling unwell and need to take a sick
+                                                            leave today to rest and recover.<br> I will keep you updated
+                                                            on my condition.</p>
+                                                    </td>
+                                                    <td>
+                                                        <span
+                                                            class="badge bg-success rounded-pill lh-1 fs-14 fw-semibold"><i
+                                                                class="bi bi-check2-circle"></i> Approved</span>
+                                                    </td>
+                                                </tr>
+                                                <!-- emp7 -->
+                                                <tr class="align-middle">
+                                                    <td>EMP-<span class="fw-semibold text-dark">0723</span></td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <div class="avatar avatar-lg">
+                                                                <img src="images/avatars/avatar10.jpg"
+                                                                    alt="Employee Img"
+                                                                    class="w-100 h-100 rounded-circle">
+                                                            </div>
+                                                            <div>
+                                                                <h6 class="mb-0 fw-semibold"><span>Priya Sharma</span>
+                                                                </h6>
+                                                                <small>Sales Executive</small>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center"><span
+                                                            class="badge bg-soft-primary fs-14 fw-semibold">Annual
+                                                            Leave</span> </td>
+                                                    <td class="fw-medium text-dark">25 Jan 2026</td>
+                                                    <td class="fw-medium text-dark">27 January 2026</td>
+                                                    <td class="fw-medium text-dark">31 January 2026</td>
+                                                    <td><span class="fw-medium text-dark">5 </span>days</td>
+                                                    <td class="text-wrap">
+                                                        <p class="fs-6 mb-0">I am requesting annual leave for personal
+                                                            travel and errands.</p>
+                                                    </td>
+                                                    <td>
+                                                        <span
+                                                            class="badge bg-danger rounded-pill lh-1 fs-14 fw-semibold"><i
+                                                                class="bi bi-x-circle"></i> Rejected</span>
+                                                    </td>
+                                                </tr>
+                                                <!-- emp8 -->
+                                                <tr class="align-middle">
+                                                    <td>EMP-<span class="fw-semibold text-dark">0177</span></td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <div class="avatar avatar-lg">
+                                                                <img src="images/avatars/avatar8.jpg" alt="Employee Img"
+                                                                    class="w-100 h-100 rounded-circle">
+                                                            </div>
+                                                            <div>
+                                                                <h6 class="mb-0 fw-semibold"><span>Laura Taylor</span>
+                                                                </h6>
+                                                                <small>Frontend Developer</small>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center"><span
+                                                            class="badge bg-soft-primary fs-14 fw-semibold">Personal
+                                                            Leave</span> </td>
+                                                    <td class="fw-medium text-dark">29 Jan 2026</td>
+                                                    <td class="fw-medium text-dark">29 January 2026</td>
+                                                    <td class="fw-medium text-dark">29 January 2026</td>
+                                                    <td><span class="fw-medium text-dark">First Half</td>
+                                                    <td class="text-wrap">
+                                                        <p class="fs-6 mb-0">I am requesting annual leave for personal
+                                                            travel and errands.</p>
+                                                    </td>
+                                                    <td>
+                                                        <span
+                                                            class="badge bg-success rounded-pill lh-1 fs-14 fw-semibold"><i
+                                                                class="bi bi-check2-circle"></i> Approved</span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div
+                                        class="table-bottom d-flex flex-wrap justify-content-center justify-content-sm-between align-items-center gap-3 mt-4">
+                                        <div id="table-leave-info" class="order-sm-1 order-2"></div>
+                                        <div id="table-leave-pagination" class="order-sm-2 order-1">
+                                            <nav aria-label="Employee list pagination">
+                                                <ul class="pagination mb-0">
+                                                    <li class="page-item disabled">
+                                                        <a class="page-link" href="#" aria-label="Previous">
+                                                            <span aria-hidden="true"><i
+                                                                    class="ri-arrow-left-double-line"></i></span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="page-item mx-1 disabled"><a class="page-link" href="#"
+                                                            aria-label="Previous">
+                                                            <span aria-hidden="true"><i
+                                                                    class="ri-arrow-left-s-line"></i></span>
+                                                        </a></li>
+                                                    <li class="page-item"><a class="page-link px-3" href="#">1</a></li>
+                                                    <li class="page-item mx-1 disabled"><a class="page-link" href="#"
+                                                            aria-label="Next">
+                                                            <span aria-hidden="true"><i
+                                                                    class="ri-arrow-right-s-line"></i></span>
+                                                        </a></li>
+                                                    <li class="page-item disabled">
+                                                        <a class="page-link" href="#" aria-label="Next">
+                                                            <span aria-hidden="true"><i
+                                                                    class="ri-arrow-right-double-line"></i></span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            %%include('./partials/layout/footer.html')
+        </div>
+    </div>
+
+
+    <!-- employee leave request -->
+    <div class="modal fade" id="leaveReqModal" tabindex="-1" aria-labelledby="leaveReqModalLabel">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 fw-bold" id="leaveReqModalLabel">Leave Request</h1>
+                    <p class="mb-0">Fill Out the form to submit leave request</p>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <hr class="mb-0">
+                <div class="modal-body">
+                    <form>
+                        <div class="row">
+                            <div class="col-sm-4 col-12 mb-3">
+                                <label for="emp-id" class="col-form-label">Employee ID:</label>
+                                <input type="text" class="form-control rounded-3" id="emp-id">
+                            </div>
+                            <div class="col-sm-8 col-12 mb-3">
+                                <label for="emp-name" class="col-form-label">Employee Name:</label>
+                                <input type="text" class="form-control rounded-3" id="emp-name">
+                            </div>
+                            <div class="col-sm-6 col-12 mb-3">
+                                <label for="job-title" class="col-form-label">Job Title:</label>
+                                <input type="text" class="form-control rounded-3" id="job-title">
+                            </div>
+                            <div class="col-sm-6 col-12 mb-3">
+                                <label for="leave-type" class="col-form-label">Leave Type:</label>
+                                <select class="form-select rounded-3" aria-label="Leave Type Select" id="leave-type">
+                                    <option selected>Select Leave Type</option>
+                                    <option value="1">Sick Leave</option>
+                                    <option value="2">Annual Leave</option>
+                                    <option value="3">Personal Leave</option>
+                                </select>
+                            </div>
+                            <div class="col-sm-6 col-12 mb-3">
+                                <label for="startLeaveDatePicker" class="col-form-label">Starting Date:</label>
+                                <div class="input-icon d-flex align-items-center justify-content-between">
+                                    <input type="text" id="startLeaveDatePicker" placeholder="Select date"
+                                        class="form-control ps-3 rounded-3" />
+                                    <span class="position-absolute end-0 me-3"><i
+                                            class="bi bi-calendar4-event"></i></span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-12 mb-3">
+                                <label for="endLeaveDatePicker" class="col-form-label">Ending Date:</label>
+                                <div class="input-icon d-flex align-items-center justify-content-between">
+                                    <input type="text" id="endLeaveDatePicker" placeholder="Select date"
+                                        class="form-control ps-3 rounded-3" />
+                                    <span class="position-absolute end-0 me-3"><i
+                                            class="bi bi-calendar4-event"></i></span>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-3">
+                                <div class="border border-1 rounded-3 p-4">
+                                    <div class="row align-items-center">
+                                        <div class="col-sm-6 col-12 mb-3">
+                                            <h6 class="mb-0 text-dark"> Tue 03,February 2026</h6>
+                                        </div>
+                                        <div class="col-sm-6 col-12 mb-3">
+                                            <select class="form-select rounded-3" aria-label="day of leave"
+                                                id="dayOfLeave">
+                                                <option value="1" selected>Full Day</option>
+                                                <option value="2">First Half</option>
+                                                <option value="3">Second Half</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-6">
+                                            <h6 class="mb-0 text-dark">Total</h6>
+                                        </div>
+                                        <div class="col-6">
+                                            <h6 class="mb-0 text-dark">1 Day(s)</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 mb-3">
+                                <label for="leaveReasonTextarea" class="col-form-label">Reason for leave:</label>
+                                <textarea class="form-control rounded-3" id="leaveReasonTextarea" rows="3"
+                                    placeholder="Type your reason"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="informManager">
+                                    <label class="form-check-label" for="informManager">
+                                        Notify Reporting Manager
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer justify-content-start">
+                    <button type="button" class="btn btn-success" id="approveBtn">Apply Leave</button>
+                    <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal"
+                        id="cancelBtn">cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- employee leave approve -->
+    <div class="modal fade" id="leaveApproveModal" tabindex="-1" aria-labelledby="leaveApproveModalLabel">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5 fw-bold" id="leaveApproveModalLabel">Employees Details</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row row-gap-3">
+                            <div class="col-12">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <img alt="Rounded Avatar 1" class="avatar-img-xxxxl rounded-circle"
+                                        id="modalEmpAvatar">
+                                    <div class="d-flex flex-column">
+                                        <small class="mb-0"><span id="modalEmpId"></span></small>
+                                        <small id="modalJobTitle"></small>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h5 id="modalEmpName" class="mb-0 fw-semibold"></h5>
+                                    <div class="d-flex align-items-center gap-2">
+                                        <button type="button"
+                                            class="avatar avatar-xs p-0 rounded-circle btn btn-outline-secondary lh-1"><span><i
+                                                    class="bi bi-telephone"></i></span></button>
+                                        <button type="button"
+                                            class="avatar avatar-xs p-0 rounded-circle btn btn-outline-secondary lh-1"><span><i
+                                                    class="bi bi-envelope-paper"></i></span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="br-dashed m-0">
+                            <div class="col-sm-4 col-6">
+                                <small>Leave Type</small>
+                                <div id="modalType" class="mt-1"></div>
+                            </div>
+                            <div class="col-sm-4 col-6">
+                                <small>Status</small>
+                                <div id="modalStatus" class="mt-1"></div>
+                            </div>
+                            <div class="col-sm-4 col-12">
+                                <small class="mb-1">Application date</small>
+                                <div id="modalReqDate" class="fw-semibold text-dark"></div>
+                            </div>
+                            <div class="col-6">
+                                <small class="mb-1">Starting date of leave</small>
+                                <div id="modalStartDate" class="fw-semibold text-dark"></div>
+                            </div>
+                            <div class="col-6">
+                                <small class="mb-1">Ending date of leave</small>
+                                <div id="modalEndDate" class="fw-semibold text-dark"></div>
+                            </div>
+                            <div class="col-12">
+                                <div class="border border-1 rounded-3 p-3">
+                                    <div class="row row-gap-3">
+                                        <div class="col-6">
+                                            <h6 class="mb-0">Full Day</h6>
+                                        </div>
+                                        <div class="col-6">
+                                            <h6 class="mb-0">Full Day</h6>
+                                        </div>
+                                         <div class="col-6">
+                                            <h6 class="mb-0">Total Days:</h6>
+                                        </div>
+                                        <div class="col-6">
+                                            <div id="modalDuration"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <small class="mb-1">Reason</small>
+                                <div id="modalReason" class="text-dark"></div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control rounded-3 ps-2"
+                                        placeholder="Input your approval notes here" id="floatingApprovalNotes"
+                                        style="height: 100px"></textarea>
+                                    <label for="floatingApprovalNotes">Input your approval notes here</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center flex-nowrap">
+                    <button type="button" class="btn btn-outline-primary w-100" data-bs-dismiss="modal">Reject</button>
+                    <button type="button" class="btn btn-primary w-100"  data-bs-dismiss="modal">Approve</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    %%include('./partials/layout/right-sidebar.html')
+
+    <!-- %%include('./partials/right-sidebar.html')
+    %%include('./partials/back-to-top.html') -->
+
+    %%include('./partials/layout/footer-js.html')
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="plugins/datatables.net/js/dataTables.min.js"></script>
+    <script src="plugins/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+    <script src="plugins/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="plugins/datatables.net-responsive-dt/js/responsive.dataTables.min.js"></script>
+    <script src="plugins/flatpickr/flatpickr.min.js"></script>
+    <script src="js/pages/leave_manage.js"></script>
+
+</body>
+
+</html>

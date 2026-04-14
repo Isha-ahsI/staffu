@@ -1,0 +1,337 @@
+<div class="position-fixed top-50 translate-middle-y end-0 z-3">
+    <div class="avatar avatar-lg bg-gradient-alt-primary text-white rounded-start-pill shadow-lg cursor-pointer"
+        data-bs-toggle="offcanvas" data-bs-target="#themeSettings" aria-controls="themeSettings"
+        data-bs-placement="left" title="Theme Settings" id="themeSettingsBtn">
+        <i class="bi bi-gear-wide-connected rotate-icon fs-4"></i>
+    </div>
+</div>
+
+<div class="offcanvas offcanvas-end border-start shadow-lg" tabindex="-1" id="themeSettings">
+    <div class="border-bottom offcanvas-header">
+        <div class="d-flex align-items-center w-100">
+            <i class="bi bi-sliders text-primary me-2 fs-4"></i>
+            <h5 class="mb-0 fw-bold">Theme Settings</h5>
+            <button type="button" data-bs-dismiss="offcanvas" aria-label="Close"
+                class="ms-auto p-0 text-muted btn btn-link">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+    </div>
+    <div class="offcanvas-body">
+        <!-- Tab Navigation -->
+        <ul class="nav nav-pills nav-justified mb-3" id="settingsTabs" role="tablist">
+            <li class="nav-item my-2 my-sm-0" role="presentation">
+                <button class="nav-link p-3 text-center active" id="color-tab" data-bs-toggle="pill"
+                    data-bs-target="#color-pane" type="button" role="tab" aria-controls="color-pane"
+                    aria-selected="true">
+                    <i class="ri-palette-line me-2"></i> Colors
+                </button>
+            </li>
+            <li class="nav-item my-2 my-sm-0" role="presentation">
+                <button class="nav-link p-3 text-center" id="layout-tab" data-bs-toggle="pill"
+                    data-bs-target="#layout-pane" type="button" role="tab" aria-controls="layout-pane"
+                    aria-selected="false">
+                    <i class="ri-layout-line me-2"></i> Layout
+                </button>
+            </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="settingsTabContent">
+            <!-- Colors Tab -->
+            <div class="tab-pane fade show active" id="color-pane" role="tabpanel" aria-labelledby="color-tab">
+                <!-- Theme Colors Section -->
+                <div class="mb-4">
+                    <h6 class="mb-3 fw-semibold text-uppercase text-muted small">Theme Colors</h6>
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="bg-primary bg-opacity-10 avatar avatar-sm rounded-circle me-3">
+                            <i class="bi bi-palette text-primary"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-0 fw-semibold">Primary Color</h6>
+                            <small class="text-muted">Choose your preferred theme color</small>
+                        </div>
+                    </div>
+                    <div class="row g-2">
+                        <!-- Purple (Default) -->
+                        <div class="col-6">
+                            <button class="btn btn-outline-secondary w-100 d-flex align-items-center justify-content-start position-relative theme-color-btn" data-theme-color="default" data-color="#4666e1">
+                                <i class="bi bi-droplet-fill me-2" style="color: #4666e1;"></i>
+                                <span class="small fw-medium">Purple</span>
+                                <i class="bi bi-check-circle-fill ms-auto theme-check-icon" style="display: none;"></i>
+                            </button>
+                        </div>
+                        <!-- Blue  -->
+                        <div class="col-6">
+                            <button class="btn btn-outline-secondary w-100 d-flex align-items-center justify-content-start position-relative theme-color-btn" data-theme-color="blue" data-color="#1774ff">
+                                <i class="bi bi-droplet-fill me-2" style="color: #1774ff;"></i>
+                                <span class="small fw-medium">Blue</span>
+                                <i class="bi bi-check-circle-fill ms-auto theme-check-icon" style="display: none;"></i>
+                            </button>
+                        </div>
+                        <!-- Orange -->
+                        <div class="col-6">
+                            <button class="btn btn-outline-secondary w-100 d-flex align-items-center justify-content-start position-relative theme-color-btn" data-theme-color="orange" data-color="#e17846">
+                                <i class="bi bi-droplet-fill me-2" style="color: #e17846;"></i>
+                                <span class="small fw-medium">Orange</span>
+                                <i class="bi bi-check-circle-fill ms-auto theme-check-icon" style="display: none;"></i>
+                            </button>
+                        </div>
+                        <!-- Green -->
+                        <div class="col-6">
+                            <button class="btn btn-outline-secondary w-100 d-flex align-items-center justify-content-start position-relative theme-color-btn" data-theme-color="green" data-color="#3fc1b4">
+                                <i class="bi bi-droplet-fill me-2" style="color: #28adbb;"></i>
+                                <span class="small fw-medium">Cyan</span>
+                                <i class="bi bi-check-circle-fill ms-auto theme-check-icon" style="display: none;"></i>
+                            </button>
+                        </div>
+                        <!-- Red -->
+                        <div class="col-6">
+                            <button class="btn btn-outline-secondary w-100 d-flex align-items-center justify-content-start position-relative theme-color-btn" data-theme-color="red" data-color="#e25867">
+                                <i class="bi bi-droplet-fill me-2" style="color: #e17846;"></i>
+                                <span class="small fw-medium">Red</span>
+                                <i class="bi bi-check-circle-fill ms-auto theme-check-icon" style="display: none;"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar Color Scheme Section -->
+                <div class="mb-4">
+                    <h6 class="mb-3 fw-semibold text-uppercase text-muted small">Sidebar Color Scheme</h6>
+                    <div class="g-3 row">
+                        <!-- Default Color -->
+                        <div class="col-6">
+                            <div class="color-swatch rounded-3 p-3 position-relative overflow-hidden background-white border d-flex flex-column justify-content-end cursor-pointer"
+                                data-sidebar-color="default" style="height: 90px;">
+                                <span
+                                    class="position-absolute bottom-0 start-0 p-3 w-100 fw-medium d-flex align-items-center text-secondary">
+                                    <i class="bi bi-circle-fill me-2 fs-10"></i>
+                                    <span class="text-secondary">Default</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Dark Color -->
+                        <div class="col-6">
+                            <div class="color-swatch rounded-3 p-3 position-relative overflow-hidden bg-dark border d-flex flex-column justify-content-end cursor-pointer"
+                                data-sidebar-color="dark" style="height: 90px;">
+                                <span
+                                    class="position-absolute bottom-0 start-0 p-3 w-100 fw-medium d-flex align-items-center text-white">
+                                    <i class="bi bi-circle-fill me-2 fs-10"></i> <span class="text-white">Dark</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Primary Color -->
+                        <div class="col-6">
+                            <div class="color-swatch rounded-3 p-3 position-relative overflow-hidden bg-primary border d-flex flex-column justify-content-end cursor-pointer"
+                                data-sidebar-color="primary" style="height: 90px;">
+                                <span
+                                    class="position-absolute bottom-0 start-0 p-3 w-100 fw-medium d-flex align-items-center text-white">
+                                    <i class="bi bi-circle-fill me-2 fs-10"></i> <span class="text-white">Primary</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Gradient Color -->
+                        <div class="col-6">
+                            <div class="color-swatch rounded-3 p-3 position-relative overflow-hidden bg-gradient-alt-primary border d-flex flex-column justify-content-end cursor-pointer"
+                                data-sidebar-color="gradient" style="height: 90px;">
+                                <span
+                                    class="position-absolute bottom-0 start-0 p-3 w-100 fw-medium d-flex align-items-center text-white">
+                                    <i class="bi bi-circle-fill me-2 fs-10"></i> <span
+                                        class="text-white">Gradient</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted mt-2 d-block">
+                        <i class="bi bi-info-circle me-1"></i>Default sidebar is disabled in dark mode for better
+                        visibility
+                    </small>
+                </div>
+                <div class="mb-4">
+                    <h6 class="mb-3 fw-semibold text-uppercase text-muted small">Header Color Scheme</h6>
+                    <div class="g-3 row">
+                        <!-- Default Color -->
+                        <div class="col-6">
+                            <div class="color-swatch rounded-3 p-3 position-relative overflow-hidden background-white border d-flex flex-column justify-content-end cursor-pointer"
+                                data-header-color="default" style="height: 90px;">
+                                <span
+                                    class="position-absolute bottom-0 start-0 p-3 w-100 fw-medium d-flex align-items-center text-secondary">
+                                    <i class="bi bi-circle-fill me-2 fs-10"></i>
+                                    <span class="text-secondary">Default</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Dark Color -->
+                        <div class="col-6">
+                            <div class="color-swatch rounded-3 p-3 position-relative overflow-hidden bg-dark border d-flex flex-column justify-content-end cursor-pointer"
+                                data-header-color="dark" style="height: 90px;">
+                                <span
+                                    class="position-absolute bottom-0 start-0 p-3 w-100 fw-medium d-flex align-items-center text-white">
+                                    <i class="bi bi-circle-fill me-2 fs-10"></i>
+                                    <span class="text-white">Dark</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Primary Color -->
+                        <div class="col-6">
+                            <div class="color-swatch rounded-3 p-3 position-relative overflow-hidden bg-primary border d-flex flex-column justify-content-end cursor-pointer"
+                                data-header-color="primary" style="height: 90px;">
+                                <span
+                                    class="position-absolute bottom-0 start-0 p-3 w-100 fw-medium d-flex align-items-center text-white">
+                                    <i class="bi bi-circle-fill me-2 fs-10"></i>
+                                    <span class="text-white">Primary</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Gradient Color -->
+                        <div class="col-6">
+                            <div class="color-swatch rounded-3 p-3 position-relative overflow-hidden bg-gradient-alt-primary border d-flex flex-column justify-content-end cursor-pointer"
+                                data-header-color="gradient" style="height: 90px;">
+                                <span
+                                    class="position-absolute bottom-0 start-0 p-3 w-100 fw-medium d-flex align-items-center text-white">
+                                    <i class="bi bi-circle-fill me-2 fs-10"></i>
+                                    <span class="text-white">Gradient</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="text-muted mt-2 d-block">
+                        <i class="bi bi-info-circle me-1"></i>Default header is disabled in dark mode for better
+                        visibility
+                    </small>
+                </div>
+            </div>
+
+            <!-- Layout Tab -->
+            <div class="tab-pane fade" id="layout-pane" role="tabpanel" aria-labelledby="layout-tab">
+                <!-- Sidebar Layout Section -->
+                <div class="mb-4">
+                    <h6 class="mb-3 fw-semibold text-uppercase text-muted small">Layout Options</h6>
+                    <div class="p-3 bg-light bg-opacity-10 rounded-3">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-primary bg-opacity-10 avatar avatar-sm rounded-circle me-3">
+                                <i class="bi bi-layout-sidebar text-primary"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0 fw-semibold">Sidebar Layout</h6>
+                                <small class="text-muted">Choose your preferred sidebar size</small>
+                            </div>
+                        </div>
+                        <div class="layout-selector">
+                            <div class="btn-group w-100 position-relative" role="group" aria-label="Sidebar size options">
+                                <div class="toggle-overlay toggle-overlay-sidebar lg"></div>
+                                <div class="flex-grow-1">
+                                    <input class="btn-check" id="sidebar-sm" type="radio" name="sidebarSize">
+                                    <label class="btn w-100 d-flex flex-column align-items-center py-3" for="sidebar-sm"
+                                        data-bs-toggle="tooltip" title="Minimal sidebar for more content space">
+                                        <i class="bi bi-layout-sidebar-inset mb-1"></i> <span class="small fw-medium">Compact</span>
+                                    </label>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <input class="btn-check" id="sidebar-lg" type="radio" checked name="sidebarSize">
+                                    <label class="btn w-100 d-flex flex-column align-items-center py-3 active" for="sidebar-lg" data-bs-toggle="tooltip"
+                                        title="Wider sidebar for better navigation">
+                                        <i class="bi bi-layout-sidebar-inset-reverse mb-1"></i> <span class="small fw-medium">Expanded</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Page Layout Section -->
+                <div class="mb-4">
+                    <h6 class="mb-3 fw-semibold text-uppercase text-muted small">Page Layout</h6>
+
+                    <div class="p-3 bg-light bg-opacity-10 rounded-3">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-success bg-opacity-10 avatar avatar-sm rounded-circle me-3">
+                                <i class="bi bi-aspect-ratio text-success"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0 fw-semibold">Layout Mode</h6>
+                                <small class="text-muted">Choose how content is displayed</small>
+                            </div>
+                        </div>
+
+                        <div class="layout-selector">
+                            <div class="btn-group w-100 position-relative" role="group" aria-label="Layout mode options">
+                                <div class="toggle-overlay toggle-overlay-layout default"></div>
+
+                                <!-- Default Layout -->
+                                <div class="flex-grow-1">
+                                    <input class="btn-check" id="layout-default" type="radio" name="layoutMode"
+                                        data-layout="default">
+                                    <label class="btn w-100 d-flex flex-column align-items-center py-3" for="layout-default">
+                                        <i class="bi bi-arrows-fullscreen mb-1"></i>
+                                        <span class="small fw-medium">Default</span>
+                                    </label>
+                                </div>
+
+                                <!-- Boxed Layout -->
+                                <div class="flex-grow-1">
+                                    <input class="btn-check" id="layout-boxed" type="radio" name="layoutMode" data-layout="boxed">
+                                    <label class="btn w-100 d-flex flex-column align-items-center py-3" for="layout-boxed">
+                                        <i class="bi bi-layout-text-window mb-1"></i>
+                                        <span class="small fw-medium">Boxed</span>
+                                    </label>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Direction Section -->
+                <div class="mb-4">
+                    <h6 class="mb-3 fw-semibold text-uppercase text-muted small">Direction</h6>
+                    <div class="p-3 bg-light bg-opacity-10 rounded-3">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="bg-primary bg-opacity-10 avatar avatar-sm rounded-circle me-3">
+                                <i class="bi bi-text-left text-primary"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0 fw-semibold">Layout Direction</h6>
+                                <small class="text-muted">Switch between LTR and RTL layouts</small>
+                            </div>
+                        </div>
+                        <div class="layout-selector">
+                            <div class="btn-group w-100 position-relative" role="group" aria-label="Direction options">
+                                <div class="toggle-overlay toggle-overlay-direction ltr"></div>
+                                <div class="flex-grow-1">
+                                    <input class="btn-check" id="direction-ltr" type="radio" name="textDirection"
+                                        checked>
+                                    <label class="btn w-100 d-flex flex-column align-items-center py-3 active"
+                                        for="direction-ltr" data-bs-toggle="tooltip"
+                                        title="Left to Right (English, Spanish, etc.)">
+                                        <i class="bi bi-text-left mb-1"></i> <span class="small fw-medium">LTR</span>
+                                    </label>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <input class="btn-check" id="direction-rtl" type="radio" name="textDirection">
+                                    <label class="btn w-100 d-flex flex-column align-items-center py-3"
+                                        for="direction-rtl" data-bs-toggle="tooltip"
+                                        title="Right to Left (Arabic, Hebrew, etc.)">
+                                        <i class="bi bi-text-right mb-1"></i> <span class="small fw-medium">RTL</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="border-top p-3 text-center">
+        <small class="text-muted"><i class="bi bi-info-circle me-1"></i> Changes are saved automatically</small>
+    </div>
+</div>

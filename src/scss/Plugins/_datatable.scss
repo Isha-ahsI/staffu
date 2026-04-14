@@ -1,0 +1,14 @@
+// datatable.scss
+
+table.table.dataTable {
+    &.table-hover>tbody>tr {
+        &:hover>* {
+            box-shadow: none;
+            background-color: var(--bs-table-bg-state);
+        }
+        td{
+            white-space: normal !important
+        }
+    }
+}
+

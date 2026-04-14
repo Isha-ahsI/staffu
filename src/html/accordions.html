@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <div class="page-layout">
+        %%include('./partials/layout/header.html')
+        %%include('./partials/layout/left-sidebar.html')
+        <div class="page-wrapper">
+            <div class="page-content">
+                %%include('./partials/components/page-title.html', { pageTitle: 'Accordions', pagePrTitle: 'UI Elements' })
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Default Accordion</h5>
+                                    <div class="accordion" id="faqAccordion">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingOne">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">What is Bootstrap? <div class="toggle-icon"><i class="ri-add-large-line"></i></div></button>
+                                            </h2>
+                                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                                <div class="accordion-body">Bootstrap is a powerful open-source CSS framework that helps developers create responsive, mobile-first websites with ready-to-use components and utilities.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingTwo">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">How does an Accordion work? <div class="toggle-icon"><i class="ri-add-large-line"></i></div></button>
+                                            </h2>
+                                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                                <div class="accordion-body">An Accordion organizes content into collapsible sections. Clicking a header expands its content while collapsing the others, providing a clean and interactive layout.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingThree">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Why use Bootstrap Accordion? <div class="toggle-icon"><i class="ri-add-large-line"></i></div></button>
+                                            </h2>
+                                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                                <div class="accordion-body">Bootstrap Accordion is easy to implement and offers pre-designed styles. It improves user experience by structuring content in an interactive and space-saving way.</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingFour">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">How to implement Accordions? <div class="toggle-icon"><i class="ri-add-large-line"></i></div></button>
+                                            </h2>
+                                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                                                <div class="accordion-body">In Bootstrap, use the Accordion component to create collapsible sections. Customize it with classes and attributes for specific behavior.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Accordion with Icons</h5>
+                                    <div class="custom-accordion accordion" id="customAccordionIcons">
+                                        <!-- Item 1 -->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingIconOne">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseIconOne" aria-expanded="true" aria-controls="collapseIconOne">
+                                                    <i class="bi-question-circle fs-22 me-2"></i> What is Bootstrap? <div class="toggle-icon"><i class="ri-add-large-line"></i></div>
+                                                </button>
+                                            </h2>
+                                            <div id="collapseIconOne" class="accordion-collapse collapse show" aria-labelledby="headingIconOne" data-bs-parent="#customAccordion">
+                                                <div class="accordion-body pt-0">Bootstrap is a powerful open-source CSS framework that helps developers create responsive, mobile-first websites with ready-to-use components and utilities.</div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Item 2 -->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingIconTwo">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseIconTwo" aria-expanded="false" aria-controls="collapseIconTwo">
+                                                    <i class="bi-list-task fs-22 me-2"></i> How does an Accordion work? <div class="toggle-icon"><i class="ri-add-large-line"></i></div>
+                                                </button>
+                                            </h2>
+                                            <div id="collapseIconTwo" class="accordion-collapse collapse" aria-labelledby="headingIconTwo" data-bs-parent="#customAccordion">
+                                                <div class="accordion-body pt-0">An Accordion organizes content into collapsible sections. Clicking a header expands its content while collapsing the others, providing a clean and interactive layout.</div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Item 3 -->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingIconThree">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseIconThree" aria-expanded="false" aria-controls="collapseIconThree">
+                                                    <i class="bi-ui-checks fs-22 me-2"></i> Why use Bootstrap Accordion? <div class="toggle-icon"><i class="ri-add-large-line"></i></div>
+                                                </button>
+                                            </h2>
+                                            <div id="collapseIconThree" class="accordion-collapse collapse" aria-labelledby="headingIconThree" data-bs-parent="#customAccordion">
+                                                <div class="accordion-body pt-0">Bootstrap Accordion is easy to implement and offers pre-designed styles. It improves user experience by structuring content in an interactive and space-saving way.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-title h5">Accordion with Bordered Style</div>
+                                    <div class="custom-accordion accordion" id="borderedAccordion">
+                                        <!-- Accordion Item 1 -->
+                                        <div class="accordion-primary accordion-item">
+                                            <h2 class="accordion-header" id="headingBorderedOne">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBorderedOne" aria-expanded="true" aria-controls="collapseBorderedOne">What is Bootstrap? <div class="toggle-icon"><i class="ri-add-large-line"></i></div></button>
+                                            </h2>
+                                            <div id="collapseBorderedOne" class="accordion-collapse collapse show" aria-labelledby="headingBorderedOne" data-bs-parent="#borderedAccordion">
+                                                <div class="accordion-body">Bootstrap is a powerful open-source CSS framework that helps developers create responsive, mobile-first websites with ready-to-use components and utilities.</div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Accordion Item 2 -->
+                                        <div class="accordion-success accordion-item">
+                                            <h2 class="accordion-header" id="headingBorderedTwo">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBorderedTwo" aria-expanded="false" aria-controls="collapseBorderedTwo">How does an Accordion work? <div class="toggle-icon"><i class="ri-add-large-line"></i></div></button>
+                                            </h2>
+                                            <div id="collapseBorderedTwo" class="accordion-collapse collapse" aria-labelledby="headingBorderedTwo" data-bs-parent="#borderedAccordion">
+                                                <div class="accordion-body">An Accordion organizes content into collapsible sections. Clicking a header expands its content while collapsing the others, providing a clean and interactive layout.</div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Accordion Item 3 -->
+                                        <div class="accordion-danger accordion-item">
+                                            <h2 class="accordion-header" id="headingBorderedThree">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBorderedThree" aria-expanded="false" aria-controls="collapseBorderedThree">Why use Bootstrap Accordion? <div class="toggle-icon"><i class="ri-add-large-line"></i></div></button>
+                                            </h2>
+                                            <div id="collapseBorderedThree" class="accordion-collapse collapse" aria-labelledby="headingBorderedThree" data-bs-parent="#borderedAccordion">
+                                                <div class="accordion-body">Bootstrap Accordion is easy to implement and offers pre-designed styles. It improves user experience by structuring content in an interactive and space-saving way.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-title h5">Accordion with Badges</div>
+                                    <div class="accordion" id="badgeAccordion">
+
+                                        <!-- Accordion Item 1 -->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingBadgeOne">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBadgeOne" aria-expanded="true" aria-controls="collapseBadgeOne">
+                                                    <span class="me-2 badge bg-info rounded-pill">Info</span>What is Bootstrap? <div class="toggle-icon"><i class="ri-add-large-line"></i></div>
+                                                </button>
+                                            </h2>
+                                            <div id="collapseBadgeOne" class="accordion-collapse collapse show" aria-labelledby="headingBadgeOne" data-bs-parent="#badgeAccordion">
+                                                <div class="accordion-body"> Bootstrap is a powerful open-source CSS framework that helps developers create responsive, mobile-first websites with ready-to-use components and utilities.</div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Accordion Item 2 -->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingBadgeTwo">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBadgeTwo" aria-expanded="false" aria-controls="collapseBadgeTwo">
+                                                    <span class="me-2 badge bg-success rounded-pill">Guide</span>How does an Accordion work? <div class="toggle-icon"><i class="ri-add-large-line"></i></div>
+                                                </button>
+                                            </h2>
+                                            <div id="collapseBadgeTwo" class="accordion-collapse collapse" aria-labelledby="headingBadgeTwo" data-bs-parent="#badgeAccordion">
+                                                <div class="accordion-body"> An Accordion organizes content into collapsible sections. Clicking a header expands its content while collapsing the others, providing a clean and interactive layout.</div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Accordion Item 3 -->
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingBadgeThree">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBadgeThree" aria-expanded="false" aria-controls="collapseBadgeThree">
+                                                    <span class="me-2 badge bg-warning rounded-pill">Tip</span> Why use Bootstrap Accordion? <div class="toggle-icon"><i class="ri-add-large-line"></i></div>
+                                                </button>
+                                            </h2>
+                                            <div id="collapseBadgeThree" class="accordion-collapse collapse"
+                                                aria-labelledby="headingBadgeThree" data-bs-parent="#badgeAccordion">
+                                                <div class="accordion-body"> Bootstrap Accordion is easy to implement and offers pre-designed styles. It improves user experience by structuring content in an interactive and space-saving way.                                            </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-title h5">Accordion with Images or Media</div>
+                                    <div class="custom-accordion accordion" id="accordionAvatars">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingAvatar1">
+                                                <button class="accordion-button d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAvatar1" aria-expanded="true" aria-controls="collapseAvatar1">
+                                                    <img alt="avatar-img" class="avatar-img-sm me-2 rounded-circle" src="images/avatars/avatar1.jpg">
+                                                    <span class="d-flex flex-column align-items-start">
+                                                        <span class="d-block mb-1">What is Bootstrap?</span>
+                                                        <span class="text-muted fw-normal fs-14">A popular CSS framework.</span>
+                                                    </span>
+                                                    <div class="toggle-icon"><i class="ri-add-large-line"></i></div>
+                                                </button>
+                                            </h2>
+                                            <div id="collapseAvatar1" class="accordion-collapse collapse show" aria-labelledby="headingAvatar1" data-bs-parent="#accordionAvatars">
+                                                <div class="accordion-body pt-0">Bootstrap is a powerful open-source CSS framework that helps developers create responsive, mobile-first websites with ready-to-use components and utilities.</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingAvatar2">
+                                                <button class="accordion-button collapsed d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAvatar2" aria-expanded="false" aria-controls="collapseAvatar2">
+                                                    <img alt="avatar-img" class="avatar-img-sm me-2 rounded-circle" src="images/avatars/avatar2.jpg">
+                                                    <span class="d-flex flex-column align-items-start">
+                                                        <span class="d-block mb-1">How does an Accordion work?</span>
+                                                        <span class="text-muted fw-normal fs-14">Organizes content dynamically.</span>
+                                                    </span>
+                                                    <div class="toggle-icon"><i class="ri-add-large-line"></i></div>
+                                                </button>
+                                            </h2>
+                                            <div id="collapseAvatar2" class="accordion-collapse collapse" aria-labelledby="headingAvatar2" data-bs-parent="#accordionAvatars">
+                                                <div class="accordion-body pt-0">An Accordion organizes content into collapsible sections. Clicking a header expands its content while collapsing the others, providing a clean and interactive layout.</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingAvatar3">
+                                                <button class="accordion-button collapsed d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAvatar3" aria-expanded="false" aria-controls="collapseAvatar3">
+                                                    <img alt="avatar-img" class="avatar-img-sm me-2 rounded-circle" src="images/avatars/avatar3.jpg">
+                                                    <span class="d-flex flex-column align-items-start">
+                                                        <span class="d-block mb-1">Why use Bootstrap Accordion?</span>
+                                                        <span class="text-muted fw-normal fs-14">Saves space effectively.</span>
+                                                    </span>
+                                                    <div class="toggle-icon"><i class="ri-add-large-line"></i></div>
+                                                </button>
+                                            </h2>
+                                            <div id="collapseAvatar3" class="accordion-collapse collapse" aria-labelledby="headingAvatar3" data-bs-parent="#accordionAvatars">
+                                                <div class="accordion-body pt-0"> Bootstrap Accordion is easy to implement and offers pre-designed styles. It improves user experience by structuring content in an interactive and space-saving way.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-title h5">Accordion with Shadow Effects</div>
+                                    <div class="custom-accordion accordion-shadow accordion" id="accordionShadow">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingShadow1">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseShadow1" aria-expanded="true" aria-controls="collapseShadow1">What is Bootstrap? <div class="toggle-icon"><i class="ri-add-large-line"></i></div></button>
+                                            </h2>
+                                            <div id="collapseShadow1" class="accordion-collapse collapse show" aria-labelledby="headingShadow1" data-bs-parent="#accordionShadow">
+                                                <div class="accordion-body pt-0">Bootstrap is a powerful open-source CSS framework that helps developers create responsive, mobile-first websites with ready-to-use components and utilities.</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingShadow2">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseShadow2" aria-expanded="false" aria-controls="collapseShadow2">How does an Accordion work? <div class="toggle-icon"><i class="ri-add-large-line"></i></div></button>
+                                            </h2>
+                                            <div id="collapseShadow2" class="accordion-collapse collapse" aria-labelledby="headingShadow2" data-bs-parent="#accordionShadow">
+                                                <div class="accordion-body pt-0">An Accordion organizes content into collapsible sections. Clicking a header expands its content while collapsing the others, providing a clean and interactive layout.</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="headingShadow3">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseShadow3" aria-expanded="false" aria-controls="collapseShadow3">Why use Bootstrap Accordion? <div class="toggle-icon"><i class="ri-add-large-line"></i></div></button>
+                                            </h2>
+                                            <div id="collapseShadow3" class="accordion-collapse collapse" aria-labelledby="headingShadow3" data-bs-parent="#accordionShadow">
+                                                <div class="accordion-body pt-0">Bootstrap Accordion is easy to implement and offers pre-designed styles. It improves user experience by structuring content in an interactive and space-saving way.</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            %%include('./partials/layout/footer.html')
+        </div>
+    </div>
+    %%include('./partials/layout/right-sidebar.html')
+    <!-- %%include('./partials/right-sidebar.html')
+    %%include('./partials/back-to-top.html') -->
+    
+   %%include('./partials/layout/footer-js.html')
+</body>
+</html>

@@ -1,0 +1,1585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <div class="page-layout">
+        %%include('./partials/layout/header.html')
+        %%include('./partials/layout/left-sidebar.html')
+        <div class="page-wrapper">
+            <div class="page-content">
+                %%include('./partials/components/page-title.html', { pageTitle: 'Leads', pagePrTitle:
+                'Clients' })
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- On hold -->
+                        <div class="col-xl-3 col-sm-6 col-12 mb-4">
+                            <div class="card h-100 mb-0">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap justify-content-between align-items-end gap-1">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="avatar avatar-lg avatar-outline-primary custom-avatar"><i
+                                                    class="ri-pause-circle-line"></i></div>
+                                            <div>
+                                                <p class="mb-1">On hold</p>
+                                                <h4 class="mb-0 text-dark fw-semibold">8</h4>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <small><span class="text-danger fw-semibold"><i
+                                                        class="ri-arrow-right-down-long-line"></i>1.2% </span>vs last
+                                                month</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Rejected -->
+                        <div class="col-xl-3 col-sm-6 col-12 mb-4">
+                            <div class="card h-100 mb-0">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap justify-content-between align-items-end gap-1">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="avatar avatar-lg avatar-outline-danger custom-avatar"><i
+                                                    class="ri-delete-bin-7-line"></i></div>
+                                            <div>
+                                                <p class="mb-1">Rejected</p>
+                                                <h4 class="mb-0 text-dark fw-semibold">17</h4>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <small><span class="text-danger fw-semibold"><i
+                                                        class="ri-arrow-right-down-long-line"></i>0.3% </span>vs last
+                                                month</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Completed -->
+                        <div class="col-xl-3 col-sm-6 col-12 mb-4">
+                            <div class="card h-100 mb-0">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap justify-content-between align-items-end gap-1">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="avatar avatar-lg avatar-outline-success custom-avatar"><i
+                                                    class="ri-pause-circle-line"></i></div>
+                                            <div>
+                                                <p class="mb-1">Completed</p>
+                                                <h4 class="mb-0 text-dark fw-semibold">301</h4>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <small><span class="text-success fw-semibold"><i
+                                                        class="ri-arrow-right-up-long-line"></i>2.9% </span>vs last
+                                                month</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Canceled -->
+                        <div class="col-xl-3 col-sm-6 col-12 mb-4">
+                            <div class="card h-100 mb-0">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap justify-content-between align-items-end gap-1">
+                                        <div class="d-flex align-items-center gap-3">
+                                            <div class="avatar avatar-lg avatar-outline-orange custom-avatar"><i
+                                                    class="ri-close-line"></i></div>
+                                            <div>
+                                                <p class="mb-1">Canceled</p>
+                                                <h4 class="mb-0 text-dark fw-semibold">23</h4>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <small><span class="text-danger fw-semibold"><i
+                                                        class="ri-arrow-right-down-long-line"></i>0.1% </span>vs last
+                                                month</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div
+                                        class="d-flex flex-wrap justify-content-between align-items-center gap-sm-1 gap-4">
+                                        <ul class="nav nav-pills gap-1">
+                                            <li class="nav-item">
+                                                <a class="nav-link tab active" href="#"
+                                                    data-target="tableView"><span class="me-1"><i
+                                                            class="ri-list-check"></i></span>List</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link tab" href="#" data-target="cardView"><span
+                                                        class="me-1"><i class="ri-layout-grid-line"></i></span>Cards</a>
+                                            </li>
+                                        </ul>
+                                        <div class="d-flex flex-wrap align-items-center gap-2">
+                                            <!--Lead Source filter dropdown -->
+                                            <div class="dropdown source-dropdown position-relative me-2">
+                                                <button type="button"
+                                                    class="btn btn-soft-dark z-1 rounded-3 dropdown-toggle"
+                                                    id="leadSourceFilter" data-bs-toggle="dropdown"
+                                                    aria-expanded="false"><span class="me-1"><i
+                                                            class="bi bi-filter"></i></span> <span
+                                                        class="filter-label">All Source</span> <span><i
+                                                            class="bi bi-chevron-down drop-caret"></i></span></button>
+                                                <div aria-labelledby="leadSourceFilter"
+                                                    class="dropdown-menu dropdown-menu-lg-end">
+                                                    <a class="dropdown-item" href="#" data-discover="true"
+                                                        data-status="">All
+                                                        Source</a>
+                                                    <a class="dropdown-item" href="#" data-discover="true"
+                                                        data-status="Website"><span class="me-1"><i
+                                                                class="ri-earth-line"></i></span>Website</a>
+                                                    <a class="dropdown-item" href="#" data-discover="true"
+                                                        data-status="Social Media"><span class="me-1"><i
+                                                                class="ri-smartphone-line"></i></span>Social Media</a>
+                                                    <a class="dropdown-item" href="#" data-discover="true"
+                                                        data-status="Referral"><span class="me-1"><i
+                                                                class="ri-shake-hands-line"></i></span>Referral</a>
+                                                    <a class="dropdown-item" href="#" data-discover="true"
+                                                        data-status="Campaign"><span class="me-1"><i
+                                                                class="ri-megaphone-line me-1"></i></span>Campaign</a>
+                                                </div>
+                                            </div>
+                                            <!-- lead status filter dropdown -->
+                                            <div class="dropdown status-dropdown position-relative me-2">
+                                                <button type="button"
+                                                    class="btn btn-soft-dark z-1 rounded-3 dropdown-toggle"
+                                                    id="leadStatusFilter" data-bs-toggle="dropdown"
+                                                    aria-expanded="false"><span class="me-1"><i
+                                                            class="bi bi-filter"></i></span> <span
+                                                        class="filter-label">All Status</span> <span><i
+                                                            class="bi bi-chevron-down drop-caret"></i></span></button>
+                                                <div aria-labelledby="leadStatusFilter"
+                                                    class="dropdown-menu dropdown-menu-lg-end">
+                                                    <a class="dropdown-item" href="#" data-discover="true"
+                                                        data-status="">All</a>
+                                                    <a class="dropdown-item" href="#" data-discover="true"
+                                                        data-status="New">New</a>
+                                                    <a class="dropdown-item" href="#" data-discover="true"
+                                                        data-status="Qualified">Qualified</a>
+                                                    <a class="dropdown-item" href="#" data-discover="true"
+                                                        data-status="Proposal">Proposal</a>
+                                                    <a class="dropdown-item" href="#" data-discover="true"
+                                                        data-status="Contacted">Contacted</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div id="leadsDetails">
+                                <div id="tableView" class="view-content">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="datatable-wrapper">
+                                                <table id="leadsManageTable"
+                                                    class="table table-hover table-nowrap table-cell-padding-lg">
+                                                    <thead class="table-light">
+                                                        <tr>
+                                                            <th class="py-3">Lead Name</th>
+                                                            <th class="py-3">Project</th>
+                                                            <th class="py-3 text-center">Source</th>
+                                                            <th class="py-3 text-center">Probability</th>
+                                                            <th class="py-3 text-center">Potential Value($)</th>
+                                                            <th class="py-3 text-center">Assigned To</th>
+                                                            <th class="py-3 text-center">Project Progress</th>
+                                                            <th class="py-3 text-center">Status</th>
+                                                            <th class="py-3 text-center">Notes / Actions</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <!-- lead 1 -->
+                                                        <tr class="align-middle">
+                                                            <td class="text-wrap">
+                                                                <div class="d-flex align-items-center gap-1">
+                                                                    <img src="images/lead_com_logos/mitsubishi.png"
+                                                                        alt="mitsubishi" class="img-fluid">
+                                                                    <h6 class="text-dark mb-0 fw-semibold">Mitsubishi
+                                                                        Group</h6>
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-wrap">
+                                                                <h6 class="mb-0 text-dark fw-semibold">E-commerce
+                                                                    Platform</h6>
+                                                            </td>
+                                                            <td class="text-wrap text-center">
+                                                                <span class="badge bg-outline-secondary fs-14"><i
+                                                                        class="ri-earth-line me-1"></i>Website</span>
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <div data-progress="90"
+                                                                    class="radial-chart-canvas mx-auto"
+                                                                    style="width: 60px; height: 60px; min-height: 60px; min-width: 60px; display: block;">
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-wrap text-center">
+                                                                <h6 class="text-dark mb-0">$25,000</h6>
+                                                            </td>
+                                                            <td class="text-wrap">
+                                                                <div class="avatar-group justify-content-center">
+                                                                    <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Nia Dubey">
+                                                                        <img alt="Avatar 5" class="w-100 h-100"
+                                                                            src="../images/avatars/avatar5.jpg">
+                                                                    </div>
+                                                                    <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Rahul Sharma">
+                                                                        <img alt="Avatar 6" class="w-100 h-100"
+                                                                            src="../images/avatars/avatar6.jpg">
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-wrap text-center">
+                                                                <div
+                                                                    class="d-flex justify-content-end align-items-center gap-2">
+                                                                    <div class="progress w-100" role="progressbar"
+                                                                        aria-valuenow="95" aria-valuemin="0"
+                                                                        aria-valuemax="100" style="height: 8px;">
+                                                                        <div class="progress-bar bg-success"
+                                                                            style="width: 95%">
+                                                                        </div>
+                                                                    </div>
+                                                                    <small class="text-muted">95%</small>
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-wrap text-center">
+                                                                <span class="badge bg-soft-success">Qualified</span>
+                                                            </td>
+                                                            <td class="text-wrap">
+                                                                <div
+                                                                    class="d-flex justify-content-center align-items-center gap-2">
+                                                                    <a href="#"
+                                                                        class="btn btn-outline-secondary avatar avatar-sm rounded-circle p-0"><span><i
+                                                                                class="ri-mail-send-line fw-normal"></i></span></a>
+                                                                    <a href="#"
+                                                                        class="btn btn-outline-secondary avatar avatar-sm rounded-circle p-0"><span><i
+                                                                                class="ri-phone-line fw-normal"></i></span></a>
+                                                                    <a href="#"
+                                                                        class="btn btn-outline-secondary avatar avatar-sm rounded-circle p-0"><span><i
+                                                                                class="ri-sticky-note-add-line fw-normal"></i></span></a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <!-- lead 2 -->
+                                                        <tr class="align-middle">
+                                                            <td class="text-wrap">
+                                                                <div class="d-flex align-items-center gap-1">
+                                                                    <img src="images/lead_com_logos/vestige.png"
+                                                                        alt="Vestige Marketing Pvt.Ltd."
+                                                                        class="img-fluid">
+                                                                    <h6 class="text-dark mb-0 fw-semibold">Vestige
+                                                                        Marketing
+                                                                        Pvt.
+                                                                        Ltd.</h6>
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-wrap">
+                                                                <h6 class="mb-0 text-dark fw-semibold">Wellness Campaign
+                                                                    Q1</h6>
+                                                            </td>
+                                                            <td class="text-wrap text-center">
+                                                                <span class="badge bg-outline-secondary fs-14"><i
+                                                                        class="ri-smartphone-line me-1"></i>Social
+                                                                    Media</span>
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <div data-progress="55"
+                                                                    class="radial-chart-canvas mx-auto"
+                                                                    style="width: 60px; height: 60px; min-height: 60px; min-width: 60px; display: block;">
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-wrap text-center">
+                                                                <h6 class="text-dark mb-0">$45,000</h6>
+                                                            </td>
+                                                            <td class="text-wrap">
+                                                                <div class="avatar-group justify-content-center">
+                                                                    <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Ethan Ray">
+                                                                        <img alt="Avatar 5" class="w-100 h-100"
+                                                                            src="../images/avatars/avatar2.jpg">
+                                                                    </div>
+                                                                    <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Ollivia Joy">
+                                                                        <img alt="Avatar 6" class="w-100 h-100"
+                                                                            src="../images/avatars/avatar3.jpg">
+                                                                    </div>
+                                                                    <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Mark Lee">
+                                                                        <img alt="Avatar 6" class="w-100 h-100"
+                                                                            src="../images/avatars/avatar1.jpg">
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-wrap text-center">
+                                                                <div
+                                                                    class="d-flex justify-content-end align-items-center gap-2">
+                                                                    <div class="progress w-100" role="progressbar"
+                                                                        aria-valuenow="30" aria-valuemin="0"
+                                                                        aria-valuemax="100" style="height: 8px;">
+                                                                        <div class="progress-bar bg-danger"
+                                                                            style="width: 30%">
+                                                                        </div>
+                                                                    </div>
+                                                                    <small class="text-muted">30%</small>
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-wrap text-center">
+                                                                <span class="badge bg-soft-warning">Proposal</span>
+                                                            </td>
+                                                            <td class="text-wrap">
+                                                                <div
+                                                                    class="d-flex justify-content-center align-items-center gap-2">
+                                                                    <a href="#"
+                                                                        class="btn btn-outline-secondary avatar avatar-sm rounded-circle p-0"><span><i
+                                                                                class="ri-mail-send-line fw-normal"></i></span></a>
+                                                                    <a href="#"
+                                                                        class="btn btn-outline-secondary avatar avatar-sm rounded-circle p-0"><span><i
+                                                                                class="ri-phone-line fw-normal"></i></span></a>
+                                                                    <a href="#"
+                                                                        class="btn btn-outline-secondary avatar avatar-sm rounded-circle p-0"><span><i
+                                                                                class="ri-sticky-note-add-line fw-normal"></i></span></a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <!-- lead 3 -->
+                                                        <tr class="align-middle">
+                                                            <td class="text-wrap">
+                                                                <div class="d-flex align-items-center gap-1">
+                                                                    <img src="images/lead_com_logos/mclaren.png"
+                                                                        alt="McLaren Group Limited" class="img-fluid">
+                                                                    <h6 class="text-dark mb-0 fw-semibold">McLaren Group
+                                                                        Limited
+                                                                    </h6>
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-wrap">
+                                                                <h6 class="mb-0 text-dark fw-semibold">Enterprise CRM
+                                                                    Implementation
+                                                                </h6>
+                                                            </td>
+                                                            <td class="text-wrap text-center">
+                                                                <span class="badge bg-outline-secondary fs-14"><i
+                                                                        class="ri-shake-hands-line me-1"></i>Referral</span>
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <div data-progress="75"
+                                                                    class="radial-chart-canvas mx-auto"
+                                                                    style="width: 60px; height: 60px; min-height: 60px; min-width: 60px; display: block;">
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-wrap text-center">
+                                                                <h6 class="text-dark mb-0">$55,000</h6>
+                                                            </td>
+                                                            <td class="text-wrap">
+                                                                <div class="avatar-group justify-content-center">
+                                                                    <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Rahul Sharma">
+                                                                        <img alt="Avatar 5" class="w-100 h-100"
+                                                                            src="../images/avatars/avatar6.jpg">
+                                                                    </div>
+                                                                    <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Joyce Neal">
+                                                                        <img alt="Avatar 6" class="w-100 h-100"
+                                                                            src="../images/avatars/avatar4.jpg">
+                                                                    </div>
+                                                                    <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="
+                                                                                                Mark Lee">
+                                                                        <img alt="Avatar 6" class="w-100 h-100"
+                                                                            src="../images/avatars/avatar1.jpg">
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-wrap text-center">
+                                                                <div
+                                                                    class="d-flex justify-content-end align-items-center gap-2">
+                                                                    <div class="progress w-100" role="progressbar"
+                                                                        aria-valuenow="50" aria-valuemin="0"
+                                                                        aria-valuemax="100" style="height: 8px;">
+                                                                        <div class="progress-bar bg-warning"
+                                                                            style="width: 50%">
+                                                                        </div>
+                                                                    </div>
+                                                                    <small class="text-muted">50%</small>
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-wrap text-center">
+                                                                <span class="badge bg-soft-info">Contacted</span>
+                                                            </td>
+                                                            <td class="text-wrap">
+                                                                <div
+                                                                    class="d-flex justify-content-center align-items-center gap-2">
+                                                                    <a href="#"
+                                                                        class="btn btn-outline-secondary avatar avatar-sm rounded-circle p-0"><span><i
+                                                                                class="ri-mail-send-line fw-normal"></i></span></a>
+                                                                    <a href="#"
+                                                                        class="btn btn-outline-secondary avatar avatar-sm rounded-circle p-0"><span><i
+                                                                                class="ri-phone-line fw-normal"></i></span></a>
+                                                                    <a href="#"
+                                                                        class="btn btn-outline-secondary avatar avatar-sm rounded-circle p-0"><span><i
+                                                                                class="ri-sticky-note-add-line fw-normal"></i></span></a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <!-- lead 4 -->
+                                                        <tr class="align-middle">
+                                                            <td class="text-wrap">
+                                                                <div class="d-flex align-items-center gap-1">
+                                                                    <img src="images/lead_com_logos/lumion.png"
+                                                                        alt="Lumion B.V." class="img-fluid">
+                                                                    <h6 class="text-dark mb-0 fw-semibold">Lumion B.V.
+                                                                    </h6>
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-wrap">
+                                                                <h6 class="mb-0 text-dark fw-semibold">3D Architectural
+                                                                    Rendering
+                                                                </h6>
+                                                            </td>
+                                                            <td class="text-wrap text-center">
+                                                                <span class="badge bg-outline-secondary fs-14"><i
+                                                                        class="ri-megaphone-line me-1"></i>Campaign</span>
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <div data-progress="60"
+                                                                    class="radial-chart-canvas mx-auto"
+                                                                    style="width: 60px; height: 60px; min-height: 60px; min-width: 60px; display: block;">
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-wrap text-center">
+                                                                <h6 class="text-dark mb-0">$75,000</h6>
+                                                            </td>
+                                                            <td class="text-wrap">
+                                                                <div class="avatar-group justify-content-center">
+                                                                    <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Sarah Khan">
+                                                                        <img alt="Avatar 5" class="w-100 h-100"
+                                                                            src="../images/avatars/avatar8.jpg">
+                                                                    </div>
+                                                                    <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Neha Paul">
+                                                                        <img alt="Avatar 6" class="w-100 h-100"
+                                                                            src="../images/avatars/avatar7.jpg">
+                                                                    </div>
+                                                                    <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Ethan Ray">
+                                                                        <img alt="Avatar 6" class="w-100 h-100"
+                                                                            src="../images/avatars/avatar2.jpg">
+                                                                    </div>
+                                                                    <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Nia Dubey">
+                                                                        <img alt="Avatar 6" class="w-100 h-100"
+                                                                            src="../images/avatars/avatar5.jpg">
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-wrap text-center">
+                                                                <div
+                                                                    class="d-flex justify-content-end align-items-center gap-2">
+                                                                    <div class="progress w-100" role="progressbar"
+                                                                        aria-valuenow="35" aria-valuemin="0"
+                                                                        aria-valuemax="100" style="height: 8px;">
+                                                                        <div class="progress-bar bg-warning"
+                                                                            style="width: 35%">
+                                                                        </div>
+                                                                    </div>
+                                                                    <small class="text-muted">35%</small>
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-wrap text-center">
+                                                                <span class="badge bg-soft-info">Contacted</span>
+                                                            </td>
+                                                            <td class="text-wrap">
+                                                                <div
+                                                                    class="d-flex justify-content-center align-items-center gap-2">
+                                                                    <a href="#"
+                                                                        class="btn btn-outline-secondary avatar avatar-sm rounded-circle p-0"><span><i
+                                                                                class="ri-mail-send-line fw-normal"></i></span></a>
+                                                                    <a href="#"
+                                                                        class="btn btn-outline-secondary avatar avatar-sm rounded-circle p-0"><span><i
+                                                                                class="ri-phone-line fw-normal"></i></span></a>
+                                                                    <a href="#"
+                                                                        class="btn btn-outline-secondary avatar avatar-sm rounded-circle p-0"><span><i
+                                                                                class="ri-sticky-note-add-line fw-normal"></i></span></a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <!-- lead 5 -->
+                                                        <tr class="align-middle">
+                                                            <td class="text-wrap">
+                                                                <div class="d-flex align-items-center gap-1">
+                                                                    <img src="images/lead_com_logos/global.png"
+                                                                        alt="Global Infotech" class="img-fluid">
+                                                                    <h6 class="text-dark mb-0 fw-semibold">Global
+                                                                        Infotech</h6>
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-wrap">
+                                                                <h6 class="mb-0 text-dark fw-semibold">Mobile App
+                                                                    Development
+                                                                </h6>
+                                                            </td>
+                                                            <td class="text-wrap text-center">
+                                                                <span class="badge bg-outline-secondary fs-14"><i
+                                                                        class="ri-earth-line me-1"></i>Website</span>
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <div data-progress="85"
+                                                                    class="radial-chart-canvas mx-auto"
+                                                                    style="width: 60px; height: 60px; min-height: 60px; min-width: 60px; display: block;">
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-wrap text-center">
+                                                                <h6 class="text-dark mb-0">$45,000</h6>
+                                                            </td>
+                                                            <td class="text-wrap">
+                                                                <div class="avatar-group justify-content-center">
+                                                                    <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Emily Davis">
+                                                                        <img alt="Avatar 5" class="w-100 h-100"
+                                                                            src="../images/avatars/avatar10.jpg">
+                                                                    </div>
+                                                                    <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Ollivia Joy">
+                                                                        <img alt="Avatar 6" class="w-100 h-100"
+                                                                            src="../images/avatars/avatar3.jpg">
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-wrap text-center">
+                                                                <div
+                                                                    class="d-flex justify-content-end align-items-center gap-2">
+                                                                    <div class="progress w-100" role="progressbar"
+                                                                        aria-valuenow="80" aria-valuemin="0"
+                                                                        aria-valuemax="100" style="height: 8px;">
+                                                                        <div class="progress-bar bg-success"
+                                                                            style="width: 80%">
+                                                                        </div>
+                                                                    </div>
+                                                                    <small class="text-muted">80%</small>
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-wrap text-center">
+                                                                <span class="badge bg-soft-success">Qualified</span>
+                                                            </td>
+                                                            <td class="text-wrap">
+                                                                <div
+                                                                    class="d-flex justify-content-center align-items-center gap-2">
+                                                                    <a href="#"
+                                                                        class="btn btn-outline-secondary avatar avatar-sm rounded-circle p-0"><span><i
+                                                                                class="ri-mail-send-line fw-normal"></i></span></a>
+                                                                    <a href="#"
+                                                                        class="btn btn-outline-secondary avatar avatar-sm rounded-circle p-0"><span><i
+                                                                                class="ri-phone-line fw-normal"></i></span></a>
+                                                                    <a href="#"
+                                                                        class="btn btn-outline-secondary avatar avatar-sm rounded-circle p-0"><span><i
+                                                                                class="ri-sticky-note-add-line fw-normal"></i></span></a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <!-- lead 6 -->
+                                                        <tr class="align-middle">
+                                                            <td class="text-wrap">
+                                                                <div class="d-flex align-items-center gap-1">
+                                                                    <img src="images/lead_com_logos/quinscape.png"
+                                                                        alt="Quinscape GmbH" class="img-fluid">
+                                                                    <h6 class="text-dark mb-0 fw-semibold">Quinscape
+                                                                        GmbH</h6>
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-wrap">
+                                                                <h6 class="mb-0 text-dark fw-semibold">Website Redesign
+                                                                </h6>
+                                                            </td>
+                                                            <td class="text-wrap text-center">
+                                                                <span class="badge bg-outline-secondary fs-14"><i
+                                                                        class="ri-smartphone-line me-1"></i>Social
+                                                                    Media</span>
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <div data-progress="30"
+                                                                    class="radial-chart-canvas mx-auto"
+                                                                    style="width: 60px; height: 60px; min-height: 60px; min-width: 60px; display: block;">
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-wrap text-center">
+                                                                <h6 class="text-dark mb-0">$40,000</h6>
+                                                            </td>
+                                                            <td class="text-wrap">
+                                                                <div class="avatar-group justify-content-center">
+                                                                    <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Kelvin Yia">
+                                                                        <img alt="Kelvin Yia" class="w-100 h-100"
+                                                                            src="../images/avatars/avatar9.jpg">
+                                                                    </div>
+                                                                    <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Sarah Khan">
+                                                                        <img alt="Sarah Khan" class="w-100 h-100"
+                                                                            src="../images/avatars/avatar8.jpg">
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-wrap text-center">
+                                                                <div
+                                                                    class="d-flex justify-content-end align-items-center gap-2">
+                                                                    <div class="progress w-100" role="progressbar"
+                                                                        aria-valuenow="28" aria-valuemin="0"
+                                                                        aria-valuemax="100" style="height: 8px;">
+                                                                        <div class="progress-bar bg-danger"
+                                                                            style="width: 28%">
+                                                                        </div>
+                                                                    </div>
+                                                                    <small class="text-muted">28%</small>
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-wrap text-center"><span
+                                                                    class="badge bg-soft-primary">New</span>
+                                                            </td>
+                                                            </td>
+                                                            <td class="text-wrap">
+                                                                <div
+                                                                    class="d-flex justify-content-center align-items-center gap-2">
+                                                                    <a href="#"
+                                                                        class="btn btn-outline-secondary avatar avatar-sm rounded-circle p-0"><span><i
+                                                                                class="ri-mail-send-line fw-normal"></i></span></a>
+                                                                    <a href="#"
+                                                                        class="btn btn-outline-secondary avatar avatar-sm rounded-circle p-0"><span><i
+                                                                                class="ri-phone-line fw-normal"></i></span></a>
+                                                                    <a href="#"
+                                                                        class="btn btn-outline-secondary avatar avatar-sm rounded-circle p-0"><span><i
+                                                                                class="ri-sticky-note-add-line fw-normal"></i></span></a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <!-- lead 7 -->
+                                                        <tr class="align-middle">
+                                                            <td class="text-wrap">
+                                                                <div class="d-flex align-items-center gap-1">
+                                                                    <img src="images/lead_com_logos/stellar.png"
+                                                                        alt="Stellar Marketing" class="img-fluid">
+                                                                    <h6 class="text-dark mb-0 fw-semibold">Stellar
+                                                                        Marketing
+                                                                    </h6>
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-wrap">
+                                                                <h6 class="mb-0 text-dark fw-semibold">Digital Marketing
+                                                                    Campaign
+                                                                </h6>
+                                                            </td>
+                                                            <td class="text-wrap text-center">
+                                                                <span class="badge bg-outline-secondary fs-14"><i
+                                                                        class="ri-megaphone-line me-1"></i>Campaign</span>
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <div data-progress="80"
+                                                                    class="radial-chart-canvas mx-auto"
+                                                                    style="width: 60px; height: 60px; min-height: 60px; min-width: 60px; display: block;">
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-wrap text-center">
+                                                                <h6 class="text-dark mb-0">$60,000</h6>
+                                                            </td>
+                                                            <td class="text-wrap">
+                                                                <div class="avatar-group justify-content-center">
+                                                                    <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Joyce Neal">
+                                                                        <img alt="Joyce Neal" class="w-100 h-100"
+                                                                            src="../images/avatars/avatar4.jpg">
+                                                                    </div>
+                                                                    <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Neha Paul">
+                                                                        <img alt="Neha Paul" class="w-100 h-100"
+                                                                            src="../images/avatars/avatar7.jpg">
+                                                                    </div>
+                                                                    <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Kelvin Yia">
+                                                                        <img alt="Nia Dubey" class="w-100 h-100"
+                                                                            src="../images/avatars/avatar9.jpg">
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-wrap text-center">
+                                                                <div
+                                                                    class="d-flex justify-content-end align-items-center gap-2">
+                                                                    <div class="progress w-100" role="progressbar"
+                                                                        aria-valuenow="75" aria-valuemin="0"
+                                                                        aria-valuemax="100" style="height: 8px;">
+                                                                        <div class="progress-bar bg-success"
+                                                                            style="width: 75%">
+                                                                        </div>
+                                                                    </div>
+                                                                    <small class="text-muted">75%</small>
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-wrap text-center">
+                                                                <span class="badge bg-soft-success">Qualified</span>
+                                                            </td>
+                                                            <td class="text-wrap">
+                                                                <div
+                                                                    class="d-flex justify-content-center align-items-center gap-2">
+                                                                    <a href="#"
+                                                                        class="btn btn-outline-secondary avatar avatar-sm rounded-circle p-0"><span><i
+                                                                                class="ri-mail-send-line fw-normal"></i></span></a>
+                                                                    <a href="#"
+                                                                        class="btn btn-outline-secondary avatar avatar-sm rounded-circle p-0"><span><i
+                                                                                class="ri-phone-line fw-normal"></i></span></a>
+                                                                    <a href="#"
+                                                                        class="btn btn-outline-secondary avatar avatar-sm rounded-circle p-0"><span><i
+                                                                                class="ri-sticky-note-add-line fw-normal"></i></span></a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <!-- lead 8 -->
+                                                        <tr class="align-middle">
+                                                            <td class="text-wrap">
+                                                                <div class="d-flex align-items-center gap-1">
+                                                                    <img src="images/lead_com_logos/atom.png"
+                                                                        alt="Atom Solution" class="img-fluid">
+                                                                    <h6 class="text-dark mb-0 fw-semibold">Atom Solution
+                                                                    </h6>
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-wrap">
+                                                                <h6 class="mb-0 text-dark fw-semibold">Software
+                                                                    Integration</h6>
+                                                            </td>
+                                                            <td class="text-wrap text-center">
+                                                                <span class="badge bg-outline-secondary fs-14"><i
+                                                                        class="ri-shake-hands-line me-1"></i>Referral</span>
+                                                            </td>
+                                                            <td class="text-center">
+                                                                <div data-progress="50"
+                                                                    class="radial-chart-canvas mx-auto"
+                                                                    style="width: 60px; height: 60px; min-height: 60px; min-width: 60px; display: block;">
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-wrap text-center">
+                                                                <h6 class="text-dark mb-0">$80,000</h6>
+                                                            </td>
+                                                            <td class="text-wrap">
+                                                                <div class="avatar-group justify-content-center">
+                                                                    <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Emily Devis">
+                                                                        <img alt="Emily Devis" class="w-100 h-100"
+                                                                            src="../images/avatars/avatar10.jpg">
+                                                                    </div>
+                                                                    <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                        title="Nia Dubey">
+                                                                        <img alt="Nia Dubey" class="w-100 h-100"
+                                                                            src="../images/avatars/avatar5.jpg">
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-wrap text-center">
+                                                                <div
+                                                                    class="d-flex justify-content-end align-items-center gap-2">
+                                                                    <div class="progress w-100" role="progressbar"
+                                                                        aria-valuenow="45" aria-valuemin="0"
+                                                                        aria-valuemax="100" style="height: 8px;">
+                                                                        <div class="progress-bar bg-warning"
+                                                                            style="width: 45%">
+                                                                        </div>
+                                                                    </div>
+                                                                    <small class="text-muted">45%</small>
+                                                                </div>
+                                                            </td>
+                                                            <td class="text-wrap text-center">
+                                                                <span class="badge bg-soft-info">Contacted</span>
+                                                            </td>
+                                                            <td class="text-wrap">
+                                                                <div
+                                                                    class="d-flex justify-content-center align-items-center gap-2">
+                                                                    <a href="#"
+                                                                        class="btn btn-outline-secondary avatar avatar-sm rounded-circle p-0"><span><i
+                                                                                class="ri-mail-send-line fw-normal"></i></span></a>
+                                                                    <a href="#"
+                                                                        class="btn btn-outline-secondary avatar avatar-sm rounded-circle p-0"><span><i
+                                                                                class="ri-phone-line fw-normal"></i></span></a>
+                                                                    <a href="#"
+                                                                        class="btn btn-outline-secondary avatar avatar-sm rounded-circle p-0"><span><i
+                                                                                class="ri-sticky-note-add-line fw-normal"></i></span></a>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="cardView" class="view-content">
+                                    <div class="row">
+                                        <!-- card1 -->
+                                        <div class="col-xl-4 col-md-6 col-12 mb-4">
+                                            <div class="card lead-card h-100 mb-0">
+                                                <div class="card-body">
+                                                    <div
+                                                        class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-2">
+                                                        <div class="d-flex align-items-start gap-2">
+                                                            <img src="images/lead_com_logos/mitsubishi.png"
+                                                                alt="mitsubishi" class="img-fluid">
+                                                            <h5 class="text-dark mb-0 fw-semibold">Mitsubishi Group</h5>
+                                                        </div>
+                                                        <span class="badge bg-soft-success">Qualified</span>
+                                                    </div>
+                                                    <div class="d-flex flex-column mb-4">
+                                                        <small><span class="me-1 text-dark"><i
+                                                                    class="ri-mail-send-line fs-6"></i></span>mitsubishi.group@gmail.com</small>
+                                                        <small><span class="me-1 text-dark"><i
+                                                                    class="ri-phone-line fs-6"></i></span>+1 965 567
+                                                            890</small>
+                                                    </div>
+                                                    <div class="d-flex flex-wrap justify-content-between gap-2 mb-2">
+                                                        <div>
+                                                            <p class="mb-1">Project Info</p>
+                                                            <h6 class="mb-0 text-dark fw-semibold">E-commerce Platform
+                                                            </h6>
+                                                        </div>
+                                                        <div>
+                                                            <p class="mb-1">Project Progress</p>
+                                                            <div
+                                                                class="d-flex justify-content-end align-items-center gap-2">
+                                                                <div class="progress w-100" role="progressbar"
+                                                                    aria-valuenow="95" aria-valuemin="0"
+                                                                    aria-valuemax="100" style="height: 8px;">
+                                                                    <div class="progress-bar bg-success"
+                                                                        style="width: 95%">
+                                                                    </div>
+                                                                </div>
+                                                                <small class="text-muted">95%</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex justify-content-between align-items-center gap-1 mb-2">
+                                                        <p class="mb-0">Probability</p>
+                                                        <div data-progress="90" class="radial-chart-canvas" style="width: 60px; height: 60px; min-height: 60px; min-width: 60px; display: block;"></div>
+                                                    </div>
+                                                    <div class="d-flex flex-wrap justify-content-between gap-2">
+                                                        <div class="d-flex flex-wrap gap-4">
+                                                            <div>
+                                                                <p class="mb-1">Source</p>
+                                                                <span class="badge bg-outline-secondary fs-14"><i
+                                                                        class="ri-earth-line me-1"></i>Website</span>
+                                                            </div>
+                                                            <div>
+                                                                <p class="mb-2">Amount($)</p>
+                                                                <h6 class="text-dark mb-0">$25,000</h6>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <p class="mb-1">Assigned</p>
+                                                            <div class="avatar-group justify-content-center">
+                                                                <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                    title="Nia Dubey">
+                                                                    <img alt="Avatar 5" class="w-100 h-100"
+                                                                        src="../images/avatars/avatar5.jpg">
+                                                                </div>
+                                                                <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                    title="Rahul Sharma">
+                                                                    <img alt="Avatar 6" class="w-100 h-100"
+                                                                        src="../images/avatars/avatar6.jpg">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- card2 -->
+                                        <div class="col-xl-4 col-md-6 col-12 mb-4">
+                                            <div class="card lead-card h-100 mb-0">
+                                                <div class="card-body">
+                                                    <div
+                                                        class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-2">
+                                                        <div class="d-flex align-items-start gap-2">
+                                                            <img src="images/lead_com_logos/vestige.png"
+                                                                alt="Vestige Marketing Pvt.Ltd." class="img-fluid">
+                                                            <h5 class="text-dark mb-0 fw-semibold">Vestige Marketing
+                                                                Pvt.Ltd.</h5>
+                                                        </div>
+                                                        <span class="badge bg-soft-warning">Proposal</span>
+                                                    </div>
+                                                    <div class="d-flex flex-column mb-4">
+                                                        <small><span class="me-1 text-dark"><i
+                                                                    class="ri-mail-send-line fs-6"></i></span>vestige.marketing@gmail.com</small>
+                                                        <small><span class="me-1 text-dark"><i
+                                                                    class="ri-phone-line fs-6"></i></span>+1 965 567
+                                                            753</small>
+                                                    </div>
+                                                    <div class="d-flex flex-wrap justify-content-between gap-2 mb-2">
+                                                        <div>
+                                                            <p class="mb-1">Project Info</p>
+                                                            <h6 class="mb-0 text-dark fw-semibold">Wellness Campaign Q1
+                                                            </h6>
+                                                        </div>
+                                                        <div>
+                                                            <p class="mb-1">Project Progress</p>
+                                                            <div
+                                                                class="d-flex justify-content-end align-items-center gap-2">
+                                                                <div class="progress w-100" role="progressbar"
+                                                                    aria-valuenow="30" aria-valuemin="0"
+                                                                    aria-valuemax="100" style="height: 8px;">
+                                                                    <div class="progress-bar bg-danger"
+                                                                        style="width: 30%">
+                                                                    </div>
+                                                                </div>
+                                                                <small class="text-muted">30%</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex justify-content-between align-items-center gap-1 mb-2">
+                                                        <p class="mb-0">Probability</p>
+                                                        <div data-progress="55" class="radial-chart-canvas" style="width: 60px; height: 60px; min-height: 60px; min-width: 60px; display: block;"></div>
+                                                    </div>
+                                                    <div class="d-flex flex-wrap justify-content-between gap-2">
+                                                        <div class="d-flex flex-wrap gap-4">
+                                                            <div>
+                                                                <p class="mb-1">Source</p>
+                                                                <span class="badge bg-outline-secondary fs-14"><i
+                                                                        class="ri-smartphone-line me-1"></i>Social
+                                                                    Media</span>
+                                                            </div>
+                                                            <div>
+                                                                <p class="mb-2">Amount($)</p>
+                                                                <h6 class="text-dark mb-0">$45,000</h6>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <p class="mb-1">Assigned</p>
+                                                            <div class="avatar-group justify-content-center">
+                                                                <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                    title="Ethan Ray">
+                                                                    <img alt="Avatar 5" class="w-100 h-100"
+                                                                        src="../images/avatars/avatar2.jpg">
+                                                                </div>
+                                                                <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                    title="Ollivia Joy">
+                                                                    <img alt="Avatar 6" class="w-100 h-100"
+                                                                        src="../images/avatars/avatar3.jpg">
+                                                                </div>
+                                                                <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                    title="Mark Lee">
+                                                                    <img alt="Avatar 6" class="w-100 h-100"
+                                                                        src="../images/avatars/avatar1.jpg">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- card3 -->
+                                        <div class="col-xl-4 col-md-6 col-12 mb-4">
+                                            <div class="card lead-card h-100 mb-0">
+                                                <div class="card-body">
+                                                    <div
+                                                        class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-2">
+                                                        <div class="d-flex align-items-start gap-2">
+                                                            <img src="images/lead_com_logos/mclaren.png"
+                                                                alt="McLaren Group Limited" class="img-fluid">
+                                                            <h5 class="text-dark mb-0 fw-semibold">McLaren Group Limited
+                                                            </h5>
+                                                        </div>
+                                                        <span class="badge bg-soft-info">Contacted</span>
+                                                    </div>
+                                                    <div class="d-flex flex-column mb-4">
+                                                        <small><span class="me-1 text-dark"><i
+                                                                    class="ri-mail-send-line fs-6"></i></span>mclaren.marketing@gmail.com</small>
+                                                        <small><span class="me-1 text-dark"><i
+                                                                    class="ri-phone-line fs-6"></i></span>+1 965 789
+                                                            753</small>
+                                                    </div>
+                                                    <div class="d-flex flex-wrap justify-content-between gap-2 mb-2">
+                                                        <div>
+                                                            <p class="mb-1">Project Info</p>
+                                                            <h6 class="mb-0 text-dark fw-semibold">Enterprise CRM
+                                                                Implementation</h6>
+                                                        </div>
+                                                        <div>
+                                                            <p class="mb-1">Project Progress</p>
+                                                            <div
+                                                                class="d-flex justify-content-end align-items-center gap-2">
+                                                                <div class="progress w-100" role="progressbar"
+                                                                    aria-valuenow="50" aria-valuemin="0"
+                                                                    aria-valuemax="100" style="height: 8px;">
+                                                                    <div class="progress-bar bg-warning"
+                                                                        style="width: 50%">
+                                                                    </div>
+                                                                </div>
+                                                                <small class="text-muted">50%</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex justify-content-between align-items-center gap-1 mb-2">
+                                                        <p class="mb-0">Probability</p>
+                                                        <div data-progress="75" class="radial-chart-canvas" style="width: 60px; height: 60px; min-height: 60px; min-width: 60px; display: block;"></div>
+                                                    </div>
+                                                    <div class="d-flex flex-wrap justify-content-between gap-2">
+                                                        <div class="d-flex flex-wrap gap-4">
+                                                            <div>
+                                                                <p class="mb-1">Source</p>
+                                                                <span class="badge bg-outline-secondary fs-14"><i
+                                                                        class="ri-shake-hands-line me-1"></i>Referral</span>
+                                                            </div>
+                                                            <div>
+                                                                <p class="mb-2">Amount($)</p>
+                                                                <h6 class="text-dark mb-0">$55,000</h6>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <p class="mb-1">Assigned</p>
+                                                            <div class="avatar-group justify-content-center">
+                                                                <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                    title="Rahul Sharma">
+                                                                    <img alt="Avatar 5" class="w-100 h-100"
+                                                                        src="../images/avatars/avatar6.jpg">
+                                                                </div>
+                                                                <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                    title="Joyce Neal">
+                                                                    <img alt="Avatar 6" class="w-100 h-100"
+                                                                        src="../images/avatars/avatar4.jpg">
+                                                                </div>
+                                                                <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                    title="
+                                                                                        Mark Lee">
+                                                                    <img alt="Avatar 6" class="w-100 h-100"
+                                                                        src="../images/avatars/avatar1.jpg">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- card4 -->
+                                        <div class="col-xl-4 col-md-6 col-12 mb-4">
+                                            <div class="card lead-card h-100 mb-0">
+                                                <div class="card-body">
+                                                    <div
+                                                        class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-2">
+                                                        <div class="d-flex align-items-start gap-2">
+                                                            <img src="images/lead_com_logos/lumion.png"
+                                                                alt="Lumion B.V." class="img-fluid">
+                                                            <h5 class="text-dark mb-0 fw-semibold">Lumion B.V.
+                                                            </h5>
+                                                        </div>
+                                                        <span class="badge bg-soft-info">Contacted</span>
+                                                    </div>
+                                                    <div class="d-flex flex-column mb-4">
+                                                        <small><span class="me-1 text-dark"><i
+                                                                    class="ri-mail-send-line fs-6"></i></span>lumion123@gmail.com</small>
+                                                        <small><span class="me-1 text-dark"><i
+                                                                    class="ri-phone-line fs-6"></i></span>+1 154 789
+                                                            753</small>
+                                                    </div>
+                                                    <div class="d-flex flex-wrap justify-content-between gap-2 mb-2">
+                                                        <div>
+                                                            <p class="mb-1">Project Info</p>
+                                                            <h6 class="mb-0 text-dark fw-semibold">3D Architectural
+                                                                Rendering</h6>
+                                                        </div>
+                                                        <div>
+                                                            <p class="mb-1">Project Progress</p>
+                                                            <div
+                                                                class="d-flex justify-content-end align-items-center gap-2">
+                                                                <div class="progress w-100" role="progressbar"
+                                                                    aria-valuenow="35" aria-valuemin="0"
+                                                                    aria-valuemax="100" style="height: 8px;">
+                                                                    <div class="progress-bar bg-warning"
+                                                                        style="width: 35%">
+                                                                    </div>
+                                                                </div>
+                                                                <small class="text-muted">35%</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex justify-content-between align-items-center gap-1 mb-2">
+                                                        <p class="mb-0">Probability</p>
+                                                        <div data-progress="60" class="radial-chart-canvas" style="width: 60px; height: 60px; min-height: 60px; min-width: 60px; display: block;"></div>
+                                                    </div>
+                                                    <div class="d-flex flex-wrap justify-content-between gap-2">
+                                                        <div class="d-flex flex-wrap gap-4">
+                                                            <div>
+                                                                <p class="mb-1">Source</p>
+                                                                <span class="badge bg-outline-secondary fs-14"><i
+                                                                        class="ri-megaphone-line me-1"></i>Campaign</span>
+                                                            </div>
+                                                            <div>
+                                                                <p class="mb-2">Amount($)</p>
+                                                                <h6 class="text-dark mb-0">$75,000</h6>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <p class="mb-1">Assigned</p>
+                                                            <div class="avatar-group justify-content-center">
+                                                                <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                    title="Sarah Khan">
+                                                                    <img alt="Avatar 5" class="w-100 h-100"
+                                                                        src="../images/avatars/avatar8.jpg">
+                                                                </div>
+                                                                <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                    title="Neha Paul">
+                                                                    <img alt="Avatar 6" class="w-100 h-100"
+                                                                        src="../images/avatars/avatar7.jpg">
+                                                                </div>
+                                                                <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                    title="Ethan Ray">
+                                                                    <img alt="Avatar 6" class="w-100 h-100"
+                                                                        src="../images/avatars/avatar2.jpg">
+                                                                </div>
+                                                                <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                    title="Nia Dubey">
+                                                                    <img alt="Avatar 6" class="w-100 h-100"
+                                                                        src="../images/avatars/avatar5.jpg">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- card5 -->
+                                        <div class="col-xl-4 col-md-6 col-12 mb-4">
+                                            <div class="card lead-card h-100 mb-0">
+                                                <div class="card-body">
+                                                    <div
+                                                        class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-2">
+                                                        <div class="d-flex align-items-start gap-2">
+                                                            <img src="images/lead_com_logos/global.png"
+                                                                alt="Global Infotech" class="img-fluid">
+                                                            <h5 class="text-dark mb-0 fw-semibold">Global Infotech
+                                                            </h5>
+                                                        </div>
+                                                        <span class="badge bg-soft-success">Qualified</span>
+                                                    </div>
+                                                    <div class="d-flex flex-column mb-4">
+                                                        <small><span class="me-1 text-dark"><i
+                                                                    class="ri-mail-send-line fs-6"></i></span>global.infotech@gmail.com</small>
+                                                        <small><span class="me-1 text-dark"><i
+                                                                    class="ri-phone-line fs-6"></i></span>+1 154 090
+                                                            753</small>
+                                                    </div>
+                                                    <div class="d-flex flex-wrap justify-content-between gap-2 mb-2">
+                                                        <div>
+                                                            <p class="mb-1">Project Info</p>
+                                                            <h6 class="mb-0 text-dark fw-semibold">Mobile App
+                                                                Development</h6>
+                                                        </div>
+                                                        <div>
+                                                            <p class="mb-1">Project Progress</p>
+                                                            <div
+                                                                class="d-flex justify-content-end align-items-center gap-2">
+                                                                <div class="progress w-100" role="progressbar"
+                                                                    aria-valuenow="80" aria-valuemin="0"
+                                                                    aria-valuemax="100" style="height: 8px;">
+                                                                    <div class="progress-bar bg-success"
+                                                                        style="width: 80%">
+                                                                    </div>
+                                                                </div>
+                                                                <small class="text-muted">80%</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex justify-content-between align-items-center gap-1 mb-2">
+                                                        <p class="mb-0">Probability</p>
+                                                        <div data-progress="85" class="radial-chart-canvas" style="width: 60px; height: 60px; min-height: 60px; min-width: 60px; display: block;"></div>
+                                                    </div>
+                                                    <div class="d-flex flex-wrap justify-content-between gap-2">
+                                                        <div class="d-flex flex-wrap gap-4">
+                                                            <div>
+                                                                <p class="mb-1">Source</p>
+                                                                <span class="badge bg-outline-secondary fs-14"><i
+                                                                        class="ri-earth-line me-1"></i>Website</span>
+                                                            </div>
+                                                            <div>
+                                                                <p class="mb-2">Amount($)</p>
+                                                                <h6 class="text-dark mb-0">$45,000</h6>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <p class="mb-1">Assigned</p>
+                                                            <div class="avatar-group justify-content-center">
+                                                                <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                    title="Emily Davis">
+                                                                    <img alt="Avatar 5" class="w-100 h-100"
+                                                                        src="../images/avatars/avatar10.jpg">
+                                                                </div>
+                                                                <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                    title="Ollivia Joy">
+                                                                    <img alt="Avatar 6" class="w-100 h-100"
+                                                                        src="../images/avatars/avatar3.jpg">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- card6 -->
+                                        <div class="col-xl-4 col-md-6 col-12 mb-4">
+                                            <div class="card lead-card h-100 mb-0">
+                                                <div class="card-body">
+                                                    <div
+                                                        class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-2">
+                                                        <div class="d-flex align-items-start gap-2">
+                                                            <img src="images/lead_com_logos/quinscape.png"
+                                                                alt="Quinscape GmbH" class="img-fluid">
+                                                            <h5 class="text-dark mb-0 fw-semibold">Quinscape GmbH
+                                                            </h5>
+                                                        </div>
+                                                        <span class="badge bg-soft-primary">New</span>
+                                                    </div>
+                                                    <div class="d-flex flex-column mb-4">
+                                                        <small><span class="me-1 text-dark"><i
+                                                                    class="ri-mail-send-line fs-6"></i></span>quinscape.gmbh@gmail.com</small>
+                                                        <small><span class="me-1 text-dark"><i
+                                                                    class="ri-phone-line fs-6"></i></span>+1 142 090
+                                                            753</small>
+                                                    </div>
+                                                    <div class="d-flex flex-wrap justify-content-between gap-2 mb-2">
+                                                        <div>
+                                                            <p class="mb-1">Project Info</p>
+                                                            <h6 class="mb-0 text-dark fw-semibold">Website Redesign</h6>
+                                                        </div>
+                                                        <div>
+                                                            <p class="mb-1">Project Progress</p>
+                                                            <div
+                                                                class="d-flex justify-content-end align-items-center gap-2">
+                                                                <div class="progress w-100" role="progressbar"
+                                                                    aria-valuenow="28" aria-valuemin="0"
+                                                                    aria-valuemax="100" style="height: 8px;">
+                                                                    <div class="progress-bar bg-danger"
+                                                                        style="width: 28%">
+                                                                    </div>
+                                                                </div>
+                                                                <small class="text-muted">28%</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex justify-content-between align-items-center gap-1 mb-2">
+                                                        <p class="mb-0">Probability</p>
+                                                        <div data-progress="30" class="radial-chart-canvas" style="width: 60px; height: 60px; min-height: 60px; min-width: 60px; display: block;"></div>
+                                                    </div>
+                                                    <div class="d-flex flex-wrap justify-content-between gap-2">
+                                                        <div class="d-flex flex-wrap gap-4">
+                                                            <div>
+                                                                <p class="mb-1">Source</p>
+                                                                <span class="badge bg-outline-secondary fs-14"><i
+                                                                        class="ri-smartphone-line me-1"></i>Social
+                                                                    Media</span>
+                                                            </div>
+                                                            <div>
+                                                                <p class="mb-2">Amount($)</p>
+                                                                <h6 class="text-dark mb-0">$40,000</h6>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <p class="mb-1">Assigned</p>
+                                                            <div class="avatar-group justify-content-center">
+                                                                <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                    title="Kelvin Yia">
+                                                                    <img alt="Kelvin Yia" class="w-100 h-100"
+                                                                        src="../images/avatars/avatar9.jpg">
+                                                                </div>
+                                                                <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                    title="Sarah Khan">
+                                                                    <img alt="Sarah Khan" class="w-100 h-100"
+                                                                        src="../images/avatars/avatar8.jpg">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- card7 -->
+                                        <div class="col-xl-4 col-md-6 col-12 mb-4">
+                                            <div class="card lead-card h-100 mb-0">
+                                                <div class="card-body">
+                                                    <div
+                                                        class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-2">
+                                                        <div class="d-flex align-items-start gap-2">
+                                                            <img src="images/lead_com_logos/stellar.png"
+                                                                alt="Stellar Marketing" class="img-fluid">
+                                                            <h5 class="text-dark mb-0 fw-semibold">Stellar Marketing
+                                                            </h5>
+                                                        </div>
+                                                        <span class="badge bg-soft-success">Qualified</span>
+                                                    </div>
+                                                    <div class="d-flex flex-column mb-4">
+                                                        <small><span class="me-1 text-dark"><i
+                                                                    class="ri-mail-send-line fs-6"></i></span>stellar.marketing@gmail.com</small>
+                                                        <small><span class="me-1 text-dark"><i
+                                                                    class="ri-phone-line fs-6"></i></span>+1 142 090
+                                                            538</small>
+                                                    </div>
+                                                    <div class="d-flex flex-wrap justify-content-between gap-2 mb-2">
+                                                        <div>
+                                                            <p class="mb-1">Project Info</p>
+                                                            <h6 class="mb-0 text-dark fw-semibold">Digital Marketing
+                                                                Campaign</h6>
+                                                        </div>
+                                                        <div>
+                                                            <p class="mb-1">Project Progress</p>
+                                                            <div
+                                                                class="d-flex justify-content-end align-items-center gap-2">
+                                                                <div class="progress w-100" role="progressbar"
+                                                                    aria-valuenow="75" aria-valuemin="0"
+                                                                    aria-valuemax="100" style="height: 8px;">
+                                                                    <div class="progress-bar bg-success"
+                                                                        style="width: 75%">
+                                                                    </div>
+                                                                </div>
+                                                                <small class="text-muted">75%</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex justify-content-between align-items-center gap-1 mb-2">
+                                                        <p class="mb-0">Probability</p>
+                                                        <div data-progress="80" class="radial-chart-canvas" style="width: 60px; height: 60px; min-height: 60px; min-width: 60px; display: block;"></div>
+                                                    </div>
+                                                    <div class="d-flex flex-wrap justify-content-between gap-2">
+                                                        <div class="d-flex flex-wrap gap-4">
+                                                            <div>
+                                                                <p class="mb-1">Source</p>
+                                                                <span class="badge bg-outline-secondary fs-14"><i
+                                                                        class="ri-megaphone-line me-1"></i>Campaign</span>
+                                                            </div>
+                                                            <div>
+                                                                <p class="mb-2">Amount($)</p>
+                                                                <h6 class="text-dark mb-0">$60,000</h6>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <p class="mb-1">Assigned</p>
+                                                            <div class="avatar-group justify-content-center">
+                                                                <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                    title="Joyce Neal">
+                                                                    <img alt="Joyce Neal" class="w-100 h-100"
+                                                                        src="../images/avatars/avatar4.jpg">
+                                                                </div>
+                                                                <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                    title="Neha Paul">
+                                                                    <img alt="Neha Paul" class="w-100 h-100"
+                                                                        src="../images/avatars/avatar7.jpg">
+                                                                </div>
+                                                                <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                    title="Kelvin Yia">
+                                                                    <img alt="Nia Dubey" class="w-100 h-100"
+                                                                        src="../images/avatars/avatar9.jpg">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- card8 -->
+                                        <div class="col-xl-4 col-md-6 col-12 mb-4">
+                                            <div class="card lead-card h-100 mb-0">
+                                                <div class="card-body">
+                                                    <div
+                                                        class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-2">
+                                                        <div class="d-flex align-items-start gap-2">
+                                                            <img src="images/lead_com_logos/atom.png"
+                                                                alt="Atom Solution" class="img-fluid">
+                                                            <h5 class="text-dark mb-0 fw-semibold">Atom Solution
+                                                            </h5>
+                                                        </div>
+                                                        <span class="badge bg-soft-info">Contacted</span>
+                                                    </div>
+                                                    <div class="d-flex flex-column mb-4">
+                                                        <small><span class="me-1 text-dark"><i
+                                                                    class="ri-mail-send-line fs-6"></i></span>atom.solution@gmail.com</small>
+                                                        <small><span class="me-1 text-dark"><i
+                                                                    class="ri-phone-line fs-6"></i></span>+1 142 170
+                                                            538</small>
+                                                    </div>
+                                                    <div class="d-flex flex-wrap justify-content-between gap-2 mb-2">
+                                                        <div>
+                                                            <p class="mb-1">Project Info</p>
+                                                            <h6 class="mb-0 text-dark fw-semibold">Software Integrationn
+                                                            </h6>
+                                                        </div>
+                                                        <div>
+                                                            <p class="mb-1">Project Progress</p>
+                                                            <div
+                                                                class="d-flex justify-content-end align-items-center gap-2">
+                                                                <div class="progress w-100" role="progressbar"
+                                                                    aria-valuenow="45" aria-valuemin="0"
+                                                                    aria-valuemax="100" style="height: 8px;">
+                                                                    <div class="progress-bar bg-warning"
+                                                                        style="width: 45%">
+                                                                    </div>
+                                                                </div>
+                                                                <small class="text-muted">45%</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="d-flex justify-content-between align-items-center gap-1 mb-2">
+                                                        <p class="mb-0">Probability</p>
+                                                        <div data-progress="50" class="radial-chart-canvas" style="width: 60px; height: 60px; min-height: 60px; min-width: 60px; display: block;"></div>
+                                                    </div>
+                                                    <div class="d-flex flex-wrap justify-content-between gap-2">
+                                                        <div class="d-flex flex-wrap gap-4">
+                                                            <div>
+                                                                <p class="mb-1">Source</p>
+                                                                <span class="badge bg-outline-secondary fs-14"><i
+                                                                        class="ri-shake-hands-line me-1"></i>Referral</span>
+                                                            </div>
+                                                            <div>
+                                                                <p class="mb-2">Amount($)</p>
+                                                                <h6 class="text-dark mb-0">$80,000</h6>
+                                                            </div>
+                                                        </div>
+                                                        <div>
+                                                            <p class="mb-1">Assigned</p>
+                                                            <div class="avatar-group justify-content-center">
+                                                                <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                    title="Emily Devis">
+                                                                    <img alt="Emily Devis" class="w-100 h-100"
+                                                                        src="../images/avatars/avatar10.jpg">
+                                                                </div>
+                                                                <div class="avatar avatar-sm custom-avatar overflow-hidden border-0"
+                                                                    data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                    title="Nia Dubey">
+                                                                    <img alt="Nia Dubey" class="w-100 h-100"
+                                                                        src="../images/avatars/avatar5.jpg">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div
+                                        class="table-bottom d-flex flex-wrap justify-content-center justify-content-sm-between align-items-center gap-3">
+                                        <div id="table-leave-info" class="order-sm-1 order-2"></div>
+                                        <div id="table-leave-pagination" class="order-sm-2 order-1">
+                                            <nav aria-label="Employee list pagination">
+                                                <ul class="pagination mb-0">
+                                                    <li class="page-item disabled">
+                                                        <a class="page-link" href="#" aria-label="Previous">
+                                                            <span aria-hidden="true"><i
+                                                                    class="ri-arrow-left-double-line"></i></span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="page-item mx-1 disabled"><a class="page-link" href="#"
+                                                            aria-label="Previous">
+                                                            <span aria-hidden="true"><i
+                                                                    class="ri-arrow-left-s-line"></i></span>
+                                                        </a></li>
+                                                    <li class="page-item"><a class="page-link px-3" href="#">1</a></li>
+                                                    <li class="page-item mx-1 disabled"><a class="page-link" href="#"
+                                                            aria-label="Next">
+                                                            <span aria-hidden="true"><i
+                                                                    class="ri-arrow-right-s-line"></i></span>
+                                                        </a></li>
+                                                    <li class="page-item disabled">
+                                                        <a class="page-link" href="#" aria-label="Next">
+                                                            <span aria-hidden="true"><i
+                                                                    class="ri-arrow-right-double-line"></i></span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            %%include('./partials/layout/footer.html')
+
+        </div>
+    </div>
+    %%include('./partials/layout/right-sidebar.html')
+
+    <!-- %%include('./partials/right-sidebar.html')
+    %%include('./partials/back-to-top.html') -->
+
+    %%include('./partials/layout/footer-js.html')
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="plugins/datatables.net/js/dataTables.min.js"></script>
+    <script src="plugins/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+    <script src="plugins/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="plugins/datatables.net-responsive-dt/js/responsive.dataTables.min.js"></script>
+    <script src="plugins/apexcharts/apexcharts.min.js"></script>
+    <script src="js/pages/leads_manage.js"></script>
+
+</body>
+
+</html>

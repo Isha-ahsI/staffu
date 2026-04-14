@@ -1,0 +1,94 @@
+// kanban.scss
+
+.kanboard {
+    min-width: max-content;
+
+    .kanban-container {
+        display: flex;
+        gap: 24px;
+
+        .kanban-board {
+            border-radius: $border-radius-xl;
+            height: max-content;
+            background: transparent;
+            // backdrop-filter: blur(6px);
+
+            @each $color, $value in $theme-colors {
+                &.kanban-board-bg-#{$color} {
+                    background: rgba(var(--bs-#{$color}-rgb), 0.1);
+
+                    .kanban-board-header {
+                        .kanban-title-board {
+                            border-color: var(--bs-#{$color});
+                            display: flex;
+                        }
+                    }
+                }
+            }
+
+            .kanban-board-header {
+                border-radius: $border-radius-xl;
+                padding-bottom: 0;
+
+                .kanban-title-board {
+                    border-left: 5px solid;
+                    padding: 4px 0px 4px 12px;
+
+                    .remove-board-btn {
+                        background-color: transparent;
+                        border-color: transparent;
+                        margin-left: auto;
+                        color: var(--bs-text-muted);
+                    }
+                }
+            }
+
+            // .kanban-item,
+            // .kanban-drag .kanban-item {
+            //     background: var(--bs-kanban-item-bg-color) !important;
+            //     border-radius: $border-radius-xl !important;
+            //     padding: 20px 20px 12px !important;
+            // }
+
+            .kanban-drag{
+                .kanban-item{
+                    .kanban-card{
+                        .avatar-group{
+                            .avatar{
+                                 pointer-events: auto;
+                                 &:hover{
+                                     cursor: pointer;
+                                 }
+                            }
+                        }
+                        .form-check{
+                            .form-check-input{
+                                pointer-events: auto;
+                            }
+                        }
+                    }
+    
+                }
+            }
+
+            footer {
+                padding: 0px 20px 20px;
+
+                .custom-button {
+                    width: 100%;
+                    padding: 8px;
+                    border-radius: $border-radius-lg;
+                    border: 1px dashed var(--bs-text-muted);
+                    background-color: transparent;
+                    color: var(--bs-text-muted);
+                }
+            }
+        }
+    }
+}
+
+.kanban-item {
+    background: var(--bs-kanban-item-bg-color) !important;
+    border-radius: $border-radius-xl !important;
+    padding: 12px 20px !important;
+}

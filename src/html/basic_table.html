@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <div class="page-layout">
+        %%include('./partials/layout/header.html')
+        %%include('./partials/layout/left-sidebar.html')
+        <div class="page-wrapper">
+            <div class="page-content">
+                %%include('./partials/components/page-title.html', { pageTitle: 'Basic Tables', pagePrTitle: 'Tables' })
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Default Table</h5>
+                                    <div class="table-responsive">
+                                        <table class="mb-0 table table-bordered table-hover">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>First</th>
+                                                    <th>Last</th>
+                                                    <th>Handle</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Mark</td>
+                                                    <td>Otto</td>
+                                                    <td>@mdo</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>Jacob</td>
+                                                    <td>Thornton</td>
+                                                    <td>@fat</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>John</td>
+                                                    <td>Doe</td>
+                                                    <td>@social</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Small Table</h5>
+                                    <div class="table-responsive">
+                                        <table class="mb-0 table table-sm table-bordered table-hover table-responsive">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>First Name</th>
+                                                    <th>Last Name</th>
+                                                    <th>Username</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Mark</td>
+                                                    <td>Otto</td>
+                                                    <td>@mdo</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>Jacob</td>
+                                                    <td>Thornton</td>
+                                                    <td>@fat</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td colspan="2">Larry the Bird</td>
+                                                    <td>@twitter</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Striped rows</h5>
+                                    <div class="table-responsive">
+                                        <table class="mb-0 table table-striped table-responsive">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>First Name</th>
+                                                    <th>Last Name</th>
+                                                    <th>Username</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Mark</td>
+                                                    <td>Otto</td>
+                                                    <td>@mdo</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>Jacob</td>
+                                                    <td>Thornton</td>
+                                                    <td>@fat</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td colspan="2">Larry the Bird</td>
+                                                    <td>@twitter</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Dark Table</h5>
+                                    <div class="table-responsive">
+                                        <table class="mb-0 table table-dark table-striped table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>First Name</th>
+                                                    <th>Last Name</th>
+                                                    <th>Username</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Mark</td>
+                                                    <td>Otto</td>
+                                                    <td>@mdo</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>Jacob</td>
+                                                    <td>Thornton</td>
+                                                    <td>@fat</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td colspan="2">Larry the Bird</td>
+                                                    <td>@twitter</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Striped columns</h5>
+                                    <div class="table-responsive">
+                                        <table class="mb-0 table table-striped-columns table-responsive">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>First Name</th>
+                                                    <th>Last Name</th>
+                                                    <th>Username</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Mark</td>
+                                                    <td>Otto</td>
+                                                    <td>@mdo</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>Jacob</td>
+                                                    <td>Thornton</td>
+                                                    <td>@fat</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td colspan="2">Larry the Bird</td>
+                                                    <td>@twitter</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Responsive Table</h5>
+                                    <div class="table-responsive">
+                                        <table class="mb-0 table">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Table heading</th>
+                                                    <th>Table heading</th>
+                                                    <th>Table heading</th>
+                                                    <th>Table heading</th>
+                                                    <th>Table heading</th>
+                                                    <th>Table heading</th>
+                                                    <th>Table heading</th>
+                                                    <th>Table heading</th>
+                                                    <th>Table heading</th>
+                                                    <th>Table heading</th>
+                                                    <th>Table heading</th>
+                                                    <th>Table heading</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>Table cell 0</td>
+                                                    <td>Table cell 1</td>
+                                                    <td>Table cell 2</td>
+                                                    <td>Table cell 3</td>
+                                                    <td>Table cell 4</td>
+                                                    <td>Table cell 5</td>
+                                                    <td>Table cell 6</td>
+                                                    <td>Table cell 7</td>
+                                                    <td>Table cell 8</td>
+                                                    <td>Table cell 9</td>
+                                                    <td>Table cell 10</td>
+                                                    <td>Table cell 11</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>Table cell 0</td>
+                                                    <td>Table cell 1</td>
+                                                    <td>Table cell 2</td>
+                                                    <td>Table cell 3</td>
+                                                    <td>Table cell 4</td>
+                                                    <td>Table cell 5</td>
+                                                    <td>Table cell 6</td>
+                                                    <td>Table cell 7</td>
+                                                    <td>Table cell 8</td>
+                                                    <td>Table cell 9</td>
+                                                    <td>Table cell 10</td>
+                                                    <td>Table cell 11</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>Table cell 0</td>
+                                                    <td>Table cell 1</td>
+                                                    <td>Table cell 2</td>
+                                                    <td>Table cell 3</td>
+                                                    <td>Table cell 4</td>
+                                                    <td>Table cell 5</td>
+                                                    <td>Table cell 6</td>
+                                                    <td>Table cell 7</td>
+                                                    <td>Table cell 8</td>
+                                                    <td>Table cell 9</td>
+                                                    <td>Table cell 10</td>
+                                                    <td>Table cell 11</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            %%include('./partials/layout/footer.html')
+        </div>
+    </div>
+    %%include('./partials/layout/right-sidebar.html')
+
+    <!-- %%include('./partials/right-sidebar.html')
+    %%include('./partials/back-to-top.html') -->
+
+    %%include('./partials/layout/footer-js.html')
+
+</body>
+
+</html>

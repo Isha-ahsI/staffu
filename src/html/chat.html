@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <div class="page-layout">
+        %%include('./partials/layout/header.html')
+        %%include('./partials/layout/left-sidebar.html')
+        <div class="page-wrapper">
+            <div class="page-content">
+                %%include('./partials/components/page-title.html', { pageTitle: 'Chat', pagePrTitle: 'Apps' })
+                <div class="container-fluid chat-container">
+                    <div class="card overflow-hidden chat-card mb-0">
+                        <div class="card-body p-0">
+                            <div class="row g-0">
+                                <div class="col-xl-3 col-lg-4 col-12">
+                                    <div class="d-none d-lg-block border-end" id="chatSidebarDesktop">
+                                        %%include('partials/components/chat_sidebar.html')
+                                    </div>
+                                </div>
+                                <div class="col-xl-9 col-lg-8 col-12">
+                                    <div class="d-flex flex-column position-relative h-100">
+                                        <div id="chatHeaderMobile"
+                                            class="d-flex d-lg-none justify-content-between align-items-center px-3 pt-3 pb-2 border-bottom">
+
+                                        </div>
+                                        <div id="chatHeaderDesktop"
+                                            class="d-none d-lg-flex justify-content-between align-items-center p-3 border-bottom">
+
+                                        </div>
+                                        <div class="chat-messages">
+                                            <div class="overlay"></div>
+                                            <div data-simplebar style="height: 100%; overflow-y: auto;">
+                                                <div id="messagesContainer" class="d-flex flex-column p-3">
+                                                    <!-- Messages will be dynamically rendered here -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-3 border-top position-absolute bottom-0 w-100 msg-type z-3">
+                                            <!-- Reply Preview -->
+                                            <div id="replyPreview"></div>
+
+                                            <!-- Attachment Preview -->
+                                            <div id="attachmentPreview"></div>
+
+                                            <form id="messageForm"
+                                                class="position-relative d-flex flex-md-nowrap flex-wrap-reverse gap-2">
+                                                <div class="input-group msg-input align-items-center">
+                                                    <div class="dropdown">
+                                                        <button
+                                                            class="btn dropdown-toggle border-end-0 pe-0 text-dark rounded-end-0"
+                                                            type="button" data-bs-toggle="dropdown"
+                                                            aria-expanded="false" id="attechDrop"><i
+                                                                class="bi bi-paperclip"></i></button>
+                                                        <ul class="dropdown-menu" aria-labelledby="attechDrop">
+                                                            <li><a class="dropdown-item" href="#"
+                                                                    data-attach-type="image"><span><i
+                                                                            class="ri-image-line me-2"></i></span>Photo
+                                                                    or
+                                                                    Video</a></li>
+                                                            <li><a class="dropdown-item" href="#"
+                                                                    data-attach-type="documents"><span><i
+                                                                            class="ri-file-line me-2"></i>Documents</span></a>
+                                                            </li>
+                                                            <li><a class="dropdown-item" href="#"
+                                                                    data-attach-type="camera"><span><i
+                                                                            class="ri-camera-line me-2"></i></span>Use
+                                                                    Camera</a>
+                                                            </li>
+                                                            <li><a class="dropdown-item" href="#"
+                                                                    data-attach-type="location"><span><i
+                                                                            class="ri-map-pin-line me-2"></i></span>Location</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <input id="fileInput" class="d-none" multiple type="file">
+                                                    <input type="text"
+                                                        class="form-control ps-2 border-start-0 border-end-0"
+                                                        placeholder="Type a message" id="messageInput">
+                                                    <div class="dropdown">
+                                                        <button
+                                                            class="btn dropdown-toggle border-start-0 border-end-0 px-3 rounded-0"
+                                                            type="button" data-bs-toggle="dropdown"
+                                                            aria-expanded="false" id="emojiDrop"><i
+                                                                class="bi bi-emoji-smile"></i></button>
+                                                        <ul class="dropdown-menu overflow-hidden dropdown-menu-end"
+                                                            aria-labelledby="emojiDrop">
+                                                            <emoji-picker id="emojiPicker"></emoji-picker>
+                                                        </ul>
+                                                    </div>
+                                                    <button class="btn border-start-0 ps-0 fw-medium mic-btn"
+                                                        type="button"><i class="ri-mic-line"></i></button>
+                                                    <button class="btn btn-primary send-btn" type="submit"><span
+                                                            class="send-icon"><i
+                                                                class="bi bi-send-fill"></i></span></button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            %%include('./partials/layout/footer.html')
+
+        </div>
+    </div>
+    %%include('./partials/layout/right-sidebar.html')
+
+    <!-- Voice Call Modal -->
+    <div class="modal fade" id="voiceCallModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content chat-items-bg border-0 rounded-4 overflow-hidden">
+                <div class="modal-body p-0 text-white position-relative">
+                    <div class="d-flex flex-column align-items-center p-4 text-center" style="min-height: 500px;">
+                        <!-- Caller Info -->
+                        <div class="position-relative mb-4">
+                            <img class="caller-avatar rounded-circle border border-4 border-primary" width="150"
+                                height="150" src="images/avatars/avatar4.jpg" alt="avatar">
+                            <!-- <div class="position-absolute top-0 start-0 w-100 h-100 rounded-circle pulse-ring"></div> -->
+                        </div>
+                        <h3 class="caller-name fw-semibold mb-3">John Doe</h3>
+                        <div class="d-flex align-items-end gap-1 recording-bars mb-1">
+                            <div class="bar bg-primary"></div>
+                            <div class="bar bg-primary"></div>
+                            <div class="bar bg-primary"></div>
+                            <div class="bar bg-primary"></div>
+                            <div class="bar bg-primary"></div>
+                            <div class="bar bg-primary"></div>
+                            <div class="bar bg-primary"></div>
+                            <div class="bar bg-primary"></div>
+                            <div class="bar bg-primary"></div>
+                        </div>
+                        <p class="call-status text-muted mb-0">Calling...</p>
+                        <p class="call-duration text-primary mb-0" style="display: none;">00:00</p>
+                        <!-- Call Controls -->
+                        <div
+                            class="position-absolute bottom-0 start-0 w-100 p-4 d-flex justify-content-center align-items-center gap-3">
+                            <button type="button"
+                                class="avatar avatar-xl p-0  btn btn-outline-primary rounded-circle"><i
+                                    class="ri-mic-line fs-4 fw-medium"></i></button>
+                            <button type="button" class="avatar avatar-xl p-0 btn btn-danger rounded-circle"><i
+                                    class="ri-phone-line fs-4 fw-medium"></i></button>
+                            <button type="button" class="avatar avatar-xl p-0 btn btn-primary rounded-circle"><i
+                                    class="ri-volume-up-line fs-4 fw-medium"></i></button>
+                            <button type="button" class="avatar avatar-xl p-0 btn btn-outline-dark rounded-circle"><i
+                                    class="ri-subtract-line fs-4 fw-medium"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Call Modal -->
+    <div class="modal fade" id="videoCallModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content overflow-hidden border-0 rounded-3">
+                <div class="p-0 text-white position-relative rounded-3 overflow-hidden modal-body">
+                    <div class="position-relative w-100 h-100">
+                        <div class="video-wrapper position-relative">
+                            <div class="ratio ratio-1x1 rounded-4 overflow-hidden shadow-lg">
+                                <video class="w-100 h-100 object-fit-cover" id="callVideoyou" autoplay muted loop>
+                                    <source src="videos/videocallyou.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="position-absolute top-0 start-0  p-3 transition-opacity ">
+                        <span class="me-2 d-flex align-items-center badge bg-transparent fs-6"><i
+                                class="ri-record-circle-fill me-1 text-danger fs-14"></i>
+                            Rec 00:03:20</span>
+                    </div>
+                    <div class="position-absolute top-0 w-25 h-25 mt-3 me-3 rounded-3 overflow-hidden end-0 shadow-lg">
+                        <video class="w-100 h-100 object-fit-cover" id="callVideome" autoplay muted loop>
+                            <source src="videos/videocallme.mp4" type="video/mp4">
+                        </video>
+                        <button type="button"
+                            class="btn btn-danger avatar avatar-xs p-0 rounded-circle position-absolute bottom-0 end-0 me-2 mb-2"><i
+                                class="ri-mic-line fs-4 fw-medium"></i></button>
+                    </div>
+                    <div
+                        class="position-absolute bottom-0 start-0 w-100 p-4 d-flex justify-content-center align-items-center transition-all ">
+                        <div class="d-flex align-items-center gap-3">
+                            <button type="button" aria-label="Mute" title="Mute"
+                                class="d-flex flex-column align-items-center justify-content-center btn bg-light bg-opacity-50 text-dark avatar avatar-lg p-0 rounded-circle"><i
+                                    class="ri-mic-line fs-4 fw-medium"></i></button>
+                            <button type="button" aria-label="Turn off video" title="Turn off video"
+                                class="d-flex flex-column align-items-center justify-content-center btn bg-light bg-opacity-50 text-dark avatar avatar-lg p-0 rounded-circle"><i
+                                    class="ri-camera-line fs-4 fw-medium"></i></button>
+                            <button type="button" aria-label="End Call" title="End Call" class="btn btn-danger"><i
+                                    class="ri-phone-line fs-4 fw-medium"></i></button>
+                            <button type="button" aria-label="Speaker on" title="Speaker on"
+                                class="d-flex flex-column align-items-center justify-content-center btn bg-light bg-opacity-50 text-dark avatar avatar-lg p-0 rounded-circle"><i
+                                    class="ri-volume-up-line fs-4 fw-medium"></i></button>
+                            <button type="button" aria-label="More options" title="More options"
+                                class="d-flex flex-column align-items-center justify-content-center btn bg-light bg-opacity-50 text-dark avatar avatar-lg p-0 rounded-circle"><i
+                                    class="ri-settings-3-line fs-4 fw-medium"></i></button>
+                        </div>
+                    </div>
+                    <div class="position-absolute end-0 bottom-0 me-2 mb-2">
+                        <button type="button" class="btn btn-sm bg-soft-light p-2 border-0" id="showControlsBtn"><i
+                                class="ri-fullscreen-line fs-5"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Forward Message Modal -->
+    <div class="modal fade" id="forwardModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-bottom-0 pb-2">
+                    <h5 class="modal-title d-flex align-items-center">
+                        <i class="ri-share-forward-line me-2"></i>
+                        <span>Forward Message</span>
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body pt-2">
+                    <p class="mb-3 text-muted fw-light">
+                        <i class="ri-user-shared-line me-1"></i> Select contacts to forward to:
+                    </p>
+                    <div class="contact-search mb-3">
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="ri-search-line text-muted"></i>
+                            </span>
+                            <input class="form-control" placeholder="Search contacts...">
+                        </div>
+                    </div>
+                    <div id="forwardContactsList" class="contact-list">
+                        <!-- Forward contacts will be rendered here -->
+                    </div>
+                </div>
+                <div class="modal-footer border-top-0 pt-1">
+                    <div class="d-flex w-100 justify-content-between">
+                        <small class="text-muted align-self-center" id="selectedCount">No contacts selected</small>
+                        <div>
+                            <button class="btn btn-danger me-2" data-bs-dismiss="modal">
+                                <i class="ri-close-line me-1"></i> Cancel
+                            </button>
+                            <button class="btn btn-primary px-4" id="forwardBtn" disabled>
+                                <i class="ri-send-plane-fill me-1"></i> Forward
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="offcanvas offcanvas-start d-lg-none d-block chat-offcanvas" tabindex="-1" id="chat-sidebar-offcanvas">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="chatSidebarOffcanvasLabel">Chat</h5>
+            <button type="button" class="btn-close d-flex align-items-center justify-content-center"
+                data-bs-dismiss="offcanvas" aria-label="Close"><span><i class="ri-close-large-line"></i></span></button>
+        </div>
+        <div class="offcanvas-body p-0" id="chatSidebarMobile">
+            %%include('partials/components/chat_sidebar.html')
+        </div>
+    </div>
+
+
+
+
+
+    %%include('./partials/layout/footer-js.html')
+    <script src="plugins/@fancyapps/ui/fancybox/fancybox.umd.js"></script>
+    <script type="module" src="plugins/emoji-picker-element/index.js"></script>
+    <script src="js/pages/chat.js"></script>
+</body>
+
+</html>

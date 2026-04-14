@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <div class="page-layout">
+        %%include('./partials/layout/header.html')
+        %%include('./partials/layout/left-sidebar.html')
+        <div class="page-wrapper">
+            <div class="page-content">
+                %%include('./partials/components/page-title.html', { pageTitle: 'Modals', pagePrTitle: 'UI Elements' })
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-title h5">Default Modal</div>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#defaultModal">Launch demo modal</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-title h5">Modal Static Backdrop</div>
+                                    <button data-bs-target="#staticModal" data-bs-toggle="modal" type="button"
+                                        class="btn btn-success">Launch static backdrop modal</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-title h5">Modal Vertically Centered</div>
+                                    <button data-bs-target="#centeredModal" data-bs-toggle="modal" type="button"
+                                        class="btn btn-primary">Launch vertically centered modal</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-title h5">Modal Without Animation</div>
+                                    <button data-bs-target="#noAnimationModal" data-bs-toggle="modal" type="button"
+                                        class="btn btn-danger">Launch demo modal</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-title h5">Modal Using the Grid</div>
+                                    <button data-bs-target="#gridModal" data-bs-toggle="modal" type="button"
+                                        class="btn btn-primary">Launch modal with grid</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-title h5">Modal Optional Sizes</div>
+                                    <div class="d-flex align-items-center flex-wrap gap-2">
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#modalSmall">Modal Small</button>
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#modalNormal">Modal Normal</button>
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#modalLarge">Modal Large</button>
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#modalFull">Modal Fullscreen</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            %%include('./partials/layout/footer.html')
+            <div role="dialog" aria-modal="true" id="defaultModal" class="fade modal" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Modal heading</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">Woohoo, you are reading this text in a modal!</div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="dialog" aria-modal="true" id="staticModal" class="fade modal" tabindex="-1" data-bs-backdrop="static"
+                data-bs-keyboard="false">
+                <div class="modal-dialog">
+                    <div class="modal-content bg-soft-success border-soft-success">
+                        <div class="modal-header">
+                            <h4 class="modal-title text-success">Modal title</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-light">I will not close if you click outside me. Do not even try to press escape
+                            key.</div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-success">Understood</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="dialog" aria-modal="true" id="centeredModal" class="fade modal" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Modal heading</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">Woohoo, you are reading this text in a modal!</div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="dialog" aria-modal="true" id="noAnimationModal" class="modal" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content bg-soft-danger border-soft-danger">
+                        <div class="modal-header">
+                            <h4 class="modal-title text-danger">Modal heading</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-white">Woohoo, you are reading this text in a modal!</div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-danger">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="dialog" aria-modal="true" id="gridModal" class="fade modal" tabindex="-1">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="modal-title h4">Modal heading</div>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-8 col-12">
+                                    <div
+                                        class="bg-soft-primary border-soft-primary text-primary border rounded p-3 mb-3 text-center">
+                                        .col-xs-12 .col-md-8</div>
+                                </div>
+                                <div class="col-md-4 col-6">
+                                    <div
+                                        class="bg-soft-secondary border-soft-secondary text-secondary border rounded p-3 mb-3 text-center">
+                                        .col-xs-6 .col-md-4</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 col-6">
+                                    <div
+                                        class="bg-soft-success border-soft-success text-success border rounded p-3 mb-3 text-center">
+                                        .col-xs-6 .col-md-4</div>
+                                </div>
+                                <div class="col-md-4 col-6">
+                                    <div
+                                        class="bg-soft-warning border-soft-warning text-warning border rounded p-3 mb-3 text-center">
+                                        .col-xs-6 .col-md-4</div>
+                                </div>
+                                <div class="col-md-4 col-6">
+                                    <div
+                                        class="bg-soft-danger border-soft-danger text-danger border rounded p-3 mb-3 text-center">
+                                        .col-xs-6 .col-md-4</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-3 col-sm-4 col-6">
+                                    <div
+                                        class="bg-soft-info border-soft-info text-info border rounded p-3 mb-3 text-center">
+                                        .col-xs-6 .col-sm-4 .col-lg-3</div>
+                                </div>
+                                <div class="col-lg-3 col-sm-4 col-6">
+                                    <div
+                                        class="bg-soft-dark border-soft-dark text-dark border rounded p-3 mb-3 text-center">
+                                        .col-xs-6 .col-sm-4 .col-lg-3</div>
+                                </div>
+                                <div class="col-lg-3 col-sm-4 col-6">
+                                    <div
+                                        class="bg-soft-orange border-soft-orange text-orange border rounded p-3 mb-3 text-center">
+                                        .col-xs-6 .col-sm-4 .col-lg-3</div>
+                                </div>
+                                <div class="col-lg-3 col-sm-4 col-6">
+                                    <div
+                                        class="bg-soft-primary border-soft-primary text-primary border rounded p-3 mb-3 text-center">
+                                        .col-xs-6 .col-sm-4 .col-lg-3</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="dialog" id="modalSmall" aria-modal="true" class="fade modal" tabindex="-1">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="modal-title h4">Modal heading</div>
+                            <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">Woohoo, you are reading this text in a modal!</div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="dialog" id="modalNormal" aria-modal="true" class="fade modal" tabindex="-1">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="modal-title h4">Modal heading</div>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">Woohoo, you are reading this text in a modal!</div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="dialog" id="modalLarge" aria-modal="true" class="fade modal" tabindex="-1">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="modal-title h4">Modal heading</div>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">Woohoo, you are reading this text in a modal!</div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="dialog" id="modalFull" aria-modal="true" class="fade modal" tabindex="-1">
+                <div class="modal-dialog modal-fullscreen">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="modal-title h4">Responsive Fullscreen Modal</div>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>This is an example of a responsive modal that adjusts its size based on the `fullscreen`
+                                prop. It can be full screen or constrained to a specific breakpoint.</p>
+                            <p>The current `fullscreen` value is set to: <b>true</b>.</p>
+                            <p>Use the buttons outside the modal to control its behavior and test its responsiveness.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    %%include('./partials/layout/right-sidebar.html')
+
+    <!-- %%include('./partials/right-sidebar.html')
+    %%include('./partials/back-to-top.html') -->
+
+    %%include('./partials/layout/footer-js.html')
+</body>
+
+</html>

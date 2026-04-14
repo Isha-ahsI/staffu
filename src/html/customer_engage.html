@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <div class="page-layout">
+        %%include('./partials/layout/header.html')
+        %%include('./partials/layout/left-sidebar.html')
+        <div class="page-wrapper">
+            <div class="page-content">
+                %%include('./partials/components/page-title.html', { pageTitle: 'Customer Engagement', pagePrTitle:
+                'Reports' })
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                                        <div class="me-auto">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <select id="customEngageLength" class="form-select form-select-sm">
+                                                    <option value="5">5</option>
+                                                    <option value="10" selected>10</option>
+                                                    <option value="25">25</option>
+                                                    <option value="50">All</option>
+                                                </select>
+                                                <p class="mb-0 text-nowrap">entries per page</p>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown">
+                                            <button type="button"
+                                                class="btn btn-outline-secondary z-1 dropdown-toggle"
+                                                id="cusTypeFilter" data-bs-toggle="dropdown"
+                                                aria-expanded="false"><span class="me-1"><i
+                                                        class="bi bi-filter"></i></span> <span
+                                                    class="filter-label">Filter</span> <span><i
+                                                        class="bi bi-chevron-down drop-caret"></i></span></button>
+                                            <div aria-labelledby="cusEnagageTypeFilter"
+                                                class="dropdown-menu dropdown-menu-sm-end">
+                                                <a class="dropdown-item" href="#" data-discover="true"
+                                                     data-status="">All</a>
+                                                <a class="dropdown-item" href="#" data-discover="true"
+                                                    data-status="New">New</a>
+                                                <a class="dropdown-item" href="#" data-discover="true"
+                                                    data-status="Returning">Returning</a>
+                                                <a class="dropdown-item" href="#" data-discover="true"
+                                                    data-status="VIP">VIP</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr class="mb-4">
+                                    <div class="datatable-wrapper">
+                                        <table id="customersEngageTable" class="table table-hover table-nowrap">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th class="py-3">Customer Name</th>
+                                                    <th class="py-3 text-center">Customer Type</th>
+                                                    <th class="py-3">Project</th>
+                                                    <th class="py-3 text-center">Assigned To</th>
+                                                    <th class="py-3 text-center">Meeting</th>
+                                                    <th class="py-3">Notes/Activities</th>
+                                                    <th class="py-3">Last Contact</th>
+                                                    <th class="py-3 text-center">Project Progress (%)</th>
+                                                    <th class="py-3 text-center">Status</th>
+                                                    <th class="py-3 text-center">Engagement score</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- cus1 -->
+                                                %%include('partials/components/cus_engage_row.html',
+                                                {
+                                                'img':'avatar2','name':'Tiger Nixon',
+                                                'type':'New','badgecolor':'primary',
+                                                'project':'Social Media Campaign',
+                                                'employeesData': '[{"n":"Nia Dubey","i":"avatar5"},{"n":"Raj Patel","i":"avatar1"},{"n":"Raj Patel","i":"avatar3"}]',
+                                                'meet':'2','note':'Discussed contract terms and delivery schedule.',
+                                                'date':'12 Feb 2026','progress':'30','procolor':'danger',
+                                                'statuscolor':'success','status':'Active','icon':'ri-user-follow-line',
+                                                'score':"35"
+                                                })
+
+                                                <!-- cus2 -->
+                                                %%include('partials/components/cus_engage_row.html',
+                                                {
+                                                'img':'avatar1','name':'Joyce Neal',
+                                                'type':'Returning','badgecolor':'blue',
+                                                'project':'SEO Optimization',
+                                                'employeesData': '[{"n":"Ollivia Joy","i":"avatar7"},{"n":"Mark Lee","i":"avatar9"}]',
+                                                'meet':'7','note':'Scheduled demo for 15th Feb.',
+                                                'date':'30 Jan 2026','progress':'60','procolor':'warning',
+                                                'statuscolor':'success','status':'Active','icon':'ri-user-follow-line',
+                                                'score':"57"
+                                                })
+                                                
+                                                <!-- cus3 -->
+                                                %%include('partials/components/cus_engage_row.html',
+                                                {
+                                                'img':'avatar3','name':'Ethan Ray',
+                                                'type':'VIP','badgecolor':'warning',
+                                                'project':'Product Launch',
+                                                'employeesData': '[{"n":"Prem Mehta","i":"avatar1"},{"n":"Nisha Shahu","i":"avatar3"},{"n":"Nisha Mehta","i":"avatar10"}]',
+                                                'meet':'5','note':'Send contract draft by Friday.',
+                                                'date':'02 Feb 2026','progress':'70','procolor':'success',
+                                                'statuscolor':'danger','status':'Inactive','icon':'ri-user-unfollow-line',
+                                                'score':"75"
+                                                })
+
+                                                <!-- cus4 -->
+                                                %%include('partials/components/cus_engage_row.html',
+                                                {
+                                                'img':'avatar4','name':'Kelvin Yia',
+                                                'type':'VIP','badgecolor':'warning',
+                                                'project':'Market Analysis',
+                                                'employeesData': '[{"n":"Rahul Sharma","i":"avatar4"},{"n":"Neha Sharma","i":"avatar8"}]',
+                                                'meet':'3','note':'Uploaded signed NDA.',
+                                                'date':'15 Jan 2026','progress':'67','procolor':'warning',
+                                                'statuscolor':'success','status':'Active','icon':'ri-user-follow-line',
+                                                'score':"44"
+                                                })
+
+                                                <!-- cus5 -->
+                                                %%include('partials/components/cus_engage_row.html',
+                                                {
+                                                'img':'avatar5','name':'Ollivia Joy',
+                                                'type':'Returning','badgecolor':'blue',
+                                                'project':'ERP Implementation',
+                                                'employeesData': '[{"n":"Kelvin Yia","i":"avatar9"},{"n":"Sarah Khan","i":"avatar10"}]',
+                                                'meet':'4','note':'Sent revised quotation email.',
+                                                'date':'10 Jan 2026','progress':'85','procolor':'success',
+                                                'statuscolor':'danger','status':'Inactive','icon':'ri-user-unfollow-line',
+                                                'score':"70"
+                                                })
+
+                                                <!-- cus6 -->
+                                                %%include('partials/components/cus_engage_row.html',
+                                                {
+                                                'img':'avatar6','name':'Mark Lee',
+                                                'type':'New','badgecolor':'primary',
+                                                'project':'Content Marketing',
+                                                'employeesData': '[{"n":"Ethan Ray","i":"avatar2"}]',
+                                                'meet':'2','note':'Phone call with client to review proposal.',
+                                                'date':'20 Feb 2026','progress':'45','procolor':'warning',
+                                                'statuscolor':'danger','status':'Inactive','icon':'ri-user-unfollow-line',
+                                                'score':"40"
+                                                })
+
+                                                <!-- cus7 -->
+                                                %%include('partials/components/cus_engage_row.html',
+                                                {
+                                                'img':'avatar7','name':'Sophia Jackson',
+                                                'type':'New','badgecolor':'primary',
+                                                'project':'Inventory Automation',
+                                                'employeesData': '[{"n":"Prem Mehta","i":"avatar4"},{"n":"Mark Lee","i":"avatar6"}]',
+                                                'meet':'1','note':'Send contract draft by Wednesday.',
+                                                'date':'22 Feb 2026','progress':'23','procolor':'danger',
+                                                'statuscolor':'success','status':'Active','icon':'ri-user-follow-line',
+                                                'score':"15"
+                                                })
+
+                                                <!-- cus8 -->
+                                                %%include('partials/components/cus_engage_row.html',
+                                                {
+                                                'img':'avatar8','name':'Laura Taylor',
+                                                'type':'Returning','badgecolor':'blue',
+                                                'project':'Cloud Migration',
+                                                'employeesData': '[{"n":"Shreya Kapoor","i":"avatar7"},{"n":"Sarah Khan","i":"avatar6"},{"n":"Pooja Khanna","i":"avatar10"}]',
+                                                'meet':'7','note':'Follow-up next week.',
+                                                'date':'05 Jan 2026','progress':'87','procolor':'success',
+                                                'statuscolor':'success','status':'Active','icon':'ri-user-follow-line',
+                                                'score':"81"
+                                                })
+
+                                                <!-- cus9 -->
+                                                %%include('partials/components/cus_engage_row.html',
+                                                {
+                                                'img':'avatar9','name':'Daniel Miller',
+                                                'type':'New','badgecolor':'primary',
+                                                'project':'Fleet Tracking System',
+                                                'employeesData': '[{"n":"Raj Grover","i":"avatar4"},{"n":"Sarah Khan","i":"avatar5"}]',
+                                                'meet':'9','note':'Phone call with client to review proposal.',
+                                                'date':'02 Jan 2026','progress':'92','procolor':'success',
+                                                'statuscolor':'success','status':'Active','icon':'ri-user-follow-line',
+                                                'score':"90"
+                                                })
+
+                                                <!-- cus10 -->
+                                                %%include('partials/components/cus_engage_row.html',
+                                                {
+                                                'img':'avatar10','name':'Priya Sharma',
+                                                'type':'Returning','badgecolor':'blue',
+                                                'project':'Logistics Dashboard',
+                                                'employeesData': '[{"n":"Prem Mehta","i":"avatar1"},{"n":"Jaya Shah","i":"avatar8"},{"n":"Nia Dubey","i":"avatar5"}]',
+                                                'meet':'9','note':'Phone call with client to review proposal.',
+                                                'date':'03 Feb 2026','progress':'40','procolor':'warning',
+                                                'statuscolor':'danger','status':'Inactive','icon':'ri-user-unfollow-line',
+                                                'score':"69"
+                                                })
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div
+                                        class="table-bottom d-flex flex-wrap justify-content-center justify-content-sm-between align-items-center gap-3 mt-4">
+                                        <div id="table-engage-info" class="order-sm-1 order-2"></div>
+                                        <div id="table-engage-pagination" class="order-sm-2 order-1">
+                                            <nav aria-label="Employee attandance pagination">
+                                                <ul class="pagination mb-0">
+                                                    <li class="page-item disabled">
+                                                        <a class="page-link" href="#" aria-label="Previous">
+                                                            <span aria-hidden="true"><i
+                                                                    class="ri-arrow-left-double-line"></i></span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="page-item mx-1 disabled"><a class="page-link" href="#"
+                                                            aria-label="Previous">
+                                                            <span aria-hidden="true"><i
+                                                                    class="ri-arrow-left-s-line"></i></span>
+                                                        </a></li>
+                                                    <li class="page-item"><a class="page-link px-3" href="#">1</a></li>
+                                                    <li class="page-item mx-1 disabled"><a class="page-link" href="#"
+                                                            aria-label="Next">
+                                                            <span aria-hidden="true"><i
+                                                                    class="ri-arrow-right-s-line"></i></span>
+                                                        </a></li>
+                                                    <li class="page-item disabled">
+                                                        <a class="page-link" href="#" aria-label="Next">
+                                                            <span aria-hidden="true"><i
+                                                                    class="ri-arrow-right-double-line"></i></span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            %%include('./partials/layout/footer.html')
+
+        </div>
+    </div>
+    %%include('./partials/layout/right-sidebar.html')
+
+    <!-- %%include('./partials/right-sidebar.html')
+    %%include('./partials/back-to-top.html') -->
+
+    %%include('./partials/layout/footer-js.html')
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="plugins/datatables.net/js/dataTables.min.js"></script>
+    <script src="plugins/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+    <script src="plugins/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="plugins/datatables.net-responsive-dt/js/responsive.dataTables.min.js"></script>
+    <script src="plugins/apexcharts/apexcharts.min.js"></script>
+    <script src="js/pages/customer_engage.js"></script>
+
+    <script>
+        document.querySelectorAll('.js-dynamic-avatars').forEach(container => {
+            const rawData = container.getAttribute('data-employees');
+            if (rawData && rawData !== '%%employeesData') {
+                try {
+                    const employees = JSON.parse(rawData);
+                    let html = '';
+                    employees.forEach(emp => {
+                        html += `
+                            <div class="avatar rounded-circle avatar-sm overflow-hidden" data-bs-toggle="tooltip" data-bs-placement="top" title="${emp.n}">
+                                <img alt="${emp.n}" src="../images/avatars/${emp.i}.jpg" class="w-100 h-100">
+                            </div>`;
+                    });
+                    
+                    container.innerHTML = html;
+                    const tooltipTriggerList = [].slice.call(container.querySelectorAll('[data-bs-toggle="tooltip"]'));
+                    tooltipTriggerList.map(function (tooltipTriggerEl) {
+                        return new bootstrap.Tooltip(tooltipTriggerEl);
+                    });
+
+                } catch (e) {
+                    console.error("JSON Error:", e);
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>

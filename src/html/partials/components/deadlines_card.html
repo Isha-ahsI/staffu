@@ -1,0 +1,24 @@
+<div class="card-body pb-0">
+    <div class="d-flex align-items-start justify-content-between mb-3">
+        <div>
+            <p class="text-dark mb-0 fw-medium"><span><i class="ri-calendar-schedule-line"></i></span> %%date</p>
+            <span class="badge badge-sm bg-soft-secondary fw-medium rounded-pill">%%days</span>
+        </div>
+        <div class="dropdown">
+            <button type="button" aria-expanded="false" class="card-drop-icon dropdown-toggle btn" data-bs-toggle="dropdown"><i class="bi bi-three-dots fs-20"></i></button>
+            <div class="dropdown-menu dropdown-menu-end">
+                <a class="dropdown-item" href="#" data-discover="true"><span><i class="ri-edit-box-line"></i></span> Edit Data</a>
+                <a class="dropdown-item" href="#" data-discover="true"><span><i class="ri-delete-bin-7-line"></i></span> Delete Data</a>
+            </div>
+        </div>
+    </div>
+    <h6 class="mb-1 fw-semibold fs-18 text-dark">%%projectName <span class="badge badge-sm %%statusBadgeColor rounded-pill border-0 ms-1 px-2 align-middle"><i class="ri-circle-fill"></i> %%status</span></h6>
+    <p class="mb-3">%%description</p>
+    <div class="d-flex align-items-center justify-content-between mb-1">
+        <small class="text-muted fs-12">Progress</small>
+        <small class="text-muted fs-12">%%width%</small>
+    </div>
+    <div class="progress h-5" role="progressbar" aria-label="8px high" aria-valuenow="%%width" aria-valuemin="0" aria-valuemax="100">
+        <div class="progress-bar %%progressBgColor w-%%width"></div>
+    </div>
+</div>

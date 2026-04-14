@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <div class="page-layout">
+        %%include('./partials/layout/header.html')
+        %%include('./partials/layout/left-sidebar.html')
+        <div class="page-wrapper">
+            <div class="page-content">
+                %%include('./partials/components/page-title.html', { pageTitle: 'Employee List', pagePrTitle:
+                'Employees' })
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                                        <div class="me-auto">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <select id="customLength" class="form-select form-select-sm">
+                                                    <option value="5">5</option>
+                                                    <option value="10" selected>10</option>
+                                                    <option value="25">25</option>
+                                                    <option value="50">All</option>
+                                                </select>
+                                                <p class="mb-0 text-nowrap">entries per page</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-wrap align-items-center gap-3">
+                                            <div class="input-icon">
+                                                <span class="search-icon"><i class="bi bi-search"></i></span>
+                                                <input class="form-control" type="text"
+                                                    placeholder="Search by name,id,desi..."
+                                                    aria-label="attendence search input" id="empListSearchInput">
+                                            </div>
+                                            <div class="dropdown position-relative">
+                                                <button type="button" class="btn btn-soft-dark z-1 dropdown-toggle"
+                                                    id="empListStatusFilter" data-bs-toggle="dropdown"
+                                                    data-bs-auto-close="false" aria-expanded="false">
+                                                    <span class="me-1"><i class="bi bi-filter"></i></span>Filter
+                                                    <span><i class="bi bi-chevron-down drop-caret"></i></span></button>
+                                                <form class="dropdown-menu dropdown-menu-lg-end p-3">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input me-1 filter-all" type="checkbox"
+                                                            value="All" id="checkAll">
+                                                        <label class="form-check-label" for="checkAll">All</label>
+                                                    </div>
+                                                    <hr>
+                                                    <h6 class="text-dark ps-2 pe-5">Status</h6>
+                                                    <div class="ps-4">
+                                                        <div class="form-check">
+                                                            <input
+                                                                class="form-check-input me-1 filter-check filter-status"
+                                                                type="checkbox" value="Active" id="checkActive">
+                                                            <label class="form-check-label"
+                                                                for="checkActive">Active</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input
+                                                                class="form-check-input me-1 filter-check filter-status"
+                                                                type="checkbox" value="Absent" id="checkAbsent">
+                                                            <label class="form-check-label"
+                                                                for="checkAbsent">Absent</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input
+                                                                class="form-check-input me-1 filter-check filter-status"
+                                                                type="checkbox" value="Leave" id="checkLeave">
+                                                            <label class="form-check-label"
+                                                                for="checkLeave">Leave</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input
+                                                                class="form-check-input me-1 filter-check filter-status"
+                                                                type="checkbox" value="Half Leave" id="checkHalfLeave">
+                                                            <label class="form-check-label" for="checkHalfLeave">Half
+                                                                Leave</label>
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+                                                    <h6 class="text-dark ps-2 pe-5">Employeement type</h6>
+                                                    <div class="ps-4">
+                                                        <div class="form-check">
+                                                            <input
+                                                                class="form-check-input me-1 filter-check filter-type"
+                                                                type="checkbox" value="Full-time" id="checkFulltime">
+                                                            <label class="form-check-label"
+                                                                for="checkFulltime">Full-time</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input
+                                                                class="form-check-input me-1 filter-check filter-type"
+                                                                type="checkbox" value="Part-time" id="checkParttime">
+                                                            <label class="form-check-label"
+                                                                for="checkParttime">Part-time</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input
+                                                                class="form-check-input me-1 filter-check filter-type"
+                                                                type="checkbox" value="Internship" id="checkIntern">
+                                                            <label class="form-check-label"
+                                                                for="checkIntern">Internship</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input
+                                                                class="form-check-input me-1 filter-check filter-type"
+                                                                type="checkbox" value="Freelance" id="checkFreelance">
+                                                            <label class="form-check-label"
+                                                                for="checkFreelance">Freelance</label>
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+                                                    <h6 class="text-dark ps-2 pe-5">Work Model</h6>
+                                                    <div class="ps-4">
+                                                        <div class="form-check">
+                                                            <input
+                                                                class="form-check-input me-1 filter-check filter-model"
+                                                                type="checkbox" value="On-site" id="checkOnsite">
+                                                            <label class="form-check-label"
+                                                                for="checkOnsite">On-site</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input
+                                                                class="form-check-input me-1 filter-check filter-model"
+                                                                type="checkbox" value="Hybrid" id="checkHybrid">
+                                                            <label class="form-check-label"
+                                                                for="checkHybrid">Hybrid</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input
+                                                                class="form-check-input me-1 filter-check filter-model"
+                                                                type="checkbox" value="Remote" id="checkRemote">
+                                                            <label class="form-check-label"
+                                                                for="checkRemote">Remote</label>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                                data-bs-target="#addEmpModal"><span class="me-1"><i
+                                                        class="ri-add-circle-line fw-normal"></i></span>Add
+                                                Employee</button>
+                                        </div>
+                                    </div>
+                                    <hr class="mb-4">
+                                    <div class="datatable-wrapper">
+                                        <table id="empListTable"
+                                            class="table table-hover table-nowrap table-cell-padding-lg">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th class="py-3">Employee ID</th>
+                                                    <th class="py-3">Employee Name</th>
+                                                    <th class="py-3">Designnation</th>
+                                                    <th class="py-3">Email</th>
+                                                    <th class="py-3 text-center">Employeement Type</th>
+                                                    <th class="py-3">Joining Date</th>
+                                                    <th class="py-3">Salary</th>
+                                                    <th class="py-3 text-center">Work model</th>
+                                                    <th class="py-3 text-center">Status</th>
+                                                    <th class="py-3 text-center">View Profile</th>
+                                                    <th class="py-3">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- emp1 -->
+                                                <tr class="align-middle">
+                                                    <td>EMP-<span class="fw-semibold">0234</span></td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <div class="avatar avatar-md">
+                                                                <img src="images/avatars/avatar2.jpg" alt="Employee Img"
+                                                                    class="w-100 h-100 custom-avatar">
+                                                            </div>
+                                                            <h6 class="mb-0 fw-semibold text-dark"><span>Tiger
+                                                                    Nixon</span>
+                                                            </h6>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex flex-column">
+                                                            <h6 class="mb-1">Software Engineer</h6>
+                                                            <small>IT Department</small>
+                                                        </div>
+                                                    </td>
+                                                    <td class="fw-medium"><span>tiger.nixon@yahoo.com</span></td>
+                                                    <td class="text-center"><span
+                                                            class="badge bg-soft-primary">Full-time</span></td>
+                                                    <td class="fw-medium"><span>12 Jan 2025</span></td>
+                                                    <td class="fw-semibold"><span>$8,570</span></td>
+                                                    <td class="text-center fw-medium"><span class="text-primary me-1"><i
+                                                                class="ri-circle-fill fs-12"></i></span>On-site</td>
+                                                    <td class="text-center"><span
+                                                            class="badge bg-soft-success rounded-pill">Active</span>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <button type="button"
+                                                            class="btn btn-outline-primary avatar avatar-sm p-0 rounded-circle mx-auto d-block"
+                                                            data-bs-toggle="modal" data-bs-target="#profileModal">
+                                                            <span><i class="ri-eye-line fw-normal fs-4"></i></span>
+                                                        </button>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-3">
+                                                            <a href="#"
+                                                                class="btn btn-outline-success btn-edit avatar avatar-sm p-0"><span><i
+                                                                        class="ri-edit-box-line fs-5 fw-normal"></i></span></a>
+                                                            <a href="#"
+                                                                class="btn btn-outline-danger btn-delete avatar avatar-sm p-0"><span><i
+                                                                        class="ri-delete-bin-7-line fs-5 fw-normal"></i></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!-- emp2 -->
+                                                <tr class="align-middle">
+                                                    <td>EMP-<span class="fw-semibold">0117</span></td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <div class="avatar avatar-md">
+                                                                <img src="images/avatars/avatar1.jpg" alt="Employee Img"
+                                                                    class="w-100 h-100 custom-avatar">
+                                                            </div>
+                                                            <h6 class="mb-0 fw-semibold text-dark"><span>Joyce
+                                                                    Neal</span>
+                                                            </h6>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex flex-column">
+                                                            <h6 class="mb-1">Project Manager</h6>
+                                                            <small>Project Management</small>
+                                                        </div>
+                                                    </td>
+                                                    <td class="fw-medium"><span>joyce.neal@yahoo.com</span></td>
+                                                    <td class="text-center"><span
+                                                            class="badge bg-soft-primary">Part-time</span></td>
+                                                    <td class="fw-medium"><span>14 Apr 2025</span></td>
+                                                    <td class="fw-semibold"><span>$7,890</span></td>
+                                                    <td class="text-center fw-medium"><span class="text-primary me-1"><i
+                                                                class="ri-circle-line fs-12"></i></span>Hybrid</td>
+                                                    <td class="text-center"><span
+                                                            class="badge bg-soft-success rounded-pill">Active</span>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <button type="button"
+                                                            class="btn btn-outline-primary avatar avatar-sm p-0 rounded-circle mx-auto d-block"
+                                                            data-bs-toggle="modal" data-bs-target="#profileModal">
+                                                            <span><i class="ri-eye-line fw-normal fs-4"></i></span>
+                                                        </button>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-3">
+                                                            <a href="#"
+                                                                class="btn btn-outline-success btn-edit avatar avatar-sm p-0"><span><i
+                                                                        class="ri-edit-box-line fs-5 fw-normal"></i></span></a>
+                                                            <a href="#"
+                                                                class="btn btn-outline-danger btn-delete avatar avatar-sm p-0"><span><i
+                                                                        class="ri-delete-bin-7-line fs-5 fw-normal"></i></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!-- emp3 -->
+                                                <tr class="align-middle">
+                                                    <td>EMP-<span class="fw-semibold">0223</span></td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <div class="avatar avatar-md">
+                                                                <img src="images/avatars/avatar3.jpg" alt="Employee Img"
+                                                                    class="w-100 h-100 custom-avatar">
+                                                            </div>
+                                                            <h6 class="mb-0 fw-semibold text-dark"><span>Ethan
+                                                                    Ray</span></h6>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex flex-column">
+                                                            <h6 class="mb-1">Customer Support</h6>
+                                                            <small>Customer service</small>
+                                                        </div>
+                                                    </td>
+                                                    <td class="fw-medium"><span>ethan.ray@yahoo.com</span></td>
+                                                    <td class="text-center"><span
+                                                            class="badge bg-soft-secondary">Internship</span></td>
+                                                    <td class="fw-medium"><span>25 Nov 2025</span></td>
+                                                    <td class="fw-semibold"><span>$4,560</span></td>
+                                                    <td class="text-center fw-medium"><span class="text-primary me-1"><i
+                                                                class="ri-circle-fill fs-12"></i></span>On-site</td>
+                                                    <td class="text-center"><span
+                                                            class="badge bg-soft-danger fs-14 fw-semibold"><i
+                                                                class="bi bi-x-circle me-1"></i>Absent</span>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <button type="button"
+                                                            class="btn btn-outline-primary avatar avatar-sm p-0 rounded-circle mx-auto d-block"
+                                                            data-bs-toggle="modal" data-bs-target="#profileModal">
+                                                            <span><i class="ri-eye-line fw-normal fs-4"></i></span>
+                                                        </button>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-3">
+                                                            <a href="#"
+                                                                class="btn btn-outline-success btn-edit avatar avatar-sm p-0"><span><i
+                                                                        class="ri-edit-box-line fs-5 fw-normal"></i></span></a>
+                                                            <a href="#"
+                                                                class="btn btn-outline-danger  btn-delete avatar avatar-sm p-0"><span><i
+                                                                        class="ri-delete-bin-7-line fs-5 fw-normal"></i></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!-- emp4 -->
+                                                <tr class="align-middle">
+                                                    <td>EMP-<span class="fw-semibold">0458</span></td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <div class="avatar avatar-md">
+                                                                <img src="images/avatars/avatar4.jpg" alt="Employee Img"
+                                                                    class="w-100 h-100 custom-avatar">
+                                                            </div>
+                                                            <h6 class="mb-0 fw-semibold text-dark"><span>Kelvin
+                                                                    Yia</span>
+                                                            </h6>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex flex-column">
+                                                            <h6 class="mb-1">Graphic Designer</h6>
+                                                            <small>Marketing</small>
+                                                        </div>
+                                                    </td>
+                                                    <td class="fw-medium"><span>kelvin.yia@yahoo.com</span></td>
+                                                    <td class="text-center"><span
+                                                            class="badge bg-soft-secondary">Freelance</span></td>
+                                                    <td class="fw-medium"><span>11 Oct 2024</span></td>
+                                                    <td class="fw-semibold"><span>$6,700</span></td>
+                                                    <td class="text-center fw-medium"><span class="text-primary me-1"><i
+                                                                class="ri-square-fill fs-12"></i></span>Remote</td>
+                                                    <td class="text-center"><span
+                                                            class="badge bg-soft-success rounded-pill">Active</span>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <button type="button"
+                                                            class="btn btn-outline-primary avatar avatar-sm p-0 rounded-circle mx-auto d-block"
+                                                            data-bs-toggle="modal" data-bs-target="#profileModal">
+                                                            <span><i class="ri-eye-line fw-normal fs-4"></i></span>
+                                                        </button>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-3">
+                                                            <a href="#"
+                                                                class="btn btn-outline-success btn-edit avatar avatar-sm p-0"><span><i
+                                                                        class="ri-edit-box-line fs-5 fw-normal"></i></span></a>
+                                                            <a href="#"
+                                                                class="btn btn-outline-danger  btn-delete avatar avatar-sm p-0"><span><i
+                                                                        class="ri-delete-bin-7-line fs-5 fw-normal"></i></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!-- emp5 -->
+                                                <tr class="align-middle">
+                                                    <td>EMP-<span class="fw-semibold">0348</span></td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <div class="avatar avatar-md">
+                                                                <img src="images/avatars/avatar5.jpg" alt="Employee Img"
+                                                                    class="w-100 h-100 custom-avatar">
+                                                            </div>
+                                                            <h6 class="mb-0 fw-semibold text-dark"><span>Ollivia
+                                                                    Joy</span>
+                                                            </h6>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex flex-column">
+                                                            <h6 class="mb-1">Data Scientist</h6>
+                                                            <small>Data Science / Analytics</small>
+                                                        </div>
+                                                    </td>
+                                                    <td class="fw-medium"><span>ollivia.joy@yahoo.com</span></td>
+                                                    <td class="text-center"><span
+                                                            class="badge bg-soft-primary">Part-time</span></td>
+                                                    <td class="fw-medium"><span>20 May 2025</span></td>
+                                                    <td class="fw-semibold"><span>$3,520</span></td>
+                                                    <td class="text-center fw-medium"><span class="text-primary me-1"><i
+                                                                class="ri-square-fill fs-12"></i></span>Remote</td>
+                                                    <td class="text-center"><span
+                                                            class="badge bg-soft-primary fs-14 fw-semibold"><i
+                                                                class="bi bi-emoji-frown me-1"></i>Leave</span>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <button type="button"
+                                                            class="btn btn-outline-primary avatar avatar-sm p-0 rounded-circle mx-auto d-block"
+                                                            data-bs-toggle="modal" data-bs-target="#profileModal">
+                                                            <span><i class="ri-eye-line fw-normal fs-4"></i></span>
+                                                        </button>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-3">
+                                                            <a href="#"
+                                                                class="btn btn-outline-success  btn-edit avatar avatar-sm p-0"><span><i
+                                                                        class="ri-edit-box-line fs-5 fw-normal"></i></span></a>
+                                                            <a href="#"
+                                                                class="btn btn-outline-danger btn-delete avatar avatar-sm p-0"><span><i
+                                                                        class="ri-delete-bin-7-line fs-5 fw-normal"></i></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!-- emp6 -->
+                                                <tr class="align-middle">
+                                                    <td>EMP-<span class="fw-semibold">0897</span></td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <div class="avatar avatar-md">
+                                                                <img src="images/avatars/avatar6.jpg" alt="Employee Img"
+                                                                    class="w-100 h-100 custom-avatar">
+                                                            </div>
+                                                            <h6 class="mb-0 fw-semibold text-dark"><span>Mark Lee</span>
+                                                            </h6>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex flex-column">
+                                                            <h6 class="mb-1">Site Supervisior</h6>
+                                                            <small>Oparations</small>
+                                                        </div>
+                                                    </td>
+                                                    <td class="fw-medium"><span>mark.lee@yahoo.com</span></td>
+                                                    <td class="text-center"><span
+                                                            class="badge bg-soft-primary">Full-time</span></td>
+                                                    <td class="fw-medium"><span>09 Feb 2024</span></td>
+                                                    <td class="fw-semibold"><span>$10,850</span></td>
+                                                    <td class="text-center fw-medium"><span class="text-primary me-1"><i
+                                                                class="ri-circle-fill fs-12"></i></span>On-site</td>
+                                                    <td class="text-center"><span
+                                                            class="badge bg-soft-warning fs-14 fw-semibold"><i
+                                                                class="bi bi-info-circle me-1"></i>Half Leave</span>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <button type="button"
+                                                            class="btn btn-outline-primary avatar avatar-sm p-0 rounded-circle mx-auto d-block"
+                                                            data-bs-toggle="modal" data-bs-target="#profileModal">
+                                                            <span><i class="ri-eye-line fw-normal fs-4"></i></span>
+                                                        </button>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-3">
+                                                            <a href="#"
+                                                                class="btn btn-outline-success btn-edit avatar avatar-sm p-0"><span><i
+                                                                        class="ri-edit-box-line fs-5 fw-normal"></i></span></a>
+                                                            <a href="#"
+                                                                class="btn btn-outline-danger  btn-delete avatar avatar-sm p-0"><span><i
+                                                                        class="ri-delete-bin-7-line fs-5 fw-normal"></i></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!-- emp7 -->
+                                                <tr class="align-middle">
+                                                    <td>EMP-<span class="fw-semibold">0742</span></td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <div class="avatar avatar-md">
+                                                                <img src="images/avatars/avatar7.jpg" alt="Employee Img"
+                                                                    class="w-100 h-100 custom-avatar">
+                                                            </div>
+                                                            <h6 class="mb-0 fw-semibold text-dark"><span>Sophia
+                                                                    Jackson</span>
+                                                            </h6>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex flex-column">
+                                                            <h6 class="mb-1">DevOps Engineer</h6>
+                                                            <small>Oparations</small>
+                                                        </div>
+                                                    </td>
+                                                    <td class="fw-medium"><span>sophia.jackson@yahoo.com</span></td>
+                                                    <td class="text-center"><span
+                                                            class="badge bg-soft-primary">Full-time</span></td>
+                                                    <td class="fw-medium"><span>06 Jun 2024</span></td>
+                                                    <td class="fw-semibold"><span>$11,480</span></td>
+                                                    <td class="text-center fw-medium"><span class="text-primary me-1"><i
+                                                                class="ri-circle-fill fs-12"></i></span>On-site</td>
+                                                    <td class="text-center"><span
+                                                            class="badge bg-soft-success rounded-pill">Active</span>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <button type="button"
+                                                            class="btn btn-outline-primary avatar avatar-sm p-0 rounded-circle mx-auto d-block"
+                                                            data-bs-toggle="modal" data-bs-target="#profileModal">
+                                                            <span><i class="ri-eye-line fw-normal fs-4"></i></span>
+                                                        </button>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-3">
+                                                            <a href="#"
+                                                                class="btn btn-outline-success btn-edit avatar avatar-sm p-0"><span><i
+                                                                        class="ri-edit-box-line fs-5 fw-normal"></i></span></a>
+                                                            <a href="#"
+                                                                class="btn btn-outline-danger  btn-delete avatar avatar-sm p-0"><span><i
+                                                                        class="ri-delete-bin-7-line fs-5 fw-normal"></i></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!-- emp8 -->
+                                                <tr class="align-middle">
+                                                    <td>EMP-<span class="fw-semibold">0177</span></td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <div class="avatar avatar-md">
+                                                                <img src="images/avatars/avatar8.jpg" alt="Employee Img"
+                                                                    class="w-100 h-100 custom-avatar">
+                                                            </div>
+                                                            <h6 class="mb-0 fw-semibold text-dark"><span>Laura
+                                                                    Taylor</span>
+                                                            </h6>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex flex-column">
+                                                            <h6 class="mb-1">Frontend Developer</h6>
+                                                            <small>IT Department</small>
+                                                        </div>
+                                                    </td>
+                                                    <td class="fw-medium"><span>laura.taylor@yahoo.com</span></td>
+                                                    <td class="text-center"><span
+                                                            class="badge bg-soft-secondary">Internship</span></td>
+                                                    <td class="fw-medium"><span>14 Apr 2025</span></td>
+                                                    <td class="fw-semibold"><span>$2,000</span></td>
+                                                    <td class="text-center fw-medium"><span class="text-primary me-1"><i
+                                                                class="ri-circle-line fs-12"></i></span>Hybrid</td>
+                                                    <td class="text-center"><span
+                                                            class="badge bg-soft-danger fs-14 fw-semibold"><i
+                                                                class="bi bi-x-circle me-1"></i>Absent</span>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <button type="button"
+                                                            class="btn btn-outline-primary avatar avatar-sm p-0 rounded-circle mx-auto d-block"
+                                                            data-bs-toggle="modal" data-bs-target="#profileModal">
+                                                            <span><i class="ri-eye-line fw-normal fs-4"></i></span>
+                                                        </button>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-3">
+                                                            <a href="#"
+                                                                class="btn btn-outline-success btn-edit avatar avatar-sm p-0"><span><i
+                                                                        class="ri-edit-box-line fs-5 fw-normal"></i></span></a>
+                                                            <a href="#"
+                                                                class="btn btn-outline-danger  btn-delete avatar avatar-sm p-0"><span><i
+                                                                        class="ri-delete-bin-7-line fs-5 fw-normal"></i></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!-- emp9 -->
+                                                <tr class="align-middle">
+                                                    <td>EMP-<span class="fw-semibold">0124</span></td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <div class="avatar avatar-md">
+                                                                <img src="images/avatars/avatar9.jpg" alt="Employee Img"
+                                                                    class="w-100 h-100 custom-avatar">
+                                                            </div>
+                                                            <h6 class="mb-0 fw-semibold text-dark"><span>Daniel
+                                                                    Miller</span>
+                                                            </h6>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex flex-column">
+                                                            <h6 class="mb-1">Finance Analyst</h6>
+                                                            <small>Accounting</small>
+                                                        </div>
+                                                    </td>
+                                                    <td class="fw-medium"><span>daniel.miller@yahoo.com</span></td>
+                                                    <td class="text-center"><span
+                                                            class="badge bg-soft-primary">Full-time</span></td>
+                                                    <td class="fw-medium"><span>02 Sep 2024</span></td>
+                                                    <td class="fw-semibold"><span>$9,450</span></td>
+                                                    <td class="text-center fw-medium"><span class="text-primary me-1"><i
+                                                                class="ri-circle-fill fs-12"></i></span>On-site</td>
+                                                    <td class="text-center"><span
+                                                            class="badge bg-soft-primary fs-14 fw-semibold"><i
+                                                                class="bi bi-emoji-frown me-1"></i>Leave</span>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <button type="button"
+                                                            class="btn btn-outline-primary avatar avatar-sm p-0 rounded-circle mx-auto d-block"
+                                                            data-bs-toggle="modal" data-bs-target="#profileModal">
+                                                            <span><i class="ri-eye-line fw-normal fs-4"></i></span>
+                                                        </button>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-3">
+                                                            <a href="#"
+                                                                class="btn btn-outline-success btn-edit avatar avatar-sm p-0"><span><i
+                                                                        class="ri-edit-box-line fs-5 fw-normal"></i></span></a>
+                                                            <a href="#"
+                                                                class="btn btn-outline-danger btn-delete avatar avatar-sm p-0"><span><i
+                                                                        class="ri-delete-bin-7-line fs-5 fw-normal"></i></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!-- emp10 -->
+                                                <tr class="align-middle">
+                                                    <td>EMP-<span class="fw-semibold">0723</span>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <div class="avatar avatar-md">
+                                                                <img src="images/avatars/avatar10.jpg"
+                                                                    alt="Employee Img"
+                                                                    class="w-100 h-100 custom-avatar">
+                                                            </div>
+                                                            <h6 class="mb-0 fw-semibold text-dark"><span>Priya Sharma</span>
+                                                            </h6>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex flex-column">
+                                                            <h6 class="mb-1">Sales Executive</h6>
+                                                            <small>Marketing</small>
+                                                        </div>
+                                                    </td>
+                                                    <td class="fw-medium">
+                                                        <span>priya.sharma@gmail.com</span>
+                                                    </td>
+                                                    <td class="text-center"><span
+                                                            class="badge bg-soft-secondary">Freelance</span></td>
+                                                    <td class="fw-medium"><span>01 Dec 2023</span></td>
+                                                    <td class="fw-semibold"><span>$15,500</span></td>
+                                                    <td class="text-center fw-medium"><span
+                                                            class="text-primary me-1"><i
+                                                                class="ri-circle-fill fs-12"></i></span>On-site</td>
+                                                    <td class="text-center"><span
+                                                            class="badge bg-soft-success rounded-pill">Active</span>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <button type="button"
+                                                            class="btn btn-outline-primary avatar avatar-sm p-0 rounded-circle mx-auto d-block"
+                                                            data-bs-toggle="modal" data-bs-target="#profileModal">
+                                                            <span><i class="ri-eye-line fw-normal fs-4"></i></span>
+                                                        </button>
+                                                    </td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-3">
+                                                            <a href="#"
+                                                                class="btn btn-outline-success btn-edit avatar avatar-sm p-0"><span><i
+                                                                        class="ri-edit-box-line fs-5 fw-normal"></i></span></a>
+                                                            <a href="#"
+                                                                class="btn btn-outline-danger btn-delete avatar avatar-sm p-0"><span><i
+                                                                        class="ri-delete-bin-7-line fs-5 fw-normal"></i></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div
+                                        class="table-bottom d-flex flex-wrap justify-content-center justify-content-sm-between align-items-center gap-3 mt-4">
+                                        <div id="table-info" class="order-sm-1 order-2"></div>
+                                        <div id="table-pagination" class="order-sm-2 order-1">
+                                            <nav aria-label="Employee list pagination">
+                                                <ul class="pagination mb-0">
+                                                    <li class="page-item disabled">
+                                                        <a class="page-link" href="#" aria-label="Previous">
+                                                            <span aria-hidden="true"><i
+                                                                    class="ri-arrow-left-double-line"></i></span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="page-item mx-1 disabled"><a class="page-link" href="#"
+                                                            aria-label="Previous">
+                                                            <span aria-hidden="true"><i
+                                                                    class="ri-arrow-left-s-line"></i></span>
+                                                        </a></li>
+                                                    <li class="page-item"><a class="page-link px-3" href="#">1</a></li>
+                                                    <li class="page-item mx-1 disabled"><a class="page-link" href="#"
+                                                            aria-label="Next">
+                                                            <span aria-hidden="true"><i
+                                                                    class="ri-arrow-right-s-line"></i></span>
+                                                        </a></li>
+                                                    <li class="page-item disabled">
+                                                        <a class="page-link" href="#" aria-label="Next">
+                                                            <span aria-hidden="true"><i
+                                                                    class="ri-arrow-right-double-line"></i></span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            %%include('./partials/layout/footer.html')
+        </div>
+    </div>
+
+    <!-- employee add modal -->
+    <div class="modal fade" id="addEmpModal" tabindex="-1" aria-labelledby="addEmpModalLabel">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="addEmpModalLabel">Add New Employee Details</h1>
+                    <p class="text-muted mb-0">
+                        Add employee details to create their profile.
+                    </p>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <hr>
+                <div class="modal-body pt-0">
+                    <form class="row">
+                        <div class="col-12 mb-4">
+                            <label for="formFile" class="form-label">Upload Employee Image / Documents:</label>
+                            <input class="form-control rounded-3" type="file" id="formFile" multiple>
+                        </div>
+                        <div class="col-xl-4 col-lg-6 col-12 mb-4">
+                            <label for="addEmpID" class="form-label">Employee ID:</label>
+                            <input type="text" class="form-control rounded-3" id="addEmpID" value="EMP-">
+                        </div>
+                        <div class="col-xl-4 col-lg-6 col-12 mb-4">
+                            <label for="addEmpFirstName" class="form-label">First Name:</label>
+                            <input type="text" class="form-control rounded-3" id="addEmpFirstName">
+                        </div>
+                        <div class="col-xl-4 col-lg-6 col-12 mb-4">
+                            <label for="addEmpLastName" class="form-label">Last Name:</label>
+                            <input type="text" class="form-control rounded-3" id="addEmpLastName">
+                        </div>
+                        <div class="col-xl-4 col-lg-6 col-12 mb-4">
+                            <label for="addEmpEmailId" class="form-label">Email ID:</label>
+                            <input type="email" class="form-control rounded-3" id="addEmpEmailId">
+                        </div>
+                        <div class="col-xl-4 col-lg-6 col-12 mb-4">
+                            <label for="addEmpPhNo" class="form-label">Phone No:</label>
+                            <input type="text" class="form-control rounded-3" id="addEmpPhNo">
+                        </div>
+                        <div class="col-xl-4 col-lg-6 col-12 mb-4">
+                            <label for="addEmpEmgNo" class="form-label">Emergency No:</label>
+                            <input type="text" class="form-control rounded-3" id="addEmpEmgNo">
+                        </div>
+                        <div class="col-xl-4 col-lg-6 col-12 mb-4">
+                            <h6 class="form-label">Employee Gender:</h6>
+                            <div class="d-flex align-items-center gap-3 ms-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="radioGender" id="radioFemale">
+                                    <label class="form-check-label" for="radioFemale">
+                                        <span><i class="ri-women-line"></i></span>Female
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="radioGender" id="radioMale">
+                                    <label class="form-check-label" for="radioMale">
+                                        <span><i class="ri-men-line"></i></span>Male
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="radioGender" id="radioOther">
+                                    <label class="form-check-label" for="radioOther">
+                                        <span><i class="ri-genderless-line"></i></span>Other
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-8 mb-4">
+                            <label for="addressTextarea" class="form-label">Address:</label>
+                            <textarea class="form-control rounded-3" id="addressTextarea" rows="2"></textarea>
+                        </div>
+                        <div class="col-xl-4 col-lg-6 col-12 mb-4">
+                            <label for="addEmpJoinDate" class="form-label">Joining Date:</label>
+                            <div class="input-icon">
+                                <span class="cale-icon"><i class="bi bi-calendar4-event"></i></span>
+                                <input type="text" id="addEmpJoinDate" placeholder="Joining date"
+                                    class="form-control rounded-3" />
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6 col-12 mb-4">
+                            <label for="addEmpJobTitle" class="form-label">Jobtitle:</label>
+                            <input type="text" class="form-control rounded-3" id="addEmpJobTitle">
+                        </div>
+                        <div class="col-xl-4 col-lg-6 col-12 mb-4">
+                            <label for="addEmpDepartment" class="form-label">Department:</label>
+                            <select class="form-select rounded-3" aria-label="Select Department" id="addEmpDepartment">
+                                <option selected disabled>Select Department</option>
+                                <option value="it">IT Department</option>
+                                <option value="bussiness">Core Bussiness</option>
+                                <option value="finance">Finance & Legal</option>
+                                <option value="creative">Creative & Growth</option>
+                                <option value="operations">Operations</option>
+                                <option value="customer">Customer Support</option>
+                                <option value="hr">Human Resources</option>
+                            </select>
+                        </div>
+                        <div class="col-xl-4 col-lg-6 col-12 mb-4">
+                            <label for="addEmpType" class="form-label">Employeement Type:</label>
+                            <select class="form-select rounded-3 mb-3" aria-label="Select employeement type"
+                                id="addEmpType">
+                                <option selected disabled>Select Employeement Type</option>
+                                <option value="fulltime">Full Time</option>
+                                <option value="parttime">Part Time</option>
+                                <option value="internship">Internship</option>
+                                <option value="freelance">Freelance</option>
+                            </select>
+                        </div>
+                        <div class="col-xl-4 col-lg-6 col-12 mb-4">
+                            <label for="addEmpMgr" class="form-label">Reporting Manager:</label>
+                            <input type="text" class="form-control rounded-3" id="addEmpMgr">
+                        </div>
+                        <div class="col-xl-4 col-lg-6 col-12 mb-4">
+                            <label for="shiftTime" class="form-label d-block">Select a employee shift time:</label>
+                            <input type="time" id="shiftTime" name="shiftTime" class="rounded-3 p-2 w-100 form-control">
+                        </div>
+                        <div class="col-lg-6 col-12 mb-4">
+                            <h6 class="form-label">Work Model:</h6>
+                            <div class="d-flex align-items-center gap-4 ms-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="radioWorkModel" id="radioOnSite">
+                                    <label class="form-check-label" for="radioOnSite">
+                                        On-site
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="radioWorkModel" id="radioHybrid">
+                                    <label class="form-check-label" for="radioHybrid">
+                                        Hybrid
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="radioWorkModel" id="radioRemote">
+                                    <label class="form-check-label" for="radioRemote">
+                                        Remote
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12 mb-4">
+                            <h6 class="form-label">Asset Allocation:</h6>
+                            <div class="d-flex align-items-center gap-4 ms-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="laptop">
+                                    <label class="form-check-label" for="laptop">
+                                        Laptop
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="mouse">
+                                    <label class="form-check-label" for="mouse">
+                                        Mouse
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="hs">
+                                    <label class="form-check-label" for="hs">
+                                        Headset
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="hs">
+                                    <label class="form-check-label" for="hs">
+                                        Other
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label for="skillTextarea" class="form-label">Skill:</label>
+                            <textarea class="form-control rounded-3" id="skillTextarea" rows="2"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Save & Continue</button>
+                    <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- employee profile view modal -->
+    <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
+            <div class="modal-content">
+                <div class="modal-header mb-2">
+                    <div class="d-flex align-items-center gap-2">
+                        <div class="avatar avatar-lg avatar-soft-dark custom-avatar">
+                            <i class="ri-group-line"></i>
+                        </div>
+                        <h5 class="modal-title">Employee Details</h5>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row grid-border-lg">
+                            <!-- left-side Emp information -->
+                            <div class="col-lg-6 col-12">
+                                <div class="d-flex align-items-start justify-content-between gap-3 mb-4">
+                                    <div class="d-flex flex-wrap align-items-center gap-3">
+                                        <div class="avatar avatar-xxxxl position-relative">
+                                            <img alt="Avatar Img"
+                                                class="w-100 h-100 rounded-circle avatar-border-primary"
+                                                src="images/avatars/avatar1.jpg"><span
+                                                class="position-absolute bottom-0 end-0 p-1 mb-2 bg-success border border-white border-3 rounded-circle z-2"></span>
+                                        </div>
+                                        <div>
+                                            <div class="d-flex align-items-center gap-2 mb-2">
+                                                <h6 class="fs-18 text-dark fw-bold mb-0">
+                                                    Joyce Neal</h6>
+                                                <span class="badge badge-sm bg-soft-success rounded-pill"><i
+                                                        class="ri-checkbox-blank-circle-fill fs-10 me-1"></i>Active</span>
+                                            </div>
+                                            <span
+                                                class="badge bg-soft-light border-0 px-2 fw-normal text-muted fs-14">Software
+                                                Engineer</span>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-sm bg-soft-light p-2 border-0"><i
+                                            class="bi bi-three-dots-vertical"></i></button>
+                                </div>
+                                <hr class="mt-4 br-dashed">
+                                <h5 class="mb-3">Personal Information</h5>
+                                <!-- name -->
+                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-2">
+                                    <div class="d-flex align-items-center gap-1 text-muted lh-1">
+                                        <span><i class="ri-user-3-line fs-6"></i></span>
+                                        <p class="mb-0 fw-normal">Full name</p>
+                                    </div>
+                                    <p class="mb-0 text-dark fw-medium">Joyce Neal</p>
+                                </div>
+                                <!-- Email -->
+                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-2">
+                                    <div class="d-flex align-items-center gap-1 text-muted lh-1">
+                                        <span><i class="ri-mail-line fs-6"></i></span>
+                                        <p class="mb-0 fw-normal">Email</p>
+                                    </div>
+                                    <p class="mb-0 text-dark fw-medium">
+                                        joyce.neal@example.com</p>
+                                </div>
+                                <!-- Date of Birth -->
+                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-2">
+                                    <div class="d-flex align-items-center gap-1 text-muted lh-1">
+                                        <span><i class="ri-calendar-line fs-6"></i></span>
+                                        <p class="mb-0 fw-normal">Date of Birth</p>
+                                    </div>
+                                    <p class="mb-0 text-dark fw-medium">15 Mar 1990</p>
+                                </div>
+                                <!-- Phone No -->
+                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-2">
+                                    <div class="d-flex align-items-center gap-1 text-muted lh-1">
+                                        <span><i class="ri-phone-line fs-6"></i></span>
+                                        <p class="mb-0 fw-normal">Phone No</p>
+                                    </div>
+                                    <p class="mb-0 text-dark fw-medium">+1 234 567 890
+                                    </p>
+                                </div>
+                                <!-- Address -->
+                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-2">
+                                    <div class="d-flex align-items-center gap-1 text-muted lh-1">
+                                        <span><i class="ri-map-pin-line fs-6"></i></span>
+                                        <p class="mb-0 fw-normal">Address</p>
+                                    </div>
+                                    <p class="mb-0 text-dark fw-medium">123 Main Street,
+                                        Bangalore, India</p>
+                                </div>
+                                <!-- Gender -->
+                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-2">
+                                    <div class="d-flex align-items-center gap-1 text-muted lh-1">
+                                        <span><i class="ri-user-4-line fs-6"></i></span>
+                                        <p class="mb-0 fw-normal">Gender</p>
+                                    </div>
+                                    <p class="mb-0 text-dark fw-medium">Male</p>
+                                </div>
+                                <!-- Post Code -->
+                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-2">
+                                    <div class="d-flex align-items-center gap-1 text-muted lh-1">
+                                        <span><i class="ri-map-pin-5-line fs-6"></i></span>
+                                        <p class="mb-0 fw-normal">Post Code</p>
+                                    </div>
+                                    <p class="mb-0 text-dark fw-medium">560001</p>
+                                </div>
+                                <hr class="mt-4 br-dashed">
+                                <h5 class="mb-3">Job Information</h5>
+                                <!-- Employee ID -->
+                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-2">
+                                    <div class="d-flex align-items-center gap-1 text-muted lh-1">
+                                        <span><i class="ri-id-card-line fs-6"></i></span>
+                                        <p class="mb-0 fw-normal">Employee ID</p>
+                                    </div>
+                                    <p class="mb-0 text-dark fw-medium">EMP-0117</p>
+                                </div>
+                                <!-- Designation -->
+                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-2">
+                                    <div class="d-flex align-items-center gap-1 text-muted lh-1">
+                                        <span><i class="ri-building-line fs-6"></i></span>
+                                        <p class="mb-0 fw-normal">Designation</p>
+                                    </div>
+                                    <p class="mb-0 text-dark fw-medium">Software
+                                        Engineer</p>
+                                </div>
+                                <!-- Department -->
+                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-2">
+                                    <div class="d-flex align-items-center gap-1 text-muted lh-1">
+                                        <span><i class="ri-suitcase-line fs-6"></i></span>
+                                        <p class="mb-0 fw-normal">Department</p>
+                                    </div>
+                                    <p class="mb-0 text-dark fw-medium">IT</p>
+                                </div>
+                                <!-- Employeement Type -->
+                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-2">
+                                    <div class="d-flex align-items-center gap-1 text-muted lh-1">
+                                        <span><i class="ri-user-received-line fs-6"></i></span>
+                                        <p class="mb-0 fw-normal">Employeement Type</p>
+                                    </div>
+                                    <p class="mb-0 text-dark fw-medium">Full Time</p>
+                                </div>
+                                <!-- Date of Joining -->
+                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-2">
+                                    <div class="d-flex align-items-center gap-1 text-muted lh-1">
+                                        <span><i class="ri-calendar-event-line fs-6"></i></span>
+                                        <p class="mb-0 fw-normal">Date of Joining</p>
+                                    </div>
+                                    <p class="mb-0 text-dark fw-medium">15-06-2023</p>
+                                </div>
+                                <!-- Work model -->
+                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-2">
+                                    <div class="d-flex align-items-center gap-1 text-muted lh-1">
+                                        <span><i class="ri-home-office-line fs-6"></i></span>
+                                        <p class="mb-0 fw-normal">Work Model</p>
+                                    </div>
+                                    <p class="mb-0 text-dark fw-medium">On-site</p>
+                                </div>
+                                <!-- Shift -->
+                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-2">
+                                    <div class="d-flex align-items-center gap-1 text-muted lh-1">
+                                        <span><i class="ri-time-line fs-6"></i></span>
+                                        <p class="mb-0 fw-normal">Shift</p>
+                                    </div>
+                                    <p class="mb-0 text-dark fw-medium">8am-5pm</p>
+                                </div>
+                                <!-- Skills -->
+                                <div class="d-flex flex-wrap justify-content-between align-items-center gap-1 mb-2">
+                                    <div class="d-flex align-items-center gap-1 text-muted lh-1">
+                                        <span><i class="ri-stack-line fs-6"></i></span>
+                                        <p class="mb-0 fw-normal">Skills</p>
+                                    </div>
+                                    <div class="d-flex flex-wrap align-items-center gap-1 justify-content-end">
+                                        <span class="badge bg-soft-light border-0 fw-medium">Html</span>
+                                        <span class="badge bg-soft-light border-0 fw-medium">JavaScript</span>
+                                        <span class="badge bg-soft-light border-0 fw-medium">Css</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="br-dashed mt-4 d-lg-none d-block">
+                            <!-- right-side Emp Performance -->
+                            <div class="col-lg-6 col-12">
+                                <!-- kpi's cards -->
+                                <div class="row">
+                                    <!-- Attendance Rate -->
+                                    <div class="col-sm-6 col-12">
+                                        <div class="card bg-soft-success border-soft-success shadow-none">
+                                            <div class="card-body">
+                                                <div class="d-flex flex-wrap align-items-center gap-3">
+                                                    <div class="avatar avatar-xl avatar-soft-success custom-avatar">
+                                                        <i class="ri-calendar-check-fill"></i>
+                                                    </div>
+                                                    <div>
+                                                        <h6 class="mb-1">Attendance Rate</h6>
+                                                        <h5 class="mb-0 text-dark fw-semibold">22 / 24</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Tasks Completion -->
+                                    <div class="col-sm-6 col-12">
+                                        <div class="card bg-soft-info border-soft-info shadow-none">
+                                            <div class="card-body">
+                                                <div class="d-flex flex-wrap align-items-center gap-3">
+                                                    <div class="avatar avatar-xl avatar-soft-info custom-avatar">
+                                                        <i class="ri-task-line"></i>
+                                                    </div>
+                                                    <div>
+                                                        <h6 class="mb-1">Tasks Completion</h6>
+                                                        <h6 class="mb-0"><span class="text-dark fw-semibold fs-5">52
+                                                            </span>of<span class="text-dark fw-semibold fs-5"> 60
+                                                            </span>tasks</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Projects Assigned -->
+                                    <div class="col-sm-6 col-12">
+                                        <div class="card bg-soft-orange border-soft-orange shadow-none">
+                                            <div class="card-body">
+                                                <div class="d-flex flex-wrap align-items-center gap-3">
+                                                    <div class="avatar avatar-xl avatar-soft-orange custom-avatar">
+                                                        <i class="ri-folders-line"></i>
+                                                    </div>
+                                                    <div>
+                                                        <h6 class="mb-1">Projects Assigned</h6>
+                                                        <h6 class="mb-0"><span class="text-dark fw-semibold fs-5"> 4
+                                                            </span>Projects</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Awards -->
+                                    <div class="col-sm-6 col-12">
+                                        <div class="card bg-soft-primary border-soft-primary shadow-none">
+                                            <div class="card-body">
+                                                <div class="d-flex flex-wrap align-items-center gap-3">
+                                                    <div class="avatar avatar-xl avatar-soft-primary custom-avatar">
+                                                        <i class="ri-trophy-line"></i>
+                                                    </div>
+                                                    <div>
+                                                        <h6 class="mb-1">Winning Awards</h6>
+                                                        <h6 class="mb-0"><span class="text-dark fw-semibold fs-5"> 3
+                                                            </span>Awards</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="br-dashed mt-0 mb-4">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="border border-1 p-3 rounded-3">
+                                            <div
+                                                class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-2">
+                                                <h5 class="card-title mb-0">Employee
+                                                    Performance</h5>
+                                                <form>
+                                                    <div class="input-select-icon">
+                                                        <span class="text-muted">
+                                                            <i class="bi bi-calendar2-check input-icon"></i>
+                                                        </span>
+                                                        <select name="PerformanceYearSelect"
+                                                            class="form-select form-select-sm"
+                                                            id="PerformanceYearSelect">
+                                                            <option>Last 6 Month
+                                                            </option>
+                                                            <option>This Year</option>
+                                                            <option>Last Month</option>
+                                                        </select>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <h4 class="mb-1 fw-semibold">90.75%</h4>
+                                            <small class="text-muted"><span class="text-success fw-semibold">
+                                                    +20% </span>vs last month</small>
+                                            <div id="empPerformChart"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal fade" id="deleteEmpConfirmModal" tabindex="-1" aria-labelledby="deleteEmpConfirmModalLabel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteEmpConfirmModalLabel">Confirm
+                        Delete
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">Are you sure you want to delete this item?</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" id="confirmDeleteEmp">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    %%include('./partials/layout/right-sidebar.html')
+
+    <!-- %%include('./partials/right-sidebar.html')
+    %%include('./partials/back-to-top.html') -->
+
+    %%include('./partials/layout/footer-js.html')
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="plugins/datatables.net/js/dataTables.min.js"></script>
+    <script src="plugins/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+    <script src="plugins/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="plugins/datatables.net-responsive-dt/js/responsive.dataTables.min.js"></script>
+    <script src="plugins/apexcharts/apexcharts.min.js"></script>
+    <script src="plugins/flatpickr/flatpickr.min.js"></script>
+    <script src="js/pages/emplist.js"></script>
+
+</body>
+
+</html>

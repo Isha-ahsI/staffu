@@ -1,0 +1,11 @@
+// progressbar.scss
+
+.progress-bar {
+    background-color: var(--bs-primary);
+}
+
+@each $color, $value in $theme-colors {
+    .progress-bar.bg-#{$color} {
+        background-color: var(--bs-#{$color}) !important;
+    }
+}

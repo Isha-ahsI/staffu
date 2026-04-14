@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <div class="page-layout">
+        %%include('./partials/layout/header.html')
+        %%include('./partials/layout/left-sidebar.html')
+        <div class="page-wrapper">
+            <div class="page-content">
+                %%include('./partials/components/page-title.html', { pageTitle: 'Customers', pagePrTitle:
+                'Clients' })
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-xl-3 col-sm-6 col-12">
+                                    <div class="card bg-soft-primary border border-soft-primary shadow-none">
+                                        <div class="card-body">
+                                            <div
+                                                class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                                                <div>
+                                                    <p class="mb-0">Total Customers</p>
+                                                    <h4 class="text-dark fw-bold mb-0">25</h4>
+                                                </div>
+                                                <div
+                                                    class="avatar avatar-xl fw-normal avatar-soft-primary rounded-circle">
+                                                    <i class="bi bi-people"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-sm-6 col-12">
+                                    <div class="card bg-soft-success border border-soft-success shadow-none">
+                                        <div class="card-body">
+                                            <div
+                                                class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                                                <div>
+                                                    <p class="mb-0">Active Customers</p>
+                                                    <h4 class="text-dark fw-bold mb-0">15</h4>
+                                                </div>
+                                                <div
+                                                    class="avatar avatar-xl fw-normal avatar-soft-success rounded-circle">
+                                                    <i class="bi bi-person-check"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-sm-6 col-12">
+                                    <div class="card bg-soft-orange border border-soft-orange shadow-none">
+                                        <div class="card-body">
+                                            <div
+                                                class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                                                <div>
+                                                    <p class="mb-0">Inactive Customers</p>
+                                                    <h4 class="text-dark fw-bold mb-0">06</h4>
+                                                </div>
+                                                <div
+                                                    class="avatar avatar-xl fw-normal avatar-soft-orange rounded-circle">
+                                                    <i class="bi bi-person-slash"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-sm-6 col-12">
+                                    <div class="card bg-soft-info border border-soft-info shadow-none">
+                                        <div class="card-body">
+                                            <div
+                                                class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                                                <div>
+                                                    <p class="mb-0">Contacts Login In</p>
+                                                    <h4 class="text-dark fw-bold mb-0">04</h4>
+                                                </div>
+                                                <div class="avatar avatar-xl fw-normal avatar-soft-info rounded-circle">
+                                                    <i class="bi bi-box-arrow-in-right"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Customers List</h5>
+                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+                                        <div role="group" class="btn-group">
+                                            <input class="btn-check" id="radio-0" type="radio" value="option1"
+                                                name="radio">
+                                            <label tabindex="0" for="radio-0"
+                                                class="btn btn-sm btn-outline-secondary"><span class="me-1 fw-normal"><i
+                                                        class="ri-export-fill fs-6"></i></span>Export</label>
+                                            <input class="btn-check" id="radio-1" type="radio" value="option2"
+                                                name="radio">
+                                            <label tabindex="0" for="radio-1"
+                                                class="btn btn-sm btn-outline-secondary"><span class="me-1 fw-normal"><i
+                                                        class="ri-article-line fs-6"></i></span>Bulk Action</label>
+                                            <input class="btn-check" id="radio-2" type="radio" value="option3"
+                                                name="radio">
+                                            <label tabindex="0" for="radio-2"
+                                                class="btn btn-sm btn-outline-secondary"><span class="fw-normal"><i
+                                                        class="ri-loop-right-line fs-6"></i></span></label>
+                                        </div>
+                                        <div class="d-flex flex-wrap align-items-center gap-2">
+                                            <div class="input-icon">
+                                                <span class="search-icon"><i class="bi bi-search"></i></span>
+                                                <input class="form-control" type="text" placeholder="Search"
+                                                    aria-label="attendence search input" id="cusListSearchInput">
+                                            </div>
+                                            <div class="dropdown">
+                                                <button type="button"
+                                                    class="btn btn-outline-secondary z-1 rounded-pill dropdown-toggle"
+                                                    id="cusTypeFilter" data-bs-toggle="dropdown"
+                                                    aria-expanded="false"><span class="me-1"><i
+                                                            class="bi bi-filter"></i></span> <span
+                                                        class="filter-label">Filter</span> <span><i
+                                                            class="bi bi-chevron-down drop-caret"></i></span></button>
+                                                <div aria-labelledby="cusTypeFilter"
+                                                    class="dropdown-menu dropdown-menu-sm-end">
+                                                    <a class="dropdown-item" href="#" data-discover="true"
+                                                        data-status="">All</a>
+                                                    <a class="dropdown-item" href="#" data-discover="true"
+                                                        data-status="New">New</a>
+                                                    <a class="dropdown-item" href="#" data-discover="true"
+                                                        data-status="Returning">Returning</a>
+                                                    <a class="dropdown-item" href="#" data-discover="true"
+                                                        data-status="VIP">VIP</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="datatable-wrapper">
+                                        <table id="customersListTable" class="table table-hover table-nowrap">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th class="py-3">Customer Name</th>
+                                                    <th class="py-3">Email</th>
+                                                    <th class="py-3">Contact No</th>
+                                                    <th class="py-3 text-center">Customer Type</th>
+                                                    <th class="py-3">Project Name</th>
+                                                    <th class="py-3 text-center">Assigned To</th>
+                                                    <th class="py-3 text-center">Status</th>
+                                                    <th class="py-3 text-end">Notes / Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- cus-1 -->
+                                                <tr class="align-middle">
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <div class="avatar avatar-md">
+                                                                <img src="images/avatars/avatar2.jpg" alt="Employee Img"
+                                                                    class="w-100 h-100 rounded-circle">
+                                                            </div>
+                                                            <h6 class="mb-0 fw-semibold text-dark"><span>Tiger
+                                                                    Nixon</span>
+                                                            </h6>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-1 text-dark"><span class="me-1 text-muted"><i
+                                                                    class="ri-mail-line"></i></span>tiger.nixon@yahoo.com
+                                                        </p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-dark"><span class="me-1 text-muted"><i
+                                                                    class="ri-phone-line"></i></span>+1 965 567 890</p>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <span class="badge bg-outline-primary fw-medium">New</span>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-dark fw-medium">Social Media Campaign</p>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <div class="avatar-group justify-content-center">
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                title="Nia Dubey"><img alt="Nia Dubey"
+                                                                    class="w-100 h-100"
+                                                                    src="../images/avatars/avatar5.jpg"></div>
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                title="Jaya Shah"><img alt="Jaya Shah"
+                                                                    class="w-100 h-100"
+                                                                    src="../images/avatars/avatar8.jpg"></div>
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                title="Rahul Sharma"><img alt="Rahul Sharma"
+                                                                    class="w-100 h-100"
+                                                                    src="../images/avatars/avatar6.jpg"></div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <p class="mb-0 fw-medium text-success"><span class="me-1"><i
+                                                                    class="ri-user-follow-line fs-18"></i></span>Active
+                                                        </p>
+                                                    </td>
+                                                    <td>
+                                                        <div
+                                                            class="d-flex justify-content-end align-items-center gap-2">
+                                                            <a href="#"
+                                                                class="btn btn-outline-secondary avatar avatar-sm p-0"><span><i
+                                                                        class="ri-sticky-note-add-line fw-normal"></i></span></a>
+                                                            <a href="#"
+                                                                class="btn btn-outline-danger btn-delete avatar avatar-sm p-0"><span><i
+                                                                        class="ri-delete-bin-7-line fw-normal"></i></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!-- cus-2 -->
+                                                <tr class="align-middle">
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <div class="avatar avatar-md">
+                                                                <img src="images/avatars/avatar1.jpg" alt="Employee Img"
+                                                                    class="w-100 h-100 rounded-circle">
+                                                            </div>
+                                                            <h6 class="mb-0 fw-semibold text-dark"><span>Joyce
+                                                                    Neal</span>
+                                                            </h6>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-1 text-dark"><span class="me-1 text-muted"><i
+                                                                    class="ri-mail-line"></i></span>joyce.neal@yahoo.com
+                                                        </p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-dark"><span class="me-1 text-muted"><i
+                                                                    class="ri-phone-line"></i></span>+1 965 487 890</p>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <span class="badge bg-outline-blue fw-medium">Returning</span>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-dark fw-medium">SEO Optimization</p>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <div class="avatar-group justify-content-center">
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                title="Ollivia Joy"><img alt="Ollivia Joy"
+                                                                    class="w-100 h-100"
+                                                                    src="../images/avatars/avatar7.jpg"></div>
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                title="Mark Lee"><img alt="Mark Lee" class="w-100 h-100"
+                                                                    src="../images/avatars/avatar9.jpg"></div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <p class="mb-0 fw-medium text-danger"><span class="me-1"><i
+                                                                    class="ri-user-forbid-line fs-18"></i></span>Inactive
+                                                        </p>
+                                                    </td>
+                                                    <td>
+                                                        <div
+                                                            class="d-flex justify-content-end align-items-center gap-2">
+                                                            <a href="#"
+                                                                class="btn btn-outline-secondary avatar avatar-sm p-0"><span><i
+                                                                        class="ri-sticky-note-add-line fw-normal"></i></span></a>
+                                                            <a href="#"
+                                                                class="btn btn-outline-danger btn-delete avatar avatar-sm p-0"><span><i
+                                                                        class="ri-delete-bin-7-line fw-normal"></i></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!-- cus-3 -->
+                                                <tr class="align-middle">
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <div class="avatar avatar-md">
+                                                                <img src="images/avatars/avatar3.jpg" alt="Employee Img"
+                                                                    class="w-100 h-100 rounded-circle">
+                                                            </div>
+                                                            <h6 class="mb-0 fw-semibold text-dark"><span>Ethan
+                                                                    Ray</span>
+                                                            </h6>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-1 text-dark"><span class="me-1 text-muted"><i
+                                                                    class="ri-mail-line"></i></span>ethan.ray@yahoo.com
+                                                        </p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-dark"><span class="me-1 text-muted"><i
+                                                                    class="ri-phone-line"></i></span>+1 145 487 890</p>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <span class="badge bg-outline-warning fw-medium">VIP</span>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-dark fw-medium">Product Launch</p>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <div class="avatar-group justify-content-center">
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                title="Prem Mehta"><img alt="Ollivia Joy"
+                                                                    class="w-100 h-100"
+                                                                    src="../images/avatars/avatar1.jpg"></div>
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                title="Nisha Shahu"><img alt="Mark Lee"
+                                                                    class="w-100 h-100"
+                                                                    src="../images/avatars/avatar3.jpg"></div>
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                title="Neha Sharma"><img alt="Ollivia Joy"
+                                                                    class="w-100 h-100"
+                                                                    src="../images/avatars/avatar10.jpg"></div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <p class="mb-0 fw-medium text-secondary"><span class="me-1"><i
+                                                                    class="ri-user-forbid-line fs-18"></i></span>Blocked
+                                                        </p>
+                                                    </td>
+                                                    <td>
+                                                        <div
+                                                            class="d-flex justify-content-end align-items-center gap-2">
+                                                            <a href="#"
+                                                                class="btn btn-outline-secondary avatar avatar-sm p-0"><span><i
+                                                                        class="ri-sticky-note-add-line fw-normal"></i></span></a>
+                                                            <a href="#"
+                                                                class="btn btn-outline-danger btn-delete avatar avatar-sm p-0"><span><i
+                                                                        class="ri-delete-bin-7-line fw-normal"></i></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!-- cus-4 -->
+                                                <tr class="align-middle">
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <div class="avatar avatar-md">
+                                                                <img src="images/avatars/avatar4.jpg" alt="Employee Img"
+                                                                    class="w-100 h-100 rounded-circle">
+                                                            </div>
+                                                            <h6 class="mb-0 fw-semibold text-dark"><span>Kelvin
+                                                                    Yia</span>
+                                                            </h6>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-1 text-dark"><span class="me-1 text-muted"><i
+                                                                    class="ri-mail-line"></i></span>kelvin.yia@yahoo.com
+                                                        </p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-dark"><span class="me-1 text-muted"><i
+                                                                    class="ri-phone-line"></i></span>+1 145 784 890</p>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <span class="badge bg-outline-warning fw-medium">VIP</span>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-dark fw-medium">Market Analysis</p>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <div class="avatar-group justify-content-center">
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                title="Kelvin Yia"><img alt="Kelvin Yia"
+                                                                    class="w-100 h-100"
+                                                                    src="../images/avatars/avatar9.jpg"></div>
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                title="Sarah Khan"><img alt="Sarah Khan"
+                                                                    class="w-100 h-100"
+                                                                    src="../images/avatars/avatar8.jpg"></div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <p class="mb-0 fw-medium text-success"><span class="me-1"><i
+                                                                    class="ri-user-follow-line fs-18"></i></span>Active
+                                                        </p>
+                                                    </td>
+                                                    <td>
+                                                        <div
+                                                            class="d-flex justify-content-end align-items-center gap-2">
+                                                            <a href="#"
+                                                                class="btn btn-outline-secondary avatar avatar-sm p-0"><span><i
+                                                                        class="ri-sticky-note-add-line fw-normal"></i></span></a>
+                                                            <a href="#"
+                                                                class="btn btn-outline-danger btn-delete avatar avatar-sm p-0"><span><i
+                                                                        class="ri-delete-bin-7-line fw-normal"></i></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!-- cus-5 -->
+                                                <tr class="align-middle">
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <div class="avatar avatar-md">
+                                                                <img src="images/avatars/avatar5.jpg" alt="Employee Img"
+                                                                    class="w-100 h-100 rounded-circle">
+                                                            </div>
+                                                            <h6 class="mb-0 fw-semibold text-dark"><span>Ollivia
+                                                                    Joy</span>
+                                                            </h6>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-1 text-dark"><span class="me-1 text-muted"><i
+                                                                    class="ri-mail-line"></i></span>ollivia.joy@yahoo.com
+                                                        </p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-dark"><span class="me-1 text-muted"><i
+                                                                    class="ri-phone-line"></i></span>+1 145 784 742</p>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <span class="badge bg-outline-blue fw-medium">Returning</span>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-dark fw-medium">ERP Implementation</p>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <div class="avatar-group justify-content-center">
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                title="Prem Mehta"><img alt="Prem Mehta"
+                                                                    class="w-100 h-100"
+                                                                    src="../images/avatars/avatar1.jpg"></div>
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                title="Mark Lee"><img alt="Mark Lee" class="w-100 h-100"
+                                                                    src="../images/avatars/avatar10.jpg"></div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <p class="mb-0 fw-medium text-success"><span class="me-1"><i
+                                                                    class="ri-user-follow-line fs-18"></i></span>Active
+                                                        </p>
+                                                    </td>
+                                                    <td>
+                                                        <div
+                                                            class="d-flex justify-content-end align-items-center gap-2">
+                                                            <a href="#"
+                                                                class="btn btn-outline-secondary avatar avatar-sm p-0"><span><i
+                                                                        class="ri-sticky-note-add-line fw-normal"></i></span></a>
+                                                            <a href="#"
+                                                                class="btn btn-outline-danger btn-delete avatar avatar-sm p-0"><span><i
+                                                                        class="ri-delete-bin-7-line fw-normal"></i></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!-- cus-6 -->
+                                                <tr class="align-middle">
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <div class="avatar avatar-md">
+                                                                <img src="images/avatars/avatar6.jpg" alt="Employee Img"
+                                                                    class="w-100 h-100 rounded-circle">
+                                                            </div>
+                                                            <h6 class="mb-0 fw-semibold text-dark"><span>Mark Lee</span>
+                                                            </h6>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-1 text-dark"><span class="me-1 text-muted"><i
+                                                                    class="ri-mail-line"></i></span>mark.lee@yahoo.com
+                                                        </p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-dark"><span class="me-1 text-muted"><i
+                                                                    class="ri-phone-line"></i></span>+1 145 486 742</p>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <span class="badge bg-outline-primary fw-medium">New</span>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-dark fw-medium">Content Marketing</p>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <div class="avatar-group justify-content-center">
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                title="Ethan Ray"><img alt="Ethan Ray"
+                                                                    class="w-100 h-100"
+                                                                    src="../images/avatars/avatar2.jpg"></div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <p class="mb-0 fw-medium text-danger"><span class="me-1"><i
+                                                                    class="ri-user-forbid-line fs-18"></i></span>Inactive
+                                                        </p>
+                                                    </td>
+                                                    <td>
+                                                        <div
+                                                            class="d-flex justify-content-end align-items-center gap-2">
+                                                            <a href="#"
+                                                                class="btn btn-outline-secondary avatar avatar-sm p-0"><span><i
+                                                                        class="ri-sticky-note-add-line fw-normal"></i></span></a>
+                                                            <a href="#"
+                                                                class="btn btn-outline-danger btn-delete avatar avatar-sm p-0"><span><i
+                                                                        class="ri-delete-bin-7-line fw-normal"></i></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!-- cus-7 -->
+                                                <tr class="align-middle">
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <div class="avatar avatar-md">
+                                                                <img src="images/avatars/avatar7.jpg" alt="Employee Img"
+                                                                    class="w-100 h-100 rounded-circle">
+                                                            </div>
+                                                            <h6 class="mb-0 fw-semibold text-dark"><span>Sophia
+                                                                    Jackson</span>
+                                                            </h6>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-1 text-dark"><span class="me-1 text-muted"><i
+                                                                    class="ri-mail-line"></i></span>sophia.jackson@yahoo.com
+                                                        </p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-dark"><span class="me-1 text-muted"><i
+                                                                    class="ri-phone-line"></i></span>+1 476 784 742</p>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <span class="badge bg-outline-primary fw-medium">New</span>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-dark fw-medium">Inventory Automation</p>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <div class="avatar-group justify-content-center">
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                title="Prem Mehta"><img alt="Prem Mehta"
+                                                                    class="w-100 h-100"
+                                                                    src="../images/avatars/avatar4.jpg"></div>
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                title="Mark Lee"><img alt="Mark Lee" class="w-100 h-100"
+                                                                    src="../images/avatars/avatar6.jpg"></div>
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                title="shreya Kapoor"><img alt="Mark Lee"
+                                                                    class="w-100 h-100"
+                                                                    src="../images/avatars/avatar8.jpg"></div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <p class="mb-0 fw-medium text-success"><span class="me-1"><i
+                                                                    class="ri-user-follow-line fs-18"></i></span>Active
+                                                        </p>
+                                                    </td>
+                                                    <td>
+                                                        <div
+                                                            class="d-flex justify-content-end align-items-center gap-2">
+                                                            <a href="#"
+                                                                class="btn btn-outline-secondary avatar avatar-sm p-0"><span><i
+                                                                        class="ri-sticky-note-add-line fw-normal"></i></span></a>
+                                                            <a href="#"
+                                                                class="btn btn-outline-danger btn-delete avatar avatar-sm p-0"><span><i
+                                                                        class="ri-delete-bin-7-line fw-normal"></i></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!-- cus-8 -->
+                                                <tr class="align-middle">
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <div class="avatar avatar-md">
+                                                                <img src="images/avatars/avatar8.jpg" alt="Employee Img"
+                                                                    class="w-100 h-100 rounded-circle">
+                                                            </div>
+                                                            <h6 class="mb-0 fw-semibold text-dark"><span>Laura
+                                                                    Taylor</span>
+                                                            </h6>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-1 text-dark"><span class="me-1 text-muted"><i
+                                                                    class="ri-mail-line"></i></span>laura.taylor@yahoo.com
+                                                        </p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-dark"><span class="me-1 text-muted"><i
+                                                                    class="ri-phone-line"></i></span>+1 781 487 890</p>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <span class="badge bg-outline-warning fw-medium">VIP</span>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-dark fw-medium">Cloud Migration</p>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <div class="avatar-group justify-content-center">
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                title="Shreya Kapoor"><img alt="Shreya Kapoor"
+                                                                    class="w-100 h-100"
+                                                                    src="../images/avatars/avatar8.jpg">
+                                                            </div>
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                title="Ollivia Joy"><img alt="Ollivia Joy"
+                                                                    class="w-100 h-100"
+                                                                    src="../images/avatars/avatar7.jpg"></div>
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                title="Raj Grover"><img alt="Raj Grover"
+                                                                    class="w-100 h-100"
+                                                                    src="../images/avatars/avatar9.jpg"></div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <p class="mb-0 fw-medium text-danger"><span class="me-1"><i
+                                                                    class="ri-user-forbid-line fs-18"></i></span>Inactive
+                                                        </p>
+                                                    </td>
+                                                    <td>
+                                                        <div
+                                                            class="d-flex justify-content-end align-items-center gap-2">
+                                                            <a href="#"
+                                                                class="btn btn-outline-secondary avatar avatar-sm p-0"><span><i
+                                                                        class="ri-sticky-note-add-line fw-normal"></i></span></a>
+                                                            <a href="#"
+                                                                class="btn btn-outline-danger btn-delete avatar avatar-sm p-0"><span><i
+                                                                        class="ri-delete-bin-7-line fw-normal"></i></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!-- cus-9 -->
+                                                <tr class="align-middle">
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <div class="avatar avatar-md">
+                                                                <img src="images/avatars/avatar9.jpg" alt="Employee Img"
+                                                                    class="w-100 h-100 rounded-circle">
+                                                            </div>
+                                                            <h6 class="mb-0 fw-semibold text-dark"><span>Daniel
+                                                                    Miller</span>
+                                                            </h6>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-1 text-dark"><span class="me-1 text-muted"><i
+                                                                    class="ri-mail-line"></i></span>daniel.miller@yahoo.com
+                                                        </p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-dark"><span class="me-1 text-muted"><i
+                                                                    class="ri-phone-line"></i></span>+1 145 783 890</p>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <span class="badge bg-outline-blue fw-medium">Returning</span>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-dark fw-medium">Fleet Tracking System</p>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <div class="avatar-group justify-content-center">
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                title="Prem Mehta"><img alt="Ollivia Joy"
+                                                                    class="w-100 h-100"
+                                                                    src="../images/avatars/avatar1.jpg"></div>
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                title="Nisha Shahu"><img alt="Mark Lee"
+                                                                    class="w-100 h-100"
+                                                                    src="../images/avatars/avatar3.jpg"></div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <p class="mb-0 fw-medium text-secondary"><span class="me-1"><i
+                                                                    class="ri-user-forbid-line fs-18"></i></span>Blocked
+                                                        </p>
+                                                    </td>
+                                                    <td>
+                                                        <div
+                                                            class="d-flex justify-content-end align-items-center gap-2">
+                                                            <a href="#"
+                                                                class="btn btn-outline-secondary avatar avatar-sm p-0"><span><i
+                                                                        class="ri-sticky-note-add-line fw-normal"></i></span></a>
+                                                            <a href="#"
+                                                                class="btn btn-outline-danger btn-delete avatar avatar-sm p-0"><span><i
+                                                                        class="ri-delete-bin-7-line fw-normal"></i></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <!-- cus-10 -->
+                                                <tr class="align-middle">
+                                                    <td>
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <div class="avatar avatar-md">
+                                                                <img src="images/avatars/avatar10.jpg"
+                                                                    alt="Employee Img"
+                                                                    class="w-100 h-100 rounded-circle">
+                                                            </div>
+                                                            <h6 class="mb-0 fw-semibold text-dark"><span>Priya
+                                                                    Sharma</span>
+                                                            </h6>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-1 text-dark"><span class="me-1 text-muted"><i
+                                                                    class="ri-mail-line"></i></span>priya.sharma@gmail.com
+                                                        </p>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-dark"><span class="me-1 text-muted"><i
+                                                                    class="ri-phone-line"></i></span>+1 145 783 890</p>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <span class="badge bg-outline-primary fw-medium">New</span>
+                                                    </td>
+                                                    <td>
+                                                        <p class="mb-0 text-dark fw-medium">Logistics Dashboard</p>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <div class="avatar-group justify-content-center">
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                title="Prem Mehta"><img alt="Ollivia Joy"
+                                                                    class="w-100 h-100"
+                                                                    src="../images/avatars/avatar4.jpg"></div>
+                                                            <div class="avatar rounded-circle avatar-md overflow-hidden"
+                                                                data-bs-toggle="tooltip" data-bs-placement="top"
+                                                                title="Nisha Shahu"><img alt="Mark Lee"
+                                                                    class="w-100 h-100"
+                                                                    src="../images/avatars/avatar7.jpg"></div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <p class="mb-0 fw-medium text-secondary"><span class="me-1"><i
+                                                                    class="ri-user-forbid-line fs-18"></i></span>Blocked
+                                                        </p>
+                                                    </td>
+                                                    <td>
+                                                        <div
+                                                            class="d-flex justify-content-end align-items-center gap-2">
+                                                            <a href="#"
+                                                                class="btn btn-outline-secondary avatar avatar-sm p-0"><span><i
+                                                                        class="ri-sticky-note-add-line fw-normal"></i></span></a>
+                                                            <a href="#"
+                                                                class="btn btn-outline-danger btn-delete avatar avatar-sm p-0"><span><i
+                                                                        class="ri-delete-bin-7-line fw-normal"></i></span></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div
+                                        class="table-bottom d-flex flex-wrap justify-content-center justify-content-sm-between align-items-center gap-3 mt-4">
+                                        <div id="table-info" class="order-sm-1 order-2"></div>
+                                        <div id="table-pagination" class="order-sm-2 order-1">
+                                            <nav aria-label="customer list pagination">
+                                                <ul class="pagination mb-0">
+                                                    <li class="page-item disabled">
+                                                        <a class="page-link" href="#" aria-label="Previous">
+                                                            <span aria-hidden="true"><i
+                                                                    class="ri-arrow-left-double-line"></i></span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="page-item mx-1 disabled"><a class="page-link" href="#"
+                                                            aria-label="Previous">
+                                                            <span aria-hidden="true"><i
+                                                                    class="ri-arrow-left-s-line"></i></span>
+                                                        </a></li>
+                                                    <li class="page-item"><a class="page-link px-3" href="#">1</a></li>
+                                                    <li class="page-item mx-1 disabled"><a class="page-link" href="#"
+                                                            aria-label="Next">
+                                                            <span aria-hidden="true"><i
+                                                                    class="ri-arrow-right-s-line"></i></span>
+                                                        </a></li>
+                                                    <li class="page-item disabled">
+                                                        <a class="page-link" href="#" aria-label="Next">
+                                                            <span aria-hidden="true"><i
+                                                                    class="ri-arrow-right-double-line"></i></span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            %%include('./partials/layout/footer.html')
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal fade" id="deleteCustomerModal" tabindex="-1" aria-labelledby="deleteCustomerModalLabel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteCustomerModalLabel">Confirm
+                        Delete
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">Are you sure you want to delete this item?</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" id="confirmDeleteCus">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    %%include('./partials/layout/right-sidebar.html')
+
+    <!-- %%include('./partials/right-sidebar.html')
+    %%include('./partials/back-to-top.html') -->
+
+    %%include('./partials/layout/footer-js.html')
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="plugins/datatables.net/js/dataTables.min.js"></script>
+    <script src="plugins/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+    <script src="plugins/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="plugins/datatables.net-responsive-dt/js/responsive.dataTables.min.js"></script>
+    <script src="js/pages/customer_list.js"></script>
+
+</body>
+
+</html>

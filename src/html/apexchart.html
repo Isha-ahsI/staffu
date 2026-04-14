@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <div class="page-layout">
+        %%include('./partials/layout/header.html')
+        %%include('./partials/layout/left-sidebar.html')
+        <div class="page-wrapper">
+            <div class="page-content">
+                %%include('./partials/components/page-title.html', { pageTitle: 'Apexcharts', pagePrTitle: 'Charts' })
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-6 col-12 mb-4">
+                            <div class="card mb-0 h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-4">Column with Markers</h5>
+                                    <div id="columnMarkerChart"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12 mb-4">
+                            <div class="card mb-0 h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-4">Dumbbell Chart</h5>
+                                    <div id="dumbbellChart"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-12 mb-4">
+                            <div class="card mb-0 h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-4">Gradient Donut</h5>
+                                    <div id="gradientDonut"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-12 mb-4">
+                            <div class="card mb-0 h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-4">Stacked Chart</h5>
+                                    <div id="stackedChart"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-10 col-12 mb-4">
+                            <div class="card mb-0 h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-4"> Grouped Stacked Bars</h5>
+                                    <div id="groupedStackedChart"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-sm-6 col-12 mb-4">
+                            <div class="card mb-0 h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-4">Stroked Gauge</h5>
+                                    <div id="stackedGauge"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-sm-6 col-12 mb-4">
+                            <div class="card mb-0 h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-4">Polar Area Chart</h5>
+                                    <div id="polarArea"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-12 mb-4">
+                            <div class="card mb-0 h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-4">Radar – Multiple Series</h5>
+                                    <div id="radarChart"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-12 mb-4">
+                            <div class="card mb-0 h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-4">Stepline Chart</h5>
+                                    <div id="steplineChart"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12 mb-4">
+                            <div class="card mb-0 h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-4">Distributed Treemap Chart</h5>
+                                    <div id="treemapChart"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12 mb-4">
+                            <div class="card mb-0 h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-4">Horizontal BoxPlot Chart</h5>
+                                    <div id="boxplotChart"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12 mb-4">
+                            <div class="card mb-0 h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-4">Timeline Chart</h5>
+                                    <div id="timelineChart"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12 mb-4">
+                            <div class="card mb-0 h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-4"> Scatter Chart</h5>
+                                    <div id="scatterChart"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            %%include('./partials/layout/footer.html')
+
+        </div>
+    </div>
+    %%include('./partials/layout/right-sidebar.html')
+
+    <!-- %%include('./partials/right-sidebar.html')
+    %%include('./partials/back-to-top.html') -->
+
+    %%include('./partials/layout/footer-js.html')
+    <script src="plugins/apexcharts/apexcharts.min.js"></script>
+    <script src="js/pages/apexcharts.js"></script>
+
+</body>
+
+</html>

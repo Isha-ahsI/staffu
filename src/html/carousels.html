@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <div class="page-layout">
+        %%include('./partials/layout/header.html')
+        %%include('./partials/layout/left-sidebar.html')
+
+        <div class="page-wrapper">
+            <div class="page-content">
+                %%include('./partials/components/page-title.html', { pageTitle: 'Carousels', pagePrTitle: 'UI Elements' })
+                <div class="container-fluid">
+                    <div class="row justify-content-center">
+                        <!-- Default Carousel -->
+                        <div class="col-lg-6 col-md-10 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Default Carousel</h5>
+                                    <div id="carouselExampleIndicators" class="carousel slide rounded-4 overflow-hidden">
+                                        <div class="carousel-indicators">
+                                            <button type="button" data-bs-target="#carouselExampleIndicators"
+                                                data-bs-slide-to="0" class="active" aria-current="true"
+                                                aria-label="Slide 1"></button>
+                                            <button type="button" data-bs-target="#carouselExampleIndicators"
+                                                data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                            <button type="button" data-bs-target="#carouselExampleIndicators"
+                                                data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                        </div>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="../images/card_img/img6.jpg" class="d-block w-100"
+                                                    alt="carousel image">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="../images/card_img/img1.jpg" class="d-block w-100"
+                                                    alt="carousel image">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="../images/card_img/img4.jpg" class="d-block w-100"
+                                                    alt="carousel image">
+                                            </div>
+                                        </div>
+                                        <button class="carousel-control-prev" type="button"
+                                            data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button"
+                                            data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Captions Carousel -->
+                        <div class="col-lg-6 col-md-10 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Captions Carousel</h5>
+                                    <div id="carouselExampleCaptions" class="carousel slide rounded-4 overflow-hidden" data-bs-ride="carousel">
+                                        <div class="carousel-indicators z-3">
+                                            <button type="button" data-bs-target="#carouselExampleCaptions"
+                                                data-bs-slide-to="0" class="active" aria-current="true"
+                                                aria-label="Slide 1"></button>
+                                            <button type="button" data-bs-target="#carouselExampleCaptions"
+                                                data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                            <button type="button" data-bs-target="#carouselExampleCaptions"
+                                                data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                        </div>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active position-relative">
+                                                <img src="../images/card_img/img6.jpg" class="d-block w-100 z-1"
+                                                    alt="carousel image">
+                                                <div
+                                                    class="overlay h-100 w-100 bg-dark bg-opacity-25 position-absolute top-0 start-0 z-2 pe-none">
+                                                </div>
+                                                <div class="carousel-caption d-none d-sm-block">
+                                                    <h4 class="fw-semibold z-3 position-relative">First slide label</h4>
+                                                    <p class="fw-medium z-3 position-relative">Some representative
+                                                        placeholder content for the first slide.</p>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="../images/card_img/img1.jpg" class="d-block w-100"
+                                                    alt="carousel image">
+                                                <div
+                                                    class="overlay h-100 w-100 bg-dark bg-opacity-25 position-absolute top-0 start-0 z-2 pe-none">
+                                                </div>
+                                                <div class="carousel-caption d-none d-sm-block">
+                                                    <h4 class="fw-semibold z-3 position-relative">Second slide label</h4>
+                                                    <p class="fw-medium z-3 position-relative">Some representative
+                                                        placeholder content for the second slide.</p>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="../images/card_img/img4.jpg" class="d-block w-100"
+                                                    alt="carousel image">
+                                                <div
+                                                    class="overlay h-100 w-100 bg-dark bg-opacity-25 position-absolute top-0 start-0 z-2 pe-none">
+                                                </div>
+                                                <div class="carousel-caption d-none d-sm-block">
+                                                    <h4 class="fw-semibold z-3 position-relative">Third slide label</h4>
+                                                    <p class="fw-medium z-3 position-relative">Some representative
+                                                        placeholder content for the third slide.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="carousel-control-prev z-3" type="button"
+                                            data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next z-3" type="button"
+                                            data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Crossfade Carousel with Autoplay-->
+                        <div class="col-lg-6 col-md-10 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Crossfade Carousel with Autoplay</h5>
+                                    <div id="carouselExampleAutoplaying"
+                                        class="carousel slide carousel-fade rounded-4 overflow-hidden"
+                                        data-bs-ride="carousel">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="../images/card_img/img6.jpg" class="d-block w-100" alt="...">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="../images/card_img/img1.jpg" class="d-block w-100" alt="...">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="../images/card_img/img4.jpg" class="d-block w-100" alt="...">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- No transition Carousel -->
+                        <div class="col-lg-6 col-md-10 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">No Transition Carousel</h5>
+                                    <div id="carouselNoTransition"
+                                        class="carousel carousel-no-animation rounded-4 overflow-hidden"
+                                        data-bs-ride="false">
+                                        <div class="carousel-indicators z-3">
+                                            <button type="button" data-bs-target="#carouselNoTransition"
+                                                data-bs-slide-to="0" class="active" aria-current="true"
+                                                aria-label="Slide 1"></button>
+                                            <button type="button" data-bs-target="#carouselNoTransition"
+                                                data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                            <button type="button" data-bs-target="#carouselNoTransition"
+                                                data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                        </div>
+
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active position-relative">
+                                                <img src="../images/card_img/img6.jpg" class="d-block w-100"
+                                                    alt="carousel image">
+                                                <div
+                                                    class="overlay h-100 w-100 bg-dark bg-opacity-25 position-absolute top-0 start-0 z-2 pe-none">
+                                                </div>
+                                                <div class="carousel-caption d-none d-sm-block">
+                                                    <h4 class="fw-semibold z-3 position-relative">First slide label</h4>
+                                                    <p class="fw-medium z-3 position-relative">Some representative
+                                                        placeholder content for the first slide.</p>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="../images/card_img/img1.jpg" class="d-block w-100"
+                                                    alt="carousel image">
+                                                <div
+                                                    class="overlay h-100 w-100 bg-dark bg-opacity-25 position-absolute top-0 start-0 z-2 pe-none">
+                                                </div>
+                                                <div class="carousel-caption d-none d-sm-block">
+                                                    <h4 class="fw-semibold z-3 position-relative">Second slide label</h4>
+                                                    <p class="fw-medium z-3 position-relative">Some representative
+                                                        placeholder content for the second slide.</p>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="../images/card_img/img4.jpg" class="d-block w-100"
+                                                    alt="carousel image">
+                                                <div
+                                                    class="overlay h-100 w-100 bg-dark bg-opacity-25 position-absolute top-0 start-0 z-2 pe-none">
+                                                </div>
+                                                <div class="carousel-caption d-none d-sm-block">
+                                                    <h4 class="fw-semibold z-3 position-relative">Third slide label</h4>
+                                                    <p class="fw-medium z-3 position-relative">Some representative
+                                                        placeholder content for the third slide.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="carousel-control-prev" type="button"
+                                            data-bs-target="#carouselNoTransition" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon"></span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button"
+                                            data-bs-target="#carouselNoTransition" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            %%include('./partials/layout/footer.html')
+        </div>
+    </div>
+    
+    %%include('./partials/layout/right-sidebar.html')
+    <!-- %%include('./partials/right-sidebar.html')
+    %%include('./partials/back-to-top.html') -->
+
+    %%include('./partials/layout/footer-js.html')
+</body>
+
+</html>

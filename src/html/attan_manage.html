@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <div class="page-layout">
+        %%include('./partials/layout/header.html')
+        %%include('./partials/layout/left-sidebar.html')
+        <div class="page-wrapper">
+            <div class="page-content">
+                %%include('./partials/components/page-title.html', { pageTitle: 'Employee List', pagePrTitle:
+                'Employees' })
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-xl-5 col-12">
+                                    <div class="row">
+                                        <!-- Present Today -->
+                                        <div class="col-xl-6 col-md-3 col-sm-6 col-12 mb-4">
+                                            <div class="card h-100 mb-0">
+                                                <div class="card-header bg-primary text-light fw-medium">
+                                                    <div class="d-flex align-items-center justify-content-between">
+                                                        Present Today <span><i class="bi bi-person-check fs-5"></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <h3 class="text-dark fw-bold mb-0">93</h3>
+                                                        <small><span class="badge badge-sm bg-soft-primary border-0 text-primary">+4</span> vs yesterday</small>
+                                                    </div>
+                                                    <small class="mb-1 text-dark">Employees present today</small>
+                                                    <div class="d-flex flex-wrap justify-content-between align-items-center mt-3 bg-secondary bg-opacity-10 p-2  rounded-3">
+                                                        <small class="fs-12"><span class="fs-14 fw-semibold text-primary me-1">82</span>On-time</small>
+                                                        <small class="fs-12"><span class="fs-14 fw-semibold text-primary me-1">11</span>Late</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Absent -->
+                                        <div class="col-xl-6 col-md-3 col-sm-6 col-12 mb-4">
+                                            <div class="card h-100 mb-0">
+                                                <div class="card-header bg-info text-light fw-medium">
+                                                    <div class="d-flex align-items-center justify-content-between">
+                                                        Absent Today <span><i class="bi bi-person-exclamation fs-5"></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <h3 class="text-dark fw-bold mb-0">2</h3>
+                                                        <small><span class="badge badge-sm bg-soft-info border-0 text-info">-2</span> vs yesterday</small>
+                                                    </div>
+                                                    <small class="mb-1 text-dark">Employees absent today</small>
+                                                    <div class="d-flex flex-wrap justify-content-between align-items-center mt-3 bg-secondary bg-opacity-10 p-2  rounded-3">
+                                                        <small class="fs-12"><span class="fs-14 fw-semibold text-info me-1">02</span>Not present today</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- On leave -->
+                                        <div class="col-xl-12 col-md-6 col-12 mb-4">
+                                            <div class="card h-100 mb-0">
+                                                <div class="card-header bg-danger text-light fw-medium">
+                                                    <div class="d-flex align-items-center justify-content-between">
+                                                        On Leave
+                                                        <span><i class="bi bi-person-x fs-5"></i></span>
+                                                    </div>
+                                                </div>
+                                                <div class="card-body">
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <h3 class="text-dark fw-bold mb-0">6</h3>
+                                                        <small><span
+                                                                class="badge badge-sm bg-soft-danger border-0 text-danger">-1</span>
+                                                            vs yesterday</small>
+                                                    </div>
+                                                    <small class="mb-1 text-dark">Employees on leave today</small>
+                                                    <div
+                                                        class="d-flex flex-wrap justify-content-between align-items-center mt-3 bg-secondary bg-opacity-10 p-2 rounded-3">
+                                                        <small class="fs-12"><span
+                                                                class="fs-14 fw-semibold text-danger me-1">03</span>Annual
+                                                            leave</small>
+                                                        <small class="fs-12"><span
+                                                                class="fs-14 fw-semibold text-danger me-1">02</span>Sick
+                                                            leave</small>
+                                                        <small class="fs-12"><span
+                                                                class="fs-14 fw-semibold text-danger me-1">01</span>Others</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Attendence Overview -->
+                                <div class="col-xl-7 col-12 mb-4">
+                                    <div class="card h-100 mb-0">
+                                        <div class="card-body pb-0">
+                                            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                                                <h5 class="card-title mb-0">Attendance Overview</h5>
+                                                <form>
+                                                    <div class="input-select-icon">
+                                                        <span class="text-muted">
+                                                            <i class="bi bi-calendar2-check input-icon"></i>
+                                                        </span>
+                                                        <select name="PerformanceYearSelect" class="form-select form-select-sm rounded-2" id="PerformanceYearSelect">
+                                                            <option>Last Year</option>
+                                                            <option>This Month</option>
+                                                            <option>Last Month</option>
+                                                            <option>Last 6 Month</option>
+                                                        </select>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div id="attendOverviewChart"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Employee Attandance -->
+                                <div class="col-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title mb-4">Employees Attendance</h5>
+                                            <div
+                                                class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-3">
+                                                <div class="me-auto">
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <select id="attendCustomLength"
+                                                            class="form-select form-select-sm">
+                                                            <option value="5">5</option>
+                                                            <option value="10" selected>10</option>
+                                                            <option value="25">25</option>
+                                                            <option value="50">All</option>
+                                                        </select>
+                                                        <p class="mb-0 text-nowrap">entries per page</p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="d-flex flex-wrap align-items-center gap-3">
+                                                    <div class="input-icon">
+                                                        <span class="search-icon"><i class="bi bi-search"></i></span>
+                                                        <input
+                                                            class="form-control"
+                                                            type="text" placeholder="Search employee"
+                                                            aria-label="attendence search input"
+                                                            id="empAttendSearchInput">
+                                                    </div>
+                                                    <div class="dropdown position-relative me-2">
+                                                        <button type="button"
+                                                            class="btn btn-soft-dark z-1 rounded-pill dropdown-toggle"
+                                                            id="statusFilter2" data-bs-toggle="dropdown"
+                                                            aria-expanded="false"><span class="me-1"><i
+                                                                    class="bi bi-filter"></i></span><span class="filter-label">Filter</span><span class="ms-1"><i class="bi bi-chevron-down drop-caret"></i></span></button>
+                                                        <div aria-labelledby="statusFilter2"
+                                                            class="dropdown-menu dropdown-menu-lg-end">
+                                                            <a class="dropdown-item" href="#" data-discover="true" data-status="">All</a>
+                                                            <a class="dropdown-item" href="#" data-discover="true" data-status="Leave">Leave</a>
+                                                            <a class="dropdown-item" href="#" data-discover="true" data-status="Active">Active</a>
+                                                            <a class="dropdown-item" href="#" data-discover="true" data-status="Absent">Absent</a>
+                                                            <a class="dropdown-item" href="#" data-discover="true" data-status="Half leave">Half leave</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-icon">
+                                                        <span class="cale-icon"><i
+                                                                class="bi bi-calendar4-event"></i></span>
+                                                        <input type="text" id="singleDatePicker"
+                                                            placeholder="Select date" class="form-control" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="datatable-wrapper">
+                                                <table id="attanManageTable" class="table table-hover table-nowrap">
+                                                    <thead class="table-light">
+                                                        <tr>
+                                                            <th class="py-3">
+                                                                <div class="d-flex align-items-center gap-1 lh-1">
+                                                                    <span><i class="ri-user-3-fill fs-5 fw-normal"></i></span> Employee Name / ID
+                                                                </div>
+                                                            </th>
+                                                            <th class="py-3">
+                                                                <div class="d-flex align-items-center gap-1 lh-1">
+                                                                    <span><i class="ri-briefcase-2-line fs-5 fw-normal"></i></span> Designnation
+                                                                </div>
+                                                            </th>
+                                                            <th class="py-3">
+                                                                <div class="d-flex align-items-center gap-1 lh-1">
+                                                                    <span><i class="ri-calendar-line fs-5 fw-normal"></i></span> Date
+                                                                </div>
+                                                            </th>
+                                                            <th class="py-3 text-center">
+                                                                <div class="d-flex justify-content-center align-items-center gap-1 lh-1">
+                                                                    <span><i class="ri-home-office-line fs-5 fw-normal"></i></span> Work model
+                                                                </div>
+                                                            </th>
+                                                            <th class="py-3">
+                                                                <div class="d-flex align-items-center gap-1 lh-1">
+                                                                    <span><i class="ri-login-box-line fs-5 fw-normal"></i></span> Check In-Out
+                                                                </div>
+                                                            </th>
+                                                            <th class="py-3">
+                                                                <div class="d-flex align-items-center gap-1 lh-1">
+                                                                    <span><i class="ri-hourglass-2-fill fs-5 fw-normal"></i></span> Duration
+                                                                </div>
+                                                            </th>
+                                                            <th class="py-3">
+                                                                <div class="d-flex align-items-center gap-1 lh-1">
+                                                                    <span><i class="ri-time-line fs-5 fw-normal"></i></span> Overtime
+                                                                </div>
+                                                            </th>
+                                                            <th class="py-3 text-center">
+                                                                <div class="d-flex align-items-center justify-content-center gap-1 lh-1">
+                                                                    <span><i class="ri-checkbox-circle-line fs-5 fw-normal"></i></span> Status
+                                                                </div>
+                                                            </th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <!-- emp1 -->
+                                                        <tr class="align-middle">
+                                                            <td>
+                                                                <div class="d-flex align-items-center gap-3">
+                                                                    <img alt="Employee Profile Image"
+                                                                        class="avatar-img-lg rounded-circle"
+                                                                        src="/images/avatars/avatar1.jpg">
+                                                                    <div class="d-flex flex-column">
+                                                                        <h6 class="mb-1 fw-semibold text-dark">Joyce
+                                                                            Neal
+                                                                        </h6>
+                                                                        <small>EMP-0117</small>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex flex-column">
+                                                                    <h6 class="mb-1 text-dark">Software Engineer</h6>
+                                                                    <small>IT Department</small>
+                                                                </div>
+                                                            </td>
+                                                            <td class="fw-medium text-dark">19 Jan 2026</td>
+                                                            <td class="text-center fw-medium text-dark"><span
+                                                                    class="text-primary me-1"><i
+                                                                        class="ri-circle-line fs-12"></i></span>Hybrid
+                                                            </td>
+                                                            <td class="fw-medium text-dark">
+                                                                08:55 AM - 06:45 PM
+                                                            </td>
+                                                            <td class="fw-medium text-dark">8h 10m</td>
+                                                            <td class="fw-medium text-dark">10m</td>
+                                                            <td class="text-center"><span
+                                                                    class="badge bg-soft-success rounded-pill">Active</span>
+                                                            </td>
+                                                        </tr>
+                                                        <!-- emp2 -->
+                                                        <tr class="align-middle">
+                                                            <td>
+                                                                <div class="d-flex align-items-center gap-3">
+                                                                    <img alt="Employee Profile Image"
+                                                                        class="avatar-img-lg rounded-circle"
+                                                                        src="/images/avatars/avatar2.jpg">
+                                                                    <div class="d-flex flex-column">
+                                                                        <h6 class="mb-1 fw-semibold text-dark">Tiger
+                                                                            Nixon
+                                                                        </h6>
+                                                                        <small>EMP-0234</small>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex flex-column">
+                                                                    <h6 class="mb-1 text-dark">Project Manager</h6>
+                                                                    <small>Project Management</small>
+                                                                </div>
+                                                            </td>
+                                                            <td class="fw-medium text-dark">19 Jan 2026</td>
+                                                            <td class="text-center fw-medium"><span
+                                                                    class="text-primary me-1"><i
+                                                                        class="ri-circle-fill fs-12"></i></span>On-site
+                                                            </td>
+                                                            <td class="fw-medium text-dark">
+                                                                09:10 AM - 06:25 PM
+                                                            </td>
+                                                            <td class="fw-medium text-dark">8h 15m</td>
+                                                            <td class="fw-medium text-dark">15m</td>
+                                                            <td class="text-center"><span
+                                                                    class="badge bg-soft-success rounded-pill">Active</span>
+                                                            </td>
+                                                        </tr>
+                                                        <!-- emp3 -->
+                                                        <tr class="align-middle">
+                                                            <td>
+                                                                <div class="d-flex align-items-center gap-3">
+                                                                    <img alt="Employee Profile Image"
+                                                                        class="avatar-img-lg rounded-circle"
+                                                                        src="/images/avatars/avatar3.jpg">
+                                                                    <div class="d-flex flex-column">
+                                                                        <h6 class="mb-1 fw-semibold text-dark">Ethan Ray
+                                                                        </h6>
+                                                                        <small>EMP-0223</small>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex flex-column">
+                                                                    <h6 class="mb-1 text-dark">Customer Support</h6>
+                                                                    <small>Customer service</small>
+                                                                </div>
+                                                            </td>
+                                                            <td class="fw-medium text-dark">19 Jan 2026</td>
+                                                            <td class="text-center fw-medium"><span
+                                                                    class="text-primary me-1"><i
+                                                                        class="ri-circle-fill fs-12"></i></span>On-site
+                                                            </td>
+                                                            <td class="fw-medium text-dark">
+                                                                --:-- -- - --:-- --
+                                                            </td>
+                                                            <td class="fw-medium text-dark">--</td>
+                                                            <td class="fw-medium text-dark">--</td>
+                                                            <td class="text-center"><span
+                                                                    class="badge bg-soft-danger fs-14 fw-semibold"><i
+                                                                        class="bi bi-x-circle me-1"></i>Absent</span>
+                                                            </td>
+                                                        </tr>
+                                                        <!-- emp4 -->
+                                                        <tr class="align-middle">
+                                                            <td>
+                                                                <div class="d-flex align-items-center gap-3">
+                                                                    <img alt="Employee Profile Image"
+                                                                        class="avatar-img-lg rounded-circle"
+                                                                        src="/images/avatars/avatar4.jpg">
+                                                                    <div class="d-flex flex-column">
+                                                                        <h6 class="mb-1 fw-semibold text-dark">Kelvin
+                                                                            Yia
+                                                                        </h6>
+                                                                        <small>EMP-0458</small>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex flex-column">
+                                                                    <h6 class="mb-1 text-dark">Graphic Designer</h6>
+                                                                    <small>Marketing</small>
+                                                                </div>
+                                                            </td>
+                                                            <td class="fw-medium text-dark">19 Jan 2026</td>
+                                                            <td class="text-center fw-medium"><span
+                                                                    class="text-primary me-1"><i
+                                                                        class="ri-square-fill fs-12"></i></span>Remote
+                                                            </td>
+                                                            <td class="fw-medium text-dark">
+                                                                09:00 AM - 05:30 PM
+                                                            </td>
+                                                            <td class="fw-medium text-dark">7h 30m</td>
+                                                            <td class="fw-medium text-dark">--</td>
+                                                            <td class="text-center"><span
+                                                                    class="badge bg-soft-success rounded-pill">Active</span>
+                                                            </td>
+                                                        </tr>
+                                                        <!-- emp5 -->
+                                                        <tr class="align-middle">
+                                                            <td>
+                                                                <div class="d-flex align-items-center gap-3">
+                                                                    <img alt="Employee Profile Image"
+                                                                        class="avatar-img-lg rounded-circle"
+                                                                        src="/images/avatars/avatar6.jpg">
+                                                                    <div class="d-flex flex-column">
+                                                                        <h6 class="mb-1 fw-semibold text-dark">Mark Lee
+                                                                        </h6>
+                                                                        <small>EMP-0897</small>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex flex-column">
+                                                                    <h6 class="mb-1 text-dark">Data Scientist</h6>
+                                                                    <small>Data Science / Analytics</small>
+                                                                </div>
+                                                            </td>
+                                                            <td class="fw-medium text-dark">19 Jan 2026</td>
+                                                            <td class="text-center fw-medium text-dark"><span
+                                                                    class="text-primary me-1"><i
+                                                                        class="ri-circle-line fs-12"></i></span>Hybrid
+                                                            </td>
+                                                            <td class="fw-medium text-dark">
+                                                                09:00 AM - 01:00 PM
+                                                            </td>
+                                                            <td class="fw-medium text-dark">4h</td>
+                                                            <td class="fw-medium text-dark">--</td>
+                                                            <td class="text-center"><span
+                                                                    class="badge bg-soft-warning fs-14 fw-semibold"><i
+                                                                        class="bi bi-info-circle me-1"></i>Half
+                                                                    leave</span>
+                                                            </td>
+                                                        </tr>
+                                                        <!-- emp6 -->
+                                                        <tr class="align-middle">
+                                                            <td>
+                                                                <div class="d-flex align-items-center gap-3">
+                                                                    <img alt="Employee Profile Image"
+                                                                        class="avatar-img-lg rounded-circle"
+                                                                        src="/images/avatars/avatar5.jpg">
+                                                                    <div class="d-flex flex-column">
+                                                                        <h6 class="mb-1 fw-semibold text-dark">Ollivia
+                                                                            Joy
+                                                                        </h6>
+                                                                        <small>EMP-0348</small>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex flex-column">
+                                                                    <h6 class="mb-1 text-dark">Site Supervisior</h6>
+                                                                    <small>Oparations</small>
+                                                                </div>
+                                                            </td>
+                                                            <td class="fw-medium text-dark">19 Jan 2026</td>
+                                                            <td class="text-center fw-medium"><span
+                                                                    class="text-primary me-1"><i
+                                                                        class="ri-circle-fill fs-12"></i></span>On-site
+                                                            </td>
+                                                            <td class="fw-medium text-dark">
+                                                                8:48 AM - 5:00 PM
+                                                            </td>
+                                                            <td class="fw-medium text-dark">8h 12m</td>
+                                                            <td class="fw-medium text-dark">12m</td>
+                                                            <td class="text-center"><span
+                                                                    class="badge bg-soft-success rounded-pill">Active</span>
+                                                            </td>
+                                                        </tr>
+                                                        <!-- emp7 -->
+                                                        <tr class="align-middle">
+                                                            <td>
+                                                                <div class="d-flex align-items-center gap-3">
+                                                                    <img alt="Employee Profile Image"
+                                                                        class="avatar-img-lg rounded-circle"
+                                                                        src="/images/avatars/avatar7.jpg">
+                                                                    <div class="d-flex flex-column">
+                                                                        <h6 class="mb-1 fw-semibold text-dark">Sophia
+                                                                            Jackson
+                                                                        </h6>
+                                                                        <small>EMP-0742</small>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex flex-column">
+                                                                    <h6 class="mb-1 text-dark">DevOps Engineer</h6>
+                                                                    <small>Oparations</small>
+                                                                </div>
+                                                            </td>
+                                                            <td class="fw-medium text-dark">19 Jan 2026</td>
+                                                            <td class="text-center fw-medium"><span
+                                                                    class="text-primary me-1"><i
+                                                                        class="ri-circle-fill fs-12"></i></span>On-site
+                                                            </td>
+                                                            <td class="fw-medium text-dark">
+                                                                -:-- -- - -:-- --
+                                                            </td>
+                                                            <td class="fw-medium text-dark">--</td>
+                                                            <td class="fw-medium text-dark">--</td>
+                                                            <td class="text-center"><span
+                                                                    class="badge bg-soft-primary fs-14 fw-semibold"><i
+                                                                        class="bi bi-emoji-frown me-1"></i>Leave</span>
+                                                            </td>
+                                                        </tr>
+                                                        <!-- emp8 -->
+                                                        <tr class="align-middle">
+                                                            <td>
+                                                                <div class="d-flex align-items-center gap-3">
+                                                                    <img alt="Employee Profile Image"
+                                                                        class="avatar-img-lg rounded-circle"
+                                                                        src="/images/avatars/avatar8.jpg">
+                                                                    <div class="d-flex flex-column">
+                                                                        <h6 class="mb-1 fw-semibold text-dark">Laura
+                                                                            Taylor
+                                                                        </h6>
+                                                                        <small>EMP-0177</small>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex flex-column">
+                                                                    <h6 class="mb-1 text-dark">Frontend Developer</h6>
+                                                                    <small>IT Department</small>
+                                                                </div>
+                                                            </td>
+                                                            <td class="fw-medium text-dark">19 Jan 2026</td>
+                                                            <td class="text-center fw-medium"><span
+                                                                    class="text-primary me-1"><i
+                                                                        class="ri-square-fill fs-12"></i></span>Remote
+                                                            </td>
+                                                            <td class="fw-medium text-dark">
+                                                                08:30 AM - 12:00 PM
+                                                            </td>
+                                                            <td class="fw-medium text-dark">3h 30m</td>
+                                                            <td class="fw-medium text-dark">--</td>
+                                                            <td class="text-center"><span
+                                                                    class="badge bg-soft-warning fs-14 fw-semibold"><i
+                                                                        class="bi bi-info-circle me-1"></i>Half
+                                                                    leave</span>
+                                                            </td>
+                                                        </tr>
+                                                        <!-- emp9 -->
+                                                        <tr class="align-middle">
+                                                            <td>
+                                                                <div class="d-flex align-items-center gap-3">
+                                                                    <img alt="Employee Profile Image"
+                                                                        class="avatar-img-lg rounded-circle"
+                                                                        src="/images/avatars/avatar9.jpg">
+                                                                    <div class="d-flex flex-column">
+                                                                        <h6 class="mb-1 fw-semibold text-dark">Daniel
+                                                                            Miller
+                                                                        </h6>
+                                                                        <small>EMP-0124</small>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex flex-column">
+                                                                    <h6 class="mb-1 text-dark">Finance Analyst</h6>
+                                                                    <small>Accounting</small>
+                                                                </div>
+                                                            </td>
+                                                            <td class="fw-medium text-dark">19 Jan 2026</td>
+                                                            <td class="text-center fw-medium text-dark"><span
+                                                                    class="text-primary me-1"><i
+                                                                        class="ri-circle-line fs-12"></i></span>Hybrid
+                                                            </td>
+                                                            <td class="fw-medium text-dark">
+                                                                -:-- -- - -:-- --
+                                                            </td>
+                                                            <td class="fw-medium text-dark">--</td>
+                                                            <td class="fw-medium text-dark">--</td>
+                                                            <td class="text-center"><span
+                                                                    class="badge bg-soft-primary fs-14 fw-semibold"><i
+                                                                        class="bi bi-emoji-frown me-1"></i>Leave</span>
+                                                            </td>
+                                                        </tr>
+                                                        <!-- emp10 -->
+                                                        <tr class="align-middle">
+                                                            <td>
+                                                                <div class="d-flex align-items-center gap-3">
+                                                                    <img alt="Employee Profile Image"
+                                                                        class="avatar-img-lg rounded-circle"
+                                                                        src="/images/avatars/avatar10.jpg">
+                                                                    <div class="d-flex flex-column">
+                                                                        <h6 class="mb-1 fw-semibold text-dark">Priya
+                                                                            Sharma
+                                                                        </h6>
+                                                                        <small>EMP-0723</small>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="d-flex flex-column">
+                                                                    <h6 class="mb-1 text-dark">Sales Executive</h6>
+                                                                    <small>Marketing</small>
+                                                                </div>
+                                                            </td>
+                                                            <td class="fw-medium text-dark">19 Jan 2026</td>
+                                                            <td class="text-center fw-medium"><span
+                                                                    class="text-primary me-1"><i
+                                                                        class="ri-circle-fill fs-12"></i></span>On-site
+                                                            </td>
+                                                            <td class="fw-medium text-dark">
+                                                                09:00 AM - 06:15 PM
+                                                            </td>
+                                                            <td class="fw-medium text-dark">8h 15m</td>
+                                                            <td class="fw-medium text-dark">15m</td>
+                                                            <td class="text-center"><span
+                                                                    class="badge bg-soft-success rounded-pill">Active</span>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div
+                                                class="table-bottom d-flex flex-wrap justify-content-center justify-content-sm-between align-items-center gap-3 mt-3">
+                                                <div id="table-attend-info" class="order-sm-1 order-2"></div>
+                                                <div id="table-attend-pagination" class="order-sm-2 order-1">
+                                                    <nav aria-label="Employee attandance pagination">
+                                                        <ul class="pagination mb-0">
+                                                            <li class="page-item disabled">
+                                                                <a class="page-link" href="#" aria-label="Previous">
+                                                                    <span aria-hidden="true"><i
+                                                                            class="ri-arrow-left-double-line"></i></span>
+                                                                </a>
+                                                            </li>
+                                                            <li class="page-item mx-1 disabled"><a class="page-link"
+                                                                    href="#" aria-label="Previous">
+                                                                    <span aria-hidden="true"><i
+                                                                            class="ri-arrow-left-s-line"></i></span>
+                                                                </a></li>
+                                                            <li class="page-item"><a class="page-link px-3"
+                                                                    href="#">1</a></li>
+                                                            <li class="page-item mx-1 disabled"><a class="page-link"
+                                                                    href="#" aria-label="Next">
+                                                                    <span aria-hidden="true"><i
+                                                                            class="ri-arrow-right-s-line"></i></span>
+                                                                </a></li>
+                                                            <li class="page-item disabled">
+                                                                <a class="page-link" href="#" aria-label="Next">
+                                                                    <span aria-hidden="true"><i
+                                                                            class="ri-arrow-right-double-line"></i></span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </nav>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            %%include('./partials/layout/footer.html')
+
+        </div>
+    </div>
+    %%include('./partials/layout/right-sidebar.html')
+
+    <!-- %%include('./partials/right-sidebar.html')
+    %%include('./partials/back-to-top.html') -->
+
+    %%include('./partials/layout/footer-js.html')
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="plugins/datatables.net/js/dataTables.min.js"></script>
+    <script src="plugins/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+    <script src="plugins/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="plugins/datatables.net-responsive-dt/js/responsive.dataTables.min.js"></script>
+    <script src="plugins/apexcharts/apexcharts.min.js"></script>
+    <script src="plugins/flatpickr/flatpickr.min.js"></script>
+    <script src="js/pages/atten_manage.js"></script>
+
+</body>
+
+</html>

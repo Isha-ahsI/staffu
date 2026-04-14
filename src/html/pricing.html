@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <div class="page-layout">
+        %%include('./partials/layout/header.html')
+        %%include('./partials/layout/left-sidebar.html')
+        <div class="page-wrapper">
+            <div class="page-content">
+                %%include('./partials/components/page-title.html', { pageTitle: 'Pricing', pagePrTitle: 'Pages' })
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 mb-4">
+                            <div role="alert"
+                                class="fade alert border-secondary border-opacity-25 alert-dismissible show flex-column align-items-start shadow-sm bg-white bg-opacity-50">
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close alert"></button>
+                                <div class="d-flex flex-wrap justify-content-between align-items-center w-100">
+                                    <div class="d-flex flex-column">
+                                        <div class="d-flex flex-wrap gap-2 mb-1">
+                                            <h6 class="fw-bold text-dark mb-0">Free 2-month plus trial available</h6>
+                                            <span class="badge badge-sm bg-dark">Save 20%</span>
+                                        </div>
+                                        <small class="fw-normal text-muted fs-14">Upgrate to any annually plan today and
+                                            get the first 2 months free trial.</small>
+                                    </div>
+                                    <button class="btn border-secondary rounded-2 btn-sm">Switch to annually</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 mb-4">
+                            <div class="d-flex flex-column align-items-center justify-content-center">
+                                <h1 class="fw-semibold">Pricing Plans</h1>
+                                <p class="text-muted">Find the Perfect Plan That Grows With Your Business , Giving You
+                                    the Tools to Succeed at Every Stage.</p>
+                                <div class="billing-toggle d-inline-block">
+                                    <button class="billing-option active fs-18" data-plan="monthly">Monthly</button>
+                                    <button class="billing-option fs-18" data-plan="yearly">Yearly</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="row justify-content-center">
+                                <div class="col-xxl-3 col-xl-4 col-md-6 col-12 mb-4">
+                                    <div class="card price-card mb-0 h-100">
+                                        <div class="card-body px-0 py-0 d-flex flex-column">
+                                            <a class="btn w-100 price-btn fs-18 mt-auto py-3" href="#"
+                                                role="button">Select Plan
+                                                <span><i class="ri-arrow-right-long-line"></i></span></a>
+                                            <div class="card mx-1 mb-1 rounded-3 p-4 flex-grow-1 d-flex flex-column">
+                                                <div class="mb-4">
+                                                    <h5 class="fw-semibold">Basic Plan</h5>
+                                                    <p class="text-muted mb-0">Perfect for getting started with
+                                                        essential features.</p>
+                                                </div>
+                                                <div class="d-flex align-items-end gap-1">
+                                                    <h1 class="text-dark fw-bold mb-0 amount" data-monthly="99" data-yearly="499">$99</h1>
+                                                    <p class="text-muted mb-1">/ Month</p>
+                                                </div>
+                                                <hr class="br-dashed">
+                                                <h6 class="text-dark fw-semibold mb-3">What's Included:</h6>
+                                                <ul class="list-unstyled mb-0">
+                                                    <li class="mb-2 fs-18"><span class="text-primary me-2"><i
+                                                                class="ri-checkbox-circle-fill"></i></span>Task
+                                                        management essentials</li>
+                                                    <li class="mb-2"><span class="text-primary me-2"><i
+                                                                class="ri-checkbox-circle-fill"></i></span>Team
+                                                        Messaging $ file sharing</li>
+                                                    <li class="mb-2"><span class="text-primary me-2"><i
+                                                                class="ri-checkbox-circle-fill"></i></span>Activity feed
+                                                        & project overview</li>
+                                                    <li class="mb-2"><span class="text-primary me-2"><i
+                                                                class="ri-checkbox-circle-fill"></i></span>Mobile &
+                                                        desktop access</li>
+                                                    <li><span class="text-primary me-2"><i
+                                                                class="ri-checkbox-circle-fill"></i></span>Email support
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-xl-4 col-md-6 col-12 mb-4">
+                                    <div class="card price-card mb-0 h-100">
+                                        <div class="card-body px-0 py-0 d-flex flex-column">
+                                            <a class="btn w-100 price-btn fs-18 mt-auto py-3" href="#"
+                                                role="button">Select Plan
+                                                <span><i class="ri-arrow-right-long-line"></i></span></a>
+                                            <div class="card mx-1 mb-1 rounded-3 p-4 flex-grow-1 d-flex flex-column">
+                                                <div class="mb-4">
+                                                    <h5 class="fw-semibold">Standard Plan</h5>
+                                                    <p class="text-muted mb-0">Ideal for growing teams needing more
+                                                        tools.</p>
+                                                </div>
+                                                <div class="d-flex align-items-end gap-1">
+                                                    <h1 class="text-dark fw-bold mb-0 amount" data-monthly="199" data-yearly="899">$199</h1>
+                                                    <p class="text-muted mb-1">/ Month</p>
+                                                </div>
+                                                <hr class="br-dashed">
+                                                <h6 class="text-dark fw-semibold mb-3">What's Included:</h6>
+                                                <ul class="list-unstyled mb-0">
+                                                    <li class="mb-2 fs-18"><span class="text-primary me-2"><i
+                                                                class="ri-checkbox-circle-fill"></i></span>Time tracking
+                                                        & workload managemnet</li>
+                                                    <li class="mb-2"><span class="text-primary me-2"><i
+                                                                class="ri-checkbox-circle-fill"></i></span>Advanced
+                                                        reporting & filters</li>
+                                                    <li class="mb-2"><span class="text-primary me-2"><i
+                                                                class="ri-checkbox-circle-fill"></i></span>Custom
+                                                        labels, priorities & checklists</li>
+                                                    <li class="mb-2"><span class="text-primary me-2"><i
+                                                                class="ri-checkbox-circle-fill"></i></span>Project
+                                                        insights & team analytics</li>
+                                                    <li class="mb-2"><span class="text-primary me-2"><i
+                                                                class="ri-checkbox-circle-fill"></i></span>Billing &
+                                                        usage tracking
+                                                    </li>
+                                                    <li><span class="text-primary me-2"><i
+                                                                class="ri-checkbox-circle-fill"></i></span>Priority
+                                                        support
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xxl-3 col-xl-4 col-md-6 col-12 mb-4">
+                                    <div class="card price-card mb-0">
+                                        <div class="card-body px-0 py-0 d-flex flex-column">
+                                            <a class="btn w-100 price-btn fs-18 mt-auto py-3" href="#"
+                                                role="button">Select Plan
+                                                <span><i class="ri-arrow-right-long-line"></i></span></a>
+                                            <div class="card mx-1 mb-1 rounded-3 p-4 flex-grow-1 d-flex flex-column">
+                                                <div class="mb-4">
+                                                    <h5 class="fw-semibold">Professional Plan</h5>
+                                                    <p class="text-muted mb-0">Our most chosen plan – advanced features
+                                                        for productivity.</p>
+                                                </div>
+                                                <div class="d-flex align-items-end gap-1">
+                                                    <h1 class="text-dark fw-bold mb-0 amount" data-monthly="299" data-yearly="1999">$299</h1>
+                                                    <p class="text-muted mb-1">/ Month</p>
+                                                </div>
+                                                <hr class="br-dashed">
+                                                <h6 class="text-dark fw-semibold mb-3">What's Included:</h6>
+                                                <ul class="list-unstyled mb-0">
+                                                    <li class="mb-2 fs-18"><span class="text-primary me-2"><i
+                                                                class="ri-checkbox-circle-fill"></i></span>Dedicated
+                                                        account manager</li>
+                                                    <li class="mb-2"><span class="text-primary me-2"><i
+                                                                class="ri-checkbox-circle-fill"></i></span>Custom
+                                                        integrations & automation</li>
+                                                    <li class="mb-2"><span class="text-primary me-2"><i
+                                                                class="ri-checkbox-circle-fill"></i></span>SSO &
+                                                        role-based access control</li>
+                                                    <li class="mb-2"><span class="text-primary me-2"><i
+                                                                class="ri-checkbox-circle-fill"></i></span>Project
+                                                        insights & team analytics</li>
+                                                    <li class="mb-2"><span class="text-primary me-2"><i
+                                                                class="ri-checkbox-circle-fill"></i></span>Unlimited
+                                                        projects & users
+                                                    </li>
+                                                    <li class="mb-2"><span class="text-primary me-2"><i
+                                                                class="ri-checkbox-circle-fill"></i></span>KPI
+                                                        dashboards & reporting tools
+                                                    </li>
+                                                    <li><span class="text-primary me-2"><i
+                                                                class="ri-checkbox-circle-fill"></i></span>Onboarding
+                                                        support
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            %%include('./partials/layout/footer.html')
+
+        </div>
+    </div>
+    %%include('./partials/layout/right-sidebar.html')
+
+    <!-- %%include('./partials/right-sidebar.html')
+    %%include('./partials/back-to-top.html') -->
+
+    %%include('./partials/layout/footer-js.html')
+    <script src="js/pages/price.js"></script>
+
+</body>
+
+</html>

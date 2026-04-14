@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <div class="page-layout">
+        %%include('./partials/layout/header.html')
+        %%include('./partials/layout/left-sidebar.html')
+        <div class="page-wrapper">
+            <div class="page-content">
+                %%include('./partials/components/page-title.html', { pageTitle: 'Buttons', pagePrTitle: 'UI Elements' })
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- default buttons -->
+                        <div class="col-xl-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Default Buttons</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2 ">
+                                        <button type="button" class="btn btn-primary">Primary</button>
+                                        <button type="button" class="btn btn-secondary">Secondary</button>
+                                        <button type="button" class="btn btn-success">Success</button>
+                                        <button type="button" class="btn btn-warning">Warning</button>
+                                        <button type="button" class="btn btn-blue">Blue</button>
+                                        <button type="button" class="btn btn-orange">Orange</button>
+                                        <button type="button" class="btn btn-danger">Danger</button>
+                                        <button type="button" class="btn btn-info">Info</button>
+                                        <button type="button" class="btn btn-light">Light</button>
+                                        <button type="button" class="btn btn-dark">Dark</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- rounded pill buttons -->
+                        <div class="col-xl-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Buttons Rounded Pill</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2 ">
+                                        <button type="button" class="rounded-pill btn btn-primary">Primary</button>
+                                        <button type="button" class="rounded-pill btn btn-secondary">Secondary</button>
+                                        <button type="button" class="rounded-pill btn btn-success">Success</button>
+                                        <button type="button" class="rounded-pill btn btn-warning">Warning</button>
+                                        <button type="button" class="rounded-pill btn btn-blue">Blue</button>
+                                        <button type="button" class="rounded-pill btn btn-orange">Orange</button>
+                                        <button type="button" class="rounded-pill btn btn-danger">Danger</button>
+                                        <button type="button" class="rounded-pill btn btn-info">Info</button>
+                                        <button type="button" class="rounded-pill btn btn-light">Light</button>
+                                        <button type="button" class="rounded-pill btn btn-dark">Dark</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- outline buttons -->
+                        <div class="col-xl-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Buttons Outline</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2 ">
+                                        <button type="button" class="btn btn-outline-primary">Primary</button>
+                                        <button type="button" class="btn btn-outline-secondary">Secondary</button>
+                                        <button type="button" class="btn btn-outline-success">Success</button>
+                                        <button type="button" class="btn btn-outline-warning">Warning</button>
+                                        <button type="button" class="btn btn-outline-blue">Blue</button>
+                                        <button type="button" class="btn btn-outline-orange">Orange</button>
+                                        <button type="button" class="btn btn-outline-danger">Danger</button>
+                                        <button type="button" class="btn btn-outline-info">Info</button>
+                                        <button type="button" class="btn btn-outline-light">Light</button>
+                                        <button type="button" class="btn btn-outline-dark">Dark</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- outline buttons rounded pill-->
+                        <div class="col-xl-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Buttons Outline Rounded Pill</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2 ">
+                                        <button type="button" class="rounded-pill btn btn-outline-primary">Primary</button>
+                                        <button type="button"
+                                            class="rounded-pill btn btn-outline-secondary">Secondary</button>
+                                        <button type="button" class="rounded-pill btn btn-outline-success">Success</button>
+                                        <button type="button" class="rounded-pill btn btn-outline-warning">Warning</button>
+                                        <button type="button" class="rounded-pill btn btn-outline-blue">Blue</button>
+                                        <button type="button" class="rounded-pill btn btn-outline-orange">Orange</button>
+                                        <button type="button" class="rounded-pill btn btn-outline-danger">Danger</button>
+                                        <button type="button" class="rounded-pill btn btn-outline-info">Info</button>
+                                        <button type="button" class="rounded-pill btn btn-outline-light">Light</button>
+                                        <button type="button" class="rounded-pill btn btn-outline-dark">Dark</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- soft buttons -->
+                        <div class="col-xl-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Buttons Soft</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2 ">
+                                        <button type="button" class="btn btn-soft-primary">Primary</button>
+                                        <button type="button" class="btn btn-soft-secondary">Secondary</button>
+                                        <button type="button" class="btn btn-soft-success">Success</button>
+                                        <button type="button" class="btn btn-soft-warning">Warning</button>
+                                        <button type="button" class="btn btn-soft-blue">Blue</button>
+                                        <button type="button" class="btn btn-soft-orange">Orange</button>
+                                        <button type="button" class="btn btn-soft-danger">Danger</button>
+                                        <button type="button" class="btn btn-soft-info">Info</button>
+                                        <button type="button" class="btn btn-soft-light">Light</button>
+                                        <button type="button" class="btn btn-soft-dark">Dark</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- soft buttons rounded pill -->
+                        <div class="col-xl-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Buttons Soft Rounded</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2 ">
+                                        <button type="button" class="rounded-pill btn btn-soft-primary">Primary</button>
+                                        <button type="button" class="rounded-pill btn btn-soft-secondary">Secondary</button>
+                                        <button type="button" class="rounded-pill btn btn-soft-success">Success</button>
+                                        <button type="button" class="rounded-pill btn btn-soft-warning">Warning</button>
+                                        <button type="button" class="rounded-pill btn btn-soft-blue">Blue</button>
+                                        <button type="button" class="rounded-pill btn btn-soft-orange">Orange</button>
+                                        <button type="button" class="rounded-pill btn btn-soft-danger">Danger</button>
+                                        <button type="button" class="rounded-pill btn btn-soft-info">Info</button>
+                                        <button type="button" class="rounded-pill btn btn-soft-light">Light</button>
+                                        <button type="button" class="rounded-pill btn btn-soft-dark">Dark</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- buttons gradient -->
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Buttons Gradient</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2">
+                                        <button type="button" class="btn btn-gradient-primary">Primary</button>
+                                        <button type="button" class="btn btn-gradient-secondary">Secondary</button>
+                                        <button type="button" class="btn btn-gradient-success">Success</button>
+                                        <button type="button" class="btn btn-gradient-warning">Warning</button>
+                                        <button type="button" class="btn btn-gradient-blue">Blue</button>
+                                        <button type="button" class="btn btn-gradient-orange">Orange</button>
+                                        <button type="button" class="btn btn-gradient-danger">Danger</button>
+                                        <button type="button" class="btn btn-gradient-info">Info</button>
+                                        <button type="button" class="btn btn-gradient-light">Light</button>
+                                        <button type="button" class="btn btn-gradient-dark">Dark</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Buttons Gradient -->
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Buttons Gradient Alt</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2 ">
+                                        <button type="button" class="btn btn-gradient-alt-primary">Primary</button>
+                                        <button type="button" class="btn btn-gradient-alt-secondary">Secondary</button>
+                                        <button type="button" class="btn btn-gradient-alt-success">Success</button>
+                                        <button type="button" class="btn btn-gradient-alt-warning">Warning</button>
+                                        <button type="button" class="btn btn-gradient-alt-blue">Blue</button>
+                                        <button type="button" class="btn btn-gradient-alt-orange">Orange</button>
+                                        <button type="button" class="btn btn-gradient-alt-danger">Danger</button>
+                                        <button type="button" class="btn btn-gradient-alt-info">Info</button>
+                                        <button type="button" class="btn btn-gradient-alt-light">Light</button>
+                                        <button type="button" class="btn btn-gradient-alt-dark">Dark</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- buttons size -->
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Buttons Size</h5>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-12">
+                                            <h6>Button Large</h6>
+                                            <div class="d-flex align-items-center flex-wrap gap-2 mb-3">
+                                                <button type="button" class="btn btn-primary btn-lg">Button Lg</button>
+                                                <button type="button" class="btn btn-outline-danger btn-lg">Button
+                                                    Lg</button>
+                                                <button type="button" class="btn btn-soft-success btn-lg">Button Lg</button>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-12">
+                                            <h6>Button Normal</h6>
+                                            <div class="d-flex align-items-center flex-wrap gap-2 mb-3">
+                                                <button type="button" class="btn btn-primary btn-md">Button Normal</button>
+                                                <button type="button" class="btn btn-outline-danger btn-md">Button
+                                                    Normal</button>
+                                                <button type="button" class="btn btn-soft-success btn-md">Button
+                                                    Normal</button>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-12">
+                                            <h6>Button Small</h6>
+                                            <div class="d-flex align-items-center flex-wrap gap-2 mb-lg-0 mb-3">
+                                                <button type="button" class="btn btn-primary btn-sm">Button Sm</button>
+                                                <button type="button" class="btn btn-outline-danger btn-sm">Button
+                                                    Sm</button>
+                                                <button type="button" class="btn btn-soft-success btn-sm">Button Sm</button>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-12">
+                                            <h6>Button Extra Small</h6>
+                                            <div class="d-flex align-items-center flex-wrap gap-2">
+                                                <button type="button" class="btn btn-primary btn-xs">Button Xs</button>
+                                                <button type="button" class="btn btn-outline-danger btn-xs">Button
+                                                    Xs</button>
+                                                <button type="button" class="btn btn-soft-success btn-xs">Button Xs</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Buttons Disabled -->
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Buttons Disabled</h5>
+                                    <div class="row">
+                                        <div class="col-lg-6 col-12">
+                                            <h6>Button Disabled</h6>
+                                            <div class="d-flex align-items-center flex-wrap gap-2 mb-3">
+                                                <button type="button" disabled class="btn btn-primary">Primary</button>
+                                                <button type="button" disabled class="btn btn-success">Success</button>
+                                                <button type="button" disabled class="btn btn-danger">Danger</button>
+                                                <button type="button" disabled class="btn btn-info">Info</button>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-12">
+                                            <h6>Button Outline Disabled</h6>
+                                            <div class="d-flex align-items-center flex-wrap gap-2 mb-3">
+                                                <button type="button" disabled class="btn btn-outline-primary">Primary</button>
+                                                <button type="button" disabled class="btn btn-outline-success">Success</button>
+                                                <button type="button" disabled class="btn btn-outline-danger">Danger</button>
+                                                <button type="button" disabled class="btn btn-outline-info">Info</button>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-12">
+                                            <h6>Button Soft Disabled</h6>
+                                            <div class="d-flex align-items-center flex-wrap gap-2 mb-lg-0 mb-3">
+                                                <button type="button" disabled class="btn btn-soft-primary">Primary</button>
+                                                <button type="button" disabled class="btn btn-soft-success">Success</button>
+                                                <button type="button" disabled class="btn btn-soft-danger">Danger</button>
+                                                <button type="button" disabled class="btn btn-soft-info">Info</button>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-12">
+                                            <h6>Button Gradient Disabled</h6>
+                                            <div class="d-flex align-items-center flex-wrap gap-2">
+                                                <button type="button" disabled class="btn btn-gradient-primary">Primary</button>
+                                                <button type="button" disabled class="btn btn-gradient-success">Success</button>
+                                                <button type="button" disabled class="btn btn-gradient-danger">Danger</button>
+                                                <button type="button" disabled class="btn btn-gradient-info">Info</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Buttons With Icon -->
+                        <div class="col-lg-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Buttons With Icon</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2 ">
+                                        <button type="button" class="btn btn-primary"><i class="bi bi-bell-fill me-1"></i>Bell</button>
+                                        <button type="button" class="btn btn-success"><i class="bi bi-check-circle-fill me-1"></i>Check</button>
+                                        <button type="button" class="btn btn-danger"><i class="bi bi-heart-fill me-1"></i>Heart</button>
+                                        <button type="button" class="btn btn-info"><i class="bi bi-cloud-drizzle-fill me-1"></i>Cloud</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Outline Buttons With Icon -->
+                        <div class="col-lg-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Outline Buttons With Icon</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2 ">
+                                        <button type="button" class="btn btn-outline-primary"><i class="bi bi-bell me-1"></i>Bell</button>
+                                        <button type="button" class="btn btn-outline-success"><i class="bi bi-check-circle me-1"></i>Check</button>
+                                        <button type="button" class="btn btn-outline-danger"><i class="bi bi-heart me-1"></i>Heart</button>
+                                        <button type="button" class="btn btn-outline-info"><i class="bi bi-cloud-drizzle me-1"></i>Cloud</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Soft Buttons With Icon -->
+                        <div class="col-lg-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Soft Buttons With Icon</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2 ">
+                                        <button type="button" class="btn btn-soft-primary"><i class="bi bi-bell-fill me-1"></i>Bell</button>
+                                        <button type="button" class="btn btn-soft-success"><i class="bi bi-check-circle-fill me-1"></i>Check</button>
+                                        <button type="button" class="btn btn-soft-danger"><i class="bi bi-heart-fill me-1"></i>Heart</button>
+                                        <button type="button" class="btn btn-soft-info"><i class="bi bi-cloud-drizzle-fill me-1"></i>Cloud</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Gradient Buttons With Icon -->
+                        <div class="col-lg-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Gradient Buttons With Icon</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2 ">
+                                        <button type="button" class="btn btn-gradient-primary"><i class="bi bi-bell-fill me-1"></i>Bell</button>
+                                        <button type="button" class="btn btn-gradient-success"><i class="bi bi-check-circle-fill me-1"></i>Check</button>
+                                        <button type="button" class="btn btn-gradient-danger"><i class="bi bi-heart-fill me-1"></i>Heart</button>
+                                        <button type="button" class="btn btn-gradient-info"><i class="bi bi-cloud-drizzle-fill me-1"></i>Cloud</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Icon Buttons -->
+                        <div class="col-lg-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Icon Buttons</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2">
+                                        <button type="button" class="avatar avatar-md p-0  btn btn-primary"><i class="ri-home-5-fill"></i></button>
+                                        <button type="button" class="avatar avatar-md p-0  btn btn-secondary"><i class="ri-chat-ai-fill"></i></button>
+                                        <button type="button" class="avatar avatar-md p-0  btn btn-success"><i class="ri-color-filter-fill"></i></button>
+                                        <button type="button" class="avatar avatar-md p-0  btn btn-danger"><i class="ri-heart-2-fill"></i></button>
+                                        <button type="button" class="avatar avatar-md p-0 rounded-circle btn btn-warning"><i class="ri-flower-fill"></i></button>
+                                        <button type="button" class="avatar avatar-md p-0 rounded-circle btn btn-info"><i class="ri-user-smile-fill"></i></button>
+                                        <button type="button" class="avatar avatar-md p-0 rounded-circle btn btn-dark"><i class="ri-apple-fill"></i></button>
+                                        <button type="button" class="avatar avatar-md p-0 rounded-circle btn btn-light"><i class="ri-sun-fill"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Icon Outline Buttons -->
+                        <div class="col-lg-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Icon Outline Buttons</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2">
+                                        <button type="button" class="avatar avatar-md p-0  btn btn-outline-primary"><i class="ri-home-5-line"></i></button>
+                                        <button type="button" class="avatar avatar-md p-0  btn btn-outline-secondary"><i class="ri-chat-ai-line"></i></button>
+                                        <button type="button" class="avatar avatar-md p-0  btn btn-outline-success"><i class="ri-color-filter-line"></i></button>
+                                        <button type="button" class="avatar avatar-md p-0  btn btn-outline-danger"><i class="ri-heart-2-line"></i></button>
+                                        <button type="button" class="avatar avatar-md p-0 rounded-circle btn btn-outline-warning"><i class="ri-flower-line"></i></button>
+                                        <button type="button" class="avatar avatar-md p-0 rounded-circle btn btn-outline-info"><i class="ri-user-smile-line"></i></button>
+                                        <button type="button" class="avatar avatar-md p-0 rounded-circle btn btn-outline-dark"><i class="ri-apple-line"></i></button>
+                                        <button type="button" class="avatar avatar-md p-0 rounded-circle btn btn-outline-light"><i class="ri-sun-line"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Icon Soft Buttons -->
+                        <div class="col-lg-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Icon Soft Buttons</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2">
+                                        <button type="button" class="avatar avatar-md p-0  btn btn-soft-primary"><i class="ri-home-5-line"></i></button>
+                                        <button type="button" class="avatar avatar-md p-0  btn btn-soft-secondary"><i class="ri-chat-ai-line"></i></button>
+                                        <button type="button" class="avatar avatar-md p-0  btn btn-soft-success"><i class="ri-color-filter-line"></i></button>
+                                        <button type="button" class="avatar avatar-md p-0  btn btn-soft-danger"><i class="ri-heart-2-line"></i></button>
+                                        <button type="button" class="avatar avatar-md p-0 rounded-circle btn btn-soft-warning"><i class="ri-flower-line"></i></button>
+                                        <button type="button" class="avatar avatar-md p-0 rounded-circle btn btn-soft-info"><i class="ri-user-smile-line"></i></button>
+                                        <button type="button" class="avatar avatar-md p-0 rounded-circle btn btn-soft-dark"><i class="ri-apple-line"></i></button>
+                                        <button type="button" class="avatar avatar-md p-0 rounded-circle btn btn-soft-light"><i class="ri-sun-line"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Icon Gradient Buttons -->
+                        <div class="col-lg-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Icon Gradient Buttons</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2">
+                                        <button type="button" class="avatar avatar-md p-0  btn btn-gradient-primary"><i class="ri-home-5-fill"></i></button>
+                                        <button type="button" class="avatar avatar-md p-0  btn btn-gradient-secondary"><i class="ri-chat-ai-fill"></i></button>
+                                        <button type="button" class="avatar avatar-md p-0  btn btn-gradient-success"><i class="ri-color-filter-fill"></i></button>
+                                        <button type="button" class="avatar avatar-md p-0  btn btn-gradient-danger"><i class="ri-heart-2-fill"></i></button>
+                                        <button type="button" class="avatar avatar-md p-0 rounded-circle btn btn-gradient-warning"><i class="ri-flower-fill"></i></button>
+                                        <button type="button" class="avatar avatar-md p-0 rounded-circle btn btn-gradient-info"><i class="ri-user-smile-fill"></i></button>
+                                        <button type="button" class="avatar avatar-md p-0 rounded-circle btn btn-gradient-dark"><i class="ri-apple-fill"></i></button>
+                                        <button type="button" class="avatar avatar-md p-0 rounded-circle btn btn-gradient-light"><i class="ri-sun-fill"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Buttons Loading -->
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-title h5">Buttons Loading</div>
+                                    <div class="row">
+                                        <div class="col-md-6 col-12">
+                                            <div class="d-flex align-items-center flex-wrap gap-2 mb-3">
+                                                <button type="button" class="btn btn-primary">Click Me</button>
+                                                <button type="button" class="btn btn-danger">Click Me</button>
+                                                <button type="button" class="btn btn-success">Click Me</button>
+                                                <button type="button" class="btn btn-info">Click Me</button>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="d-flex align-items-center flex-wrap gap-2 mb-3">
+                                                <button type="button" class="btn btn-outline-primary">Click Me</button>
+                                                <button type="button" class="btn btn-outline-danger">Click Me</button>
+                                                <button type="button" class="btn btn-outline-success">Click Me</button>
+                                                <button type="button" class="btn btn-outline-info">Click Me</button>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="d-flex align-items-center flex-wrap gap-2 mb-md-0 mb-3">
+                                                <button type="button" class="btn btn-soft-primary">Click Me</button>
+                                                <button type="button" class="btn btn-soft-danger">Click Me</button>
+                                                <button type="button" class="btn btn-soft-success">Click Me</button>
+                                                <button type="button" class="btn btn-soft-info">Click Me</button>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-12">
+                                            <div class="d-flex align-items-center flex-wrap gap-2">
+                                                <button type="button" class="btn btn-gradient-primary">Click Me</button>
+                                                <button type="button" class="btn btn-gradient-danger">Click Me</button>
+                                                <button type="button" class="btn btn-gradient-success">Click Me</button>
+                                                <button type="button" class="btn btn-gradient-info">Click Me</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- buttons full size -->
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Buttons Block</h5>
+                                    <div class="row">
+                                        <!-- Buttons Block -->
+                                        <div class="col-md-3 col-12">
+                                            <button type="button" class="w-100 mb-2 btn btn-primary">Primary</button>
+                                            <button type="button" class="w-100 mb-2 btn btn-success"><i class="bi-chat-fill me-1"></i>Message</button>
+                                            <button type="button" class="w-100 btn btn-danger">Notification<i class="bi-bell-fill ms-1"></i></button>
+                                        </div>
+                                        <!-- Outline Buttons -->
+                                        <div class="col-md-3 col-12">
+                                            <button type="button" class="w-100 mb-2 btn btn-outline-primary">Primary</button>
+                                            <button type="button" class="w-100 mb-2 btn btn-outline-success"><i class="bi-chat me-1"></i>Message</button>
+                                            <button type="button" class="w-100 btn btn-outline-danger">Notification<i class="bi-bell ms-1"></i></button>
+                                        </div>
+                                        <!-- Soft Buttons -->
+                                        <div class="col-md-3 col-12">
+                                            <button type="button" class="w-100 mb-2 btn btn-soft-primary">Primary</button>
+                                            <button type="button" class="w-100 mb-2 btn btn-soft-success"><i class="bi-chat-fill me-1"></i>Message</button>
+                                            <button type="button" class="w-100 btn btn-soft-danger">Notification<i class="bi-bell-fill ms-1"></i></button>
+                                        </div>
+                                        <!-- Gradient Buttons -->
+                                        <div class="col-md-3 col-12">
+                                            <button type="button" class="w-100 mb-2 btn btn-gradient-primary">Primary</button>
+                                            <button type="button" class="w-100 mb-2 btn btn-gradient-success"><i class="bi-chat-fill me-1"></i>Message</button>
+                                            <button type="button" class="w-100 btn btn-gradient-danger">Notification<i class="bi-bell-fill ms-1"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Buttons Outline -->
+                        <div class="col-xl-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Buttons Outline</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2 ">
+                                        <button type="button" class="btn btn-outline-primary">Primary</button>
+                                        <button type="button" class="btn btn-outline-secondary">Secondary</button>
+                                        <button type="button" class="btn btn-outline-success">Success</button>
+                                        <button type="button" class="btn btn-outline-warning">Warning</button>
+                                        <button type="button" class="btn btn-outline-blue">Blue</button>
+                                        <button type="button" class="btn btn-outline-orange">Orange</button>
+                                        <button type="button" class="btn btn-outline-danger">Danger</button>
+                                        <button type="button" class="btn btn-outline-info">Info</button>
+                                        <button type="button" class="btn btn-outline-light">Light</button>
+                                        <button type="button" class="btn btn-outline-dark">Dark</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Buttons Outline Rounded Pill -->
+                        <div class="col-xl-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Buttons Outline Rounded Pill</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2 ">
+                                        <button type="button" class="rounded-pill btn btn-outline-primary">Primary</button>
+                                        <button type="button" class="rounded-pill btn btn-outline-secondary">Secondary</button>
+                                        <button type="button" class="rounded-pill btn btn-outline-success">Success</button>
+                                        <button type="button" class="rounded-pill btn btn-outline-warning">Warning</button>
+                                        <button type="button" class="rounded-pill btn btn-outline-blue">Blue</button>
+                                        <button type="button" class="rounded-pill btn btn-outline-orange">Orange</button>
+                                        <button type="button" class="rounded-pill btn btn-outline-danger">Danger</button>
+                                        <button type="button" class="rounded-pill btn btn-outline-info">Info</button>
+                                        <button type="button" class="rounded-pill btn btn-outline-light">Light</button>
+                                        <button type="button" class="rounded-pill btn btn-outline-dark">Dark</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Buttons Soft -->
+                        <div class="col-xl-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Buttons Soft</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2 ">
+                                        <button type="button" class="btn btn-soft-primary">Primary</button>
+                                        <button type="button" class="btn btn-soft-secondary">Secondary</button>
+                                        <button type="button" class="btn btn-soft-success">Success</button>
+                                        <button type="button" class="btn btn-soft-warning">Warning</button>
+                                        <button type="button" class="btn btn-soft-blue">Blue</button>
+                                        <button type="button" class="btn btn-soft-orange">Orange</button>
+                                        <button type="button" class="btn btn-soft-danger">Danger</button>
+                                        <button type="button" class="btn btn-soft-info">Info</button>
+                                        <button type="button" class="btn btn-soft-light">Light</button>
+                                        <button type="button" class="btn btn-soft-dark">Dark</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Buttons Soft Rounded pill-->
+                        <div class="col-xl-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Buttons Soft Rounded</h5>
+                                    <div class="d-flex align-items-center flex-wrap gap-2 ">
+                                        <button type="button" class="rounded-pill btn btn-soft-primary">Primary</button>
+                                        <button type="button" class="rounded-pill btn btn-soft-secondary">Secondary</button>
+                                        <button type="button" class="rounded-pill btn btn-soft-success">Success</button>
+                                        <button type="button" class="rounded-pill btn btn-soft-warning">Warning</button>
+                                        <button type="button" class="rounded-pill btn btn-soft-blue">Blue</button>
+                                        <button type="button" class="rounded-pill btn btn-soft-orange">Orange</button>
+                                        <button type="button" class="rounded-pill btn btn-soft-danger">Danger</button>
+                                        <button type="button" class="rounded-pill btn btn-soft-info">Info</button>
+                                        <button type="button" class="rounded-pill btn btn-soft-light">Light</button>
+                                        <button type="button" class="rounded-pill btn btn-soft-dark">Dark</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Buttons checkbox -->
+                        <div class="col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Buttons Checkbox</h5>
+                                    <div role="group" class="btn-group">
+                                        <input class="btn-check" id="option1" type="checkbox" value="option1">
+                                        <label tabindex="0" for="option1" class="btn btn-outline-primary">Option 1 </label>
+                                        <input class="btn-check" id="option2" type="checkbox" value="option2">
+                                        <label tabindex="0" for="option2" class="btn btn-outline-success">Option 2 </label>
+                                        <input class="btn-check" id="option3" type="checkbox" value="option3">
+                                        <label tabindex="0" for="option3" class="btn btn-outline-danger">Option 3 </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Buttons Radio -->
+                        <div class="col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Buttons Radio</h5>
+                                    <div role="group" class="btn-group">
+                                        <input class="btn-check" id="radio-0" type="radio" value="option1" name="radio">
+                                        <label tabindex="0" for="radio-0" class="btn btn-outline-primary">Option 1</label>
+                                        <input class="btn-check" id="radio-1" type="radio" value="option2" name="radio">
+                                        <label tabindex="0" for="radio-1" class="btn btn-outline-primary">Option 2</label>
+                                        <input class="btn-check" id="radio-2" type="radio" value="option3" name="radio">
+                                        <label tabindex="0" for="radio-2" class="btn btn-outline-primary">Option 3</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            %%include('./partials/layout/footer.html')
+        </div>
+    </div>
+
+    %%include('./partials/layout/right-sidebar.html')
+    <!-- %%include('./partials/right-sidebar.html')
+    %%include('./partials/back-to-top.html') -->
+
+    %%include('./partials/layout/footer-js.html')
+</body>
+
+</html>

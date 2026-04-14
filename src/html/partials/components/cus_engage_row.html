@@ -1,0 +1,44 @@
+<tr class="align-middle">
+    <td>
+        <div class="d-flex align-items-center gap-2">
+            <div class="avatar avatar-sm">
+                <img src="images/avatars/%%img.jpg" alt="Employee Img" class="w-100 h-100 custom-avatar">
+            </div>
+            <h6 class="mb-0 fw-semibold text-dark"><span>%%name</span>
+            </h6>
+        </div>
+    </td>
+    <td class="text-center">
+        <span class="badge bg-outline-%%badgecolor fw-medium">%%type</span>
+    </td>
+    <td>
+        <p class="mb-0 text-dark fw-medium">%%project</p>
+    </td>
+    <td class="text-center">
+        <div class="avatar-group justify-content-center js-dynamic-avatars" data-employees='%%employeesData'>
+        </div>
+    </td>
+    <td class="text-center">
+        <p class="mb-0 text-center fw-semibold">%%meet</p>
+    </td>
+    <td>%%note</td>
+    <td class="fw-medium"><span>%%date</span></td>
+    <td class="text-wrap text-center">
+        <div class="d-flex justify-content-end align-items-center gap-2">
+            <div class="progress w-100" role="progressbar" aria-valuenow="%%progress" aria-valuemin="0"
+                aria-valuemax="100" style="height: 8px;">
+                <div class="progress-bar bg-%%procolor w-%%progress">
+                </div>
+            </div>
+            <small class="text-muted">%%progress%</small>
+        </div>
+    </td>
+    <td class="text-center">
+        <p class="mb-0 fw-medium text-%%statuscolor"><span class="me-1"><i class="%%icon fs-18"></i></span>%%status
+        </p>
+    </td>
+    <td class="text-center">
+        <div data-progress="%%score" class="radial-chart-canvas mx-auto"
+            style="width: 60px; height: 60px; min-height: 60px; min-width: 60px; display: block;"></div>
+    </td>
+</tr>

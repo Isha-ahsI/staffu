@@ -1,0 +1,34 @@
+// layout.scss
+
+body[data-layout="boxed"] {
+    background-color: var(--bs-body-boxed);
+    .page-layout, .topbar {
+        max-width: $layout-width;
+        margin: 0 auto;
+    }
+    .page-layout {
+        position: relative;
+        .topbar {
+            left: 0;
+            right: 0;
+        }
+        .left-sidebar {
+            position: absolute;
+            left: 0;
+            top: $topbar-height;
+            height: calc(100% - $topbar-height);
+            z-index: 1029;
+            .menu-simplebar {
+                height: 100%;
+            }
+        }
+        .page-wrapper {
+            background-color: var(--bs-body-bg);
+            border-right: $border-width solid var(--bs-border-color);
+            border-left: $border-width solid var(--bs-border-color);
+            // .page-content {
+            //     padding-right: 0;
+            // }
+        }
+    }
+}

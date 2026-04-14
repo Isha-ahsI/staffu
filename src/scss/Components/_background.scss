@@ -1,0 +1,25 @@
+// background.scss
+
+@each $color, $value in $theme-colors {
+    .bg-soft-#{$color} {
+        background: rgba(var(--bs-#{$color}-rgb), .12) !important;
+    }
+    .border-soft-#{$color} {
+        border-color: rgba(var(--bs-#{$color}-rgb), .25) !important;
+    }
+}
+@each $name, $colors in $bg-gradients { 
+    .bg-gradient-#{$name} {
+        background-image: linear-gradient(to right, nth($colors, 1) 0%, nth($colors, 2) 50%, nth($colors, 3) 100%); 
+        background-size: 250% auto; transition: 0.5s; color: $white; 
+    }
+}
+@each $name, $colors in $bg-gradients-alt { 
+    .bg-gradient-alt-#{$name} {
+        background-image: linear-gradient(to right, nth($colors, 1) 0%, nth($colors, 2) 50%, nth($colors, 3) 100%); 
+        background-size: 250% auto; transition: 0.5s; color: $white; 
+    }
+}
+// .bg-light {
+//     background-color: var(--bs-bg-light-color) !important;
+// }

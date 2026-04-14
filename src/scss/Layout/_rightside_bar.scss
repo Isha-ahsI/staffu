@@ -1,0 +1,96 @@
+.rotate-icon {
+  animation: rotate 5s linear infinite;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.layout-selector {
+  .btn-group {
+    background: rgba(var(--bs-primary-rgb), 0.1);
+    border-radius: $border-radius-lg;
+    padding: 4px;
+    gap: 0;
+    position: relative;
+    overflow: hidden;
+
+    .toggle-overlay {
+      position: absolute;
+      top: 4px;
+      bottom: 4px;
+      left: 4px /*rtl: auto*/;
+      right: auto /*rtl: 4px*/;
+      width: calc(50% - 4px);
+      border-radius: $border-radius-lg;
+      z-index: 0;
+      background: var(--bs-primary);
+      transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+
+      // Sidebar Layout Classes (toggle-overlay-sidebar)
+      &.toggle-overlay-sidebar {
+        &.sm {
+          transform: translateX(0);
+        }
+
+        &.lg {
+          transform: translateX(100%) /*rtl: translateX(-100%)*/;
+        }
+      }
+
+      // Direction Toggle Classes (toggle-overlay-direction)
+      &.toggle-overlay-direction {
+        &.ltr {
+          transform: translateX(0);
+        }
+
+        &.rtl {
+          transform: translateX(100%) /*rtl: translateX(-100%)*/;
+        }
+      }
+
+      // Page Layout Mode Classes (toggle-overlay-layout)
+      &.toggle-overlay-layout {
+        &.default {
+          transform: translateX(0);
+        }
+
+        &.boxed {
+          transform: translateX(100%) /*rtl: translateX(-100%)*/;
+        }
+      }
+    }
+
+    .btn {
+      border: none;
+      border-radius: $border-radius-lg !important;
+      padding: 0.5rem;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 1;
+
+      i {
+        font-size: 1.25rem;
+        margin-bottom: 0.25rem;
+      }
+
+      span {
+        font-size: 0.75rem;
+        font-weight: 500;
+      }
+
+      &.active {
+        color: $white;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

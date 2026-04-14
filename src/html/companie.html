@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <div class="page-layout">
+        %%include('./partials/layout/header.html')
+        %%include('./partials/layout/left-sidebar.html')
+        <div class="page-wrapper">
+            <div class="page-content">
+                %%include('./partials/components/page-title.html', { pageTitle: 'Companies', pagePrTitle:
+                'Clients' })
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- companie1 -->
+                        <div class="col-xxl-3 col-xl-4 col-md-6 col-12 mb-4">
+                            %%include('partials/components/companie_card.html',
+                            {
+                            "logo":"google.png","name":"Google","mailid":"contact@google.com",
+                            "statusclass":"bg-soft-success","status":"Active",
+                            "discription":"Google LLC is an American multinational technology company specializing in Internet-related services and products.",
+                            "badge1":"Tech Giant","badge2":"High Revenue","badge3":"Global",
+                            "badge4":"AI Leader","badge5":"Cloud Services","badge6":"Strategic Account",
+
+                            })
+                        </div>
+                        <!-- companie2 -->
+                        <div class="col-xxl-3 col-xl-4 col-md-6 col-12 mb-4">
+                            %%include('partials/components/companie_card.html',
+                            {
+                            "logo":"amazon.png","name":"Amazon","mailid":"contact@amazon.com",
+                            "statusclass":"bg-soft-success","status":"Active",
+                            "discription":"Amazon is a global e-commerce and cloud computing company, leading in online retail and technology innovation.",
+                            "badge1":"E-commerce","badge2":"$513B","badge3":"1.54M+ Employees",
+                            "badge4":"Active","badge5":"Global","badge6":"Enterprise",
+                            })
+                        </div>
+                        <!-- companie3 -->
+                        <div class="col-xxl-3 col-xl-4 col-md-6 col-12 mb-4">
+                            %%include('partials/components/companie_card.html',
+                            {
+                            "logo":"dropbox.png","name":"Dropbox","mailid":"contact@dropbox.com",
+                            "statusclass":"bg-soft-warning","status":"Prospect",
+                            "discription":"Dropbox, Inc. is an American cloud-based file storage and collaboration platform, helping teams and individuals securely store, share, and access files from anywhere.",
+                            "badge1":"Cloud Storage","badge2":"Collaboration","badge3":"SaaS",
+                            "badge4":"Global","badge5":"High Value","badge6":"Remote-Friendly",
+                            })
+                        </div>
+                        <!-- companie4 -->
+                        <div class="col-xxl-3 col-xl-4 col-md-6 col-12 mb-4">
+                            %%include('partials/components/companie_card.html',
+                            {
+                            "logo":"figma.png","name":"Figma","mailid":"support@figma.com",
+                            "statusclass":"bg-soft-warning","status":"Prospect",
+                            "discription":"Figma is a collaborative interface design tool that enables teams to create, prototype, and share designs in real time.",
+                            "badge1":"Design Tool","badge2":"Collaboration","badge3":"Cloud-Based",
+                            "badge4":"UI/UX","badge5":"Innovative","badge6":"SaaS",
+                            })
+                        </div>
+                        <!-- companie5 -->
+                        <div class="col-xxl-3 col-xl-4 col-md-6 col-12 mb-4">
+                            %%include('partials/components/companie_card.html',
+                            {
+                            "logo":"meta.png","name":"Meta","mailid":"contact@meta.com",
+                            "statusclass":"bg-soft-danger","status":"Inactive",
+                            "discription":"Meta Platforms, Inc. is an American technology conglomerate known for Facebook, Instagram, WhatsApp, and advancing virtual reality through the Metaverse.",
+                            "badge1":"Social Media","badge2":"Tech Giant","badge3":"Global",
+                            "badge4":"High Revenue","badge5":"VR & AR","badge6":"AI Leader",
+                            })
+                        </div>
+                        <!-- companie6 -->
+                        <div class="col-xxl-3 col-xl-4 col-md-6 col-12 mb-4">
+                            %%include('partials/components/companie_card.html',
+                            {
+                            "logo":"midjourney.png","name":"MidJourney","mailid":"contact@midjourney.com",
+                            "statusclass":"bg-soft-danger","status":"Inactive",
+                            "discription":"MidJourney is an independent research lab exploring new mediums of thought and expanding the imaginative powers of the human species through AI-powered image generation.",
+                            "badge1":"AI Startup","badge2":"Creative Tools","badge3":"Global",
+                            "badge4":"Image Generation","badge5":"Innovation","badge6":"High Engagement",
+                            })
+                        </div>
+                        <!-- companie7 -->
+                        <div class="col-xxl-3 col-xl-4 col-md-6 col-12 mb-4">
+                            %%include('partials/components/companie_card.html',
+                            {
+                            "logo":"paypal.png","name":"PayPal","mailid":"contact@paypal.com",
+                            "statusclass":"bg-soft-warning","status":"Prospect",
+                            "discription":"PayPal Holdings, Inc. is a global online payments system that supports online money transfers and serves as an electronic alternative to traditional paper methods.",
+                            "badge1":"FinTech","badge2":"Global","badge3":"High Revenue",
+                            "badge4":"Digital Payments","badge5":"Trusted Brand","badge6":"Enterprise Client",
+                            })
+                        </div>
+                        <!-- companie8 -->
+                        <div class="col-xxl-3 col-xl-4 col-md-6 col-12 mb-4">
+                            %%include('partials/components/companie_card.html',
+                            {
+                            "logo":"perplexity.png","name":"Perplexity","mailid":"contact@perplexity.ai",
+                            "statusclass":"bg-soft-success","status":"Active",
+                            "discription":"Perplexity AI is an advanced AI-powered search and Q&A platform that provides accurate answers to complex queries in real-time.",
+                            "badge1":"AI Platform","badge2":"Innovative","badge3":"High Growth",
+                            "badge4":"Tech Startup","badge5":"NLP Expert","badge6":"Global Reach",
+                            })
+                        </div>
+                        <!-- companie9 -->
+                        <div class="col-xxl-3 col-xl-4 col-md-6 col-12 mb-4">
+                            %%include('partials/components/companie_card.html',
+                            {
+                            "logo":"slack.png","name":"Slack","mailid":"info@slack.com",
+                            "statusclass":"bg-soft-success","status":"Active",
+                            "discription":"Slack is a collaboration hub that connects people, tools, and information for teams to work together efficiently.",
+                            "badge1":"Collaboration","badge2":"Messaging","badge3":"Cloud Service",
+                            "badge4":"Productivity","badge5":"Remote Work","badge6":"Enterprise Client",
+                            })
+                        </div>
+                        <!-- companie10 -->
+                        <div class="col-xxl-3 col-xl-4 col-md-6 col-12 mb-4">
+                            %%include('partials/components/companie_card.html',
+                            {
+                            "logo":"spotify.png","name":"Spotify","mailid":"contact@spotify.com",
+                            "statusclass":"bg-soft-warning","status":"Prospect",
+                            "discription":"Spotify Technology S.A. is a digital music streaming service that gives users access to millions of songs and podcasts worldwide.",
+                            "badge1":"Music Streaming","badge2":"Global","badge3":"Tech Innovator",
+                            "badge4":"High Revenue","badge5":"Subscription Service","badge6":"AI & Recommendations",
+                            })
+                        </div>
+                        <!-- companie11 -->
+                        <div class="col-xxl-3 col-xl-4 col-md-6 col-12 mb-4">
+                            %%include('partials/components/companie_card.html',
+                            {
+                            "logo":"visa.png","name":"Visa","mailid":"contact@visa.com",
+                            "statusclass":"bg-soft-danger","status":"Inactive",
+                            "discription":"Visa Inc. is a global payments technology company that connects consumers, businesses, banks, and governments, enabling digital payments worldwide.",
+                            "badge1":"Fintech","badge2":"Global","badge3":"High Revenue",
+                            "badge4":"Enterprise Client","badge5":"Digital Payments","badge6":"Trusted Brand",
+                            })
+                        </div>
+                        <!-- companie12 -->
+                        <div class="col-xxl-3 col-xl-4 col-md-6 col-12 mb-4">
+                            %%include('partials/components/companie_card.html',
+                            {
+                            "logo":"yahoo.png","name":"Yahoo","mailid":"contact@yahoo.com",
+                            "statusclass":"bg-soft-success","status":"Active",
+                            "discription":"Yahoo is an American web services provider, known for its web portal, search engine, and online services like email and news.",
+                            "badge1":"Internet Company","badge2":"Global","badge3":"High Traffic",
+                            "badge4":"Email Services","badge5":"News Portal","badge6":"Advertising",
+                            })
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-12 mb-5">
+                            <button type="button" class="btn border-0 btn-load w-100">
+                                <span class="spinner-border spinner-border-sm border-2 me-1" aria-hidden="true"></span>
+                                <span role="status">Loading more...</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            %%include('./partials/layout/footer.html')
+
+        </div>
+    </div>
+    %%include('./partials/layout/right-sidebar.html')
+
+    <!-- %%include('./partials/right-sidebar.html')
+    %%include('./partials/back-to-top.html') -->
+
+    %%include('./partials/layout/footer-js.html')
+
+</body>
+
+</html>

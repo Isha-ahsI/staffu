@@ -1,0 +1,365 @@
+// helper.scss
+
+// Font-size
+@for $i from 10 through 200 {
+    .fs-#{$i} {
+        font-size: 1px * $i;
+    }
+}
+
+// height & width
+@for $j from 1 through 200 {
+    .w-#{$j} {
+        width: 1% * $j;
+    }
+
+    .h-#{$j} {
+        height: 1% * $j !important;
+    }
+
+    .br-w-#{$j} {
+        border-width: 1px * $j !important;
+    }
+
+    .opacity-#{$j} {
+        opacity: 0.01 * $j;
+    }
+}
+
+.hr-style-1 {
+    border-image: linear-gradient(to right, transparent, var(--bs-text-muted), transparent) 100% 1 100% 1 / 5px 0 0 0 stretch;
+}
+
+::selection {
+    background-color: var(--bs-menu-btn-hover-color);
+    color: var(--bs-card-bg-color);
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.br-dashed {
+    border-style: dashed;
+}
+
+a {
+    text-decoration: none;
+    font-weight: $font-weight-semibold;
+}
+
+.text-muted {
+    color: var(--bs-text-muted);
+}
+
+.text-dark {
+    color: var(--bs-title-color) !important;
+}
+
+.border-white {
+    border-color: var(--bs-card-bg-color) !important;
+}
+
+// Base class generator
+@mixin grid-border($breakpoint) {
+    @include media-breakpoint-up($breakpoint) {
+        .grid-border-#{$breakpoint} {
+            &>*:not(:last-child) {
+                border-right: 1px solid var(--bs-border-line-color);
+            }
+        }
+    }
+}
+
+// Apply to desired breakpoints
+@include grid-border(sm);
+@include grid-border(md);
+@include grid-border(lg);
+@include grid-border(xl);
+@include grid-border(xxl);
+
+// odd-border
+.odd-border {
+    padding-right: calc(var(--bs-gutter-x) * 0.5);
+    padding-left: calc(var(--bs-gutter-x) * 0.5);
+
+    &>div:nth-child(odd)>div {
+        border-right: $border-width dashed var(--bs-card-border-color);
+    }
+
+    &>div {
+        padding: 0;
+
+        &>div {
+            border-bottom: $border-width dashed var(--bs-card-border-color);
+        }
+
+        &:nth-last-child(-n+1) {
+            &>div {
+                border-bottom: none;
+            }
+        }
+
+        @include media-breakpoint-up(sm) {
+            &:nth-last-child(-n+2) {
+                &>div {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        &>div:nth-child(odd)>div {
+            border-right: none;
+        }
+    }
+}
+
+// logo
+.invoice-card-logo {
+    .logo-dark {
+        display: var(--bs-logo-dark);
+    }
+
+    .logo-light {
+        display: var(--bs-logo-light);
+    }
+}
+
+// breadcrumb
+.breadcrumb {
+    .breadcrumb-item {
+        color: var(--bs-breadcrumb-text-color);
+
+        &.active {
+            color: var(--bs-card-title-color);
+        }
+    }
+}
+
+// icon-box
+.icon-card {
+    transition: all 0.2s linear;
+    border: 1px solid transparent;
+
+    .icon-box {
+
+        .icon-box-icon,
+        .icon-box-text {
+            display: block;
+            transition: all 0.2s linear;
+        }
+
+        .icon-box-icon {
+            color: var(--bs-title-color);
+        }
+
+        .icon-box-text {
+            color: (--bs-text-muted)
+        }
+    }
+
+    &:hover {
+        border: 1px solid $gray-400;
+
+        .icon-box {
+
+            .icon-box-icon,
+            .icon-box-text {
+                color: var(--bs-menu-btn-hover-color);
+            }
+
+            .icon-box-icon {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+// 
+.doc-item {
+    padding: .50rem;
+    border-radius: $border-radius-lg;
+    border: $border-width solid;
+
+    &:not(:last-child) {
+        margin-bottom: 16px;
+    }
+
+    &[data-status="true"] {
+        border-color: $success;
+
+        .status-icon {
+            color: $success;
+
+            &.doc-one {
+                display: block;
+            }
+
+            &.doc-two {
+                display: none;
+            }
+        }
+    }
+
+    &[data-status="false"] {
+        border-color: $danger;
+
+        .status-icon {
+            color: $danger;
+
+            &.doc-one {
+                display: none;
+            }
+
+            &.doc-two {
+                display: block;
+            }
+        }
+    }
+}
+
+// toggle button 
+.toggle-btn {
+    padding: 4px 8px;
+    border: 1px solid rgba($secondary, 0.3);
+    background-color: rgba($secondary, 0.1);
+    border-radius: $border-radius-lg;
+
+    .btn-overlay {
+        position: absolute;
+        top: 0.25rem;
+        bottom: 0.25rem;
+        left: 0.25rem;
+        width: 50%;
+        background-color: var(--bs-boarding-toggle-btn-bg-color);
+        font-weight: $font-weight-semibold;
+        border-radius: $border-radius-lg;
+        z-index: 1;
+        transition: transform 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+        box-shadow: $box-shadow-sm;
+
+        &.option1 {
+            transform: translateX(0);
+        }
+
+        &.option2 {
+            transform: translateX(calc(100% - 0.5rem));
+        }
+    }
+
+    .toggle-option {
+        position: relative;
+        flex: 1;
+        padding: 8px 12px;
+        color: var(--bs-text-muted);
+        z-index: 2;
+        transition: color 0.3s linear;
+
+        &.active,
+        &:focus {
+            color: var(--bs-text-dark);
+        }
+
+        &:hover {
+            transform: scale(1) !important;
+        }
+    }
+}
+
+// wizard css
+@include media-breakpoint-up(sm) {
+    .list-group {
+        &.vertical-steps {
+            counter-reset: step-counter;
+
+            .list-group-item {
+                position: relative;
+                border: transparent;
+                border-left: 3px solid var(--bs-border-line-color);
+                box-sizing: border-box;
+                border-radius: 0;
+                counter-increment: step-counter;
+                padding-left: 27px;
+                padding-right: 0px;
+                padding-bottom: 24px;
+                padding-top: 0px;
+                background-color: transparent;
+
+                &:last-child {
+                    // border-left: 3px solid transparent;
+                    padding-bottom: 0;
+                }
+
+                @each $color, $value in $theme-colors {
+                    &.list-group-item-#{$color} {
+                        &::before {
+                            background-color: var(--bs-#{$color});
+                            box-shadow: 0 0 0 8px rgba(var(--bs-#{$color}-rgb), 0.1);
+                        }
+                    }
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 12px;
+                    height: 12px;
+                    border-radius: $border-radius-2xl;
+                    margin-left: -35px;
+                }
+
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .list-group {
+        &.vertical-steps {
+            .list-group-item {
+                .time-col {
+                    flex: 0 0 100px;
+                }
+            }
+        }
+
+    }
+}
+
+@media (min-width: 0px) and (max-width: 575.98px) {
+    .list-group {
+        &.vertical-steps {
+            .list-group-item {
+                padding: 0px 0px 24px;
+                border-color: transparent;
+                background-color: transparent;
+            }
+        }
+    }
+}
+
+.billing-toggle {
+    padding: 8px 12px;
+    border: 1px solid rgba($secondary, 0.3);
+    border-radius: $border-radius-xl;
+    transition: $transition-base;
+    box-shadow: $box-shadow-sm;
+
+    .billing-option {
+        border: 1px solid transparent;
+        border-radius: $border-radius-xl;
+        background-color: transparent;
+        color: var(--bs-text-muted);
+        padding: 8px 16px;
+
+        &:hover,
+        &.active {
+            background-color: $primary;
+            color: $white;
+            font-weight: $font-weight-semibold;
+            
+        }
+    }
+}

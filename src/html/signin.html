@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <section class="auth-page">
+        <div class="overlay"></div>
+        <div class="container position-relative z-3">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card auth-card rounded-5 overflow-hidden">
+                        <div class="card-body p-0">
+                            <div class="row">
+                                <div class="col-lg-6 col-12">
+                                    <div class="m-4">
+                                        <div class="p-xl-4">
+                                            <div class="d-flex align-items-center justify-content-center mb-4">
+                                                <img src="images/logos/logo_light.png" height="30" alt="Light Logo">
+                                            </div>
+                                            <h1 class="text-white fw-bold mb-1">Sign In</h1>
+                                            <p class="text-light text-opacity-75 mb-5">Welcome back! It's great to see you.</p>
+                                            <form class="auth-form">
+                                                <button class="w-100 btn btn-light btn-google" type="button">
+                                                    <img src="../images/b_logo/google.png" alt="google" height="20">
+                                                    <span class="ms-2">Sign In with Google</span>
+                                                </button>
+                                                <hr class="mb-5">
+                                                <div class="mb-4">
+                                                    <label for="authVerifyEmail"
+                                                        class="form-label text-light fw-light">Email ID</label>
+                                                    <div class="input-group">
+                                                        <span
+                                                            class="input-group-text bg-light bg-opacity-75 border-0 text-dark"><i
+                                                                class="bi bi-envelope-at-fill fs-5"></i></span>
+                                                        <input placeholder="Enter Your Email ID" required=""
+                                                            id="authVerifyEmail" class="form-control auth-control"
+                                                            type="email" value="joyce.neal@example.com" name="emailId">
+                                                    </div>
+                                                </div>
+
+                                                <div class="mb-4">
+                                                    <div class="d-flex justify-content-between align-items-center">
+                                                        <label for="authVerifyPassword"
+                                                            class="form-label text-light fw-light">Password</label>
+                                                        <a href="./forgot_pass.html" class="d-sm-block d-none" data-discover="true">Forgot password?</a>
+                                                    </div>
+                                                    <div class="input-group">
+                                                        <span
+                                                            class="input-group-text bg-light bg-opacity-75 border-0 text-dark toggle-password" data-target="authVerifyPassword"><i
+                                                                class="bi bi-eye-slash-fill fs-5"></i></span>
+                                                        <input placeholder="Create password" required=""
+                                                            id="authVerifyPassword" class="form-control auth-control"
+                                                            type="password" value="012345678" name="password">
+                                                    </div>
+                                                    <div id="pswHelp" class="form-text text-secondary d-sm-block d-none">Must be at least
+                                                        8 characters</div>
+                                                    <a href="#" class="d-block d-sm-none">Forgot password?</a>
+                                                </div>
+
+                                                <button class="btn btn-primary w-100 mb-3" type="submit">Sign In</button>
+
+                                            </form>
+                                        </div>
+                                        <div
+                                            class="mb-1 d-flex flex-wrap align-items-center justify-content-center mt-xl-0 mt-4 gap-1">
+                                            <p class="mb-0 text-secondary text-center">First time with us ? </p>
+                                            <a href="signup.html" class="text-primary fw-semibold">Create an account</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-12 d-lg-block d-none">
+                                    <div class="p-4 auth-sec-border rounded-5 bg-dark h-100">
+                                        <div class="swiper authSwiper overflow-hidden h-100 w-100"
+                                            id="authSignInSwiper">
+                                            <!-- Additional required wrapper -->
+                                            <div class="swiper-wrapper">
+                                                <!-- Slides -->
+                                                <div class="swiper-slide">
+                                                    <div class="m-4">
+                                                        <h4 class="text-center mb-1 fw-bold text-light mb-5">Visualize
+                                                            trends, track key metrics, and gain real-time insights to
+                                                            make faster, data-driven decisions that drive growth.</h4>
+                                                        <img src="../images/dashboard_img/dash1.jpg" alt=""
+                                                            class="img-fluid rounded-3 dash-img-shadow">
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="m-4">
+                                                        <h4 class="text-center mb-1 fw-bold text-light mb-5">Accelerate
+                                                            Your Sales Pipeline With Real-Time Performance Tracking</h4>
+                                                        <img src="../images/dashboard_img/dash2.jpg" alt=""
+                                                            class="img-fluid rounded-3 dash-img-shadow">
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="m-4">
+                                                        <h4 class="text-center mb-1 fw-bold text-light mb-5">Simplify
+                                                            Attendance Management With Smart Tracking Tools</h4>
+                                                        <img src="../images/dashboard_img/dash3.jpg" alt=""
+                                                            class="img-fluid rounded-3 dash-img-shadow">
+                                                    </div>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <div class="m-4">
+                                                        <h4 class="text-center mb-1 fw-bold text-light mb-5">Measure,
+                                                            Analyze, and Improve Team Performance Seamlessly</h4>
+                                                        <img src="../images/dashboard_img/dash4.jpg" alt=""
+                                                            class="img-fluid rounded-3 dash-img-shadow">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- If we need pagination -->
+                                            <div class="swiper-pagination"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="plugins/swiper/swiper-bundle.min.js"></script>
+    <script src="js/combined.min.js"></script>
+    <script src="js/pages/signin.js"></script>
+
+</body>
+
+</html>

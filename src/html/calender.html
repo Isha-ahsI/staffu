@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <div class="page-layout">
+        %%include('./partials/layout/header.html')
+        %%include('./partials/layout/left-sidebar.html')
+        <div class="page-wrapper">
+            <div class="page-content">
+                %%include('./partials/components/page-title.html', { pageTitle: 'Calendar', pagePrTitle: 'Apps' })
+                <div class="container-fluid">
+                    <div class="row">
+
+                        <!-- Sidebar -->
+                        <div class="col-lg-4 col-xxl-3 order-lg-1 order-2">
+                            <div class="card">
+                                <div class="card-body d-flex flex-column p-3">
+                                    <button id="btnAddEvent" class="btn btn-primary w-100 mb-4">
+                                        <i class="bi bi-plus-lg me-2"></i>
+                                        <span>Add Event</span>
+                                    </button>
+                                    <div class="d-flex flex-column justify-content-center align-items-center mb-4 w-100">
+                                        <div id="sidebar-datepicker" class="w-100 border-0"></div>
+                                    </div>
+
+                                    <div class="bg-secondary bg-opacity-10 rounded-3 p-3 mb-4 shadow-sm border border-1 border-secondary border-opacity-10">
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <h6 class="mb-0 text-uppercase text-muted small fw-bold">Events Summary</h6>
+                                            <span id="totalEventsBadge" class="badge bg-soft-secondary px-2 py-1">0
+                                                Total</span>
+                                        </div>
+
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <div class="d-flex align-items-center">
+                                                <div class="avatar avatar-sm avatar-soft-primary rounded-circle me-2">
+                                                    <i class="ri-briefcase-line"></i>
+                                                </div>
+                                                <span class="small">Work</span>
+                                            </div>
+                                            <span id="workCount" class="badge bg-primary px-2 py-1">0</span>
+                                        </div>
+
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="d-flex align-items-center">
+                                                <div class="avatar avatar-sm avatar-soft-success rounded-circle me-2">
+                                                    <i class="ri-calendar-check-fill"></i>
+                                                </div>
+                                                <span class="small">Leave</span>
+                                            </div>
+                                            <span id="leaveCount" class="badge bg-success px-2 py-1">0</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="bg-secondary bg-opacity-10 rounded-3 p-3 mb-4 shadow-sm border border-1 border-secondary border-opacity-10">
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <h6 class="mb-1 text-uppercase text-muted small fw-bold">Leave Balance</h6>
+                                            <span class="small fw-bold">
+                                                <span id="remainingLeaves" class="text-success">0</span> / <span
+                                                    id="leaveBalance">15</span> days
+                                            </span>
+                                        </div>
+                                        <div class="progress mb-2" style="height: 6px;">
+                                            <div id="leaveProgress" class="progress-bar bg-success" role="progressbar"
+                                                style="width: 0%"></div>
+                                        </div>
+                                        <div class="d-flex justify-content-between">
+                                            <small class="text-muted">
+                                                <i class="bi bi-calendar-week me-1"></i> <span id="usedLeaves">0</span>
+                                                days used
+                                            </small>
+                                            <small class="text-muted"><span id="usedPercent">0%</span> utilized</small>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-3 text-uppercase fw-bold">Time Brackdown</h6>
+                                        <div class="ms-3">
+                                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                                <div class="d-flex align-items-center gap-2 me-auto">
+                                                    <span class="text-primary"><i class="ri-circle-fill fs-10"></i></span>
+                                                    <p class="mb-0 text-muted">Meeting</p>
+                                                </div>
+                                                <div class="progress w-50 ms-auto" role="progressbar" aria-label="Example 1px high"
+                                                    aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"
+                                                    style="height: 4px;">
+                                                    <div class="progress-bar bg-primary" style="width: 40%;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                                <div class="d-flex align-items-center gap-2 me-auto">
+                                                    <span class="text-success"><i class="ri-circle-fill fs-10"></i></span>
+                                                    <p class="mb-0 text-muted">Task</p>
+                                                </div>
+                                                <div class="progress w-50 ms-auto" role="progressbar" aria-label="Example 1px high"
+                                                    aria-valuenow="77" aria-valuemin="0" aria-valuemax="100"
+                                                    style="height: 4px;">
+                                                    <div class="progress-bar bg-success" style="width: 77%;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                                <div class="d-flex align-items-center gap-2 me-auto">
+                                                    <span class="text-orange"><i class="ri-circle-fill fs-10"></i></span>
+                                                    <p class="mb-0 text-muted">Training</p>
+                                                </div>
+                                                <div class="progress w-50 ms-auto" role="progressbar" aria-label="Example 1px high"
+                                                    aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
+                                                    style="height: 4px;">
+                                                    <div class="progress-bar bg-orange" style="width: 60%;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-between mb-2">
+                                                <div class="d-flex align-items-center gap-2 me-auto">
+                                                    <span class="text-blue"><i class="ri-circle-fill fs-10"></i></span>
+                                                    <p class="mb-0 text-muted">Leave</p>
+                                                </div>
+                                                <div class="progress w-50 ms-auto" role="progressbar" aria-label="Example 1px high"
+                                                    aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"
+                                                    style="height: 4px;">
+                                                    <div class="progress-bar bg-blue" style="width: 45%;"></div>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card-footer p-3 bg-transparent">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <h6 class="mb-0 text-uppercase fw-bold">Upcoming Schedule</h6>
+                                        <span id="upcomingCount" class="badge bg-soft-dark px-2 py-1">0</span>
+                                    </div>
+                                    <div id="upcomingList" class="d-flex flex-column gap-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Calendar -->
+                        <div class="col-lg-8 col-xxl-9 col-12 order-lg-2 order-1">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <div id="calendar"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            %%include('./partials/layout/footer.html')
+        </div>
+    </div>
+
+
+    <!-- Add/Edit Event Modal -->
+    <div class="modal fade" id="eventModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 id="modalTitle" class="modal-title">Add New Event</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form id="eventForm">
+                    <div class="modal-body">
+                        <input type="hidden" id="eventId">
+                        <div class="mb-3">
+                            <label class="form-label">Event Title</label>
+                            <input type="text" id="eventTitle" class="form-control" placeholder="Enter event title"
+                                required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Event Type</label>
+                            <select id="eventType" class="form-select">
+                                <option value="task">Task</option>
+                                <option value="meeting">Meeting</option>
+                                <option value="deadline">Deadline</option>
+                                <option value="leave">Leave</option>
+                                <option value="personal">Personal</option>
+                                <option value="holiday">Holiday</option>
+                                <option value="reminder">Reminder</option>
+                            </select>
+                        </div>
+                        <div id="colorPickerGroup" class="mb-3">
+                            <label class="form-label">Event Color</label>
+                            <div id="colorOptions" class="d-flex flex-wrap gap-2"></div>
+                        </div>
+
+                        <div id="statusGroup" class="mb-3" style="display: none;">
+                            <label class="form-label">Event Status</label>
+                            <select id="eventStatus" class="form-select">
+                                <option value="pending">Pending</option>
+                                <option value="approved">Approved</option>
+                                <option value="rejected">Rejected</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Date & Time</label>
+                            <input type="text" id="dateTime" class="form-control" placeholder="Select date and time">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Description (Optional)</label>
+                            <textarea id="eventDescription" class="form-control" rows="3"
+                                placeholder="Enter event description"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer justify-content-between">
+                        <div>
+                            <button type="button" id="deleteBtn" class="btn btn-outline-danger" style="display: none;">
+                                <i class="bi bi-trash me-1"></i> Delete
+                            </button>
+                        </div>
+                        <div>
+                            <button type="button" class="btn btn-outline-secondary me-2"
+                                data-bs-dismiss="modal">Cancel</button>
+                            <button type="submit" id="saveBtn" class="btn btn-primary">Save Event</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal fade" id="delConfirmModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0 pb-4">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body py-4 text-center">
+                    <div class="p-0 d-inline-flex text-danger lh-1"><i
+                            class="bi bi-exclamation-diamond-fill display-2"></i></div>
+                    <h5>Are you sure?</h5>
+                    <p class="text-muted">This will permanently delete the event from the calendar.</p>
+                </div>
+                <div class="modal-footer border-0 pt-0">
+                    <button type="button" class="btn btn-outline-secondary px-4" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" id="confirmDelete" class="btn btn-danger px-4"><i
+                            class="bi bi-trash me-1"></i> Delete Event</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    %%include('./partials/layout/right-sidebar.html')
+
+    <!-- %%include('./partials/right-sidebar.html')
+    %%include('./partials/back-to-top.html') -->
+
+    %%include('./partials/layout/footer-js.html')
+    <script src='plugins/@fullcalendar/core/index.global.min.js'></script>
+    <script src='plugins/@fullcalendar/daygrid/index.global.min.js'></script>
+    <script src="plugins/@fullcalendar/timegrid/index.global.min.js"></script>
+    <script src="plugins/@fullcalendar/interaction/index.global.min.js"></script>
+    <script src="plugins/@fullcalendar/bootstrap5/index.global.min.js"></script>
+    <script src="plugins/@fullcalendar/list/index.global.min.js"></script>
+    <script src="plugins/flatpickr/flatpickr.min.js"></script>
+    <script src="js/pages/calender.js"></script>
+
+</body>
+
+</html>

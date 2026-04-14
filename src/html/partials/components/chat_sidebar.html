@@ -1,0 +1,98 @@
+<div class="d-flex flex-column" data-simplebar style="overflow-y: auto;">
+    <div class="p-3">
+        <!-- Favorites -->
+        <h5 class="text-muted fw-semibold mb-3 fs-18">Favorites</h5>
+        <div class="position-relative pb-3" data-simplebar style="max-width: 100%;">
+            <div class="d-flex align-items-center gap-3" style="min-width:max-content;">
+                <div class="position-relative">
+                    <img alt="Rounded Avatar 1" class="avatar-img-xs rounded-circle"
+                        src="../images/avatars/avatar1.jpg">
+                    <span
+                        class="position-absolute top-0 mt-2 start-100 translate-middle p-1 bg-success border border-white border-3 rounded-circle z-2"></span>
+                </div>
+                <img alt="Rounded Avatar 2" class="avatar-img-xs rounded-circle" src="../images/avatars/avatar2.jpg">
+                <img alt="Rounded Avatar 3" class="avatar-img-xs rounded-circle" src="../images/avatars/avatar3.jpg">
+                <div class="position-relative">
+                    <img alt="Rounded Avatar 4" class="avatar-img-xs rounded-circle"
+                        src="../images/avatars/avatar4.jpg">
+                    <span
+                        class="position-absolute top-0 mt-2 start-100 translate-middle p-1 bg-success border border-white border-3 rounded-circle z-2"></span>
+                </div>
+                <img alt="Rounded Avatar 5" class="avatar-img-xs rounded-circle" src="../images/avatars/avatar5.jpg">
+                <img alt="Rounded Avatar 6" class="avatar-img-xs rounded-circle" src="../images/avatars/avatar6.jpg">
+                <img alt="Rounded Avatar 7" class="avatar-img-xs rounded-circle" src="../images/avatars/avatar7.jpg">
+                <img alt="Rounded Avatar 8" class="avatar-img-xs rounded-circle" src="../images/avatars/avatar8.jpg">
+                <img alt="Rounded Avatar 9" class="avatar-img-xs rounded-circle" src="../images/avatars/avatar9.jpg">
+                <img alt="Rounded Avatar 10" class="avatar-img-xs rounded-circle" src="../images/avatars/avatar10.jpg">
+            </div>
+        </div>
+
+        <hr class="mt-0">
+
+        <!-- search -->
+        <div class="search-box position-relative">
+            <div class="position-absolute start-0 top-50 translate-middle-y ms-3"><i class="ri-search-line"></i></div>
+            <input class="chatSearch ps-5 form-control" placeholder="Search Messanger" type="text" id="chatSearch">
+        </div>
+    </div>
+    
+    <!-- chats -->
+    <div>
+        <div class="px-2">
+            <div class="tab-content chatTabContent">
+
+                <!-- Chats Tab -->
+                <div class="tab-pane fade show active" id="pills-chats" role="tabpanel"
+                    aria-labelledby="pills-chats-tab" tabindex="0">
+                    <h5 class="text-dark ms-3 fw-semibold mb-3">All Chats</h5>
+                    <div data-simplebar class="chat-leftbar-height" style="overflow-y: auto;">
+                        <div class="chatList chat-list list-group list-group-flush">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Groups Tab -->
+                <div class="tab-pane fade" id="pills-group" role="tabpanel" aria-labelledby="pills-group-tab"
+                    tabindex="0">
+                    <h5 class="text-dark ms-3 fw-semibold mb-3">Group Chats</h5>
+                    <div data-simplebar class="chat-leftbar-height" style="overflow-y: auto;">
+                        <div class="groupsList px-2 list-group list-group-flush"></div>
+                        <div class="p-3">
+                            <button type="button"
+                                class="w-100 mb-3 d-flex align-items-center justify-content-center btn btn-outline-primary btn-sm createGroupBtn rounded-pill">
+                                <i class="ri-user-add-line me-2 fs-6 fw-medium"></i>  Find and invite people
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Tab -->
+                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"
+                    tabindex="0">
+                    <h5 class="text-dark ms-3 fw-semibold mb-3">Recent Calls</h5>
+                    <div data-simplebar class="chat-leftbar-height" style="overflow-y: auto;">
+                        <div class="callsList px-2 list-group list-group-flush"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ul class="nav nav-pills justify-content-between border-0 rounded-0 px-3 chatBarTab py-3 flex-nowrap" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-chats-tab" data-bs-toggle="pill" data-bs-target="#pills-chats"
+                    type="button" role="tab" aria-controls="pills-chats" aria-selected="true"><span class="d-block"><i
+                            class="ri-message-3-line"></i></span> Chats</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-group-tab" data-bs-toggle="pill" data-bs-target="#pills-group"
+                    type="button" role="tab" aria-controls="pills-group" aria-selected="false"><span class="d-block"><i
+                            class="ri-group-2-line"></i></span> Groups</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
+                    type="button" role="tab" aria-controls="pills-contact" aria-selected="false"><span
+                        class="d-block"><i class="ri-phone-line"></i></span>Contacts</button>
+            </li>
+        </ul>
+    </div>
+
+</div>

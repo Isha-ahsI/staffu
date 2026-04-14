@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <div class="page-layout">
+        %%include('./partials/layout/header.html')
+        %%include('./partials/layout/left-sidebar.html')
+        <div class="page-wrapper">
+            <div class="page-content">
+                %%include('./partials/components/page-title.html', { pageTitle: 'Activity Log', pagePrTitle: 'Clients' })
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap justify-content-between align-items-end gap-3">
+                                        <div>
+                                            <smal class="text-muted">Filter with Date</smal>
+                                            <div class="input-icon">
+                                                <span class="cale-icon"><i class="bi bi-calendar4-event"></i></span>
+                                                <input type="text" id="activityDatePicker" placeholder="Select date" class="form-control" />
+                                            </div>
+                                        </div>
+                                        <div role="group" class="btn-group">
+                                            <input class="btn-check" id="call" type="checkbox" value="call">
+                                            <label tabindex="0" for="call" class="btn btn-sm btn-outline-secondary"><span><i class="ri-phone-line fs-5 fw-medium me-1"></i></span></label>
+                                            <input class="btn-check" id="email" type="checkbox" value="email">
+                                            <label tabindex="0" for="email" class="btn btn-sm btn-outline-secondary"><span><i class="ri-mail-check-line fs-5 fw-medium me-1"></i></span></label>
+                                            <input class="btn-check" id="meeting" type="checkbox" value="meeting">
+                                            <label tabindex="0" for="meeting" class="btn btn-sm btn-outline-secondary"><span><i class="ri-team-line fs-5 fw-medium me-1"></i></span></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="text-dark fw-bold mb-4">
+                                        <span class="badge bg-soft-dark me-2"><i class="ri-arrow-down-s-line"></i></span>Today
+                                    </h6>
+                                    <ul class="list-group vertical-steps ps-4">
+                                        <li class="list-group-item list-group-item-primary d-flex flex-lg-row flex-column gap-lg-4 gap-2">
+                                            <p class="time-col mb-0 text-muted text-nowrap"><span><i class="bi bi-clock-history"></i></span> 12 min ago</p>
+                                            <div class="card mb-0">
+                                                <div class="card-body pb-3">
+                                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                                        <h6 class="fs-18 fw-semibold mb-0">Sent proposal & follow-up email</h6>
+                                                        <span class="badge bg-soft-info border-0  rounded-pill">Follow-up</span>
+                                                    </div>
+                                                    <p class="mb-0">"Sent a detailed proposal to the client outlining the scope of work, deliverables, timelines, and pricing. <br>Followed up with a personalized email to address any questions or clarifications, ensuring the client has all necessary information to make a decision."</p>
+                                                </div>
+                                                <div class="card-footer pt-0 bg-transparent border-0">
+                                                    <div class="d-flex justify-content-end align-items-center gap-2">
+                                                        <div class="avatar avatar-xxxs">
+                                                            <img src="images/avatars/avatar2.jpg" alt="Employee Img" class="w-100 h-100 rounded-circle">
+                                                        </div>
+                                                        <small class="text-dark"><span>Tiger Nixon</span></small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li class="list-group-item list-group-item-primary d-flex flex-lg-row flex-column gap-lg-4 gap-2">
+                                            <p class="time-col mb-0 text-muted text-nowrap"><span><i class="bi bi-clock-history"></i></span> 05:45 pm</p>
+                                            <div class="d-flex align-items-center">
+                                                <div class="avatar avatar-sm avatar-soft-orange rounded-circle fw-semibold me-2">JD</div>
+                                                <p class="mb-0 text-muted"><span class="fw-semibold text-dark">Joy David</span> ended her work session <span class="text-dark">at 5:45 PM.</span></p>
+                                            </div>
+                                        </li>
+
+                                        <li class="list-group-item list-group-item-primary d-flex flex-lg-row flex-column gap-lg-4 gap-2">
+                                            <p class="time-col mb-0 text-muted text-nowrap"><span><i class="bi bi-clock-history"></i></span> 04:30 pm</p>
+                                            <div class="card mb-0">
+                                                <div class="card-body py-3">
+                                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-sm-5">
+                                                        <h6 class="fs-18 fw-semibold mb-0">Design review with timeless
+                                                        </h6>
+                                                        <div class="avatar-group">
+                                                            <div
+                                                                class="avatar rounded-circle avatar-sm overflow-hidden">
+                                                                <img alt="Bordered Avatar 1" class="w-100 h-100"
+                                                                    src="../images/avatars/avatar1.jpg">
+                                                            </div>
+                                                            <div
+                                                                class="avatar rounded-circle avatar-sm overflow-hidden">
+                                                                <img alt="Bordered Avatar 2" class="w-100 h-100"
+                                                                    src="../images/avatars/avatar2.jpg">
+                                                            </div>
+                                                            <small>and 4 Others</small>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li
+                                            class="list-group-item list-group-item-primary d-flex flex-lg-row flex-column gap-lg-4 gap-2">
+                                            <p class="time-col mb-0 text-muted text-nowrap"><span><i
+                                                        class="bi bi-clock-history"></i></span> 09:20
+                                                am</p>
+                                            <div class="d-flex align-items-center">
+                                                <div class="avatar avatar-sm me-2">
+                                                    <img src="images/avatars/avatar1.jpg" alt="Employee Img"
+                                                        class="w-100 h-100 custom-avatar">
+                                                </div>
+                                                <p class="mb-0 text-muted"><span class="fw-semibold text-dark">Tiger
+                                                        Nixon</span> created <span class="text-dark">project.</span></p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="text-dark fw-bold mb-4">
+                                        <span class="badge bg-soft-dark me-2"><i class="ri-arrow-down-s-line"></i></span>Yesterday</h6>
+                                    <ul class="list-group vertical-steps ps-4">
+                                        <li
+                                            class="list-group-item list-group-item-primary d-flex flex-lg-row flex-column gap-lg-4 gap-2 pt-sm-4">
+                                            <p class="time-col mb-0 text-muted text-nowrap"><span><i
+                                                        class="bi bi-clock-history"></i></span> 05:00
+                                                pm</p>
+                                            <div class="card mb-0">
+                                                <div class="card-header bg-transparent border-0 ps-3">
+                                                    <span
+                                                        class="badge bg-soft-dark border-0 rounded-pill fw-medium"><span
+                                                            class="me-1"><i
+                                                                class="ri-history-line"></i></span>Reminder</span>
+                                                </div>
+                                                <div class="card-body py-3 pt-0 ps-4">
+                                                    <h6 class="fs-18 fw-semibold mb-1">Quarterly Business Review –
+                                                        Vestige
+                                                        Marketing Pvt. Ltd.</h6>
+                                                    <small><span><i class="ri-calendar-schedule-line"></i></span> 12
+                                                        February 2026, 6:00 PM</small>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li
+                                            class="list-group-item list-group-item-primary d-flex flex-lg-row flex-column gap-lg-4 gap-2">
+                                            <p class="time-col mb-0 text-muted text-nowrap"><span><i
+                                                        class="bi bi-clock-history"></i></span> 04:00
+                                                pm</p>
+                                            <div class="d-flex align-items-center">
+                                                <div class="avatar avatar-sm me-2">
+                                                    <img src="images/avatars/avatar3.jpg" alt="Employee Img"
+                                                        class="w-100 h-100 rounded-circle">
+                                                </div>
+                                                <p class="mb-0 text-muted"><span class="fw-semibold text-dark">Ollivia
+                                                        Joy</span> completed the assigned task for <span
+                                                        class="text-dark">ERP
+                                                        Implementation.</span></p>
+                                            </div>
+                                        </li>
+
+                                        <li
+                                            class="list-group-item list-group-item-primary d-flex flex-lg-row flex-column gap-lg-4 gap-2">
+                                            <p class="time-col mb-0 text-muted text-nowrap"><span><i
+                                                        class="bi bi-clock-history"></i></span> 03:15
+                                                pm</p>
+                                            <div class="card mb-0">
+                                                <div class="card-header bg-transparent border-0 ps-3">
+                                                    <div class="d-flex align-items-center gap-1">
+                                                        <img src="images/lead_com_logos/zoom.png" alt="zoom"
+                                                            class="img-fluid">
+                                                        <p class="mb-0 text-muted">Meeting on Zoom</p>
+                                                    </div>
+                                                </div>
+                                                <div class="card-body pt-0 ps-4">
+                                                    <h6 class="fs-18 fw-semibold mb-0">Project Kickoff with Client Rahul
+                                                        Sharma
+                                                    </h6>
+                                                    <p class="mb-0">Initial discussion with client about project scope
+                                                        and
+                                                        Gather feedback from client on last delivered milestone.</p>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li
+                                            class="list-group-item list-group-item-primary d-flex flex-lg-row flex-column gap-lg-4 gap-2">
+                                            <p class="time-col mb-0 text-muted text-nowrap"><span><i
+                                                        class="bi bi-clock-history"></i></span> 11:20
+                                                am</p>
+                                            <p class="mb-0 text-muted"><span class="fw-semibold text-dark"> John Doe
+                                                </span>is<span class="fw-semibold text-dark"> on leave </span>today due
+                                                to
+                                                personal reasons. He will be unavailable for meetings and tasks
+                                                scheduled for
+                                                this date. </p>
+                                        </li>
+
+                                        <li
+                                            class="list-group-item list-group-item-primary  d-flex flex-lg-row flex-column gap-lg-4 gap-2">
+                                            <p class="time-col mb-0 text-muted text-nowrap"><span><i
+                                                        class="bi bi-clock-history"></i></span> 09:10
+                                                am</p>
+                                            <div class="d-flex align-items-center">
+                                                <div
+                                                    class="avatar avatar-sm avatar-soft-purple rounded-circle fw-semibold me-2">
+                                                    EJ
+                                                </div>
+                                                <p class="mb-0 text-muted"><span class="fw-semibold text-dark">Emily
+                                                        Joy</span>
+                                                    started working on <span class="text-dark">Project Alpha</span></p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h6 class="text-dark fw-bold mb-4">
+                                        <span class="badge bg-soft-dark me-2"><i class="ri-arrow-down-s-line"></i></span>Wed, 11 Feb 2026</h6>
+                                    <ul class="list-group vertical-steps ps-4">
+                                        <li
+                                            class="list-group-item list-group-item-primary d-flex flex-lg-row flex-column gap-lg-4 gap-2 pt-sm-4">
+                                            <p class="time-col mb-0 text-muted text-nowrap"><span><i
+                                                        class="bi bi-clock-history"></i></span> 07:45 pm</p>
+                                            <p class="mb-0 text-muted"><span class="fw-semibold text-dark">Amit
+                                                    Verma</span>
+                                                logged out <span class="text-success">successfully.</span></p>
+                                        </li>
+
+                                        <li
+                                            class="list-group-item list-group-item-primary d-flex flex-lg-row flex-column gap-lg-4 gap-2">
+                                            <p class="time-col mb-0 text-muted text-nowrap"><span><i
+                                                        class="bi bi-clock-history"></i></span> 12 min ago</p>
+                                            <div class="card mb-0">
+                                                <div class="card-body py-3 ">
+                                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                                        <h6 class="fs-18 fw-semibold mb-0">Website Redesign was
+                                                            successfully
+                                                            completed</h6>
+                                                        <span class="text-warning"><i class="ri-star-fill"></i></span>
+                                                    </div>
+                                                    <p class="mb-0">The project was delivered on time with all client
+                                                        requirements fulfilled. Final deliverables uploaded and
+                                                        approved.</p>
+                                                    <div class="avatar-group">
+                                                        <div class="avatar rounded-circle avatar-xxs overflow-hidden">
+                                                            <img alt="Bordered Avatar 1" class="w-100 h-100"
+                                                                src="../images/avatars/avatar1.jpg">
+                                                        </div>
+                                                        <div class="avatar rounded-circle avatar-xxs overflow-hidden">
+                                                            <img alt="Bordered Avatar 2" class="w-100 h-100"
+                                                                src="../images/avatars/avatar2.jpg">
+                                                        </div>
+                                                        <div class="avatar rounded-circle avatar-xxs overflow-hidden">
+                                                            <img alt="Bordered Avatar 2" class="w-100 h-100"
+                                                                src="../images/avatars/avatar3.jpg">
+                                                        </div>
+                                                        <small>+ 2 Other</small>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                        <li
+                                            class="list-group-item list-group-item-primary d-flex flex-lg-row flex-column gap-lg-4 gap-2">
+                                            <p class="time-col mb-0 text-muted text-nowrap"><span><i
+                                                        class="bi bi-clock-history"></i></span> 04:00 pm</p>
+                                            <div class="d-flex align-items-center">
+                                                <div class="avatar avatar-sm me-2">
+                                                    <img src="images/avatars/avatar3.jpg" alt="Employee Img"
+                                                        class="w-100 h-100 rounded-circle">
+                                                </div>
+                                                <p class="mb-0 text-muted"><span class="fw-semibold text-dark">Ollivia
+                                                        Joy</span> completed the assigned task for <span
+                                                        class="text-dark">ERP
+                                                        Implementation.</span></p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            %%include('./partials/layout/footer.html')
+
+        </div>
+    </div>
+    %%include('./partials/layout/right-sidebar.html')
+
+    <!-- %%include('./partials/right-sidebar.html')
+    %%include('./partials/back-to-top.html') -->
+
+    %%include('./partials/layout/footer-js.html')
+    <script src="plugins/flatpickr/flatpickr.min.js"></script>
+    <script src="js/pages/active_log.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+// simplebar.scss
+
+.simplebar-scrollable-y {
+    .simplebar-track {
+        width: 12px;
+        right: 0;
+        left: auto;
+    }
+
+    .simplebar-scrollbar {
+        &::before {
+            background-color: var(--bs-simplebar-track-color);
+            border-radius: $border-radius-pill;
+            width: 6px;
+        }
+
+        .simplebar-visible::before {
+            background-color: var(--bs-simplebar-track-color);
+        }
+    }
+
+}
+
+.simplebar-scrollable-x {
+    max-width: 100%;
+    overflow-x: auto;
+
+    // .simplebar-content {
+    //     display: flex;
+    // }
+
+    .simplebar-track {
+        &.simplebar-horizontal{
+            height: 12px; 
+        }
+    }
+
+    .simplebar-scrollbar {
+        &::before {
+            background-color: var(--bs-simplebar-track-color);
+            border-radius: $border-radius-pill;
+        }
+
+        .simplebar-visible::before {
+            background-color: var(--bs-simplebar-track-color);
+        }
+    }
+
+}
+

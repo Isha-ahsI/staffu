@@ -1,0 +1,480 @@
+.left-sidebar {
+    position: fixed;
+    top: $topbar-height;
+    bottom: 0;
+    left: 0;
+    right: auto;
+    width: $leftbar-width;
+    height: 100vh;
+    background: var(--bs-left-sidebar-bg);
+    border-right: $border-width solid var(--bs-simplebar-bg);
+    box-shadow: $card-box-shadow;
+    backdrop-filter: blur(12px);
+    transition: $transition;
+    z-index: 1030;
+}
+
+.menu-simplebar {
+    height: calc(100vh - #{$topbar-height});
+
+    .leftbar-menu {
+        padding: math.div($spacer, 2) $spacer;
+
+        .navbar {
+            padding: 0;
+
+            &>.navbar-nav {
+                width: 100%;
+
+                .menu-title {
+                    display: flex;
+                    align-items: center;
+                    font-size: 13px;
+                    color: var(--bs-menu-title-color);
+                    text-transform: uppercase;
+                    margin: 12px 0px 8px;
+                }
+
+                &>.nav-item {
+                    position: relative;
+
+                    &>.nav-link {
+                        position: relative;
+                        padding: $left-menu-link-padding;
+                        color: var(--bs-left-nav-link-color);
+                        border: $border-width solid transparent;
+                        border-radius: $left-menu-border-radius;
+                        margin-bottom: 10px;
+                        display: flex;
+                        justify-content: start;
+                        align-items: center;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        transition: $transition;
+
+                        .menu-icon {
+                            margin-right: 6px;
+                        }
+                        .menu-text {
+                            color: inherit;
+                        }
+
+                        &.menu-drop-btn {
+                            position: relative;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+
+                            .drop-link-title {
+                                display: flex;
+                                align-items: center;
+                            }
+
+                            .menu-arrow {
+                                font-size: 20px;
+                                line-height: normal;
+                            }
+
+                        }
+
+                        &:hover,
+                        &:focus,
+                        &:focus-visible,
+                        &.active {
+                            // background-color: rgba($gray-300, 0.5);
+                            background: var(--bs-left-nav-link-active-color);
+                            color: var(--bs-menu-link-hover-color);
+                        }
+                    }
+
+                    &>.nav-link:not(.menu-drop-btn) {
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            height: 8px;
+                            width: 8px;
+                            border-radius: $border-radius-2xl;
+                            background-color: var(--bs-menu-link-hover-color);
+                            opacity: 0;
+                            scale: 0;
+                            right: 0;
+                            margin-right: 12px;
+                            transition: $transition;
+                            box-shadow:
+                                0 0 2px rgba($gray-800, 0.8),
+                                0 0 4px rgba($gray-800, 0.7),
+                                0 0 6px rgba($gray-800, 0.6),
+                                0 0 8px rgba($gray-800, 0.5);
+                        }
+
+                        &:hover,
+                        &:focus,
+                        &:focus-visible,
+                        &.active {
+                            &::after {
+                                opacity: 1;
+                                scale: 1;
+                            }
+                        }
+                    }
+
+                    .sub-menu {
+                        .navbar-nav {
+                            margin-left: 16px;
+
+                            &>.nav-item {
+                                &>.nav-link {
+                                    display: flex;
+                                    justify-content: start;
+                                    align-items: center;
+                                    color: var(--bs-left-nav-link-color);
+                                    transition: $transition;
+
+                                    .menu-icon {
+                                        font-size: 8px;
+                                        margin-right: 8px;
+                                    }
+
+                                    .menu-text {
+                                        font-size: 16px;
+                                        white-space: nowrap;
+                                        color: inherit;
+                                    }
+
+                                    &:hover,
+                                    &:focus,
+                                    &:focus-visible,
+                                    &.active {
+                                        color: var(--bs-left-nav-sub-link-active-color);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Bootstrap Offcanvas Sidebar Styles
+.leftside-offcanvas {
+    height: 100vh;
+    width: $leftbar-width !important;
+    top: $topbar-height;
+    transition: $transition;
+
+    .offcanvas-header {
+        .main-logo {
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+
+            .logo-dark {
+                display: block !important;
+            }
+
+            .logo-light {
+                display: none !important;
+            }
+        }
+    }
+
+    .offcanvas-body {
+        background-color: var(--bs-left-sidebar-bg);
+        backdrop-filter: blur(12px);
+    }
+}
+
+// Sidebar Small Mode for large screens (1600px+)
+@include media-breakpoint-up(lg) {
+    body.sidebar-hover-enabled[data-sidebar="sm"] {
+        .left-sidebar {
+            width: $leftbar-sm-width;
+
+            .navbar {
+                &>.navbar-nav {
+                    .menu-title {
+                        display: none;
+                    }
+
+                    &>.nav-item {
+                        &>.nav-link {
+                            justify-content: center;
+                            // border-radius: $border-radius-2xl;
+                            padding: $left-menu-sm-link-padding;
+                            // border-radius: $border-radius-2xl;
+
+                            .menu-icon {
+                                margin-right: 0px;
+                                font-size: 20px;
+                            }
+
+                            .menu-text {
+                                display: none;
+                            }
+
+                            &.menu-drop-btn {
+                                justify-content: center;
+
+                                .menu-arrow {
+                                    display: none;
+                                }
+                            }
+                        }
+
+                        &>.nav-link:not(.menu-drop-btn) {
+
+                            &:hover,
+                            &:focus,
+                            &:focus-visible,
+                            &.active {
+                                &::after {
+                                    margin-right: 0;
+                                    opacity: 0;
+                                    scale: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Hover effect for small sidebar
+            &:hover {
+                width: $leftbar-width;
+
+                .navbar {
+                    &>.navbar-nav {
+                        .menu-title {
+                            display: flex;
+                            margin: 10px 0px 8px;
+                        }
+
+                        &>.nav-item {
+                            &>.nav-link {
+                                justify-content: start;
+                                // border-radius: $left-menu-border-radius;
+
+                                .menu-icon {
+                                    margin-right: 6px;
+                                    font-size: 16px;
+                                }
+
+                                .menu-text {
+                                    display: block;
+                                }
+
+                                &.menu-drop-btn {
+                                    justify-content: space-between;
+
+                                    .drop-link-title {
+                                        display: flex;
+                                        align-items: center;
+                                    }
+
+                                    .menu-arrow {
+                                        display: block;
+                                    }
+                                }
+                            }
+
+                            &>.nav-link:not(.menu-drop-btn) {
+
+                                &:hover,
+                                &:focus,
+                                &:focus-visible,
+                                &.active {
+                                    &::after {
+                                        margin-right: 12px;
+                                        opacity: 1;
+                                        scale: 1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// @include media-breakpoint-up(lg) {}
+body.sidebar-hover-enabled[data-sidebar="sm"] {
+    .left-sidebar { 
+        .navbar {
+            &>.navbar-nav {
+                &>.nav-item {
+                    .sub-menu.collapse {
+                        .nav-link {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+        &:hover {
+            .navbar {
+                &>.navbar-nav {
+                    &>.nav-item {
+                        .sub-menu.collapse {
+                            .nav-link {
+                                display: flex;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// Medium screens (992px - 1600px) hover effect
+@include media-breakpoint-between(lg, xxl) {
+    // body.sidebar-hover-enabled[data-sidebar="sm"] {
+    //     .left-sidebar {
+    //         width: $leftbar-sm-width;
+
+    //         .navbar {
+    //             &>.navbar-nav {
+    //                 .menu-title {
+    //                     display: none;
+    //                 }
+
+    //                 &>.nav-item {
+    //                     &>.nav-link {
+    //                         justify-content: center;
+    //                         padding: $left-menu-sm-link-padding;
+    //                         border-radius: $border-radius-2xl;
+
+    //                         .menu-icon {
+    //                             margin-right: 0px;
+    //                             font-size: 20px;
+    //                         }
+
+    //                         .menu-text {
+    //                             display: none;
+    //                         }
+
+    //                         &.menu-drop-btn {
+    //                             justify-content: center;
+
+    //                             .menu-arrow {
+    //                                 display: none;
+    //                             }
+    //                         }
+    //                     }
+
+    //                     &>.nav-link:not(.menu-drop-btn) {
+
+    //                         &:hover,
+    //                         &:focus,
+    //                         &:focus-visible,
+    //                         &.active {
+    //                             &::after {
+    //                                 margin-right: 0;
+    //                                 opacity: 0;
+    //                                 scale: 0;
+    //                             }
+    //                         }
+    //                     }
+    //                 }
+
+    //             }
+    //         }
+
+    //         // Hover effect for medium screens
+    //         &:hover {
+    //             width: $leftbar-width;
+
+    //             .navbar {
+    //                 &>.navbar-nav {
+    //                     .menu-title {
+    //                         display: flex;
+    //                         margin: 12px 0px 8px;
+    //                     }
+
+    //                     &>.nav-item {
+    //                         &>.nav-link {
+    //                             justify-content: start;
+    //                             border-radius: $border-radius-pill;
+
+    //                             .menu-icon {
+    //                                 margin-right: 6px;
+    //                                 font-size: 16px;
+    //                             }
+
+    //                             .menu-text {
+    //                                 display: block;
+    //                             }
+
+    //                             &.menu-drop-btn {
+    //                                 justify-content: space-between;
+
+    //                                 .drop-link-title {
+    //                                     display: flex;
+    //                                     align-items: center;
+    //                                 }
+
+    //                                 .menu-arrow {
+    //                                     display: block;
+    //                                 }
+    //                             }
+    //                         }
+
+    //                         &>.nav-link:not(.menu-drop-btn) {
+
+    //                             &:hover,
+    //                             &:focus,
+    //                             &:focus-visible,
+    //                             &.active {
+    //                                 &::after {
+    //                                     margin-right: 12px;
+    //                                     opacity: 1;
+    //                                     scale: 1;
+    //                                 }
+    //                             }
+    //                         }
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+
+    // When hover is disabled, show full sidebar
+    body:not(.sidebar-hover-enabled)[data-sidebar="sm"] {
+        .sidebar {
+            width: $leftbar-width;
+        }
+    }
+}
+
+[data-bs-theme="dark"] {
+    .leftside-offcanvas {
+        .offcanvas-header {
+            .main-logo {
+                .logo-dark {
+                    display: none !important;
+                }
+
+                .logo-light {
+                    display: block !important;
+                }
+
+            }
+        }
+    }
+}
+
+body[data-layout="boxed"] {
+    .left-sidebar {
+        top: 100px;
+        left: $spacer;
+        bottom: $spacer;
+    }
+}

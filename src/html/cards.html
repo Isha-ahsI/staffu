@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <div class="page-layout">
+        %%include('./partials/layout/header.html')
+        %%include('./partials/layout/left-sidebar.html')
+
+        <div class="page-wrapper">
+            <div class="page-content">
+                %%include('./partials/components/page-title.html', { pageTitle: 'Cards', pagePrTitle: 'UI Elements' })
+                <div class="container-fluid">
+                    <!-- card -->
+                    <div class="row">
+                        <div class="col-xl-4 col-12">
+                            <div class="card overflow-hidden">
+                                <img src="../images/card_img/img1.jpg" class="card-img-top" alt="Card image">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the
+                                        bulk of the card’s content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-12">
+                            <div class="card overflow-hidden">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-2">Card title</h5>
+                                    <h6 class="mb-2 text-muted card-subtitle">Card Subtitle</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the
+                                        bulk of the card’s content.</p>
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                                <img src="../images/card_img/img2.jpg" class="card-img-bottom" alt="Card image">
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-12">
+                            <div class="card overflow-hidden">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-0">Card title</h5>
+                                </div>
+                                <img src="../images/card_img/img3.jpg" class="card-img-middle" alt="Card image">
+                                <div class="card-body">
+                                    <p class="card-text">Some quick example text to build on the card title and make up the
+                                        bulk of the card’s content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-2">Normal card</h5>
+                                    <h6 class="card-subtitle mb-3 text-body-secondary">Card subtitle</h6>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the
+                                        bulk of the card’s content.</p>
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-6 col-12">
+                            <div class="card overflow-hidden">
+                                <h5 class="card-header bg-secondary text-light">Featured</h5>
+                                <div class="card-body">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional
+                                        content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card Color , Border & Header Colors -->
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <h5 class="mb-0">Card Color , Border & Header Colors</h5>
+                        </div>
+                        <div class="col-xl-3 col-md-6 col-12">
+                            <div class="card bg-success mb-3">
+                                <div class="card-header text-light fw-medium">Header</div>
+                                <div class="card-body">
+                                    <h5 class="card-title text-light mb-2">Secondary card title</h5>
+                                    <p class="card-text text-muted">Some quick example text to build on the card title and
+                                        make up the
+                                        bulk of the card’s content.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 col-12">
+                            <div class="card border-info mb-3 overflow-hidden">
+                                <div class="card-header bg-info text-light fw-medium">Header</div>
+                                <div class="card-body">
+                                    <h5 class="card-title mb-2">Secondary card title</h5>
+                                    <p class="card-text text-muted">Some quick example text to build on the card title and
+                                        make up the
+                                        bulk of the card’s content.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 col-12">
+                            <div class="card border-danger mb-3">
+                                <div class="card-header text-danger fw-medium border-danger">Header</div>
+                                <div class="card-body">
+                                    <h5 class="card-title text-danger mb-2">Danger card title</h5>
+                                    <p class="card-text text-danger">Some quick example text to build on the card title and
+                                        make up the
+                                        bulk of the card’s content.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6 col-12">
+                            <div class="card border-secondary mb-3">
+                                <div class="card-header bg-transparent border-secondary text-secondary">Header</div>
+                                <div class="card-body">
+                                    <h5 class="card-title text-secondary">Success card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the
+                                        bulk of the card’s content.</p>
+                                </div>
+                                <div class="card-footer bg-transparent border-secondary text-secondary">Footer</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card Text Alignment -->
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <h5 class="mb-0">Card Text Alignment</h5>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="card mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional
+                                        content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="card text-center mb-3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional
+                                        content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="card text-end">
+                                <div class="card-body">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional
+                                        content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card Horizontal -->
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <h5 class="mb-0">Card Horizontal</h5>
+                        </div>
+                        <div class="col-lg-6 col-12">
+                            <div class="card mb-3 overflow-hidden">
+                                <div class="row g-0">
+                                    <div class="col-md-4 col-12">
+                                        <img src="../images/card_img/img1.jpg"
+                                            class="h-100 w-100 object-fit-cover rounded-start" alt="card image">
+                                    </div>
+                                    <div class="col-md-8 col-12">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="card-text">This is a wider card with supporting text below as a
+                                                natural lead-in to additional content. This content is a little bit longer.
+                                            </p>
+                                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                                    ago</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12">
+                            <div class="card mb-3 overflow-hidden">
+                                <div class="row g-0">
+                                    <div class="col-md-8 col-12 order-md-1 order-2">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Card title</h5>
+                                            <p class="card-text">This is a wider card with supporting text below as a
+                                                natural lead-in to additional content. This content is a little bit longer.
+                                            </p>
+                                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins
+                                                    ago</small></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-12 order-md-2 order-1">
+                                        <img src="../images/card_img/img3.jpg"
+                                            class="h-100 w-100 object-fit-cover rounded-end" alt="card image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card Avatar -->
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <h5 class="mb-0">Card Avatar</h5>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12 mb-md-0 mb-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="avatar avatar-xxxl"><img alt="Avatar Img" class="w-100 h-100 custom-avatar"
+                                            src="../images/avatars/avatar2.jpg"></div>
+                                    <h5 class="card-title mt-4 mb-2">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the
+                                        bulk of the card’s content.</p>
+                                    <a href="#" class="card-link">Learn more
+                                        <span class="lh-1"><i class="ri-arrow-right-long-line fs-6 ms-1"></i></span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="card position-relative z-1 overflow-visible">
+                                <div class="card-body text-center">
+                                    <div class="avatar avatar-xxxxl position-absolute top-0 start-50 translate-middle z-2"><img alt="Avatar Img" class="w-100 h-100 rounded-circle avatar-border-primary" src="../images/avatars/avatar2.jpg"></div>
+                                    <h5 class="card-title mt-5 mb-2">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and
+                                        make up the
+                                        bulk of the card’s content.</p>
+                                    <button type="button" class="btn btn-primary">Learn more <i class="ri-arrow-right-long-line fs-6 ms-1"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-2">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the
+                                        bulk of the card’s content.</p>
+                                    <button type="button" class="btn btn-outline-secondary btn-sm">Learn more<i class="ri-arrow-right-long-line fs-6 ms-1"></i></button>
+                                </div>
+                                <div class="card-footer text-muted mx-4 bg-transparent px-0">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h6 class="mb-0">Avatar Name</h6>
+                                            <small>-Profession</small>
+                                        </div>
+                                        <div class="avatar avatar-lg"><img alt="Avatar Img" class="w-100 h-100 rounded-circle" src="../images/avatars/avatar2.jpg"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- List groups -->
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <h5 class="mb-0">List groups</h5>
+                        </div>
+                        <div class="col-xl-4 col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="card-header bg-secondary text-light">Featured</div>
+                                    <ul class="list-group list-group-flush rounded-bottom">
+                                        <li class="list-group-item">Home</li>
+                                        <li class="list-group-item">Messages</li>
+                                        <li class="list-group-item">Settings</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <ul class="list-group list-group-flush rounded">
+                                        <li class="list-group-item">Dashboard Overview</li>
+                                        <li class="list-group-item">User Profile</li>
+                                        <li class="list-group-item">Notifications Settings</li>
+                                        <li class="list-group-item">Logout</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-md-6 col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <ul class="list-group list-group-flush rounded-top">
+                                        <li class="list-group-item">Featured</li>
+                                        <li class="list-group-item">Home</li>
+                                        <li class="list-group-item">Messages</li>
+                                    </ul>
+                                    <div class="card-footer bg-secondary text-light">
+                                        Settings
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-12">
+                            <div class="card overflow-hidden">
+                                <img src="../images/card_img/img4.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the
+                                        bulk of the card’s content.</p>
+                                </div>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">Cras justo odio</li>
+                                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                                    <li class="list-group-item">Vestibulum at eros</li>
+                                </ul>
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <a href="#" class="card-link">Learn more <span class="lh-1"><i
+                                                    class="ri-arrow-right-long-line fs-6 ms-1"></i></span></a>
+                                        <span class="lh-1"><i class="ri-bookmark-line fs-6"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-12">
+                            <div class="card overflow-hidden">
+                                <div class="card-body">
+                                    <img class="card-img rounded-3 mb-4" src="../images/card_img/img5.jpg" alt="Card image">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the
+                                        bulk of the card’s content.</p>
+                                    <div class="list-group-flush list-group rounded mb-3">
+                                        <div class="list-group-item">Cras justo odio</div>
+                                        <div class="list-group-item">Dapibus ac facilisis in</div>
+                                        <div class="list-group-item">Vestibulum at eros</div>
+                                    </div>
+                                    <button type="button" class="rounded-pill btn btn-outline-secondary btn-sm">Learn
+                                        more</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-12">
+                            <div class="card overflow-hidden">
+                                <div class="card-body text-center">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the
+                                        bulk of the card’s content.</p>
+                                    <img class="card-img rounded-3 mb-4" src="../images/card_img/img6.jpg" alt="Card image">
+                                    <div class="list-group-flush list-group rounded mb-3 text-center">
+                                        <div class="list-group-item">Cras justo odio</div>
+                                        <div class="list-group-item">Dapibus ac facilisis in</div>
+                                        <div class="list-group-item">Vestibulum at eros</div>
+                                    </div>
+                                    <button type="button" class="w-100 btn btn-gradient-primary">Watch<i
+                                            class="ri-play-reverse-fill"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Quote Card Color -->
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <h5 class="mb-0">Quote Card Color</h5>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="card overflow-hidden">
+                                <div class="card-header bg-secondary text-light fw-medium">Inspiration</div>
+                                <div class="card-body">
+                                    <figure class="mb-0">
+                                        <blockquote class="blockquote mb-0">
+                                            <p class="fs-18">Success is not final, failure is not fatal: It is the courage
+                                                to continue that counts.</p>
+                                        </blockquote>
+                                        <figcaption class="blockquote-footer mb-0 mt-1">
+                                            Winston Churchill in <cite title="Source Title">London</cite>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="card bg-primary">
+                                <div class="card-header text-light fw-medium">Motivation</div>
+                                <div class="card-body">
+                                    <figure class="mb-0">
+                                        <blockquote class="blockquote mb-0">
+                                            <p class="fs-18 text-light">Believe you can and you're halfway there.</p>
+                                        </blockquote>
+                                        <figcaption class="blockquote-footer mb-0 mt-1 text-light">
+                                            Theodore Roosevelt in <cite title="Source Title">Washington</cite>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="card bg-dark bg-opacity-75">
+                                <div class="card-header text-light fw-medium">Determination</div>
+                                <div class="card-body">
+                                    <figure class="mb-0">
+                                        <blockquote class="blockquote mb-0">
+                                            <p class="fs-18 text-light">Do not watch the clock. Do what it does. Keep going.
+                                            </p>
+                                        </blockquote>
+                                        <figcaption class="blockquote-footer mb-0 mt-1 text-light">
+                                            Sam Levenson in <cite title="Source Title">Boston</cite>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-12">
+                            <div class="card overflow-hidden">
+                                <img src="../images/card_img/img4.jpg" class="card-img-top" alt="Card image">
+                                <div class="card-body">
+                                    <p class="card-text">Some quick example text to build on the card title and make up the
+                                        bulk of the card’s content.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-12">
+                            <div class="card overflow-hidden">
+                                <div class="card-body">
+                                    <p class="card-text">Some quick example text to build on the card title and make up the
+                                        bulk of the card’s content.</p>
+                                </div>
+                                <img src="../images/card_img/img3.jpg" class="card-img-bottom" alt="Card image">
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-12">
+                            <div class="card overflow-hidden">
+                                <img src="../images/card_img/img1.jpg" class="card-img" alt="Card image">
+                                <div class="card-img-overlay">
+                                    <div class="card-title h5">Card title</div>
+                                    <p class="card-text text-light">This is a wider card with supporting text below as a
+                                        natural lead-in to additional content. This content is a little bit longer.</p>
+                                    <p class="card-text text-light">Last updated 3 mins ago</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="card text-center overflow-hidden">
+                                <div class="card-header bg-secondary text-light fw-medium">Featured</div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Special title treatment</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional
+                                        content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                                <div class="card-footer bg-secondary text-light fw-medium">2 days ago</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="card text-center overflow-hidden">
+                                <div class="card-header bg-primary text-light fw-medium">Featured</div>
+                                <div class="card-body">
+                                    <h5 class="card-title text-primary">Special title treatment</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional
+                                        content.</p>
+                                    <a href="#" class="btn btn-soft-primary">Go somewhere</a>
+                                </div>
+                                <div class="card-footer bg-primary text-light fw-medium">2 days ago</div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-12">
+                            <div class="card text-center bg-primary">
+                                <div class="card-header text-light fw-medium">Featured</div>
+                                <div class="card-body">
+                                    <h5 class="card-title text-light">Special title treatment</h5>
+                                    <p class="card-text text-light">With supporting text below as a natural lead-in to
+                                        additional
+                                        content.</p>
+                                    <a href="#" class="btn btn-outline-light">Go somewhere</a>
+                                </div>
+                                <div class="card-footer bg-primary text-light fw-medium">2 days ago</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card Groups -->
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <h5 class="mb-0">Card Groups</h5>
+                        </div>
+                        <div class="col-12">
+                            <div class="mb-4 card-group">
+                                <div class="card overflow-hidden">
+                                    <img class="card-img-top" src="../images/card_img/img1.jpg" alt="Card image">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a wider card with supporting text below as a natural
+                                            lead-in to additional content. This content is a little bit longer.</p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                    </div>
+                                </div>
+                                <div class="card overflow-hidden">
+                                    <img src="../images/card_img/img2.jpg" class="card-img-top" alt="Card image">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This card has supporting text below as a natural lead-in to
+                                            additional content.</p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                    </div>
+                                </div>
+                                <div class="card overflow-hidden">
+                                    <img src="../images/card_img/img3.jpg" class="card-img-top" alt="Card image">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a wider card with supporting text below as a natural
+                                            lead-in to additional content. This card has even longer content than the first
+                                            to show that equal height action.</p>
+                                    </div>
+                                    <div class="card-footer">
+                                        <small class="text-muted">Last updated 3 mins ago</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            %%include('./partials/layout/footer.html')
+        </div>
+    </div>
+    
+    %%include('./partials/layout/right-sidebar.html')
+    <!-- %%include('./partials/right-sidebar.html')
+    %%include('./partials/back-to-top.html') -->
+
+    %%include('./partials/layout/footer-js.html')
+</body>
+
+</html>

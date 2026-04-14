@@ -1,0 +1,147 @@
+
+
+const emailsData = [
+    {
+        id: 1,
+        sender: "Ethan Ray",
+        emailid: "ethanray@gmail.com",
+        subject: "LinkedIn Connection Request",
+        preview: "Jane Smith wants to connect with you. Review her profile and accept or ignore the request.",
+        time: "11:49 am",
+        date: "Today",
+        category: "Social",
+        unread: true,
+        starred: false,
+        hasAttachment: false
+    },
+    {
+        id: 2,
+        sender: "Ollivia Joy",
+        emailid:"ollivia12joy@yahoo.com",
+        subject: "Invoice #PAY-2026-002 - March Payment",
+        preview: "Please find attached the invoice for March 2026. Kindly review the amount due and confirm payment by the end of the month.",
+        time: "5:01 am",
+        date: "Today",
+        category: "Payment",
+        unread: false,
+        starred: false,
+        hasAttachment: false
+    },
+    {
+        id: 3,
+        sender: "Kelvin Yia",
+        emailid:"kelvin185@yahoo.com",
+        subject: "Client Tiger Nixon: Project Kickoff",
+        preview: "Kickoff meeting with Client Tiger Nixon to discuss project scope, deliverables, and timelines. Join via Zoom link provided.",
+        time: "11:20 am",
+        date: "Yesterday",
+        category: "Client Meeting",
+        unread: false,
+        starred: false,
+        hasAttachment: false
+    },
+    {
+        id: 4,
+        sender: "Infinity HR",
+        emailid:"infinityhr@yahoo.com",
+        subject: "Weekly Sales Report",
+        preview: "The weekly sales report has been uploaded to the shared drive. Please review the numbers for your team and provide feedback...",
+        time: "9:30 am",
+        date: "Yesterday",
+        category: "Work",
+        unread: false,
+        starred: true,
+        hasAttachment: true
+    },
+    {
+        id: 5,
+        sender: "Web Support Dennis",
+        emailid:"websupportdennis@yahoo.com",
+        subject: "Project Update: Q1 Report",
+        preview: "Hi Team, the Q1 report is ready. Please review the sales and performance numbers. We will discuss during the meeting tomorrow...",
+        time: "4:20 pm",
+        date: "Jun 10",
+        category: "Project Team Discussion",
+        unread: false,
+        starred: false,
+        hasAttachment: false
+    },
+    {
+        id: 6,
+        sender: "Sophia",
+        emailid:"Sophia0067@gmail.com",
+        subject: "Design Review",
+        preview: "Client Ollivia Joy wants to review the new UI/UX designs. Prepare mockups and gather feedback notes for discussion.",
+        time: "3:40 pm",
+        date: "Jun 9",
+        category: "Client Meeting",
+        unread: false,
+        starred: false,
+        hasAttachment: false
+    },
+    {
+        id: 7,
+        sender: "Laura Taylor",
+        emailid:"laurataylor@gmail.com",
+        subject: "YouTube Subscription",
+        preview: "New video uploaded by “Tech Tutorials”. Watch now to keep up with the latest tech tips.",
+        time: "10:15 am",
+        date: "Jun 9",
+        category: "Social",
+        unread: false,
+        starred: false,
+        hasAttachment: false
+    },
+    {
+        id: 8,
+        sender: "Death to Stock",
+        emailid:"death2stock@gmail.com",
+        subject: "Meeting Reminder",
+        preview: "Reminder: Project kickoff meeting scheduled for Monday at 10 AM. Agenda includes roadmap, milestones, and task assignments...",
+        time: "9:00 am",
+        date: "Jun 8",
+        category: "Project Team Discussion",
+        unread: false,
+        starred: false,
+        hasAttachment: false
+    },
+    {
+        id: 9,
+        sender: "Revibe",
+        emailid:"revibe147@gmail.com",
+        subject: "Payment Received - Invoice #PAY-2026-003",
+        preview: "We have received your payment for invoice #PAY-2026-003. Thank you for the timely transaction. The receipt has been attached for your records.",
+        time: "6:30 pm",
+        date: "Jun 7",
+        category: "Payment",
+        unread: false,
+        starred: false,
+        hasAttachment: false
+    },
+    {
+        id: 10,
+        sender: "Daniel Miller",
+        emailid:"danielmiller@gmail.com",
+        subject: "Invoice Approval Needed",
+        preview: " Please review the attached invoice #PAY-2026-001 for March and approve it for processing. Let me know if any changes are required...",
+        time: "2:45 pm",
+        date: "Feb 7",
+        category: "Work",
+        unread: false,
+        starred: false,
+        hasAttachment: false
+    }
+];
+
+const avatarImages = [
+    'images/avatars/avatar1.jpg',
+    'images/avatars/avatar2.jpg',
+    'images/avatars/avatar3.jpg',
+    'images/avatars/avatar4.jpg',
+    'images/avatars/avatar5.jpg',
+    'images/avatars/avatar6.jpg',
+    'images/avatars/avatar7.jpg',
+    'images/avatars/avatar8.jpg',
+    'images/avatars/avatar9.jpg',
+    'images/avatars/avatar10.jpg',
+];

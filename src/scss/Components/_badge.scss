@@ -1,0 +1,100 @@
+// badge.scss
+
+@each $color, $value in $theme-colors {
+    .badge {
+        &.bg-soft-#{$color} {
+            color: var(--bs-#{$color});
+            border: $border-width solid rgba(var(--bs-#{$color}-rgb), 0.25);
+            background: linear-gradient(to right, rgba($value, 0.15) 1%, transparent 50%, rgba($value, 0.15) 100%);
+        }
+
+        &.bg-outline-#{$color} {
+            color: var(--bs-#{$color});
+            border: $border-width solid var(--bs-#{$color});
+            transition: $transition-base;
+        }
+    }
+
+    .btn {
+        &.btn-outline-#{$color} {
+            &:hover {
+                .badge.bg-#{$color}:not(.position-absolute) {
+                    background-color: $white !important;
+                    color: var(--bs-#{$color});
+                }
+            }
+        }
+    }
+}
+
+.btn {
+    .badge {
+        top: inherit;
+    }
+
+    &.badge-center {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.badge {
+
+    &.bg-light,
+    &.bg-white,
+    &.bg-soft-light,
+    &.bg-outline-light,
+    &.bg-soft-dark,
+    &.bg-outline-dark {
+        color: $dark;
+    }
+}
+
+.badge {
+    &.badge-lg {
+        font-size: $font-size-base;
+        padding: 0.625rem 0.875rem;
+    }
+
+    &.badge-sm {
+        font-size: $font-size-xs;
+        padding: 0.25rem 0.35rem;
+        border-radius: $border-radius-sm;
+    }
+}
+
+[data-bs-theme="dark"] {
+    .badge {
+        &.bg-light {
+            background-color: $gray-100 !important;
+        }
+
+        &.bg-dark {
+            background-color: tint-color($gray-900, 25%) !important;
+            color: tint-color($gray-900, 75%) !important;
+        }
+
+        &.bg-outline-light,
+        &.bg-soft-light {
+            color: $gray-100;
+            border-color: $gray-100;
+        }
+
+        &.bg-outline-dark {
+            color: tint-color($gray-900, 75%);
+            border-color: $gray-700;
+        }
+
+        &.bg-soft-dark {
+            border: $border-width solid tint-color($gray-900, 25%) !important;
+            color: tint-color($gray-900, 50%) !important;
+            background: linear-gradient(to right, rgba(tint-color($gray-900, 50%), 0.15) 1%, transparent 50%, rgba(tint-color($gray-900, 50%), 0.15) 100%);
+        }
+
+        &.table-badge {
+            color: $gray-100;
+            border: $border-width solid rgba($gray-200, 0.25);
+            background: rgba($gray-200, 0.15);
+        }
+    }
+}

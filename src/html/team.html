@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <div class="page-layout">
+        %%include('./partials/layout/header.html')
+        %%include('./partials/layout/left-sidebar.html')
+        <div class="page-wrapper">
+            <div class="page-content">
+                %%include('./partials/components/page-title.html', { pageTitle: 'Teams', pagePrTitle: 'Apps' })
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- Sales -->
+                        <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-4">
+                            %%include('partials/components/team_card.html',{
+                            'color':'blue','icon':'bi bi-graph-up-arrow',
+                            'department':'Sales','count':'25','percentage':"80"
+                            })
+                        </div>
+                        <!-- Marketing -->
+                        <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-4">
+                            %%include('partials/components/team_card.html',{
+                            'color':'orange','icon':'bi bi-megaphone',
+                            'department':'Marketing','count':'15','percentage':"75"
+                            })
+                        </div>
+                        <!--  Development -->
+                        <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-4">
+                            %%include('partials/components/team_card.html',{
+                            'color':'purple','icon':'bi bi-code-slash',
+                            'department':'Development','count':'40','percentage':"95"
+                            })
+                        </div>
+                        <!-- HR -->
+                        <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-4">
+                            %%include('partials/components/team_card.html',{
+                            'color':'info','icon':'bi bi-people',
+                            'department':'HR','count':'10','percentage':"90"
+                            })
+                        </div>
+                        <!-- Finance -->
+                        <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-4">
+                            %%include('partials/components/team_card.html',{
+                            'color':'success','icon':'bi bi-cash-stack',
+                            'department':'Finance','count':'12','percentage':"83"
+                            })
+                        </div>
+                        <!-- Customer Support -->
+                        <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-4">
+                            %%include('partials/components/team_card.html',{
+                            'color':'warning','icon':'bi bi-headset',
+                            'department':'Customer Support','count':'18','percentage':"89"
+                            })
+                        </div>
+                        <!-- Operations -->
+                        <div class="col-xl-3 col-lg-4 col-sm-6 col-12 mb-4">
+                            %%include('partials/components/team_card.html',{
+                            'color':'secondary','icon':'bi bi-gear',
+                            'department':'Operations','count':'20','percentage':"85"
+                            })
+                        </div>
+
+                        <div class="col-12 mb-3">
+                            <div class="d-flex justify-content-end align-items-end gap-2">
+                                <button type="button" class="btn btn-outline-primary rounded-2" data-bs-toggle="modal"
+                                    data-bs-target="#addTeamMemberModal"><span><i
+                                            class="bi bi-plus-square-dotted"></i></span> Add
+                                    Employee</button>
+                                <button type="button" class="btn btn-gradient-primary"><span><i class="ri-file-download-line fw-medium"></i> Export CSV</button>
+                            </div>
+                        </div>
+                        <hr class="border-secondary">
+                        <div class="col-12">
+                            <!-- sales table -->
+                            <div class="accordion mb-4" id="salesAccordion">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingSales">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseSales" aria-expanded="true"
+                                            aria-controls="collapseSales">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span><i class="bi bi-chevron-down fs-6"></i></span>
+                                                <h6 class="mb-0 fw-bold fs-18 border-start border-3 border-blue ps-2">
+                                                    Sales Team</h6>
+                                                <span class="badge bg-soft-blue table-count">3</span>
+                                            </div>
+                                            <div class="toggle-icon"><i class="ri-add-large-line"></i></div>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseSales" class="accordion-collapse collapse show"
+                                        aria-labelledby="headingSales" data-bs-parent="#salesAccordion">
+                                        <div class="accordion-body pt-0">
+                                            <div class="datatable-wrapper">
+                                                <table id="salesEmpListTable"
+                                                    class="table table-hover table-md-nowrap table-bordered team-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="py-3">No.</th>
+                                                            <th class=" position-relative py-3 text-center"
+                                                                style="cursor: default;">
+                                                                <div
+                                                                    class="d-flex align-items-center justify-content-center gap-2">
+                                                                    <div class=""><input aria-label="Select all"
+                                                                            class="form-check-input" type="checkbox">
+                                                                    </div>
+                                                                </div>
+                                                            </th>
+                                                            <th class="py-3">Employee ID</th>
+                                                            <th class="py-3">Employee Name</th>
+                                                            <th class="py-3">Contacts</th>
+                                                            <th class="py-3 text-center">Employeement Type</th>
+                                                            <th class="py-3 text-center">Work Model</th>
+                                                            <th class="py-3 text-center">Status</th>
+                                                            <th class="py-3 text-center">Actions</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        %%include('partials/components/teamtable_row.html',{
+                                                        'no':'1','id':'0234','img':'avatar2',
+                                                        'empname':'Tiger Nixon','email':'tiger.nixon@yahoo.com',
+                                                        'contact':'+1 965 567 890','type':'Full-time',
+                                                        'model':'On-site','modelicon':'ri-circle-fill',
+                                                        'status':'Active','statusbg':'success'
+                                                        })
+
+                                                        %%include('partials/components/teamtable_row.html',{
+                                                        'no':'2','id':'0117','img':'avatar1',
+                                                        'empname':'Joyce Neal','email':'joyce.neal@yahoo.com',
+                                                        'contact':'+1 965 478 890','type':'Part-time',
+                                                        'model':'Hybrid','modelicon':'ri-circle-line',
+                                                        'status':'Active','statusbg':'success'
+                                                        })
+
+                                                        %%include('partials/components/teamtable_row.html',{
+                                                        'no':'3','id':'0223','img':'avatar3',
+                                                        'empname':'Ethan Ray','email':'ethan.ray@gmail.com',
+                                                        'contact':'+1 965 478 145','type':'Full-time',
+                                                        'model':'On-site','modelicon':'ri-circle-fill',
+                                                        'status':'Absent','statusbg':'danger'
+                                                        })
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- marketing table -->
+                            <div class="accordion mb-4" id="marketingAccordion">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingMarketing">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseMarketing" aria-expanded="true"
+                                            aria-controls="collapseMarketing">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span><i class="bi bi-chevron-down fs-6"></i></span>
+                                                <h6 class="mb-0 fw-bold fs-18 border-start border-3 border-orange ps-2">
+                                                    Marketing Team</h6>
+                                                <span class="badge bg-soft-orange table-count">2</span>
+                                            </div>
+                                            <div class="toggle-icon"><i class="ri-add-large-line"></i></div>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseMarketing" class="accordion-collapse collapse show"
+                                        aria-labelledby="headingMarketing" data-bs-parent="#marketingAccordion">
+                                        <div class="accordion-body pt-0">
+                                            <div class="datatable-wrapper">
+                                                <table id="marketingEmpListTable"
+                                                    class="table table-hover table-md-nowrap table-bordered team-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="py-3">No.</th>
+                                                            <th class=" position-relative py-3 text-center"
+                                                                style="cursor: default;">
+                                                                <div
+                                                                    class="d-flex align-items-center justify-content-center gap-2">
+                                                                    <div class=""><input aria-label="Select all"
+                                                                            class="form-check-input" type="checkbox">
+                                                                    </div>
+                                                                </div>
+                                                            </th>
+                                                            <th class="py-3">Employee ID</th>
+                                                            <th class="py-3">Employee Name</th>
+                                                            <th class="py-3">Contacts</th>
+                                                            <th class="py-3 text-center">Employeement Type</th>
+                                                            <th class="py-3 text-center">Work Model</th>
+                                                            <th class="py-3 text-center">Status</th>
+                                                            <th class="py-3 text-center">Actions</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        %%include('partials/components/teamtable_row.html',{
+                                                        'no':'1','id':'0458','img':'avatar4',
+                                                        'empname':'Kelvin Yia','email':'kelvin.yia@yahoo.com',
+                                                        'contact':'+1 635 567 890','type':'Freelance',
+                                                        'model':'Remote','modelicon':'ri-square-fill',
+                                                        'status':'Active','statusbg':'success'
+                                                        })
+
+                                                        %%include('partials/components/teamtable_row.html',{
+                                                        'no':'2','id':'0897','img':'avatar6',
+                                                        'empname':'Mark Lee','email':'mark.lee@gmail.com',
+                                                        'contact':'+1 965 321 145','type':'Full-time',
+                                                        'model':'On-site','modelicon':'ri-circle-fill',
+                                                        'status':'Half Leave','statusbg':'warning'
+                                                        })
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- development table -->
+                            <div class="accordion mb-4" id="developmentAccordion">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingDevelopment">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseDevelopment" aria-expanded="true"
+                                            aria-controls="collapseDevelopment">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span><i class="bi bi-chevron-down fs-6"></i></span>
+                                                <h6 class="mb-0 fw-bold fs-18 border-start border-3 border-purple ps-2">
+                                                    Development Team</h6>
+                                                <span class="badge bg-soft-purple table-count">5</span>
+                                            </div>
+                                            <div class="toggle-icon"><i class="ri-add-large-line"></i></div>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseDevelopment" class="accordion-collapse collapse show"
+                                        aria-labelledby="headingDevelopment" data-bs-parent="#developmentAccordion">
+                                        <div class="accordion-body pt-0">
+                                            <div class="datatable-wrapper">
+                                                <table id="developmentEmpListTable"
+                                                    class="table table-hover table-md-nowrap table-bordered team-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="py-3">No.</th>
+                                                            <th class=" position-relative py-3 text-center"
+                                                                style="cursor: default;">
+                                                                <div
+                                                                    class="d-flex align-items-center justify-content-center gap-2">
+                                                                    <div class=""><input aria-label="Select all"
+                                                                            class="form-check-input" type="checkbox">
+                                                                    </div>
+                                                                </div>
+                                                            </th>
+                                                            <th class="py-3">Employee ID</th>
+                                                            <th class="py-3">Employee Name</th>
+                                                            <th class="py-3">Contacts</th>
+                                                            <th class="py-3 text-center">Employeement Type</th>
+                                                            <th class="py-3 text-center">Work Model</th>
+                                                            <th class="py-3 text-center">Status</th>
+                                                            <th class="py-3 text-center">Actions</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                        %%include('partials/components/teamtable_row.html',{
+                                                        'no':'1','id':'0742','img':'avatar7',
+                                                        'empname':'Sophia Jackson','email':'sophia.jackson@yahoo.com',
+                                                        'contact':'+1 369 478 890','type':'Full-time',
+                                                        'model':'On-site','modelicon':'ri-circle-fill',
+                                                        'status':'Active','statusbg':'success'
+                                                        })
+
+                                                        %%include('partials/components/teamtable_row.html',{
+                                                        'no':'2','id':'0348','img':'avatar5',
+                                                        'empname':'Ollivia Joy','email':'ollivia.joy@gmail.com',
+                                                        'contact':'+1 965 478 896','type':'Part-time',
+                                                        'model':'Remote','modelicon':'ri-square-fill',
+                                                        'status':'Absent','statusbg':'danger'
+                                                        })
+
+                                                        %%include('partials/components/teamtable_row.html',{
+                                                        'no':'3','id':'0177','img':'avatar8',
+                                                        'empname':'Laura Taylor','email':'laura.taylor@gmail.com',
+                                                        'contact':'+1 965 428 145','type':'Freelance',
+                                                        'model':'Hybrid','modelicon':'ri-circle-line',
+                                                        'status':'Active','statusbg':'success'
+                                                        })
+
+                                                        %%include('partials/components/teamtable_row.html',{
+                                                        'no':'4','id':'0124','img':'avatar9',
+                                                        'empname':'Daniel Miller','email':'daniel.miller@yahoo.com',
+                                                        'contact':'+1 369 478 146','type':'Full-time',
+                                                        'model':'On-site','modelicon':'ri-circle-fill',
+                                                        'status':'Active','statusbg':'success'
+                                                        })
+
+
+                                                        %%include('partials/components/teamtable_row.html',{
+                                                        'no':'5','id':'0723','img':'avatar10',
+                                                        'empname':'Priya Sharma','email':'priya.sharma@gmail.com',
+                                                        'contact':'+1 951 478 146','type':'Internship',
+                                                        'model':'On-site','modelicon':'ri-circle-fill',
+                                                        'status':'Leave','statusbg':'primary'
+                                                        })
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- HR table -->
+                            <div class="accordion mb-4" id="HRAccordion">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingHR">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseHR" aria-expanded="true"
+                                            aria-controls="collapseHR">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span><i class="bi bi-chevron-down fs-6"></i></span>
+                                                <h6 class="mb-0 fw-bold fs-18 border-start border-3 border-info ps-2">
+                                                    HR Team</h6>
+                                                <span class="badge bg-soft-info table-count">2</span>
+                                            </div>
+                                            <div class="toggle-icon"><i class="ri-add-large-line"></i></div>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseHR" class="accordion-collapse collapse show"
+                                        aria-labelledby="headingHR" data-bs-parent="#HRAccordion">
+                                        <div class="accordion-body pt-0">
+                                            <div class="datatable-wrapper">
+                                                <table id="hrEmpListTable"
+                                                    class="table table-hover table-md-nowrap table-bordered team-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="py-3">No.</th>
+                                                            <th class=" position-relative py-3 text-center"
+                                                                style="cursor: default;">
+                                                                <div
+                                                                    class="d-flex align-items-center justify-content-center gap-2">
+                                                                    <div class=""><input aria-label="Select all"
+                                                                            class="form-check-input" type="checkbox">
+                                                                    </div>
+                                                                </div>
+                                                            </th>
+                                                            <th class="py-3">Employee ID</th>
+                                                            <th class="py-3">Employee Name</th>
+                                                            <th class="py-3">Contacts</th>
+                                                            <th class="py-3 text-center">Employeement Type</th>
+                                                            <th class="py-3 text-center">Work Model</th>
+                                                            <th class="py-3 text-center">Status</th>
+                                                            <th class="py-3 text-center">Actions</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        %%include('partials/components/teamtable_row.html',{
+                                                        'no':'1','id':'0510','img':'avatar3',
+                                                        'empname':'Anjali Verma','email':'anjali.verma@gmail.com',
+                                                        'contact':'+1 753 567 890','type':'Full-time',
+                                                        'model':'On-site','modelicon':'ri-circle-fill',
+                                                        'status':'Active','statusbg':'success'
+                                                        })
+
+                                                        %%include('partials/components/teamtable_row.html',{
+                                                        'no':'2','id':'0511','img':'avatar1',
+                                                        'empname':'Rohan Singh','email':'rohan.singh@yahoo.com',
+                                                        'contact':'+1 789 478 890','type':'Full-time',
+                                                        'model':'On-site','modelicon':'ri-circle-fill',
+                                                        'status':'Active','statusbg':'success'
+                                                        })
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- finance table -->
+                            <div class="accordion mb-4" id="financeAccordion">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingFinance">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseFinance" aria-expanded="true"
+                                            aria-controls="collapseFinance">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span><i class="bi bi-chevron-down fs-6"></i></span>
+                                                <h6
+                                                    class="mb-0 fw-bold fs-18 border-start border-3 border-success ps-2">
+                                                    Finance Team</h6>
+                                                <span class="badge bg-soft-success table-count">2</span>
+                                            </div>
+                                            <div class="toggle-icon"><i class="ri-add-large-line"></i></div>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseFinance" class="accordion-collapse collapse show"
+                                        aria-labelledby="headingFinance" data-bs-parent="#financeAccordion">
+                                        <div class="accordion-body pt-0">
+                                            <div class="datatable-wrapper">
+                                                <table id="financeEmpListTable"
+                                                    class="table table-hover table-md-nowrap table-bordered team-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="py-3">No.</th>
+                                                            <th class=" position-relative py-3 text-center"
+                                                                style="cursor: default;">
+                                                                <div
+                                                                    class="d-flex align-items-center justify-content-center gap-2">
+                                                                    <div class=""><input aria-label="Select all"
+                                                                            class="form-check-input" type="checkbox">
+                                                                    </div>
+                                                                </div>
+                                                            </th>
+                                                            <th class="py-3">Employee ID</th>
+                                                            <th class="py-3">Employee Name</th>
+                                                            <th class="py-3">Contacts</th>
+                                                            <th class="py-3 text-center">Employeement Type</th>
+                                                            <th class="py-3 text-center">Work Model</th>
+                                                            <th class="py-3 text-center">Status</th>
+                                                            <th class="py-3 text-center">Actions</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        %%include('partials/components/teamtable_row.html',{
+                                                        'no':'1','id':'0512','img':'avatar4',
+                                                        'empname':'Amit Sharma','email':'amit.sharma@gmail.com',
+                                                        'contact':'+1 753 453 890','type':'Full-time',
+                                                        'model':'On-site','modelicon':'ri-circle-fill',
+                                                        'status':'Leave','statusbg':'primary'
+                                                        })
+
+                                                        %%include('partials/components/teamtable_row.html',{
+                                                        'no':'2','id':'0515','img':'avatar2',
+                                                        'empname':'Kavita Joshi','email':'kavita.joshi@yahoo.com',
+                                                        'contact':'+1 789 478 651','type':'Part-time',
+                                                        'model':'On-site','modelicon':'ri-circle-fill',
+                                                        'status':'Active','statusbg':'success'
+                                                        })
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- customer support table -->
+                            <div class="accordion mb-4" id="custSupportAccordion">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingCustSupport">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseCustSupport" aria-expanded="true"
+                                            aria-controls="collapseCustSupport">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span><i class="bi bi-chevron-down fs-6"></i></span>
+                                                <h6
+                                                    class="mb-0 fw-bold fs-18 border-start border-3 border-warning ps-2">
+                                                    Customer Support Team</h6>
+                                                <span class="badge bg-soft-warning table-count">4</span>
+                                            </div>
+                                            <div class="toggle-icon"><i class="ri-add-large-line"></i></div>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseCustSupport" class="accordion-collapse collapse show"
+                                        aria-labelledby="headingCustSupport" data-bs-parent="#custSupportAccordion">
+                                        <div class="accordion-body pt-0">
+                                            <div class="datatable-wrapper">
+                                                <table id="custSupportEmpListTable"
+                                                    class="table table-hover table-md-nowrap table-bordered team-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="py-3">No.</th>
+                                                            <th class=" position-relative py-3 text-center"
+                                                                style="cursor: default;">
+                                                                <div
+                                                                    class="d-flex align-items-center justify-content-center gap-2">
+                                                                    <div class=""><input aria-label="Select all"
+                                                                            class="form-check-input" type="checkbox">
+                                                                    </div>
+                                                                </div>
+                                                            </th>
+                                                            <th class="py-3">Employee ID</th>
+                                                            <th class="py-3">Employee Name</th>
+                                                            <th class="py-3">Contacts</th>
+                                                            <th class="py-3 text-center">Employeement Type</th>
+                                                            <th class="py-3 text-center">Work Model</th>
+                                                            <th class="py-3 text-center">Status</th>
+                                                            <th class="py-3 text-center">Actions</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        %%include('partials/components/teamtable_row.html',{
+                                                        'no':'1','id':'0513','img':'avatar6',
+                                                        'empname':'Vikram Patel','email':'vikram.aptel@gmail.com',
+                                                        'contact':'+1 954 453 890','type':'Full-time',
+                                                        'model':'On-site','modelicon':'ri-circle-fill',
+                                                        'status':'Active','statusbg':'success'
+                                                        })
+
+                                                        %%include('partials/components/teamtable_row.html',{
+                                                        'no':'2','id':'0516','img':'avatar5',
+                                                        'empname':'Simran Kaur','email':'simran.kaur@yahoo.com',
+                                                        'contact':'+1 789 033 651','type':'Part-time',
+                                                        'model':'On-site','modelicon':'ri-circle-fill',
+                                                        'status':'Absent','statusbg':'danger'
+                                                        })
+
+                                                        %%include('partials/components/teamtable_row.html',{
+                                                        'no':'3','id':'0514','img':'avatar7',
+                                                        'empname':'Aarti Desai','email':'aarti.desai@yahoo.com',
+                                                        'contact':'+1 965 478 651','type':'Full-time',
+                                                        'model':'On-site','modelicon':'ri-circle-fill',
+                                                        'status':'Half Leave','statusbg':'warning'
+                                                        })
+
+                                                        %%include('partials/components/teamtable_row.html',{
+                                                        'no':'4','id':'0517','img':'avatar8',
+                                                        'empname':'Meera Nair','email':'meera.nair@yahoo.com',
+                                                        'contact':'+1 352 478 651','type':'Part-time',
+                                                        'model':'On-site','modelicon':'ri-circle-fill',
+                                                        'status':'Active','statusbg':'success'
+                                                        })
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- operations table -->
+                            <div class="accordion mb-4" id="operationsAccordion">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOperations">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#collapseOperations" aria-expanded="true"
+                                            aria-controls="collapseOperations">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <span><i class="bi bi-chevron-down fs-6"></i></span>
+                                                <h6
+                                                    class="mb-0 fw-bold fs-18 border-start border-3 border-secondary ps-2">
+                                                    Operations Team</h6>
+                                                <span class="badge bg-soft-secondary table-count">3</span>
+                                            </div>
+                                            <div class="toggle-icon"><i class="ri-add-large-line"></i></div>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOperations" class="accordion-collapse collapse show"
+                                        aria-labelledby="headingOperations" data-bs-parent="#operationsAccordion">
+                                        <div class="accordion-body pt-0">
+                                            <div class="datatable-wrapper">
+                                                <table id="operationsEmpListTable"
+                                                    class="table table-hover table-md-nowrap table-bordered team-table">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="py-3">No.</th>
+                                                            <th class=" position-relative py-3 text-center"
+                                                                style="cursor: default;">
+                                                                <div
+                                                                    class="d-flex align-items-center justify-content-center gap-2">
+                                                                    <div class=""><input aria-label="Select all"
+                                                                            class="form-check-input" type="checkbox">
+                                                                    </div>
+                                                                </div>
+                                                            </th>
+                                                            <th class="py-3">Employee ID</th>
+                                                            <th class="py-3">Employee Name</th>
+                                                            <th class="py-3">Contacts</th>
+                                                            <th class="py-3 text-center">Employeement Type</th>
+                                                            <th class="py-3 text-center">Work Model</th>
+                                                            <th class="py-3 text-center">Status</th>
+                                                            <th class="py-3 text-center">Actions</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        %%include('partials/components/teamtable_row.html',{
+                                                        'no':'1','id':'0520','img':'avatar10',
+                                                        'empname':'Sneha Patil','email':'sneha.patil@gmail.com',
+                                                        'contact':'+1 023 453 890','type':'Full-time',
+                                                        'model':'On-site','modelicon':'ri-circle-fill',
+                                                        'status':'Active','statusbg':'success'
+                                                        })
+
+                                                        %%include('partials/components/teamtable_row.html',{
+                                                        'no':'2','id':'0521','img':'avatar1',
+                                                        'empname':'Anil Gupta','email':'anil.gupta@yahoo.com',
+                                                        'contact':'+1 412 033 651','type':'Part-time',
+                                                        'model':'Hybrid','modelicon':'ri-circle-line',
+                                                        'status':'leave','statusbg':'primary'
+                                                        })
+
+                                                        %%include('partials/components/teamtable_row.html',{
+                                                        'no':'3','id':'0523','img':'avatar9',
+                                                        'empname':'Naman Chauhan','email':'naman.chauhan@gmail.com',
+                                                        'contact':'+1 632 478 651','type':'Full-time',
+                                                        'model':'On-site','modelicon':'ri-circle-fill',
+                                                        'status':'Active','statusbg':'success'
+                                                        })
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            %%include('./partials/layout/footer.html')
+        </div>
+    </div>
+
+
+    <!-- add employee modal -->
+    <div class="modal fade" id="addTeamMemberModal" tabindex="-1" aria-labelledby="addTeamMemberModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="addTeamMemberModalLabel">Add New Employee</h1>
+                    <p class="mb-0">Add new employee according department.</p>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <hr class="mb-0">
+                <div class="modal-body">
+                    <form class="row g-3">
+                        <div class="col-md-4 col-12">
+                            <label for="teamEmpId" class="form-label">Employee ID:</label>
+                            <input type="text" class="form-control" id="teamEmpId" value="EMP-">
+                        </div>
+                        <div class="col-md-8 col-12">
+                            <label for="teamEmpName" class="form-label">Employee Name:</label>
+                            <input type="text" class="form-control" id="teamEmpName">
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <label for="teamEmpEmail" class="form-label">Email ID:</label>
+                            <input type="email" class="form-control" id="teamEmpEmail">
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <label for="teamEmpPhoneNo" class="form-label">Contact No:</label>
+                            <input type="text" class="form-control" id="teamEmpPhoneNo">
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <label for="addTeamEmpDepartment" class="form-label">Department:</label>
+                            <select class="form-select rounded-3" aria-label="Select Department"
+                                id="addTeamEmpDepartment">
+                                <option selected="" disabled="">Select Department</option>
+                                <option value="sales">Sales</option>
+                                <option value="marketing">Marketing</option>
+                                <option value="development">Development</option>
+                                <option value="finance">Finance</option>
+                                <option value="operations">Operations</option>
+                                <option value="custsupport">Customer Support</option>
+                                <option value="hr">Human Resources</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <label for="addTeamEmpType" class="form-label">Employeement Type:</label>
+                            <select class="form-select rounded-3 mb-3" aria-label="Select employeement type"
+                                id="addTeamEmpType">
+                                <option selected="" disabled="">Select Employeement Type</option>
+                                <option value="fulltime">Full Time</option>
+                                <option value="parttime">Part Time</option>
+                                <option value="internship">Internship</option>
+                                <option value="freelance">Freelance</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <h6 class="form-label">Work Model:</h6>
+                            <div class="d-flex align-items-center gap-4 ms-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="radioWorkModel"
+                                        id="radioTeamEmpOnSite">
+                                    <label class="form-check-label" for="radioTeamEmpOnSite">
+                                        On-site
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="radioWorkModel"
+                                        id="radioTeamEmpHybrid">
+                                    <label class="form-check-label" for="radioTeamEmpHybrid">
+                                        Hybrid
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="radioWorkModel"
+                                        id="radioTeamEmpRemote">
+                                    <label class="form-check-label" for="radioTeamEmpRemote">
+                                        Remote
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-success">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal fade" id="deleteTeamMemberModal" tabindex="-1" aria-labelledby="deleteTeamMemberModalLabel"
+        data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteTeamMemberModalLabel">Confirm Delete</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">Are you sure you want to delete this item?</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-danger" id="confirmDeleteMember">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    %%include('./partials/layout/right-sidebar.html')
+
+    <!-- %%include('./partials/right-sidebar.html')
+    %%include('./partials/back-to-top.html') -->
+
+    %%include('./partials/layout/footer-js.html')
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="plugins/datatables.net/js/dataTables.min.js"></script>
+    <script src="plugins/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+    <script src="plugins/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="plugins/datatables.net-responsive-dt/js/responsive.dataTables.min.js"></script>
+    <script src="js/pages/team.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <section class="auth-page">
+        <div class="overlay"></div>
+        <div class="container position-relative z-3">
+            <div class="row justify-content-center">
+                <div class="col-xl-6 col-lg-7 col-md-9 col-12">
+                    <div class="card auth-card rounded-5 overflow-hidden">
+                        <div class="card-body text-center">
+                            <img src="images/pswforgot.png" alt="forget password image" class="img-fluid">
+                            <div class="mb-4">
+                                <h1 class="text-white fw-bold mb-1">Forget Password?</h1>
+                                <p class="text-light text-opacity-75">Enter your email to reset your password.</p>
+                            </div>
+                            <form class="auth-form">
+                                <div class="mb-4">
+                                    <div class="form-floating mb-2">
+                                        <input type="email" class="form-control auth-control" id="emailVerify"
+                                            placeholder="name@example.com" value="joyce.neal@example.com" name="emailId">
+                                        <label for="emailVerify" class="text-light text-opacity-75"><span><i class="ri-mail-line"></i></span> Email
+                                            Address</label>
+                                    </div>
+                                    <div id="emailVerifyMsg" class="form-text text-secondary text-start">We'll send you
+                                        OTP to reset your password.</div>
+                                </div>
+                                <button class="btn btn-primary w-100 mb-3" type="submit">Confirm
+                                    E-mail
+                                </button>
+                                <hr class="mt-4 border-secondary">
+                                <div class="d-flex flex-wrap align-items-center justify-content-sm-between justify-content-center gap-3">
+                                    <small class="text-secondary text-center">Remember your password ?
+                                        <a class="text-white" href="signin.html" data-discover="true">Sign In</a>
+                                    </small>
+                                    <a class="small text-white text-center" href="/support" data-discover="true"><i
+                                            class="ri-customer-service-line me-1 fw-medium"></i>Help</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <p class="small text-white text-opacity-75 text-center">By continuing, you agree to our 
+                        <a href="/terms" class="text-white text-decoration-underline fw-semibold">Terms
+                            of Service</a> and
+                        <a href="/privacy" class="text-white text-decoration-underline fw-semibold">Privacy
+                            Policy</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/combined.min.js"></script>
+    <script src="js/pages/forgot_pass.js"></script>
+
+</body>
+
+</html>

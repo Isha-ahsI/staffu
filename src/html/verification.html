@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <section class="auth-page">
+        <div class="overlay"></div>
+        <div class="container position-relative z-3">
+            <div class="row justify-content-center">
+                <div class="col-xl-6 col-lg-7 col-md-9 col-12">
+                    <div class="card auth-card rounded-5 overflow-hidden">
+                        <div class="card-body text-center">
+                            <img src="images/pswforgot.png" alt="forget password image" class="img-fluid">
+                            <div class="mb-4">
+                                <h2 class="text-white fw-bold mb-1">Verify E-mail Address</h2>
+                                <p class="text-light text-opacity-75">Enter the 6-digit code sent to your email to
+                                    verify your account</p>
+                            </div>
+                            <form class="auth-form mb-5">
+                                <div class="d-flex align-items-center justify-content-center gap-3 mb-4">
+                                    <input maxlength="1"
+                                        class="text-center avatar-sm-xxxl avatar-md avatar rounded-circle p-0 fw-bold form-control opt-code"
+                                        type="text" value="" name="number1">
+                                    <input maxlength="1"
+                                        class="text-center avatar-sm-xxxl avatar-md avatar rounded-circle p-0 fw-bold form-control opt-code"
+                                        type="text" value="" name="number2">
+                                    <input maxlength="1"
+                                        class="text-center avatar-sm-xxxl avatar-md avatar rounded-circle p-0 fw-bold form-control opt-code"
+                                        type="text" value="" name="number3">
+                                    <input maxlength="1"
+                                        class="text-center avatar-sm-xxxl avatar-md avatar rounded-circle p-0 fw-bold form-control opt-code"
+                                        type="text" value="" name="number4">
+                                </div>
+                                <button class="btn btn-primary w-100 mb-4" type="submit" disabled="">Confirm
+                                    Code </button>
+                                <p class="text-white text-opacity-75 mb-1 text-center resend-text">Didn't receive the code?</p>
+                                <button type="button" class="btn btn-outline-primary btn-sm resend-btn"> Resend code</button>
+                            </form>
+                             <p class="mb-0 small text-white text-opacity-75 text-center">Wrong email address? <a class="text-white text-decoration-none" href="/auth/sign_up" data-discover="true">Change email</a></p>
+                        </div>
+                    </div>
+                    <p class="text-white text-opacity-75 small mb-0 text-center">Having trouble? <a
+                            class=" text-white text-decoration-none" href="/support" data-discover="true">Contact
+                            Support</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/combined.min.js"></script>
+    <script src="js/pages/verification.js"></script>
+
+</body>
+
+</html>

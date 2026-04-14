@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    %%include('partials/layout/meta.html', { title: 'CRM Dashborad' })
+    %%include('partials/layout/css.html')
+</head>
+
+<body>
+    <div class="page-layout">
+        %%include('./partials/layout/header.html')
+        %%include('./partials/layout/left-sidebar.html')
+        <div class="page-wrapper">
+            <div class="page-content">
+                %%include('./partials/components/page-title.html', { pageTitle: 'Employee Performance', pagePrTitle:
+                'Reports' })
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                                        <div class="me-auto">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <select id="customPerLength" class="form-select form-select-sm">
+                                                    <option value="5">5</option>
+                                                    <option value="10" selected>10</option>
+                                                    <option value="25">25</option>
+                                                    <option value="50">All</option>
+                                                </select>
+                                                <p class="mb-0 text-nowrap">entries per page</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-wrap align-items-center gap-3">
+                                            <div class="input-icon">
+                                                <span class="search-icon"><i class="bi bi-search"></i></span>
+                                                <input class="form-control" type="text"
+                                                    placeholder="Search by name,id,desi..."
+                                                    aria-label="attendence search input" id="empPerSearchInput">
+                                            </div>
+                                            <div class="dropdown position-relative">
+                                                <button type="button" class="btn btn-soft-dark z-1 dropdown-toggle"
+                                                    id="empPerStatusFilter" data-bs-toggle="dropdown"
+                                                    data-bs-auto-close="false" aria-expanded="false">
+                                                    <span class="me-1 align-middle"><i class="bi bi-filter fs-5"></i></span>Filter
+                                                    <span class="ms-5"><i class="bi bi-chevron-down drop-caret"></i></span></button>
+                                                <form class="dropdown-menu dropdown-menu-sm-end p-3">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input me-1 filter-all" type="checkbox"
+                                                            value="All" id="checkAll">
+                                                        <label class="form-check-label" for="checkAll">All</label>
+                                                    </div>
+                                                    <hr>
+                                                    <h6 class="text-dark ps-2 pe-5 text-nowrap">Employeement Type</h6>
+                                                    <div class="ps-4">
+                                                        <div class="form-check">
+                                                            <input
+                                                                class="form-check-input me-1 filter-check filter-type"
+                                                                type="checkbox" value="Full-time" id="checkPerFulltime">
+                                                            <label class="form-check-label"
+                                                                for="checkPerFulltime">Full-time</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input
+                                                                class="form-check-input me-1 filter-check filter-type"
+                                                                type="checkbox" value="Part-time" id="checkPerParttime">
+                                                            <label class="form-check-label"
+                                                                for="checkPerParttime">Part-time</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input
+                                                                class="form-check-input me-1 filter-check filter-type"
+                                                                type="checkbox" value="Internship" id="checkPerIntern">
+                                                            <label class="form-check-label"
+                                                                for="checkPerIntern">Internship</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input
+                                                                class="form-check-input me-1 filter-check filter-type"
+                                                                type="checkbox" value="Freelance" id="checkPerFreelance">
+                                                            <label class="form-check-label"
+                                                                for="checkPerFreelance">Freelance</label>
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+                                                    <h6 class="text-dark ps-2 pe-5">Work Model</h6>
+                                                    <div class="ps-4">
+                                                        <div class="form-check">
+                                                            <input
+                                                                class="form-check-input me-1 filter-check filter-model"
+                                                                type="checkbox" value="On-site" id="checkPerOnsite">
+                                                            <label class="form-check-label"
+                                                                for="checkPerOnsite">On-site</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input
+                                                                class="form-check-input me-1 filter-check filter-model"
+                                                                type="checkbox" value="Hybrid" id="checkPerHybrid">
+                                                            <label class="form-check-label"
+                                                                for="checkPerHybrid">Hybrid</label>
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input
+                                                                class="form-check-input me-1 filter-check filter-model"
+                                                                type="checkbox" value="Remote" id="checkPerRemote">
+                                                            <label class="form-check-label"
+                                                                for="checkPerRemote">Remote</label>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <hr class="mb-4">
+                                    <div class="datatable-wrapper">
+                                        <table id="empPerformanceTable" class="table table-hover table-nowrap">
+                                            <thead class="table-light">
+                                                <tr>
+                                                    <th>Employee ID</th>
+                                                    <th>Epmloyee Name</th>
+                                                    <th>Designation</th>
+                                                    <th class="text-center">Employment <br> type</th>
+                                                    <th class="text-center">Work <br> Model</th>
+                                                    <th class="text-center">Task <br>Completion </th>
+                                                    <th class="text-center">KPI Score (Out of 10)</th>
+                                                    <th>Description</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- Emp1 -->
+                                                %%include('partials/components/empPerformance_row.html',{
+                                                'id':'0234','img':'avatar2','name':'Tiger Nixon',
+                                                'job':'Software Engineer','department':'IT Department',
+                                                'badgeColor':'primary','type':'Full-time',
+                                                'icon':'ri-circle-fill','model':'On-site',
+                                                'progress':'91','rate':'95','rate-color':'success',
+                                                'num':'9.5','icon2Color':'warning',icon2:'bi bi-star-fill',
+                                                'des':"Excellent"
+                                                })
+
+                                                <!-- Emp2 -->
+                                                %%include('partials/components/empPerformance_row.html',{
+                                                'id':'0117','img':'avatar1','name':'Joyce Neal',
+                                                'job':'Project Manager','department':'Project Management',
+                                                'badgeColor':'primary','type':'Full-time',
+                                                'icon':'ri-circle-fill','model':'On-site',
+                                                'progress':'65','rate':'60','rate-color':'warning',
+                                                'num':'6.0','icon2Color':'warning',icon2:'bi bi-hand-thumbs-up-fill',
+                                                'des':"Good"
+                                                })
+
+                                                <!-- Emp3 -->
+                                                %%include('partials/components/empPerformance_row.html',{
+                                                'id':'0223','img':'avatar3','name':'Ethan Ray',
+                                                'job':'Customer Support','department':'Customer service',
+                                                'badgeColor':'warning','type':'Part-time',
+                                                'icon':'ri-circle-line','model':'Hybrid',
+                                                'progress':'30','rate':'27','rate-color':'danger',
+                                                'num':'3.5','icon2Color':'warning',icon2:'bi bi-hand-thumbs-down-fill',
+                                                'des':"Training Needed"
+                                                })
+
+                                                <!-- Emp4 -->
+                                                %%include('partials/components/empPerformance_row.html',{
+                                                'id':'0458','img':'avatar4','name':'Kelvin Yia',
+                                                'job':'Graphic Designer','department':'Marketing',
+                                                'badgeColor':'secondary','type':'Freelance',
+                                                'icon':'ri-square-fill','model':'Remote',
+                                                'progress':'52','rate':'50','rate-color':'warning',
+                                                'num':'5.0','icon2Color':'warning',icon2:'bi bi-hand-thumbs-up-fill',
+                                                'des':"Good"
+                                                })
+
+                                                <!-- Emp5 -->
+                                                %%include('partials/components/empPerformance_row.html',{
+                                                'id':'0897','img':'avatar6','name':'Mark Lee',
+                                                'job':'Site Supervisior','department':'Oparations',
+                                                'badgeColor':'primary','type':'Full-time',
+                                                'icon':'ri-circle-fill','model':'On-site',
+                                                'progress':'87','rate':'80','rate-color':'success',
+                                                'num':'8.5','icon2Color':'warning',icon2:'bi bi-star-fill',
+                                                'des':"Excellent"
+                                                })
+
+                                                <!-- Emp6 -->
+                                                %%include('partials/components/empPerformance_row.html',{
+                                                'id':'0348','img':'avatar5','name':'Ollivia Joy',
+                                                'job':'Data Scientist','department':'Data Science / Analytics',
+                                                'badgeColor':'warning','type':'Part-time',
+                                                'icon':'ri-circle-line','model':'Hybrid',
+                                                'progress':'80','rate':'70','rate-color':'success',
+                                                'num':'7.0','icon2Color':'warning',icon2:'bi bi-hand-thumbs-up-fill',
+                                                'des':"Very Good"
+                                                })
+
+                                                <!-- Emp7 -->
+                                                %%include('partials/components/empPerformance_row.html',{
+                                                'id':'0742','img':'avatar7','name':'Sophia Jackson',
+                                                'job':'DevOps Engineer','department':'Oparations',
+                                                'badgeColor':'warning','type':'Part-time',
+                                                'icon':'ri-square-fill','model':'Remote',
+                                                'progress':'67','rate':'60','rate-color':'warning',
+                                                'num':'6.5','icon2Color':'warning',icon2:'bi bi-hand-thumbs-up-fill',
+                                                'des':"Good"
+                                                })
+
+                                                <!-- Emp8 -->
+                                                %%include('partials/components/empPerformance_row.html',{
+                                                'id':'0124','img':'avatar9','name':'Daniel Miller',
+                                                'job':'Frontend Developer','department':'IT Department',
+                                                'badgeColor':'secondary','type':'Internship',
+                                                'icon':'ri-circle-fill','model':'On-site',
+                                                'progress':'25','rate':'30','rate-color':'danger',
+                                                'num':'3.0','icon2Color':'danger',icon2:'bi bi-circle-fill',
+                                                'des':"Very Poor"
+                                                })
+
+                                                <!-- Emp9 -->
+                                                %%include('partials/components/empPerformance_row.html',{
+                                                'id':'0177','img':'avatar8','name':'Laura Taylor',
+                                                'job':'Finance Analyst','department':'Accounting',
+                                                'badgeColor':'primary','type':'Full-time',
+                                                'icon':'ri-circle-fill','model':'On-site',
+                                                'progress':'70','rate':'75','rate-color':'success',
+                                                'num':'7.0','icon2Color':'warning',icon2:'bi bi-hand-thumbs-up-fill',
+                                                'des':"Very Good"
+                                                })
+
+                                                <!-- Emp10 -->
+                                                %%include('partials/components/empPerformance_row.html',{
+                                                'id':'0723','img':'avatar10','name':'Priya Sharma',
+                                                'job':'Sales Executive','department':'Marketing',
+                                                'badgeColor':'secondary','type':'Freelance',
+                                                'icon':'ri-circle-fill','model':'On-site',
+                                                'progress':'43','rate':'40','rate-color':'warning',
+                                                'num':'4.0','icon2Color':'warning',icon2:'bi bi-hand-thumbs-down-fill',
+                                                'des':"Coaching Required"
+                                                })
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div
+                                        class="table-bottom d-flex flex-wrap justify-content-center justify-content-sm-between align-items-center gap-3 mt-4">
+                                        <div id="table-per-info" class="order-sm-1 order-2"></div>
+                                        <div id="table-per-pagination" class="order-sm-2 order-1">
+                                            <nav aria-label="Employee attandance pagination">
+                                                <ul class="pagination mb-0">
+                                                    <li class="page-item disabled">
+                                                        <a class="page-link" href="#" aria-label="Previous">
+                                                            <span aria-hidden="true"><i
+                                                                    class="ri-arrow-left-double-line"></i></span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="page-item mx-1 disabled"><a class="page-link" href="#"
+                                                            aria-label="Previous">
+                                                            <span aria-hidden="true"><i
+                                                                    class="ri-arrow-left-s-line"></i></span>
+                                                        </a></li>
+                                                    <li class="page-item"><a class="page-link px-3" href="#">1</a></li>
+                                                    <li class="page-item mx-1 disabled"><a class="page-link" href="#"
+                                                            aria-label="Next">
+                                                            <span aria-hidden="true"><i
+                                                                    class="ri-arrow-right-s-line"></i></span>
+                                                        </a></li>
+                                                    <li class="page-item disabled">
+                                                        <a class="page-link" href="#" aria-label="Next">
+                                                            <span aria-hidden="true"><i
+                                                                    class="ri-arrow-right-double-line"></i></span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            %%include('./partials/layout/footer.html')
+
+        </div>
+    </div>
+    %%include('./partials/layout/right-sidebar.html')
+
+    <!-- %%include('./partials/right-sidebar.html')
+    %%include('./partials/back-to-top.html') -->
+
+    %%include('./partials/layout/footer-js.html')
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="plugins/datatables.net/js/dataTables.min.js"></script>
+    <script src="plugins/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+    <script src="plugins/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="plugins/datatables.net-responsive-dt/js/responsive.dataTables.min.js"></script>
+    <script src="plugins/apexcharts/apexcharts.min.js"></script>
+    <script src="js/pages/emp_per_reports.js"></script>
+
+</body>
+
+</html>

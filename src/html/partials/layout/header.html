@@ -1,0 +1,186 @@
+<div class="topbar">
+    <div class="topbar-content">
+        <div class="top-left-content">
+            <div class="main-logo">
+                <a href="/" class="logo-sm d-sm-none d-block"><img src="images/logos/logo_sm.png" height="28"
+                        alt="Small Logo"></a>
+                <a href="/" class="logo-dark"><img src="images/logos/logo_dark.png" height="28" alt="Dark Logo"></a>
+                <a href="/" class="logo-light"><img src="images/logos/logo_light.png" height="28" alt="Light Logo"></a>
+            </div>
+            <button type="button" class="btn top-menu-icon lh-1" id="sidebarToggle">
+                <i class="ri-menu-unfold-3-fill menu-open-icon"></i>
+            </button>
+        </div>
+
+        <div class="top-right-content">
+            <!-- Full Page Dropdown -->
+            <div class="topbar-search d-md-block d-none">
+                <div class="topbar-search-input">
+                    <input placeholder="Search anything..." name="top-search-lg" type="text" id="top-search-lg"
+                        class="form-control">
+                    <i class="ri-search-2-line top-search-icon"></i>
+                </div>
+            </div>
+
+            <!-- Mobile Search Dropdown -->
+            <div class="topbar-search drop-menu-lg d-md-none d-block dropdown">
+                <button type="button" class="topbar-search-input dropdown-toggle btn btn-link" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <span>
+                        <i class="ri-search-2-line top-search-icon"></i>
+                    </span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-end p-3">
+                    <input placeholder="Search" name="top-search-sm" type="text" id="top-search-sm"
+                        class="rounded-3 form-control shadow-none">
+                </div>
+            </div>
+
+            <!-- Theme Toggle -->
+            <div class="topbar-icon drop-item-with-icon" onclick="ThemeManager.toggle()">
+                <i id="theme-toggle-icon" class="ri-moon-line avatar avatar-sm cursor fs-5"></i>
+            </div>
+
+            <!-- Full screen -->
+            <div class="topbar-icon drop-item-with-icon d-sm-block d-none" onclick="TopbarManager.toggleFullscreen()">
+                <i class="ri-fullscreen-line avatar avatar-sm cursor fs-5" id="fullscreen-icon"></i>
+            </div>
+
+            <!-- Bell Notifications Dropdown -->
+            <div class="topbar-icon drop-menu-lg dropdown">
+                <button type="button" class="dropdown-toggle btn btn-link" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <span class="avatar avatar-sm top-msg-noti">
+                        <i class="ri-notification-2-line"></i>
+                    </span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-end drop-menu-lg">
+                    <div class="dropdown-header d-flex align-items-center justify-content-between px-3">
+                        <div>
+                            <h5 class="mb-0 fw-semibold">Notifications</h5>
+                            <p class="mb-0 text-muted">you have 12 new notification</p>
+                        </div>
+                        <a href="javascript:void(0);" class="text-muted d-block lh-1">
+                            <i class="ri-list-settings-line fs-5"></i>
+                        </a>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <div style="max-height: 320px; overflow-y: auto;" data-simplebar>
+                        <a class="drop-noti-item border-warning bg-warning bg-opacity-10 dropdown-item"
+                            href="javascript:void(0);">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <div
+                                        class="avatar avatar-sm bg-warning text-light rounded-circle border border-warning">
+                                        <i class="ri-error-warning-line"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h6 class="mb-1 text-warning fw-semibold">System Alert</h6>
+                                    <p class="text-muted mb-0">Server maintenance scheduled at 10 PM.</p>
+                                    <small class="text-muted">Just now</small>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="drop-noti-item border-success bg-success bg-opacity-10 dropdown-item"
+                            href="javascript:void(0);">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <div
+                                        class="avatar avatar-sm bg-success text-light rounded-circle border border-success">
+                                        <i class="bi bi-list-task"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h6 class="mb-1 text-success fw-semibold">Task Assignment</h6>
+                                    <p class="text-muted mb-0">New task assigned: Update Sales Report.</p>
+                                    <small class="text-muted">30 mins ago</small>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="drop-noti-item border-danger bg-danger bg-opacity-10 dropdown-item"
+                            href="javascript:void(0);">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <div
+                                        class="avatar avatar-sm bg-danger text-light rounded-circle border border-danger">
+                                        <i class="ri-user-minus-line"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h6 class="mb-1 text-danger fw-semibold">Attendance Alert</h6>
+                                    <p class="text-muted mb-0">Jane missed today's check-in.</p>
+                                    <small class="text-muted">1 hour ago</small>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="drop-noti-item border-info bg-info bg-opacity-10 dropdown-item"
+                            href="javascript:void(0);">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <div class="avatar avatar-sm bg-info text-light rounded-circle border border-info">
+                                        <i class="ri-calendar-todo-line"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h6 class="mb-1 text-info fw-semibold">Leave Request</h6>
+                                    <p class="text-muted mb-0">John Doe submitted a leave request.</p>
+                                    <small class="text-muted">2 hours ago</small>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item text-center text-primary" href="javascript:void(0);">View All
+                        Notifications <span><i class="ri-arrow-right-long-line"></i></span></a>
+                </div>
+            </div>
+
+            <!-- User Profile Dropdown -->
+            <div class="topbar-user-drop drop-item-with-icon dropdown">
+                <button type="button" class="dropdown-toggle btn btn-link" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    <div class="topbar-user">
+                        <img src="images/avatars/avatar1.jpg" alt="avatar-img" class="avatar-img-sm top-user-img">
+                        <div class="text-start d-md-block d-none">
+                            <h6 class="topbar-user-name lh-1 mb-0">Joyce Neal</h6>
+                            <small class="topbar-user-role mb-0">Project Manager</small>
+                        </div>
+                    </div>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li class="dropdown-header d-md-none d-block">
+                        <div class="topbar-user">
+                            <img src="images/avatars/avatar1.jpg" alt="avatar-img" class="avatar-img-sm top-user-img">
+                            <div>
+                                <h6 class="d-block mb-0">Joyce J. Neal</h6>
+                                <p class="text-muted fw-normal fs-14 mb-0">Project Manager</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider d-md-none d-block">
+                    </li>
+                    <li><a class="dropdown-item" href="javascript:void(0);"><i
+                                class="bi bi-person-circle  drop-icon"></i>Profile</a></li>
+                    <li><a class="dropdown-item" href="javascript:void(0);"><i
+                                class="ri-puzzle-2-line drop-icon"></i>Integration</a></li>
+                    <li><a class="dropdown-item" href="javascript:void(0);"><i
+                                class="ri-settings-5-line drop-icon"></i>Setting</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="javascript:void(0);"><i
+                                class="ri-file-3-line drop-icon"></i>Guide</a></li>
+                    <li><a class="dropdown-item" href="javascript:void(0);"><i class="ri-question-line drop-icon"></i>
+                            Help Center</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="/sign_in.html"><i
+                                class="ri-logout-circle-r-line drop-icon"></i>Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+// page-wrapper.scss
+
+.page-wrapper {
+    position: relative;
+    left: $leftbar-width;
+    right: auto;
+    width: calc(100% - #{$leftbar-width});
+    transition: $transition;
+    .page-content {
+        padding: $topbar-height math.div($grid-gutter-width, 2) 0 math.div($grid-gutter-width, 2);
+        min-height: calc(100vh - #{ $footer-height});
+        @include media-breakpoint-down(sm) {
+            min-height: calc(100vh - #{$footer-height + 18px});
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    body[data-sidebar="sm"] {
+        .page-wrapper {
+            left: $leftbar-sm-width ;
+            right: auto ;
+            width: calc(100% - #{$leftbar-sm-width});
+        }
+    }
+}
+@include media-breakpoint-down(xxl) {
+    body[data-sidebar="lg"] {
+        .page-wrapper {
+            left: $leftbar-sm-width ;
+            right: auto ;            
+            width: calc(100% - #{$leftbar-sm-width});
+        }
+    }
+}
+@include media-breakpoint-down(lg) {
+    body[data-sidebar="sm"],
+    body[data-sidebar="lg"] {
+        .page-wrapper {
+            left: 0 ;
+            right: auto ;            
+            width: 100%;
+        }
+    }
+}

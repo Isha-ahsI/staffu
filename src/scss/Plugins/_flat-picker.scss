@@ -1,0 +1,65 @@
+// flat-picker.scss
+
+.flatpickr-calendar {
+    background: $white;
+
+    .flatpickr-rContainer{
+        margin-bottom: 6px;
+        .flatpickr-day {
+            &.selected {
+                font-weight: $font-weight-semibold;
+                color: var(--bs-primary);
+                background: rgba(var(--bs-primary-rgb), .1);
+                border: 1px solid rgba(var(--bs-primary-rgb), .15);
+                backdrop-filter: blur(8px);
+            }
+        }
+
+    }
+}
+
+[data-bs-theme="dark"] {
+    .flatpickr-calendar {
+        background: tint-color($gray-900, 20%);
+
+        .flatpickr-months {
+
+            .flatpickr-prev-month,
+            .flatpickr-next-month {
+                color: $white;
+                fill: $white;
+            }
+
+
+            .flatpickr-month {
+                .flatpickr-current-month {
+                    color: $white;
+                }
+            }
+        }
+
+        .flatpickr-innerContainer {
+            .flatpickr-weekday {
+                color: $white;
+            }
+
+            .flatpickr-day {
+                color: $light;
+                &:hover{
+                    background-color:rgba($light, 0.3) ;
+                    border-color:rgba($light,0.35);
+                }
+
+                &.selected,
+                &.today {
+                    font-weight: $font-weight-semibold;
+                    color: var(--bs-primary);
+                    background: rgba(var(--bs-primary-rgb), .1);
+                    border: 1px solid rgba(var(--bs-primary-rgb), .15);
+                    backdrop-filter: blur(8px);
+                }
+            }
+
+        }
+    }
+}

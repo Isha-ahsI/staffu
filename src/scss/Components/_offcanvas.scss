@@ -1,0 +1,31 @@
+// modal.scss
+.offcanvas-backdrop {
+    backdrop-filter: blur(5px);
+    z-index: $zindex-fixed !important;
+}
+
+.offcanvas {
+    &.email-detail-offcanvas {
+        width: 60%;
+
+        @include media-breakpoint-down(md) {
+            width: 100%;
+        }
+    }
+
+    .offcanvas-header {
+        .btn-close {
+            opacity: 1;
+            background-image: none;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 14px;
+            transition: background-color .2s ease, transform .2s ease;
+            color: var(--bs-title-color);
+            &:hover {
+                background-color: var(--bs-dropdown-hover-bg);
+                transform: scale(1.08);
+            }
+        }
+    }
+}
